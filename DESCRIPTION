@@ -1,4 +1,4 @@
-Package: taxize
+Package: ritis
 Description: An interface to the Integrated Taxonomic Information System (ITIS) and Phylomatic.  
 Title: Taxnomic search and phylogeny retrieval.
 Version: 0.0-1
