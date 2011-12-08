@@ -4,4 +4,6 @@ import(XML)
 import(plyr)
 import(RJSONIO)
 
-export()
+export(getAcceptedNamesFromTSN, getAnyMatchCount, getCommentDetailFromTSN, getITISTermsFromCommonName, 
+  getITISTermsFromScientificName, getTsnByVernacularLanguage, searchByCommonName, searchByCommonNameBeginsWith,
+  searchByCommonNameEndsWith, searchByScientificName, searchForAnyMatch, searchForAnyMatchPaged)
