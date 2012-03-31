@@ -1,21 +1,23 @@
-# searchByCommonName.R
-
-searchByCommonName <- 
-# Args:
-#   srchKey: string with search text (character)
-# Output: data.frame
-# Examples:
-#   searchByCommonName("american bullfrog")
-#   searchByCommonName("ferret-badger")
-
-function(srchKey = NA,
+#' Retrieve accepted TSN (with accepted name)
+#' @import XML RCurl
+#' @param srchkey string with search text (character)
+#' @param url the ITIS API url for the function (should be left to default)
+#' @param ... optional additional curl options (debugging tools mostly)
+#' @param curl If using in a loop, call getCurlHandle() first and pass 
+#'  the returned value in here (avoids unnecessary footprint)
+#' @return A data.frame with results.
+#' @export
+#' @examples \dontrun{
+#' searchbycommonname("american bullfrog")
+#' searchbycommonname("ferret-badger")
+#' }
+searchbycommonname <- function(srchkey = NA,
   url = 'http://www.itis.gov/ITISWebService/services/ITISService/searchByCommonName',
-  ..., 
-  curl = getCurlHandle() ) 
+  ..., curl = getCurlHandle() ) 
 {
   args <- list()
-  if(!is.na(srchKey))
-    args$srchKey <- srchKey
+  if(!is.na(srchkey))
+    args$srchKey <- srchkey
   tt <- getForm(url,
     .params = args,
     ...,
@@ -31,5 +33,3 @@ function(srchKey = NA,
   nodes <- getNodeSet(out, "//ax23:sciName", namespaces=namespaces)
   data.frame(comname=comname, lang=lang, tsn=tsn[-length(tsn)])
 }
-
-# http://www.itis.gov/ITISWebService/services/ITISService/searchByCommonName?srchKey=american bullfrog

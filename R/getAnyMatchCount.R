@@ -1,21 +1,24 @@
-# getAnyMatchCount.R
-
-getAnyMatchCount <- 
-# Args:
-#   srchKey: text or taxonomic serial number (TSN) (character or numeric)
-# Output: An integer containing the number of matches the search will return.
-# Examples:
-#   getAnyMatchCount(202385)
-#   getAnyMatchCount("dolphin")
-
-function(srchKey = NA,
+#' Retrieve accepted TSN (with accepted name)
+#' @import XML RCurl
+#' @param srchkey text or taxonomic serial number (TSN) (character or numeric)
+#' @param url the ITIS API url for the function (should be left to default)
+#' @param ... optional additional curl options (debugging tools mostly)
+#' @param curl If using in a loop, call getCurlHandle() first and pass 
+#'  the returned value in here (avoids unnecessary footprint)
+#' @return An integer containing the number of matches the search will return.
+#' @export
+#' @examples \dontrun{
+#' getanymatchcount(202385)
+#' getanymatchcount("dolphin")
+#' }
+getanymatchcount <- function(srchkey = NA,
   url = 'http://www.itis.gov/ITISWebService/services/ITISService/getAnyMatchCount',
   ..., 
   curl = getCurlHandle() ) 
 {
   args <- list()
-  if(!is.na(srchKey))
-    args$srchKey <- srchKey
+  if(!is.na(srchkey))
+    args$srchKey <- srchkey
   tt <- getForm(url,
     .params = args,
     ...,
@@ -23,5 +26,3 @@ function(srchKey = NA,
   out <- xmlParse(tt)
   xmlToList(out)
 }
-
-# http://www.itis.gov/ITISWebService/services/ITISService/getAnyMatchCount?srchKey=202385

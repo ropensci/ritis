@@ -1,20 +1,22 @@
-# getITISTermsFromScientificName.R
-
-getITISTermsFromScientificName <- 
-# Args:
-#   srchKey: search text of scientific name (character)
-# Output: A data.frame with results. 
-# Examples:
-#   getITISTermsFromScientificName("ursidae")
-
-function(srchKey = NA,
+#' Retrieve accepted TSN (with accepted name)
+#' @import XML RCurl
+#' @param srchkey search text of scientific name (character)
+#' @param url the ITIS API url for the function (should be left to default)
+#' @param ... optional additional curl options (debugging tools mostly)
+#' @param curl If using in a loop, call getCurlHandle() first and pass 
+#'  the returned value in here (avoids unnecessary footprint)
+#' @return A data.frame with results.
+#' @export
+#' @examples \dontrun{
+#' getitistermsfromscientificname("ursidae")
+#' }
+getitistermsfromscientificname <- function(srchkey = NA,
   url = 'http://www.itis.gov/ITISWebService/services/ITISService/getITISTermsFromScientificName',
-  ..., 
-  curl = getCurlHandle() ) 
+  ..., curl = getCurlHandle() ) 
 {
   args <- list()
-  if(!is.na(srchKey))
-    args$srchKey <- srchKey
+  if(!is.na(srchkey))
+    args$srchKey <- srchkey
   tt <- getForm(url,
     .params = args,
     ...,
@@ -31,5 +33,3 @@ function(srchKey = NA,
   tsn <- sapply(nodes, xmlValue)
   data.frame(comname=comname[-length(comname)], nameusage=nameusage, sciname=sciname, tsn=tsn)
 }
-
-# http://www.itis.gov/ITISWebService/services/ITISService/getITISTermsFromScientificName?srchKey=ursidae

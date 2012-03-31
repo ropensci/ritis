@@ -1,20 +1,22 @@
-# searchByScientificName.R
-
-searchByScientificName <- 
-# Args:
-#   srchKey: string with search text (character)
-# Output: data.frame
-# Examples:
-#   searchByScientificName("Tardigrada")
-
-function(srchKey = NA,
+#' Retrieve accepted TSN (with accepted name)
+#' @import XML RCurl
+#' @param srchkey string with search text (character)
+#' @param url the ITIS API url for the function (should be left to default)
+#' @param ... optional additional curl options (debugging tools mostly)
+#' @param curl If using in a loop, call getCurlHandle() first and pass 
+#'  the returned value in here (avoids unnecessary footprint)
+#' @return A data.frame with results.
+#' @export
+#' @examples \dontrun{
+#' searchbyscientificname("Tardigrada")
+#' }
+searchbyscientificname <- function(srchkey = NA,
   url = 'http://www.itis.gov/ITISWebService/services/ITISService/searchByScientificName',
-  ..., 
-  curl = getCurlHandle() ) 
+  ..., curl = getCurlHandle() ) 
 {
   args <- list()
-  if(!is.na(srchKey))
-    args$srchKey <- srchKey
+  if(!is.na(srchkey))
+    args$srchKey <- srchkey
   tt <- getForm(url,
     .params = args,
     ...,
@@ -28,5 +30,3 @@ function(srchKey = NA,
   tsn <- sapply(nodes, xmlValue) # last one is a repeat
   data.frame(combinedname=combinedname, tsn=tsn)
 }
-
-# http://www.itis.gov/ITISWebService/services/ITISService/searchByScientificName?srchKey=Tardigrada

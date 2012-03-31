@@ -1,8 +1,28 @@
 Package: ritis
-Description: An interface to the Integrated Taxonomic Information System (ITIS) and Phylomatic.  
+Description: An interface to the Integrated Taxonomic Information System (ITIS)
+    and Phylomatic.
 Title: Taxnomic search and phylogeny retrieval.
-Version: 0.0-1
-License: BSD
-Author: Scott Chamberlain, Carl Boettiger
-Maintainer: Scott Chamberlain <myrmecocystus@gmail.com> 
-Imports: XML, RCurl (>= 1.6), stringr, plyr, RJSONIO
+Version: 0.0.1
+License: CC0
+Date: 2012-03-31
+Authors@R: c(person("Scott", "Chamberlain", role = c("aut", "cre"),
+    email = "myrmecocystus@gmail.com"))
+Imports:
+    XML,
+    RCurl (>= 1.6),
+    stringr,
+    plyr,
+    RJSONIO
+Collate:
+    'getcommentdetailfromtsn.R'
+    'getitistermsfromcommonname.R'
+    'getitistermsfromscientificname.R'
+    'gettsnbyvernacularlanguage.R'
+    'getacceptednamesfromtsn.R'
+    'getanymatchcount.R'
+    'searchbycommonname.R'
+    'searchbycommonnamebeginswith.R'
+    'searchbycommonnameendswith.R'
+    'searchbyscientificname.R'
+    'searchforanymatch.R'
+    'searchforanymatchpaged.R'

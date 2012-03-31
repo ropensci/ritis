@@ -1,13 +1,16 @@
-# getCommentDetailFromTSN.R
-
-getCommentDetailFromTSN <- 
-# Args:
-#   tsn: TSN for a taxonomic group (numeric)
-# Output: A data.frame with results. 
-# Examples:
-#   getCommentDetailFromTSN(180543)
-
-function(tsn = NA,
+#' Retrieve accepted TSN (with accepted name)
+#' @import XML RCurl
+#' @param tsn TSN for a taxonomic group (numeric)
+#' @param url the ITIS API url for the function (should be left to default)
+#' @param ... optional additional curl options (debugging tools mostly)
+#' @param curl If using in a loop, call getCurlHandle() first and pass 
+#'  the returned value in here (avoids unnecessary footprint)
+#' @return A data.frame with results.
+#' @export
+#' @examples \dontrun{
+#' getcommentdetailfromtsn(180543)
+#' }
+getcommentdetailfromtsn <- function(tsn = NA,
   url = 'http://www.itis.gov/ITISWebService/services/ITISService/getCommentDetailFromTSN',
   ..., 
   curl = getCurlHandle() ) 
@@ -34,5 +37,3 @@ function(tsn = NA,
   data.frame(comment=comment, commid=commid, commTime=commTime, 
     commentator=commentator, updatedate=updatedate)
 }
-
-# http://www.itis.gov/ITISWebService/services/ITISService/getCommentDetailFromTSN?tsn=180543

@@ -1,28 +1,29 @@
-# searchForAnyMatchPaged.R
-
-searchForAnyMatchPaged <- 
-# Args:
-#   srchKey: text or taxonomic serial number (TSN) (character or numeric)
-#   pageSize: An integer containing the page size (numeric)
-#   pageNum: An integer containing the page number (numeric)
-#   ascend: A boolean containing true for ascending sort order or false for descending (logical)
-# Output: list of output elements
-# Examples:
-#   searchForAnyMatchPaged(202385, 100, 1, FALSE)
-#   searchForAnyMatchPaged(srchKey = "dolphin")
-
-function(srchKey = NA, pageSize = NA, pageNum = NA, ascend = NA,
+#' Retrieve accepted TSN (with accepted name)
+#' @import XML RCurl
+#' @param srchkey text or taxonomic serial number (TSN) (character or numeric)
+#' @param pagesize An integer containing the page size (numeric)
+#' @param pagenum An integer containing the page number (numeric)
+#' @param ascend A boolean containing true for ascending sort order or false for descending (logical)
+#' @param url the ITIS API url for the function (should be left to default)
+#' @param ... optional additional curl options (debugging tools mostly)
+#' @param curl If using in a loop, call getCurlHandle() first and pass 
+#'  the returned value in here (avoids unnecessary footprint)
+#' @return List of output elements.
+#' @export
+#' @examples \dontrun{
+#' searchforanymatchpaged(202385, 100, 1, FALSE)
+#' }
+searchforanymatchpaged <- function(srchkey = NA, pagesize = NA, pagenum = NA, ascend = NA,
   url = 'http://www.itis.gov/ITISWebService/services/ITISService/searchForAnyMatchPaged',
-  ..., 
-  curl = getCurlHandle() ) 
+  ..., curl = getCurlHandle() ) 
 {
   args <- list()
-  if(!is.na(srchKey))
-    args$srchKey <- srchKey
-  if(!is.na(pageSize))
-    args$pageSize <- pageSize
-  if(!is.na(pageNum))
-    args$pageNum <- pageNum
+  if(!is.na(srchkey))
+    args$srchKey <- srchkey
+  if(!is.na(pagesize))
+    args$pageSize <- pagesize
+  if(!is.na(pagenum))
+    args$pageNum <- pagenum
   if(!is.na(ascend))
     args$ascend <- ascend
   tt <- getForm(url,
@@ -41,5 +42,3 @@ function(srchKey = NA, pageSize = NA, pageNum = NA, ascend = NA,
   sciName <- sapply(nodes, xmlValue)
   list(comname=comname, lang=lang, tsn=tsn[-length(tsn)], sciName=sciName)
 }
-
-# http://www.itis.gov/ITISWebService/services/ITISService/searchForAnyMatchPaged?srchKey=202385&pageSize=100&pageNum=1&ascend=false 

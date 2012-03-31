@@ -1,17 +1,19 @@
-# getTsnByVernacularLanguage.R
-
-getTsnByVernacularLanguage <- 
-# Args:
-#   language: A string containing the language. This is a language string, 
-#     not the international language code (character)
-# Output: A data.frame with results. 
-# Examples:
-#   getTsnByVernacularLanguage("french")
-
-function(language = NA,
+#' Retrieve accepted TSN (with accepted name)
+#' @import XML RCurl
+#' @param language A string containing the language. This is a language string, 
+#'    not the international language code (character)
+#' @param url the ITIS API url for the function (should be left to default)
+#' @param ... optional additional curl options (debugging tools mostly)
+#' @param curl If using in a loop, call getCurlHandle() first and pass 
+#'  the returned value in here (avoids unnecessary footprint)
+#' @return A data.frame with results.
+#' @export
+#' @examples \dontrun{
+#' gettsnbyvernacularlanguage("french")
+#' }
+gettsnbyvernacularlanguage <- function(language = NA,
   url = 'http://www.itis.gov/ITISWebService/services/ITISService/getTsnByVernacularLanguage',
-  ..., 
-  curl = getCurlHandle() ) 
+  ..., curl = getCurlHandle() ) 
 {
   args <- list()
   if(!is.na(language))
@@ -30,5 +32,3 @@ function(language = NA,
   tsn <- sapply(nodes, xmlValue)
   data.frame(comname=comname, language=language, tsn=tsn)
 }
-
-# http://www.itis.gov/ITISWebService/services/ITISService/getTsnByVernacularLanguage?language=french
