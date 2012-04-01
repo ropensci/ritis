@@ -8,11 +8,8 @@ Date: 2012-03-31
 Authors@R: c(person("Scott", "Chamberlain", role = c("aut", "cre"),
     email = "myrmecocystus@gmail.com"))
 Imports:
-    XML,
-    RCurl (>= 1.6),
-    stringr,
-    plyr,
-    RJSONIO
+    RCurl,
+    XML
 Collate:
     'getcommentdetailfromtsn.R'
     'getitistermsfromcommonname.R'
@@ -26,3 +23,12 @@ Collate:
     'searchbyscientificname.R'
     'searchforanymatch.R'
     'searchforanymatchpaged.R'
+    'getcommonnamesfromtsn.R'
+    'getcoremetadatafromtsn.R'
+    'getcoveragefromtsn.R'
+    'getcredibilityratingfromtsn.R'
+    'getcurrencyfromtsn.R'
+    'getdatedatafromtsn.R'
+    'getexpertsfromtsn.R'
+    'getfullrecordfromtsn.R'
+    'getgeographicdivisionsfromtsn.R'
