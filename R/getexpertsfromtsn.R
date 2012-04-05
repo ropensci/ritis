@@ -22,11 +22,12 @@ getexpertsfromtsn <- function(tsn = NA,
     ...,
     curl = curl)
   out <- xmlParse(tt)
+  namespaces <- c(ax23="http://data.itis_service.itis.usgs.org/xsd")
   toget <- list("comment","expert","name","referredTsn","referenceFor","updateDate")
   xpathfunc <- function(x) {    
     sapply(getNodeSet(out, paste("//ax23:", x, sep=''), namespaces=namespaces),xmlValue)
   }
-  df <-  do.call(cbind, lapply(toget, as.data.frame(xpathfunc)))
+  df <-  do.call(cbind, laply(toget, as.data.frame(xpathfunc)))
   names(df) <- toget
   df
 }
