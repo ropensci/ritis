@@ -8,7 +8,7 @@
 #' @return A data.frame with results.
 #' @export
 #' @examples \dontrun{
-#' getitistermsfromscientificname("ursidae")
+#' getitistermsfromscientificname(srchkey = "ursidae")
 #' }
 getitistermsfromscientificname <- function(srchkey = NA,
   url = 'http://www.itis.gov/ITISWebService/services/ITISService/getITISTermsFromScientificName',
@@ -31,5 +31,5 @@ getitistermsfromscientificname <- function(srchkey = NA,
   sciname <- sapply(nodes, xmlValue)
   nodes <- getNodeSet(out, "//ax23:tsn", namespaces=namespaces)
   tsn <- sapply(nodes, xmlValue)
-  data.frame(comname=comname[-length(comname)], nameusage=nameusage, sciname=sciname, tsn=tsn)
+  data.frame(comname=comname, nameusage=nameusage, sciname=sciname, tsn=tsn)
 }

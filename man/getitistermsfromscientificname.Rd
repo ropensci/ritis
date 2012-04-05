@@ -28,7 +28,7 @@
 }
 \examples{
 \dontrun{
-getitistermsfromscientificname("ursidae")
+getitistermsfromscientificname(srchkey = "ursidae")
 }
 }
 
