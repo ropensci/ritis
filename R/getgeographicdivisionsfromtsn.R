@@ -28,7 +28,7 @@ getgeographicdivisionsfromtsn <- function(tsn = NA,
   xpathfunc <- function(x) {    
     sapply(getNodeSet(out, paste("//ax23:", x, sep=''), namespaces=namespaces),xmlValue)
   }
-  df <-  do.call(cbind, laply(toget, as.data.frame(xpathfunc)))
+  df <-  do.call(cbind, lapply(toget, as.data.frame(xpathfunc)))
   names(df) <- toget
   df
 }
