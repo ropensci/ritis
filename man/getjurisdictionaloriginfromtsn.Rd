@@ -1,9 +1,9 @@
-\name{getgeographicdivisionsfromtsn}
-\alias{getgeographicdivisionsfromtsn}
-\title{Returns a list of the geographic divisions for the TSN.}
+\name{getjurisdictionaloriginfromtsn}
+\alias{getjurisdictionaloriginfromtsn}
+\title{Retruns the taxon completenes rating for the TSN.}
 \usage{
-  getgeographicdivisionsfromtsn(tsn = NA,
-    url = "http://www.itis.gov/ITISWebService/services/ITISService/getGeographicDivisionsFromTSN",
+  getjurisdictionaloriginfromtsn(tsn = NA,
+    url = "http://www.itis.gov/ITISWebService/services/ITISService/getJurisdictionalOriginFromTSN",
     ..., curl = getCurlHandle())
 }
 \arguments{
@@ -23,11 +23,11 @@
   A data.frame with results.
 }
 \description{
-  Returns a list of the geographic divisions for the TSN.
+  Retruns the taxon completenes rating for the TSN.
 }
 \examples{
 \dontrun{
-getgeographicdivisionsfromtsn(tsn = 180543)
+getjurisdictionaloriginfromtsn(tsn = 180543)
 }
 }
 

@@ -33,3 +33,5 @@ Collate:
     'getexpertsfromtsn.R'
     'getfullrecordfromtsn.R'
     'getgeographicdivisionsfromtsn.R'
+    'getglobalspeciescompletenessfromtsn.R'
+    'getjurisdictionaloriginfromtsn.R'

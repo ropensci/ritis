@@ -1,4 +1,4 @@
-#' Returns a list of the geographic divisions for the TSN.
+#' Retruns the taxon completenes rating for the TSN.
 #' @import XML RCurl plyr
 #' @param tsn TSN for a taxonomic group (numeric)
 #' @param url the ITIS API url for the function (should be left to default)
@@ -8,10 +8,10 @@
 #' @return A data.frame with results.
 #' @export
 #' @examples \dontrun{
-#' getgeographicdivisionsfromtsn(tsn = 180543)
+#' getjurisdictionaloriginfromtsn(tsn = 180543)
 #' }
-getgeographicdivisionsfromtsn <- function(tsn = NA,
-  url = 'http://www.itis.gov/ITISWebService/services/ITISService/getGeographicDivisionsFromTSN',
+getjurisdictionaloriginfromtsn <- function(tsn = NA,
+  url = 'http://www.itis.gov/ITISWebService/services/ITISService/getJurisdictionalOriginFromTSN',
   ..., curl = getCurlHandle() ) 
 {
   args <- list()
@@ -23,7 +23,7 @@ getgeographicdivisionsfromtsn <- function(tsn = NA,
     curl = curl)
   out <- xmlParse(tt)
   namespaces <- c(ax23="http://data.itis_service.itis.usgs.org/xsd")
-  toget <- list("geographicValue","updateDate","tsn")
+  toget <- list("jurisdictionValue","origin","updateDate")
   xpathfunc <- function(x) {    
     sapply(getNodeSet(out, paste("//ax23:", x, sep=''), namespaces=namespaces),xmlValue)
   }
