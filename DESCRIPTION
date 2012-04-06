@@ -7,7 +7,7 @@ License: CC0
 Date: 2012-03-31
 Authors@R: c(person("Scott", "Chamberlain", role = c("aut", "cre"),
     email = "myrmecocystus@gmail.com"))
-Depends:
+Imports:
     RCurl,
     XML,
     plyr
