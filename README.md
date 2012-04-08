@@ -2,9 +2,11 @@
 
 `ritis` is a wrapper to the Integrated Taxonomic Information Service (ITIS) API.
 
-For most purposes you probably want to use the package taxize ([here](https://github.com/ropensci/taxize_)) which wraps other taxonomic source APIs (uBio, EOL, Phylomatic). The `ritis` package will be called by `taxize` in various functions
+We aim to have the package taxize ([here](https://github.com/ropensci/taxize_)), which wraps other taxonomic source APIs (uBio, EOL, Phylomatic), be the main package users would interact with for all things taxonomic. However, if you just want ITIS, then `ritis` is for you! The `ritis` package is and will be called more thoroughly by `taxize` in various functions.
 
 [ITIS API docs](http://www.itis.gov/ws_description.html)
+
+No API key is needed for `ritis`.
 
 `ritis` is part of the rOpenSci project, visit [ropensci.org](http://ropensci.org) to learn more.
 

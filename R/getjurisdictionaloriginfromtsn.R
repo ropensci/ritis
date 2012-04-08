@@ -17,9 +17,10 @@ getjurisdictionaloriginfromtsn <- function(tsn = NA,
   args <- list()
   if(!is.na(tsn))
     args$tsn <- tsn
+  message(paste(url, '?tsn=', tsn, sep=''))
   tt <- getForm(url,
     .params = args,
-#     ...,
+    ...,
     curl = curl)
   out <- xmlParse(tt)
   namespaces <- c(ax23="http://data.itis_service.itis.usgs.org/xsd")

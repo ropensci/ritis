@@ -17,6 +17,7 @@ getitistermsfromscientificname <- function(srchkey = NA,
   args <- list()
   if(!is.na(srchkey))
     args$srchKey <- srchkey
+  message(paste(url, '?srchKey=', srchkey, sep=''))
   tt <- getForm(url,
     .params = args,
     ...,

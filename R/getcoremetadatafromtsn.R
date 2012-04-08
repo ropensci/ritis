@@ -21,6 +21,7 @@ getcoremetadatafromtsn <- function(tsn = NA,
   args <- list()
   if(!is.na(tsn))
     args$tsn <- tsn
+  message(paste(url, '?tsn=', tsn, sep=''))
   tt <- getForm(url,
     .params = args,
     ...,

@@ -1,5 +1,5 @@
-#' Retrieve common names from TSN.
-#' @import XML RCurl
+#' Returns the review year for the TSN.
+#' @import XML RCurl plyr
 #' @param tsn TSN for a taxonomic group (numeric)
 #' @param url the ITIS API url for the function (should be left to default)
 #' @param ... optional additional curl options (debugging tools mostly)
@@ -8,10 +8,10 @@
 #' @return A data.frame with results.
 #' @export
 #' @examples \dontrun{
-#' getcommonnamesfromtsn(183833)
+#' getreviewyearfromtsn(tsn = 180541)
 #' }
-getcommonnamesfromtsn <- function(tsn = NA,
-  url = 'http://www.itis.gov/ITISWebService/services/ITISService/getCommonNamesFromTSN',
+getreviewyearfromtsn <- function(tsn = NA,
+  url = 'http://www.itis.gov/ITISWebService/services/ITISService/getReviewYearFromTSN',
   ..., curl = getCurlHandle() ) 
 {
   args <- list()
@@ -24,11 +24,11 @@ getcommonnamesfromtsn <- function(tsn = NA,
     curl = curl)
   out <- xmlParse(tt)
   namespaces <- c(ax23="http://data.itis_service.itis.usgs.org/xsd")
-  nodes <- getNodeSet(out, "//ax23:commonName", namespaces=namespaces)
-  comname <- sapply(nodes, xmlValue)
-  nodes <- getNodeSet(out, "//ax23:language", namespaces=namespaces)
-  lang <- sapply(nodes, xmlValue)
-  nodes <- getNodeSet(out, "//ax23:tsn", namespaces=namespaces)
-  tsn <- sapply(nodes, xmlValue)
-  data.frame(comname=comname, lang=lang, tsn=tsn[-length(tsn)])
+  toget <- list("rankId","reviewYear","tsn")
+  xpathfunc <- function(x) {    
+    sapply(getNodeSet(out, paste("//ax23:", x, sep=''), namespaces=namespaces),xmlValue)
+  }
+  df <-  do.call(cbind, laply(toget, as.data.frame(xpathfunc)))
+  names(df) <- toget
+  df
 }

@@ -35,3 +35,8 @@ Collate:
     'getgeographicdivisionsfromtsn.R'
     'getglobalspeciescompletenessfromtsn.R'
     'getjurisdictionaloriginfromtsn.R'
+    'getkingdomnamefromtsn.R'
+    'getothersourcesfromtsn.R'
+    'getparenttsnfromtsn.R'
+    'getpublicationsfromtsn.R'
+    'getreviewyearfromtsn.R'
