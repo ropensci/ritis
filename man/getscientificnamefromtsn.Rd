@@ -1,0 +1,36 @@
+\name{getscientificnamefromtsn}
+\alias{getscientificnamefromtsn}
+\title{Returns the scientific name for the TSN. Also returns the component parts
+   (names and indicators) of the scientific name.}
+\usage{
+  getscientificnamefromtsn(tsn = NA,
+    url = "http://www.itis.gov/ITISWebService/services/ITISService/getScientificNameFromTSN",
+    ..., curl = getCurlHandle())
+}
+\arguments{
+  \item{tsn}{TSN for a taxonomic group (numeric)}
+
+  \item{url}{the ITIS API url for the function (should be
+  left to default)}
+
+  \item{...}{optional additional curl options (debugging
+  tools mostly)}
+
+  \item{curl}{If using in a loop, call getCurlHandle()
+  first and pass the returned value in here (avoids
+  unnecessary footprint)}
+}
+\value{
+  A data.frame with results.
+}
+\description{
+  Returns the scientific name for the TSN. Also returns the
+  component parts (names and indicators) of the scientific
+  name.
+}
+\examples{
+\dontrun{
+getscientificnamefromtsn(tsn = 531894)
+}
+}
+

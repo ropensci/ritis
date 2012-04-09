@@ -40,3 +40,7 @@ Collate:
     'getparenttsnfromtsn.R'
     'getpublicationsfromtsn.R'
     'getreviewyearfromtsn.R'
+    'getscientificnamefromtsn.R'
+    'getsynonymnamesfromtsn.R'
+    'gettaxonauthorshipfromtsn.R'
+    'gettaxonomicranknamefromtsn.R'
