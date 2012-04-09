@@ -44,3 +44,6 @@ Collate:
     'getsynonymnamesfromtsn.R'
     'gettaxonauthorshipfromtsn.R'
     'gettaxonomicranknamefromtsn.R'
+    'getfullhierarchyfromtsn.R'
+    'gettaxonomicusagefromtsn.R'
+    'getunacceptabilityreasonfromtsn.R'

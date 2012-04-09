@@ -1,4 +1,4 @@
-#' Returns the author information for the TSN.
+#' Returns the usage information for the TSN.
 #' @import XML RCurl plyr
 #' @param tsn TSN for a taxonomic group (numeric)
 #' @param url the ITIS API url for the function (should be left to default)
@@ -8,10 +8,10 @@
 #' @return A data.frame with results.
 #' @export
 #' @examples \dontrun{
-#' gettaxonauthorshipfromtsn(tsn = 183671)
+#' gettaxonomicusagefromtsn(tsn = 526852)
 #' }
-gettaxonauthorshipfromtsn <- function(tsn = NA,
-  url = 'http://www.itis.gov/ITISWebService/services/ITISService/getTaxonAuthorshipFromTSN',
+gettaxonomicusagefromtsn <- function(tsn = NA,
+  url = 'http://www.itis.gov/ITISWebService/services/ITISService/getTaxonomicUsageFromTSN',
   ..., curl = getCurlHandle() ) 
 {
   args <- list()
@@ -24,7 +24,7 @@ gettaxonauthorshipfromtsn <- function(tsn = NA,
     curl = curl)
   out <- xmlParse(tt)
   namespaces <- c(ax23="http://data.itis_service.itis.usgs.org/xsd")
-  toget <- list("authorship","updateDate","tsn")
+  toget <- list("taxonUsageRating","tsn")
   xpathfunc <- function(x) {    
     sapply(getNodeSet(out, paste("//ax23:", x, sep=''), namespaces=namespaces),xmlValue)
   }
