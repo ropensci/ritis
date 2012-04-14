@@ -47,3 +47,8 @@ Collate:
     'getfullhierarchyfromtsn.R'
     'gettaxonomicusagefromtsn.R'
     'getunacceptabilityreasonfromtsn.R'
+    'getfullrecordfromlsid.R'
+    'gethierarchydownfromtsn.R'
+    'gethierarchyupfromtsn.R'
+    'getlsidfromtsn.R'
+    'getrecordfromlsid.R'
