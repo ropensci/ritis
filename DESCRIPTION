@@ -4,7 +4,7 @@ Description: An interface to the Integrated Taxonomic Information System (ITIS)
 Title: Taxnomic search and phylogeny retrieval.
 Version: 0.0.1
 License: CC0
-Date: 2012-03-31
+Date: 2012-04-14
 Authors@R: c(person("Scott", "Chamberlain", role = c("aut", "cre"),
     email = "myrmecocystus@gmail.com"))
 Imports:
@@ -52,3 +52,13 @@ Collate:
     'gethierarchyupfromtsn.R'
     'getlsidfromtsn.R'
     'getrecordfromlsid.R'
+    'gettsnfromlsid.R'
+    'getcredibilityratings.R'
+    'getdescription.R'
+    'getgeographicvalues.R'
+    'getjurisdictionoriginvalues.R'
+    'getjurisdictionvalues.R'
+    'getkingdomnames.R'
+    'getlastchangedate.R'
+    'getranknames.R'
+    'getvernacularlanguages.R'
