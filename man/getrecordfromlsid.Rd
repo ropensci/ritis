@@ -5,7 +5,7 @@
  there is no match or the TSN is invalid.}
 \usage{
   getrecordfromlsid(lsid = NA,
-    url = "http://www.itis.gov/ITISWebService/services/ITISService/getRecordFromLSID",
+    url = "http://www.itis.gov/ITISWebService/services/ITISService/getTSNFromLSID",
     ..., curl = getCurlHandle())
 
   getrecordfromlsid(lsid = NA,

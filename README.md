@@ -12,6 +12,8 @@ No API key is needed for `ritis`.
 
 Install using `install_github` within Hadley's [devtools](https://github.com/hadley/devtools) package.
 
+# Install `ritis` from GitHub:
+
 ```R
 install.packages("devtools")
 require(devtools)

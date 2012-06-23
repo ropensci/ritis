@@ -2,6 +2,7 @@
 #'  a particular valid/accepted scientific name and their TSNs, limited to 
 #'  immediate children only. The result set will be found by comparing the 
 #'  search key to the parent TSN field.
+#'  
 #' @import XML RCurl plyr
 #' @param tsn TSN for a taxonomic group (numeric)
 #' @param url the ITIS API url for the function (should be left to default)
@@ -11,7 +12,7 @@
 #' @return A data.frame with results.
 #' @export
 #' @examples \dontrun{
-#' gethierarchydownfromtsn(tsn = 51)
+#' gethierarchydownfromtsn(tsn = 161030)
 #' }
 gethierarchydownfromtsn <- function(tsn = NA,
   url = 'http://www.itis.gov/ITISWebService/services/ITISService/getHierarchyDownFromTSN',
@@ -23,7 +24,7 @@ gethierarchydownfromtsn <- function(tsn = NA,
   message(paste(url, '?tsn=', tsn, sep=''))
   tt <- getForm(url,
     .params = args,
-    ...,
+#     ...,
     curl = curl)
   out <- xmlParse(tt)
   namespaces <- c(ax23="http://data.itis_service.itis.usgs.org/xsd")
@@ -38,5 +39,5 @@ gethierarchydownfromtsn <- function(tsn = NA,
   nodes <- getNodeSet(out, "//ax23:tsn", namespaces=namespaces)
   tsn <- sapply(nodes, xmlValue)
   data.frame(parentName=parentName, parentTsn=parentTsn, rankName=rankName,
-             taxonName=taxonName, tsn=tsn[-length(tsn)])
+             taxonName=taxonName, tsn=tsn[-1])
 }
