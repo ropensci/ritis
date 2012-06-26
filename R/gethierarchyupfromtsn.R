@@ -10,7 +10,7 @@
 #' @return A data.frame with results.
 #' @export
 #' @examples \dontrun{
-#' gethierarchyupfromtsn(tsn = 1378)
+#' gethierarchyupfromtsn(tsn = 36485)
 #' }
 gethierarchyupfromtsn <- function(tsn = NA,
   url = 'http://www.itis.gov/ITISWebService/services/ITISService/getHierarchyUpFromTSN',

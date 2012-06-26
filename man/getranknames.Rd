@@ -3,8 +3,7 @@
 \title{Provides a list of all the unique rank names contained in the database and
  their kingdom and rank ID values.}
 \usage{
-  getranknames(url = "http://www.itis.gov/ITISWebService/services/ITISService/getRankNames",
-    ..., curl = getCurlHandle())
+  getranknames(url = "http://www.itis.gov/ITISWebService/services/ITISService/getRankNames")
 }
 \arguments{
   \item{url}{the ITIS API url for the function (should be

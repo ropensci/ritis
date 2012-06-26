@@ -1,8 +1,6 @@
 \name{getfullhierarchyfromtsn}
 \alias{getfullhierarchyfromtsn}
-\title{Returns the Taxonomic Hierarchy (i.e. the hierarchy from the kingdom to the
-   requested scientific name) found by iteratively comparing the TSN to the
-   Parent TSN field.}
+\title{Returns the Taxonomic Hierarchy}
 \usage{
   getfullhierarchyfromtsn(tsn = NA,
     url = "http://www.itis.gov/ITISWebService/services/ITISService/getFullHierarchyFromTSN",
@@ -31,7 +29,7 @@
 }
 \examples{
 \dontrun{
-getfullhierarchyfromtsn(tsn = 1378)
+getfullhierarchyfromtsn(tsn = 37906)
 }
 }
 

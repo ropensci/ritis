@@ -1,6 +1,9 @@
+#' Returns the Taxonomic Hierarchy
+#' 
 #' Returns the Taxonomic Hierarchy (i.e. the hierarchy from the kingdom to the 
 #'    requested scientific name) found by iteratively comparing the TSN to the 
 #'    Parent TSN field.
+#'    
 #' @import XML RCurl plyr
 #' @param tsn TSN for a taxonomic group (numeric)
 #' @param url the ITIS API url for the function (should be left to default)
@@ -10,7 +13,7 @@
 #' @return A data.frame with results.
 #' @export
 #' @examples \dontrun{
-#' getfullhierarchyfromtsn(tsn = 1378)
+#' getfullhierarchyfromtsn(tsn = 37906)
 #' }
 getfullhierarchyfromtsn <- function(tsn = NA,
   url = 'http://www.itis.gov/ITISWebService/services/ITISService/getFullHierarchyFromTSN',
@@ -37,5 +40,5 @@ getfullhierarchyfromtsn <- function(tsn = NA,
   nodes <- getNodeSet(out, "//ax23:tsn", namespaces=namespaces)
   tsn <- sapply(nodes, xmlValue)
   data.frame(parentName=parentName, parentTsn=parentTsn, rankName=rankName,
-             taxonName=taxonName, tsn=tsn[-length(tsn)])
+             taxonName=taxonName, tsn=tsn[-1])
 }

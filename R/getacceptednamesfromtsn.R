@@ -11,7 +11,7 @@
 #' @export
 #' @examples \dontrun{
 #' getacceptednamesfromtsn('208527')  # TSN accepted - good name
-#' getacceptednamesfromtsn('504239')  # TSN not accepted - input TSN is old name
+#' getacceptednamesfromtsn(tsn='504239')  # TSN not accepted - input TSN is old name
 #' getacceptednamesfromtsn('504239', FALSE)  # TSN not accepted - input TSN is old name
 #' }
 getacceptednamesfromtsn <- function(tsn = NA, supmess = TRUE,
@@ -24,19 +24,19 @@ getacceptednamesfromtsn <- function(tsn = NA, supmess = TRUE,
     args$tsn <- tsn
   tt <- getForm(url, 
     .params = args, 
-    ...,
+#     ...,
     curl = curl)
   tt_ <- xmlParse(tt)
   temp <- xmlToList(tt_)
   if(supmess == FALSE) {
     if(length(temp$return$acceptedNames) == 1) 
       { message("Good name!")
-        temp$return$tsn 
+        temp$return$tsn
         } else
       { message("Bad name!")
-        temp$return$acceptedNames[1:2] 
+        c(submittedTsn = temp$return$tsn, temp$return$acceptedNames[1:2])
         }
   } else
       { if(length(temp$return$acceptedNames) == 1) { temp$return$tsn } else
-          { temp$return$acceptedNames[1:2] } }
+          { c(submittedTsn = temp$return$tsn, temp$return$acceptedNames[1:2]) } }
 }

@@ -31,7 +31,7 @@
 }
 \examples{
 \dontrun{
-gethierarchyupfromtsn(tsn = 1378)
+gethierarchyupfromtsn(tsn = 36485)
 }
 }
 

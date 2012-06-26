@@ -14,24 +14,17 @@
 #' getranknames()
 #' }
 getranknames <- function(
-   url = 'http://www.itis.gov/ITISWebService/services/ITISService/getRankNames',
-   ..., curl = getCurlHandle() ) 
+   url = 'http://www.itis.gov/ITISWebService/services/ITISService/getRankNames') 
 {
   message(url)
-  tt <- getForm(url,
-    .params = args,
-    ...,
-    curl = curl)
+  tt <- getURL(url)
   out <- xmlParse(tt)
   namespaces <- c(ax25="http://metadata.itis_service.itis.usgs.org/xsd")
-  nodes <- getNodeSet(out, "//ax25:kingdomId", namespaces=namespaces)
-  kingdomId <- sapply(nodes, xmlValue)
   nodes <- getNodeSet(out, "//ax25:kingdomName", namespaces=namespaces)
   kingdomName <- sapply(nodes, xmlValue)
   nodes <- getNodeSet(out, "//ax25:rankId", namespaces=namespaces)
   rankId <- sapply(nodes, xmlValue)
   nodes <- getNodeSet(out, "//ax25:rankName", namespaces=namespaces)
   rankName <- sapply(nodes, xmlValue)
-  data.frame(kingdomId = kingdomId, kingdomName = kingdomName, rankId = rankId,
-             rankName = rankName)
+  data.frame(kingdomName = kingdomName, rankId = rankId, rankName = rankName)
 }
