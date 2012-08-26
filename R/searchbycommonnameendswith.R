@@ -1,4 +1,5 @@
 #' Retrieve accepted TSN (with accepted name)
+#' 
 #' @import XML RCurl
 #' @param srchkey string with search text (character)
 #' @param url the ITIS API url for the function (should be left to default)
