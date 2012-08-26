@@ -28,6 +28,7 @@
 \examples{
 \dontrun{
 searchbyscientificname("Tardigrada")
+searchbyscientificname("Quercus douglasii")
 }
 }
 

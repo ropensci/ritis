@@ -29,6 +29,7 @@
 \dontrun{
 searchbycommonname("american bullfrog")
 searchbycommonname("ferret-badger")
+searchbycommonname(srchkey="polar bear")
 }
 }
 

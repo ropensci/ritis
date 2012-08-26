@@ -27,7 +27,7 @@
 }
 \examples{
 \dontrun{
-searchbycommonnameendswith("grizzly bear")
+searchbycommonnameendswith(srchkey="snake")
 }
 }
 
