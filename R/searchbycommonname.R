@@ -10,6 +10,7 @@
 #' @examples \dontrun{
 #' searchbycommonname("american bullfrog")
 #' searchbycommonname("ferret-badger")
+#' searchbycommonname(srchkey="polar bear")
 #' }
 searchbycommonname <- function(srchkey = NA,
   url = 'http://www.itis.gov/ITISWebService/services/ITISService/searchByCommonName',
@@ -20,7 +21,7 @@ searchbycommonname <- function(srchkey = NA,
     args$srchKey <- srchkey
   tt <- getForm(url,
     .params = args,
-    ...,
+#     ...,
     curl = curl)
   out <- xmlParse(tt)
   namespaces <- c(ax23="http://data.itis_service.itis.usgs.org/xsd")
@@ -29,7 +30,6 @@ searchbycommonname <- function(srchkey = NA,
   nodes <- getNodeSet(out, "//ax23:language", namespaces=namespaces)
   lang <- sapply(nodes, xmlValue)
   nodes <- getNodeSet(out, "//ax23:tsn", namespaces=namespaces)
-  tsn <- sapply(nodes, xmlValue) # last one is a repeat
-  nodes <- getNodeSet(out, "//ax23:sciName", namespaces=namespaces)
-  data.frame(comname=comname, lang=lang, tsn=tsn[-length(tsn)])
+  tsn <- sapply(nodes, xmlValue)
+  data.frame(comname=comname, lang=lang, tsn=tsn[-1])
 }

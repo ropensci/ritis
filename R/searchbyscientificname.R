@@ -1,4 +1,5 @@
 #' Retrieve accepted TSN (with accepted name)
+#' 
 #' @import XML RCurl
 #' @param srchkey string with search text (character)
 #' @param url the ITIS API url for the function (should be left to default)
@@ -9,6 +10,7 @@
 #' @export
 #' @examples \dontrun{
 #' searchbyscientificname("Tardigrada")
+#' searchbyscientificname("Quercus douglasii")
 #' }
 searchbyscientificname <- function(srchkey = NA,
   url = 'http://www.itis.gov/ITISWebService/services/ITISService/searchByScientificName',

@@ -14,6 +14,7 @@
 #' @export
 #' @examples \dontrun{
 #' getfullhierarchyfromtsn(tsn = 37906)
+#' getfullhierarchyfromtsn(tsn = 500664)
 #' }
 getfullhierarchyfromtsn <- function(tsn = NA,
   url = 'http://www.itis.gov/ITISWebService/services/ITISService/getFullHierarchyFromTSN',
@@ -25,7 +26,7 @@ getfullhierarchyfromtsn <- function(tsn = NA,
   message(paste(url, '?tsn=', tsn, sep=''))
   tt <- getForm(url,
     .params = args,
-    ...,
+#     ...,
     curl = curl)
   out <- xmlParse(tt)
   namespaces <- c(ax23="http://data.itis_service.itis.usgs.org/xsd")

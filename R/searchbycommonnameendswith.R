@@ -8,7 +8,7 @@
 #' @return A data.frame with results.
 #' @export
 #' @examples \dontrun{
-#' searchbycommonnameendswith("grizzly bear")
+#' searchbycommonnameendswith(srchkey="snake")
 #' }
 searchbycommonnameendswith <- function(srchkey = NA,
   url = 'http://www.itis.gov/ITISWebService/services/ITISService/searchByCommonNameEndsWith',
@@ -19,7 +19,7 @@ searchbycommonnameendswith <- function(srchkey = NA,
     args$srchKey <- srchkey
   tt <- getForm(url,
     .params = args,
-    ...,
+#     ...,
     curl = curl)
   out <- xmlParse(tt)
   namespaces <- c(ax23="http://data.itis_service.itis.usgs.org/xsd")
@@ -29,6 +29,5 @@ searchbycommonnameendswith <- function(srchkey = NA,
   lang <- sapply(nodes, xmlValue)
   nodes <- getNodeSet(out, "//ax23:tsn", namespaces=namespaces)
   tsn <- sapply(nodes, xmlValue) # last one is a repeat
-  nodes <- getNodeSet(out, "//ax23:sciName", namespaces=namespaces)
-  data.frame(comname=comname, lang=lang, tsn=tsn[-length(tsn)])
+  data.frame(comname=comname, lang=lang, tsn=tsn[!nchar(tsn) == 0])
 }
