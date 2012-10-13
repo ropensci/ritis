@@ -3,9 +3,6 @@
 #' 
 #' @import XML RCurl
 #' @param url the ITIS API url for the function (should be left to default)
-#' @param ... optional additional curl options (debugging tools mostly)
-#' @param curl If using in a loop, call getCurlHandle() first and pass 
-#'  the returned value in here (avoids unnecessary footprint)
 #' @return A data.frame with results.
 #' @export
 #' @examples \dontrun{
