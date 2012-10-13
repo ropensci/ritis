@@ -1,4 +1,5 @@
 #' Returns a list of the expert information for the TSN.
+#' 
 #' @import XML RCurl
 #' @param tsn TSN for a taxonomic group (numeric)
 #' @param url the ITIS API url for the function (should be left to default)

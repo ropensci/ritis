@@ -9,10 +9,10 @@
 #' @return A data.frame with results.
 #' @export
 #' @examples \dontrun{
-#' getrecordfromlsid(lsid = "urn:lsid:itis.gov:itis_tsn:28726")
-#' getrecordfromlsid(lsid = "urn:lsid:itis.gov:itis_tsn:0")
+#' gettsnfromlsid(lsid = "urn:lsid:itis.gov:itis_tsn:28726")
+#' gettsnfromlsid(lsid = "urn:lsid:itis.gov:itis_tsn:0")
 #' }
-getrecordfromlsid <- function(lsid = NA,
+gettsnfromlsid <- function(lsid = NA,
    url = 'http://www.itis.gov/ITISWebService/services/ITISService/getTSNFromLSID',
    ..., curl = getCurlHandle() ) 
 {

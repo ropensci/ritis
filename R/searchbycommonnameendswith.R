@@ -20,7 +20,7 @@ searchbycommonnameendswith <- function(srchkey = NA,
     args$srchKey <- srchkey
   tt <- getForm(url,
     .params = args,
-#     ...,
+    ...,
     curl = curl)
   out <- xmlParse(tt)
   namespaces <- c(ax23="http://data.itis_service.itis.usgs.org/xsd")

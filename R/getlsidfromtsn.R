@@ -1,4 +1,5 @@
 #' Gets the unique LSID for the TSN, or an empty result if there is no match.
+#' 
 #' @import XML RCurl
 #' @param tsn TSN for a taxonomic group (numeric)
 #' @param url the ITIS API url for the function (should be left to default)

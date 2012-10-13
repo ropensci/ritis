@@ -2,28 +2,21 @@
 #' 
 #' @import XML RCurl
 #' @param url the ITIS API url for the function (should be left to default)
-#' @param ... optional additional curl options (debugging tools mostly)
-#' @param curl If using in a loop, call getCurlHandle() first and pass 
-#'  the returned value in here (avoids unnecessary footprint)
 #' @return A data.frame with results.
 #' @export
 #' @examples \dontrun{
 #' getjurisdictionoriginvalues()
 #' }
 getjurisdictionoriginvalues <- function(
-   url = 'http://www.itis.gov/ITISWebService/services/ITISService/getJurisdictionalOriginValues',
-   ..., curl = getCurlHandle() ) 
+   url = 'http://www.itis.gov/ITISWebService/services/ITISService/getJurisdictionalOriginValues') 
 {
   message(url)
-  tt <- getForm(url,
-    .params = args,
-    ...,
-    curl = curl)
+  tt <- getURL(url)
   out <- xmlParse(tt)
-  namespaces <- c(ax25="http://metadata.itis_service.itis.usgs.org/xsd" )
-  nodes <- getNodeSet(out, "//ax25:jurisdiction", namespaces=namespaces)
+  namespaces <- c(ax23="http://metadata.itis_service.itis.usgs.org/xsd" )
+  nodes <- getNodeSet(out, "//ax23:jurisdiction", namespaces=namespaces)
   jurisdiction <- sapply(nodes, xmlValue)
-  nodes <- getNodeSet(out, "//ax25:origin", namespaces=namespaces)
+  nodes <- getNodeSet(out, "//ax23:origin", namespaces=namespaces)
   origin <- sapply(nodes, xmlValue)
   data.frame(jurisdiction = jurisdiction, origin = origin)
 }

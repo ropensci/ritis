@@ -1,4 +1,5 @@
 #' Returns a list of the geographic divisions for the TSN.
+#' 
 #' @import XML RCurl plyr
 #' @param tsn TSN for a taxonomic group (numeric)
 #' @param url the ITIS API url for the function (should be left to default)
@@ -20,7 +21,7 @@ getgeographicdivisionsfromtsn <- function(tsn = NA,
   message(paste(url, '?tsn=', tsn, sep=''))
   tt <- getForm(url,
     .params = args,
-#     ...,
+    ...,
     curl = curl)
   out <- xmlParse(tt)
   namespaces <- c(ax23="http://data.itis_service.itis.usgs.org/xsd")

@@ -23,11 +23,12 @@ getdatedatafromtsn <- function(tsn = NA,
     ...,
     curl = curl)
   out <- xmlParse(tt)
-  nodes <- getNodeSet(out, "//ax23:initialTimeStamp", namespaces=namespaces)
+  namespaces <- c(ax21="http://data.itis_service.itis.usgs.org/xsd")
+  nodes <- getNodeSet(out, "//ax21:initialTimeStamp", namespaces=namespaces)
   initialTimeStamp <- sapply(nodes, xmlValue)
-  nodes <- getNodeSet(out, "//ax23:updateDate", namespaces=namespaces)
+  nodes <- getNodeSet(out, "//ax21:updateDate", namespaces=namespaces)
   updateDate <- sapply(nodes, xmlValue)
-  nodes <- getNodeSet(out, "//ax23:tsn", namespaces=namespaces)
+  nodes <- getNodeSet(out, "//ax21:tsn", namespaces=namespaces)
   tsn <- sapply(nodes, xmlValue)
   data.frame(initialTimeStamp=initialTimeStamp, updateDate=updateDate, tsn=tsn)
 }

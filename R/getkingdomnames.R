@@ -3,9 +3,6 @@
 #'
 #' @import XML RCurl
 #' @param url the ITIS API url for the function (should be left to default)
-#' @param ... optional additional curl options (debugging tools mostly)
-#' @param curl If using in a loop, call getCurlHandle() first and pass 
-#'  the returned value in here (avoids unnecessary footprint)
 #' @return A data.frame with results.
 #' @details Note: Kingdom ID values are provided for sorting purposes only and 
 #'  are not guaranteed to remain the same through database updates.
@@ -14,21 +11,17 @@
 #' getkingdomnames()
 #' }
 getkingdomnames <- function(
-   url = 'http://www.itis.gov/ITISWebService/services/ITISService/getKingdomNames',
-   ..., curl = getCurlHandle() ) 
+   url = 'http://www.itis.gov/ITISWebService/services/ITISService/getKingdomNames') 
 {
   message(url)
-  tt <- getForm(url,
-    .params = args,
-    ...,
-    curl = curl)
+  tt <- getURL(url)
   out <- xmlParse(tt)
-  namespaces <- c(ax25="http://metadata.itis_service.itis.usgs.org/xsd")
-  nodes <- getNodeSet(out, "//ax25:kingdomId", namespaces=namespaces)
+  namespaces <- c(ax23="http://metadata.itis_service.itis.usgs.org/xsd")
+  nodes <- getNodeSet(out, "//ax23:kingdomId", namespaces=namespaces)
   kingdomId <- sapply(nodes, xmlValue)
-  nodes <- getNodeSet(out, "//ax25:kingdomName", namespaces=namespaces)
+  nodes <- getNodeSet(out, "//ax23:kingdomName", namespaces=namespaces)
   kingdomName <- sapply(nodes, xmlValue)
-  nodes <- getNodeSet(out, "//ax25:tsn", namespaces=namespaces)
+  nodes <- getNodeSet(out, "//ax23:tsn", namespaces=namespaces)
   tsn <- sapply(nodes, xmlValue)
   data.frame(kingdomId = kingdomId, kingdomName = kingdomName, tsn = tsn)
 }

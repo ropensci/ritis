@@ -2,19 +2,11 @@
 \alias{getjurisdictionvalues}
 \title{Provides a list of all the unique jurisdiction values contained in the database.}
 \usage{
-  getjurisdictionvalues(url = "http://www.itis.gov/ITISWebService/services/ITISService/getJurisdictionValues",
-    ..., curl = getCurlHandle())
+  getjurisdictionvalues(url = "http://www.itis.gov/ITISWebService/services/ITISService/getJurisdictionValues")
 }
 \arguments{
   \item{url}{the ITIS API url for the function (should be
   left to default)}
-
-  \item{...}{optional additional curl options (debugging
-  tools mostly)}
-
-  \item{curl}{If using in a loop, call getCurlHandle()
-  first and pass the returned value in here (avoids
-  unnecessary footprint)}
 }
 \value{
   A data.frame with results.

@@ -24,7 +24,7 @@ getacceptednamesfromtsn <- function(tsn = NA, supmess = TRUE,
     args$tsn <- tsn
   tt <- getForm(url, 
     .params = args, 
-#     ...,
+    ...,
     curl = curl)
   tt_ <- xmlParse(tt)
   temp <- xmlToList(tt_)

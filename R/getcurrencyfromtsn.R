@@ -26,11 +26,12 @@ getcurrencyfromtsn <- function(tsn = NA,
     ...,
     curl = curl)
   out <- xmlParse(tt)
-  nodes <- getNodeSet(out, "//ax23:rankId", namespaces=namespaces)
+  namespaces <- c(ax21="http://data.itis_service.itis.usgs.org/xsd")
+  nodes <- getNodeSet(out, "//ax21:rankId", namespaces=namespaces)
   rankid <- sapply(nodes, xmlValue)
-  nodes <- getNodeSet(out, "//ax23:taxonCurrency", namespaces=namespaces)
+  nodes <- getNodeSet(out, "//ax21:taxonCurrency", namespaces=namespaces)
   taxoncurrency <- sapply(nodes, xmlValue)
-  nodes <- getNodeSet(out, "//ax23:tsn", namespaces=namespaces)
+  nodes <- getNodeSet(out, "//ax21:tsn", namespaces=namespaces)
   tsn <- sapply(nodes, xmlValue)
   data.frame(rankid=rankid, taxoncurrency=taxoncurrency, tsn=tsn)
 }
