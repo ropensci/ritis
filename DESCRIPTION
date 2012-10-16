@@ -10,6 +10,8 @@ Imports:
     RCurl,
     XML,
     plyr
+Suggests:
+    testthat
 Collate:
     'getcommentdetailfromtsn.R'
     'getitistermsfromcommonname.R'
