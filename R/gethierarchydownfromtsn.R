@@ -3,7 +3,7 @@
 #'  immediate children only. The result set will be found by comparing the 
 #'  search key to the parent TSN field.
 #'  
-#' @import XML RCurl plyr
+#' @import XML RCurl
 #' @param tsn TSN for a taxonomic group (numeric)
 #' @param url the ITIS API url for the function (should be left to default)
 #' @param ... optional additional curl options (debugging tools mostly)

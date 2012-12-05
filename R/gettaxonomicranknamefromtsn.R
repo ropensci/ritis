@@ -1,5 +1,6 @@
 #' Returns the kingdom and rank information for the TSN.
-#' @import XML RCurl plyr
+#' 
+#' @import XML RCurl
 #' @param tsn TSN for a taxonomic group (numeric)
 #' @param url the ITIS API url for the function (should be left to default)
 #' @param ... optional additional curl options (debugging tools mostly)
@@ -20,7 +21,7 @@ gettaxonomicranknamefromtsn <- function(tsn = NA,
   message(paste(url, '?tsn=', tsn, sep=''))
   tt <- getForm(url,
     .params = args,
-#     ...,
+     ...,
     curl = curl)
   out <- xmlParse(tt)
   namespaces <- c(ax23="http://data.itis_service.itis.usgs.org/xsd")

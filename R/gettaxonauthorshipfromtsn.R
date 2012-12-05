@@ -1,5 +1,6 @@
 #' Returns the author information for the TSN.
-#' @import XML RCurl plyr
+#' 
+#' @import XML RCurl
 #' @param tsn TSN for a taxonomic group (numeric)
 #' @param url the ITIS API url for the function (should be left to default)
 #' @param ... optional additional curl options (debugging tools mostly)
@@ -28,7 +29,7 @@ gettaxonauthorshipfromtsn <- function(tsn = NA,
   xpathfunc <- function(x) {    
     sapply(getNodeSet(out, paste("//ax23:", x, sep=''), namespaces=namespaces),xmlValue)
   }
-  df <-  do.call(cbind, laply(toget, as.data.frame(xpathfunc)))
+  df <-  do.call(cbind, lapply(toget, as.data.frame(xpathfunc)))
   names(df) <- toget
   df
 }

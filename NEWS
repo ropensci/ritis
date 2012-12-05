@@ -1,3 +1,11 @@
+ritis 0.0.3
+===============
+
+BUG FIXES 
+
+* Removed dependency on plyr - moved from laply to lapply across functions.
+
+
 ritis 0.0.2
 ===============
 
