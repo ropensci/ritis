@@ -1,9 +1,9 @@
 Package: ritis
 Description: An interface to the Integrated Taxonomic Information System (ITIS).
 Title: Taxonomic search of ITIS data.
-Version: 0.0.1
+Version: 0.0.2
 License: CC0
-Date: 2012-10-13
+Date: 2012-11-06
 Authors@R: c(person("Scott", "Chamberlain", role = c("aut", "cre"),
     email = "myrmecocystus@gmail.com"))
 Imports:
