@@ -1,4 +1,11 @@
-# ritis #
+ritis
+=====
+
+## UPDATE as of 2014-08-20
+
+This package will undergo no further development.
+
+## Info
 
 `ritis` is a wrapper to the Integrated Taxonomic Information Service (ITIS) API.
 
