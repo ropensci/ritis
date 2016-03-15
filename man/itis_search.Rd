@@ -2,7 +2,7 @@
 % Please edit documentation in R/itis_search.R
 \name{itis_search}
 \alias{itis_search}
-\title{ITIS solr search}
+\title{ITIS Solr search}
 \usage{
 itis_search(...)
 }
@@ -10,7 +10,7 @@ itis_search(...)
 \item{...}{Args passed to \code{\link[solrium]{solr_search}}}
 }
 \description{
-ITIS solr search
+ITIS Solr search
 }
 \examples{
 \dontrun{

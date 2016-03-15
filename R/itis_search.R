@@ -1,4 +1,4 @@
-#' ITIS solr search
+#' ITIS Solr search
 #'
 #' @export
 #' @param ... Args passed to \code{\link[solrium]{solr_search}}
