@@ -3,6 +3,8 @@
 #' @export
 #' @param ... Args passed to \code{\link[solrium]{solr_search}}
 #' @examples \dontrun{
+#' itis_search(q = "tsn:182662")
+#'
 #' itis_search(q = "nameWOInd:Liquidamber\\%20styraciflua~0.4")
 #' # matches only monomials
 #' itis_search(q = "nameWOInd:/[A-Za-z0-9]*[%20]{0,0}*/")
