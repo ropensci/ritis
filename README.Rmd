@@ -1,0 +1,30 @@
+ritis
+=====
+
+## UPDATE: 2016-03-15
+
+playing with bring this pkg back... now that there's a Solr service
+
+# Installation
+
+```{r eval=FALSE}
+devtools::install_github("ropensci/ritis")
+```
+
+```{r}
+library("ritis")
+```
+
+# Solr service
+
+matches only monomials
+
+```{r}
+itis_search(q = "nameWOInd:/[A-Za-z0-9]*[%20]{0,0}*/")
+```
+
+matches only binomials
+
+```{r}
+itis_search(q = "nameWOInd:/[A-Za-z0-9]*[%20]{1,1}[A-Za-z0-9]*/")
+```
