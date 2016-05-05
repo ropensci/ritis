@@ -1,6 +1,9 @@
 ritis
 =====
 
+[![Build Status](https://api.travis-ci.org/ropensci/ritis.png)](https://travis-ci.org/ropensci/ritis)
+
+
 ## UPDATE: 2016-03-15
 
 playing with bring this pkg back... now that there's a Solr service

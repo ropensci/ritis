@@ -1,6 +1,18 @@
 ritis
 =====
 
+```{r echo=FALSE}
+knitr::opts_chunk$set(
+  comment = "#>",
+  collapse = TRUE,
+  warning = FALSE,
+  message = FALSE
+)
+```
+
+[![Build Status](https://api.travis-ci.org/ropensci/ritis.png)](https://travis-ci.org/ropensci/ritis)
+
+
 > UPDATE: 2016-03-15 - playing with bring this pkg back... now that there's a Solr service and a JSON API
 
 * [ITIS API Docs](http://www.itis.gov/ws_description.html)
