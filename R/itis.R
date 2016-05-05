@@ -5,17 +5,17 @@
 #' @template tsn
 #' @examples \dontrun{
 #' # TSN accepted - good name
-#' acceptednamesfromtsn(tsn='208527')
+#' accepted_names(tsn='208527')
 #'
 #' # TSN not accepted - input TSN is old name
-#' acceptednamesfromtsn('504239')
+#' accepted_names('504239')
 #'
 #' # raw json
-#' acceptednamesfromtsn(tsn='208527', raw = TRUE)
+#' accepted_names(tsn='208527', raw = TRUE)
 #' # raw xml
-#' acceptednamesfromtsn(tsn='208527', wt = "xml", raw = TRUE)
+#' accepted_names(tsn='208527', wt = "xml", raw = TRUE)
 #' }
-acceptednamesfromtsn <- function(tsn, wt = "json", raw = FALSE, ...) {
+accepted_names <- function(tsn, wt = "json", raw = FALSE, ...) {
   x <- itis_GET("getAcceptedNamesFromTSN", list(tsn = tsn), wt, ...)
   if (raw) return(x)
   x <- parse_raw(wt, x)
@@ -50,10 +50,10 @@ acceptednamesfromtsn <- function(tsn, wt = "json", raw = FALSE, ...) {
 #' @param x text or taxonomic serial number (TSN) (character or numeric)
 #' @return An integer containing the number of matches the search will return.
 #' @examples \dontrun{
-#' anymatchcount(202385)
-#' anymatchcount("dolphin")
+#' any_match_count(202385)
+#' any_match_count("dolphin")
 #' }
-anymatchcount <- function(x, wt = "json", raw = FALSE, ...) {
+any_match_count <- function(x, wt = "json", raw = FALSE, ...) {
 	x <- itis_GET("getAnyMatchCount", list(srchKey = x), wt = wt, ...)
 	if (raw) return(x)
 	x <- parse_raw(wt, x)
@@ -67,12 +67,12 @@ anymatchcount <- function(x, wt = "json", raw = FALSE, ...) {
 #' @template common
 #' @return A data.frame with results.
 #' @examples \dontrun{
-#' commentdetail(tsn=180543)
-#' commentdetail(tsn=180543, wt = "xml")
+#' comment_detail(tsn=180543)
+#' comment_detail(tsn=180543, wt = "xml")
 #' library(httr)
-#' commentdetail(tsn=180543, config=verbose())
+#' comment_detail(tsn=180543, config=verbose())
 #' }
-commentdetail <- function(tsn, wt = "json", raw = FALSE, ...) {
+comment_detail <- function(tsn, wt = "json", raw = FALSE, ...) {
 	x <- itis_GET("getCommentDetailFromTSN", list(tsn = tsn), wt, ...)
 	if (raw) return(x)
 	x <- parse_raw(wt, x)
@@ -91,10 +91,10 @@ commentdetail <- function(tsn, wt = "json", raw = FALSE, ...) {
 #' @template common
 #' @template tsn
 #' @examples \dontrun{
-#' commonnames(tsn=183833)
-#' commonnames(tsn=183833, wt = "xml")
+#' common_names(tsn=183833)
+#' common_names(tsn=183833, wt = "xml")
 #' }
-commonnames <- function(tsn, wt = "json", raw = FALSE, ...) {
+common_names <- function(tsn, wt = "json", raw = FALSE, ...) {
 	x <- itis_GET("getCommonNamesFromTSN", list(tsn = tsn), wt, ...)
 	if (raw) return(x)
 	x <- parse_raw(wt, x)
@@ -115,13 +115,13 @@ commonnames <- function(tsn, wt = "json", raw = FALSE, ...) {
 #' @template tsn
 #' @examples \dontrun{
 #' # coverage and currrency data
-#' coremetadata(tsn=28727)
-#' coremetadata(tsn=28727, wt = "xml")
+#' core_metadata(tsn=28727)
+#' core_metadata(tsn=28727, wt = "xml")
 #' # no coverage or currrency data
-#' coremetadata(183671)
-#' coremetadata(183671, wt = "xml")
+#' core_metadata(183671)
+#' core_metadata(183671, wt = "xml")
 #' }
-coremetadata <- function(tsn, wt = "json", raw = FALSE, ...) {
+core_metadata <- function(tsn, wt = "json", raw = FALSE, ...) {
 	x <- itis_GET("getCoreMetadataFromTSN", list(tsn = tsn), wt, ...)
 	if (raw) return(x)
 	x <- parse_raw(wt, x)
@@ -163,12 +163,12 @@ coverage <- function(tsn, wt = "json", raw = FALSE, ...) {
 #' @template common
 #' @template tsn
 #' @examples \dontrun{
-#' credibilityrating(526852)
-#' credibilityrating(526852, wt = "xml")
-#' credibilityrating(526852, wt = "xml", raw = TRUE)
-#' credibilityrating(526852, raw = TRUE)
+#' credibility_rating(526852)
+#' credibility_rating(526852, wt = "xml")
+#' credibility_rating(526852, wt = "xml", raw = TRUE)
+#' credibility_rating(526852, raw = TRUE)
 #' }
-credibilityrating <- function(tsn, wt = "json", raw = FALSE, ...) {
+credibility_rating <- function(tsn, wt = "json", raw = FALSE, ...) {
 	x <- itis_GET("getCredibilityRatingFromTSN", list(tsn = tsn), wt, ...)
   if (raw) return(x)
   x <- parse_raw(wt, x)
@@ -185,12 +185,12 @@ credibilityrating <- function(tsn, wt = "json", raw = FALSE, ...) {
 #' @export
 #' @template common
 #' @examples \dontrun{
-#' credibilityratings()
-#' credibilityratings(wt = "xml")
-#' credibilityratings(raw = TRUE)
-#' credibilityratings(wt = "xml", raw = TRUE)
+#' credibility_ratings()
+#' credibility_ratings(wt = "xml")
+#' credibility_ratings(raw = TRUE)
+#' credibility_ratings(wt = "xml", raw = TRUE)
 #' }
-credibilityratings <- function(wt = "json", raw = FALSE, ...) {
+credibility_ratings <- function(wt = "json", raw = FALSE, ...) {
 	x <- itis_GET("getCredibilityRatings", list(), wt, ...)
 	if (raw) return(x)
 	x <- parse_raw(wt, x)
@@ -231,11 +231,11 @@ currency <- function(tsn, wt = "json", raw = FALSE, ...) {
 #' @template common
 #' @template tsn
 #' @examples \dontrun{
-#' datedata(180543)
-#' datedata(180543, wt = "xml")
-#' datedata(180543, wt = "xml", raw = TRUE)
+#' date_data(180543)
+#' date_data(180543, wt = "xml")
+#' date_data(180543, wt = "xml", raw = TRUE)
 #' }
-datedata <- function(tsn, wt = "json", raw = FALSE, ...) {
+date_data <- function(tsn, wt = "json", raw = FALSE, ...) {
 	x <- itis_GET("getDateDataFromTSN", list(tsn = tsn), wt, ...)
 	if (raw) return(x)
 	x <- parse_raw(wt, x)
@@ -316,9 +316,9 @@ full_hierarchy <- function(tsn, wt = "json", raw = FALSE, ...) {
 #' @template common
 #' @template tsn
 #' @examples \dontrun{
-#' geographicdivisions(tsn=180543, config=timeout(3))
+#' geographic_divisions(tsn=180543, config=timeout(3))
 #' }
-geographicdivisions <- function(tsn, wt = "json", raw = FALSE, ...) {
+geographic_divisions <- function(tsn, wt = "json", raw = FALSE, ...) {
 	out <- itis_GET("getGeographicDivisionsFromTSN", list(tsn = tsn), wt, ...)
   namespaces <- c(namespaces <- c(ax21 = "http://data.itis_service.itis.usgs.gov/xsd"))
   toget <- list("geographicValue","updateDate")
@@ -385,86 +385,6 @@ hierarchy_up <- function(tsn, wt = "json", raw = FALSE, ...) {
   namespaces <- c(namespaces <- c(ax21 = "http://data.itis_service.itis.usgs.gov/xsd"))
   matches <- c("parentName","parentTsn","rankName","taxonName","tsn")
   itisdf(out, namespaces, matches, tolower(matches))
-}
-
-#' Get itis terms from common names
-#'
-#' @export
-#' @template common
-#' @inheritParams anymatchcount
-#' @examples \dontrun{
-#' itistermsfromcommonname("buya")
-#' itistermsfromcommonname("pum")
-#' }
-itistermsfromcommonname <- function(x, wt = "json", raw = FALSE, ...) {
-  out <- itis_GET("getITISTermsFromCommonName", list(srchKey = x), wt, ...)
-  namespaces <- c(namespaces <- c(ax21 = "http://data.itis_service.itis.usgs.gov/xsd"))
-  gg <- xml_find_all(out, "//ax21:itisTerms", namespaces)
-  res <- lapply(gg, function(z) {
-    sapply(xml2::xml_children(z), xml_ext)
-  })
-  tmp <- do.call(rbind.fill, lapply(res, function(x) data.frame(x, stringsAsFactors = FALSE)))
-  names(tmp) <- tolower(names(tmp))
-  row.names(tmp) <- NULL
-  if (NROW(tmp) == 1 && names(tmp) == "x") {
-    NA
-  } else {
-    tmp$commonnames <- gsub("true", NA, as.character(tmp$commonnames))
-    tmp
-  }
-}
-
-#' Get itis terms from common names
-#'
-#' @export
-#' @template common
-#' @inheritParams anymatchcount
-#' @examples \dontrun{
-#' itisterms(x="bear")
-#' }
-itisterms <- function(x, wt = "json", raw = FALSE, ...) {
-  out <- itis_GET("getITISTerms", list(srchKey = x), wt, ...)
-  namespaces <- c(namespaces <- c(ax21 = "http://data.itis_service.itis.usgs.gov/xsd"))
-  gg <- xml_find_all(out, "//ax21:itisTerms", namespaces)
-  res <- lapply(gg, function(z) {
-    sapply(xml2::xml_children(z), xml_ext)
-  })
-  tmp <- do.call(rbind.fill, lapply(res, function(x) data.frame(x, stringsAsFactors = FALSE)))
-  names(tmp) <- tolower(names(tmp))
-  row.names(tmp) <- NULL
-  if (NROW(tmp) == 1 && names(tmp) == "x") {
-    NA
-  } else {
-    tmp$commonnames <- gsub("true", NA, as.character(tmp$commonnames))
-    tmp
-  }
-}
-
-#' Get itis terms from scientific names
-#'
-#' @export
-#' @template common
-#' @inheritParams anymatchcount
-#' @examples \dontrun{
-#' itistermsfromscientificname(x="ursidae")
-#' itistermsfromscientificname("Ursus")
-#' }
-itistermsfromscientificname <- function(x, wt = "json", raw = FALSE, ...) {
-  out <- itis_GET("getITISTermsFromScientificName", list(srchKey = x), wt, ...)
-  namespaces <- c(namespaces <- c(ax21 = "http://data.itis_service.itis.usgs.gov/xsd"))
-  gg <- xml_find_all(out, "//ax21:itisTerms", namespaces)
-  res <- lapply(gg, function(z) {
-    sapply(xml2::xml_children(z), xml_ext)
-  })
-  tmp <- do.call(rbind.fill, lapply(res, function(x) data.frame(x,
-                                                               stringsAsFactors = FALSE)))
-  names(tmp) <- tolower(names(tmp))
-  row.names(tmp) <- NULL
-  if (NROW(tmp) == 1 && names(tmp) == "x") {
-    NA
-  } else {
-    tmp
-  }
 }
 
 #' Get jurisdictional origin from tsn
@@ -835,7 +755,7 @@ vernacular_languages <- function(wt = "json", raw = FALSE, ...) {
 #'
 #' @export
 #' @template common
-#' @inheritParams anymatchcount
+#' @inheritParams any_match_count
 #' @examples \dontrun{
 #' search_scientific("Tardigrada", config=timeout(3))
 #' search_scientific("Quercus douglasii", config=timeout(3))
@@ -851,7 +771,7 @@ search_scientific <- function(x, wt = "json", raw = FALSE, ...) {
 #'
 #' @export
 #' @template common
-#' @inheritParams anymatchcount
+#' @inheritParams any_match_count
 #' @examples \dontrun{
 #' search_anymatch(x=202385, config=timeout(3))
 #' search_anymatch(x="dolphin", config=timeout(3))
@@ -902,7 +822,7 @@ foosam <- function(x, y, ns) {
 #'
 #' @export
 #' @template common
-#' @inheritParams anymatchcount
+#' @inheritParams any_match_count
 #' @param pagesize An integer containing the page size (numeric)
 #' @param pagenum An integer containing the page number (numeric)
 #' @param ascend A boolean containing true for ascending sort order or false

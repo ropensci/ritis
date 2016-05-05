@@ -5,3 +5,5 @@
 ^\.Rproj\.user$
 ^README\.Rmd$
 man-roxygen/
+.travis.yml
+cran-comments.md

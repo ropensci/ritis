@@ -2,7 +2,7 @@
 #'
 #' @export
 #' @param lsid lsid for a taxonomic group (character)
-#' @inheritParams commentdetail
+#' @inheritParams comment_detail
 #' @examples \dontrun{
 #' # from tsn
 #' full_record(50423)
