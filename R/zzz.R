@@ -1,4 +1,4 @@
-con_utf8 <- function(x) rawToChar(content(x, "raw", encoding = "UTF-8"))
+con_utf8 <- function(x) rawToChar(httr::content(x, "raw", encoding = "UTF-8"))
 
 tc <- function(l) Filter(Negate(is.null), l)
 

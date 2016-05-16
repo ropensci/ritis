@@ -30,9 +30,9 @@ accepted_names <- function(tsn, wt = "json", raw = FALSE, ...) {
       }
     },
     xml = {
-      x_tsn <- xml_text(xml_find_all(x, "//ax21:tsn", xml_ns(x)))
-      x_acc_names <- lapply(xml_children(as_list(xml_find_all(x, "//ax21:acceptedNames", xml_ns(x)))[[1]]), function(z) {
-        as.list(setNames(xml_text(z), xml_name(z)))
+      x_tsn <- xml2::xml_text(xml2::xml_find_all(x, "//ax21:tsn", xml2::xml_ns(x)))
+      x_acc_names <- lapply(xml2::xml_children(xml2::as_list(xml2::xml_find_all(x, "//ax21:acceptedNames", xml2::xml_ns(x)))[[1]]), function(z) {
+        as.list(setNames(xml2::xml_text(z), xml2::xml_name(z)))
       })
       if (length(x_acc_names) < 2) {
         x_tsn
@@ -57,7 +57,7 @@ any_match_count <- function(x, wt = "json", raw = FALSE, ...) {
 	x <- itis_GET("getAnyMatchCount", list(srchKey = x), wt = wt, ...)
 	if (raw) return(x)
 	x <- parse_raw(wt, x)
-	switch(wt, json = x$return, xml = as.numeric(xml_text(x)))
+	switch(wt, json = x$return, xml = as.numeric(xml2::xml_text(x)))
 }
 
 #' Get comment detail from TSN
@@ -100,9 +100,9 @@ common_names <- function(tsn, wt = "json", raw = FALSE, ...) {
 	x <- parse_raw(wt, x)
 	switch(wt, json = x, xml = {
 	    namespaces <- c(namespaces <- c(ax21 = "http://data.itis_service.itis.usgs.gov/xsd"))
-	    comname <- xml_text(xml_find_all(x, "//ax21:commonName", xml_ns(x)))
-	    lang <- xml_text(xml_find_all(x, "//ax21:language", xml_ns(x)))
-	    tsn <- xml_text(xml_find_all(x, "//ax21:tsn", xml_ns(x)))
+	    comname <- xml2::xml_text(xml2::xml_find_all(x, "//ax21:commonName", xml2::xml_ns(x)))
+	    lang <- xml2::xml_text(xml2::xml_find_all(x, "//ax21:language", xml2::xml_ns(x)))
+	    tsn <- xml2::xml_text(xml2::xml_find_all(x, "//ax21:tsn", xml2::xml_ns(x)))
 	    data.frame(comname = comname, lang = lang, tsn = tsn[-length(tsn)], stringsAsFactors = FALSE)
 	  }
 	)
@@ -196,7 +196,7 @@ credibility_ratings <- function(wt = "json", raw = FALSE, ...) {
 	x <- parse_raw(wt, x)
 	switch(wt, json = x, xml = {
 	  namespaces <- c(ax23 = "http://metadata.itis_service.itis.usgs.gov/xsd")
-	  xx <- xml_text(xml_find_all(x, "//ax23:credibilityValues", xml_ns(x)))
+	  xx <- xml2::xml_text(xml2::xml_find_all(x, "//ax23:credibilityValues", xml2::xml_ns(x)))
 	  data.frame(credibilityvalues = xx, stringsAsFactors = FALSE)
 	})
 }
@@ -257,7 +257,7 @@ description <- function(wt = "json", raw = FALSE, ...){
   x <- itis_GET("getDescription", list(), wt, ...)
   if (raw) return(x)
   x <- parse_raw(wt, x)
-  switch(wt, json = x$description, xml = xml_text(xml_find_all(x, "//ns:return", xml_ns(x)))[[1]])
+  switch(wt, json = x$description, xml = xml2::xml_text(xml2::xml_find_all(x, "//ns:return", xml2::xml_ns(x)))[[1]])
 }
 
 #' Get expert information for the TSN.
@@ -277,7 +277,7 @@ experts <- function(tsn, wt = "json", raw = FALSE, ...) {
 	  namespaces <- c(namespaces <- c(ax21 = "http://data.itis_service.itis.usgs.gov/xsd"))
 	  toget <- list("comment","expert","name","referredTsn","referenceFor","updateDate")
 	  xpathfunc <- function(z) {
-	    xml_text(xml_find_all(x, paste0("//ax21:", z), namespaces))
+	    xml2::xml_text(xml2::xml_find_all(x, paste0("//ax21:", z), namespaces))
 	  }
 	  nmslwr(setNames(do.call(cbind, lapply(toget, function(z) as.data.frame(xpathfunc(z)))), toget))
 	})
@@ -299,11 +299,11 @@ full_hierarchy <- function(tsn, wt = "json", raw = FALSE, ...) {
 	x <- parse_raw(wt, x)
 	switch(wt, json = x, xml = {
 	  namespaces <- c(namespaces <- c(ax21 = "http://data.itis_service.itis.usgs.gov/xsd"))
-	  parentName <- xml_text(xml_find_all(x, "//ax21:parentName", xml_ns(x)))
-	  parentTsn <- xml_text(xml_find_all(x, "//ax21:parentTsn", xml_ns(x)))
-	  rankName <- xml_text(xml_find_all(x, "//ax21:rankName", xml_ns(x)))
-	  taxonName <- xml_text(xml_find_all(x, "//ax21:taxonName", xml_ns(x)))
-	  tsn <- xml_text(xml_find_all(x, "//ax21:tsn", xml_ns(x)))
+	  parentName <- xml2::xml_text(xml2::xml_find_all(x, "//ax21:parentName", xml2::xml_ns(x)))
+	  parentTsn <- xml2::xml_text(xml2::xml_find_all(x, "//ax21:parentTsn", xml2::xml_ns(x)))
+	  rankName <- xml2::xml_text(xml2::xml_find_all(x, "//ax21:rankName", xml2::xml_ns(x)))
+	  taxonName <- xml2::xml_text(xml2::xml_find_all(x, "//ax21:taxonName", xml2::xml_ns(x)))
+	  tsn <- xml2::xml_text(xml2::xml_find_all(x, "//ax21:tsn", xml2::xml_ns(x)))
 	  nmslwr(data.frame(parentName = parentName, parentTsn = parentTsn,
 	                    rankName = rankName[-length(rankName)],
 	                    taxonName = taxonName, tsn = tsn[-1], stringsAsFactors = FALSE))
@@ -335,7 +335,7 @@ geographic_divisions <- function(tsn, wt = "json", raw = FALSE, ...) {
 geographic_values <- function(wt = "json", raw = FALSE, ...) {
 	out <- itis_GET("getGeographicValues", list(), wt, ...)
   namespaces <- c(ax21 = "http://metadata.itis_service.itis.usgs.gov/xsd")
-  geographicValues <- xml_text(xml_find_all(out, "//ax21:geographicValues", namespaces))
+  geographicValues <- xml2::xml_text(xml2::xml_find_all(out, "//ax21:geographicValues", namespaces))
   data.frame(geographicvalues = geographicValues, stringsAsFactors = FALSE)
 }
 
@@ -400,7 +400,7 @@ jurisdictional_origin <- function(tsn, wt = "json", raw = FALSE, ...) {
   namespaces <- c(namespaces <- c(ax21 = "http://data.itis_service.itis.usgs.gov/xsd"))
   toget <- list("jurisdictionValue","origin","updateDate")
   xpathfunc <- function(x) {
-    xml_text(xml_find_all(out, paste("//ax21:", x, sep = ''), namespaces))
+    xml2::xml_text(xml2::xml_find_all(out, paste("//ax21:", x, sep = ''), namespaces))
   }
   df <- do.call(cbind, lapply(toget, function(z) as.data.frame(xpathfunc(z))))
   if (NROW(df) == 0) {
@@ -434,7 +434,7 @@ jurisdiction_origin_values <- function(wt = "json", raw = FALSE, ...) {
 jurisdiction_values <- function(wt = "json", raw = FALSE, ...) {
   out <- itis_GET("getJurisdictionValues", list(), wt, ...)
   namespaces <- c(ax23 = "http://metadata.itis_service.itis.usgs.gov/xsd")
-  jurisdictionValues <- xml_text(xml_find_all(out, "//ax23:jurisdictionValues", namespaces))
+  jurisdictionValues <- xml2::xml_text(xml2::xml_find_all(out, "//ax23:jurisdictionValues", namespaces))
   data.frame(jurisdictionvalues = jurisdictionValues, stringsAsFactors = FALSE)
 }
 
@@ -477,7 +477,7 @@ kingdom_names <- function(wt = "json", raw = FALSE, ...) {
 last_change_date <- function(wt = "json", raw = FALSE, ...) {
   out <- itis_GET("getLastChangeDate", list(), wt, ...)
   namespaces <- c(ax21 = "http://metadata.itis_service.itis.usgs.gov/xsd")
-  xml_text(xml_find_all(out, "//ax21:updateDate", namespaces))
+  xml2::xml_text(xml2::xml_find_all(out, "//ax21:updateDate", namespaces))
 }
 
 #' Gets the unique LSID for the TSN, or an empty result if there is no match.
@@ -490,7 +490,7 @@ last_change_date <- function(wt = "json", raw = FALSE, ...) {
 #' }
 tsn2lsid <- function(tsn, wt = "json", raw = FALSE, ...) {
   x <- itis_GET("getLSIDFromTSN", list(tsn = tsn), wt, ...)
-  xml_text(xml_children(x))
+  xml2::xml_text(xml2::xml_children(x))
 }
 
 #' Returns a list of the other sources used for the TSN.
@@ -507,7 +507,7 @@ other_sources <- function(tsn, wt = "json", raw = FALSE, ...) {
   toget <- list("acquisitionDate","name","referredTsn","source",
                 "sourceType","updateDate","version")
   xpathfunc <- function(x) {
-    xml_text(xml_find_all(out, paste("//ax21:", x, sep = ''), namespaces))
+    xml2::xml_text(xml2::xml_find_all(out, paste("//ax21:", x, sep = ''), namespaces))
   }
   nmslwr(setNames(do.call(cbind, lapply(toget, function(z) as.data.frame(xpathfunc(z)))), toget))
 }
@@ -542,7 +542,7 @@ publications <- function(tsn, wt = "json", raw = FALSE, ...) {
                 "pubComment","pubName","pubPlace","publisher","referenceAuthor",
                 "name","refLanguage","referredTsn","title","updateDate")
   xpathfunc <- function(x) {
-    xml_text(xml_find_all(out, paste("//ax21:", x, sep = ''), namespaces))
+    xml2::xml_text(xml2::xml_find_all(out, paste("//ax21:", x, sep = ''), namespaces))
   }
   df <-  do.call(cbind, lapply(toget, function(z) as.data.frame(xpathfunc(z))))
   if (NROW(df) > 0) names(df) <- tolower(toget)
@@ -627,13 +627,13 @@ scientific_name <- function(tsn, wt = "json", raw = FALSE, ...) {
 synonym_names <- function(tsn, wt = "json", raw = FALSE, ...) {
   out <- itis_GET("getSynonymNamesFromTSN", list(tsn = tsn), wt, ...)
   namespaces <- c(ax21 = "http://data.itis_service.itis.usgs.gov/xsd")
-  nodes <- xml_text(xml_find_all(out, "//ax21:sciName", namespaces))
+  nodes <- xml2::xml_text(xml2::xml_find_all(out, "//ax21:sciName", namespaces))
   if ( length(nodes) == 0 ) {
     name <- "nomatch"
   } else {
     name <- nodes
   }
-  nodes <- xml_text(xml_find_all(out, "//ax21:tsn", namespaces))
+  nodes <- xml2::xml_text(xml2::xml_find_all(out, "//ax21:tsn", namespaces))
   if ( length(nodes) == 1 ) {
     tsn <- nodes
   } else {
@@ -714,7 +714,7 @@ tsn_by_vernacular_language <- function(language, wt = "json", raw = FALSE, ...) 
 #' }
 lsid2tsn <- function(lsid, wt = "json", raw = FALSE, ...) {
   out <- itis_GET("getTSNFromLSID", list(lsid = lsid), wt, ...)
-  tmp <- suppressWarnings(as.numeric(xml_text(xml_find_one(out, "ns:return", xml_ns(out)))))
+  tmp <- suppressWarnings(as.numeric(xml2::xml_text(xml2::xml_find_one(out, "ns:return", xml2::xml_ns(out)))))
   if (!is.na(tmp)) {
     tmp
   } else {
@@ -747,7 +747,7 @@ unacceptability_reason <- function(tsn, wt = "json", raw = FALSE, ...) {
 vernacular_languages <- function(wt = "json", raw = FALSE, ...) {
   out <- itis_GET("getVernacularLanguages", list(), wt, ...)
   namespaces <- c(ax21 = "http://metadata.itis_service.itis.usgs.gov/xsd")
-  languageNames <- xml_text(xml_find_all(out, "//ax21:languageNames", namespaces))
+  languageNames <- xml2::xml_text(xml2::xml_find_all(out, "//ax21:languageNames", namespaces))
   data.frame(languagenames = languageNames, stringsAsFactors = FALSE)
 }
 
@@ -781,28 +781,28 @@ search_anymatch <- function(x, wt = "json", raw = FALSE, ...) {
   ns <- c(ax21 = "http://data.itis_service.itis.usgs.gov/xsd")
 
   if (is.character(x)) {
-    me <- xml_find_all(out, "//ax21:anyMatchList", ns)
+    me <- xml2::xml_find_all(out, "//ax21:anyMatchList", ns)
     comname <- vapply(me, foosam, "", y = 'commonName', ns = ns)
     comname_lang <- vapply(me, foosam, "", y = 'language', ns = ns)
-    sciname <- vapply(me, function(x) xml_text(xml_find_one(x, "ax21:sciName", ns)), "")
-    tsn <- vapply(me, function(x) xml_text(xml_find_one(x, "ax21:tsn", ns)), "")
+    sciname <- vapply(me, function(x) xml2::xml_text(xml2::xml_find_one(x, "ax21:sciName", ns)), "")
+    tsn <- vapply(me, function(x) xml2::xml_text(xml2::xml_find_one(x, "ax21:tsn", ns)), "")
     data.frame(tsn=tsn, sciname=sciname, comname=comname, comname_lang=comname_lang, stringsAsFactors = FALSE)
   } else {
-    me <- xml_find_all(out, "//ax21:commonNames", ns)
-    comname <- sapply(me, function(x) xml_text(xml_find_one(x, "ax21:commonName", ns)))
-    comname_tsn <- sapply(me, function(x) xml_text(xml_find_one(x, "ax21:tsn", ns)))
-    comname_lang <- sapply(me, function(x) xml_text(xml_find_one(x, "ax21:language", ns)))
+    me <- xml2::xml_find_all(out, "//ax21:commonNames", ns)
+    comname <- sapply(me, function(x) xml2::xml_text(xml2::xml_find_one(x, "ax21:commonName", ns)))
+    comname_tsn <- sapply(me, function(x) xml2::xml_text(xml2::xml_find_one(x, "ax21:tsn", ns)))
+    comname_lang <- sapply(me, function(x) xml2::xml_text(xml2::xml_find_one(x, "ax21:language", ns)))
     data.frame(tsn=comname_tsn, comname=comname, comname_lang=comname_lang, stringsAsFactors = FALSE)
   }
 }
 
 foosam <- function(x, y, ns) {
-  tt <- xml_find_one(x, "ax21:commonNameList", ns)
-  ttt <- tryCatch(xml_find_all(tt, "ax21:commonNames", ns), error = function(e) e)
-  if (!is(ttt, "error")) {
-    tttt <- tryCatch(xml_find_one(ttt, paste0("ax21:", y), ns), error = function(e) e)
-    if (!is(ttt, "error")) {
-      xx <- xml_text(tttt)
+  tt <- xml2::xml_find_one(x, "ax21:commonNameList", ns)
+  ttt <- tryCatch(xml2::xml_find_all(tt, "ax21:commonNames", ns), error = function(e) e)
+  if (!inherits(ttt, "error")) {
+    tttt <- tryCatch(xml2::xml_find_one(ttt, paste0("ax21:", y), ns), error = function(e) e)
+    if (!inherits(ttt, "error")) {
+      xx <- xml2::xml_text(tttt)
       if (length(xx) > 1) {
         paste0(xx, collapse = ",")
       } else if (length(xx) == 0) {
@@ -837,17 +837,17 @@ search_any_match_paged <- function(x, pagesize = NULL, pagenum = NULL, ascend = 
   ns <- c(namespaces <- c(ax21 = "http://data.itis_service.itis.usgs.gov/xsd"))
 
   if (is.character(x)) {
-    me <- xml_find_all(out, "//ax21:anyMatchList", ns)
+    me <- xml2::xml_find_all(out, "//ax21:anyMatchList", ns)
     comname <- vapply(me, foosam, "", y = 'commonName', ns = ns)
     comname_lang <- vapply(me, foosam, "", y = 'language', ns = ns)
-    sciname <- vapply(me, function(x) xml_text(xml_find_one(x, "ax21:sciName", ns)), "")
-    tsn <- vapply(me, function(x) xml_text(xml_find_one(x, "ax21:tsn", ns)), "")
+    sciname <- vapply(me, function(x) xml2::xml_text(xml2::xml_find_one(x, "ax21:sciName", ns)), "")
+    tsn <- vapply(me, function(x) xml2::xml_text(xml2::xml_find_one(x, "ax21:tsn", ns)), "")
     data.frame(tsn=tsn, sciname=sciname, comname=comname, comname_lang=comname_lang, stringsAsFactors = FALSE)
   } else {
-    me <- xml_find_all(out, "//ax21:commonNames", ns)
-    comname <- sapply(me, function(x) xml_text(xml_find_one(x, "ax21:commonName", ns)))
-    comname_tsn <- sapply(me, function(x) xml_text(xml_find_one(x, "ax21:tsn", ns)))
-    comname_lang <- sapply(me, function(x) xml_text(xml_find_one(x, "ax21:language", ns)))
+    me <- xml2::xml_find_all(out, "//ax21:commonNames", ns)
+    comname <- sapply(me, function(x) xml2::xml_text(xml2::xml_find_one(x, "ax21:commonName", ns)))
+    comname_tsn <- sapply(me, function(x) xml2::xml_text(xml2::xml_find_one(x, "ax21:tsn", ns)))
+    comname_lang <- sapply(me, function(x) xml2::xml_text(xml2::xml_find_one(x, "ax21:language", ns)))
     data.frame(tsn=comname_tsn, comname=comname, comname_lang=comname_lang, stringsAsFactors = FALSE)
   }
 }

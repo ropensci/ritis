@@ -39,8 +39,8 @@ scomm <- function(verb, x, wt, ...) {
 
 com_lang_tsn <- function(dat) {
   namespaces <- c(namespaces <- c(ax21 = "http://data.itis_service.itis.usgs.gov/xsd"))
-  comname <- xml_text(xml_find_all(dat, "//ax21:commonName", namespaces))
-  lang <- xml_text(xml_find_all(dat, "//ax21:language", namespaces))
-  tsn <- xml_text(xml_find_all(dat, "//ax21:tsn", namespaces))
+  comname <- xml2::xml_text(xml2::xml_find_all(dat, "//ax21:commonName", namespaces))
+  lang <- xml2::xml_text(xml2::xml_find_all(dat, "//ax21:language", namespaces))
+  tsn <- xml2::xml_text(xml2::xml_find_all(dat, "//ax21:tsn", namespaces))
   data.frame(comname = comname, lang = lang, tsn = tsn[!nchar(tsn) == 0], stringsAsFactors = FALSE)
 }

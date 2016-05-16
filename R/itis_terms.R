@@ -35,11 +35,11 @@ itisterms <- function(x, wt = "json", raw = FALSE, ...) {
   x <- parse_raw(wt, x)
   switch(wt, json = x, xml = {
       namespaces <- c(namespaces <- c(ax21 = "http://data.itis_service.itis.usgs.gov/xsd"))
-      gg <- xml_find_all(x, "//ax21:itisTerms", namespaces)
+      gg <- xml2::xml_find_all(x, "//ax21:itisTerms", namespaces)
       res <- lapply(gg, function(z) {
         sapply(xml2::xml_children(z), xml_ext)
       })
-      tmp <- do.call(rbind.fill, lapply(res, function(x) data.frame(x, stringsAsFactors = FALSE)))
+      tmp <- do.call(plyr::rbind.fill, lapply(res, function(x) data.frame(x, stringsAsFactors = FALSE)))
       names(tmp) <- tolower(names(tmp))
       row.names(tmp) <- NULL
       if (NROW(tmp) == 1 && names(tmp) == "x") {
@@ -57,11 +57,11 @@ itistermsfromcommonname <- function(x, wt = "json", raw = FALSE, ...) {
   x <- parse_raw(wt, x)
   switch(wt, json = x, xml = {
       namespaces <- c(namespaces <- c(ax21 = "http://data.itis_service.itis.usgs.gov/xsd"))
-      gg <- xml_find_all(x, "//ax21:itisTerms", namespaces)
+      gg <- xml2::xml_find_all(x, "//ax21:itisTerms", namespaces)
       res <- lapply(gg, function(z) {
         sapply(xml2::xml_children(z), xml_ext)
       })
-      tmp <- do.call(rbind.fill, lapply(res, function(x) data.frame(x, stringsAsFactors = FALSE)))
+      tmp <- do.call(plyr::rbind.fill, lapply(res, function(x) data.frame(x, stringsAsFactors = FALSE)))
       names(tmp) <- tolower(names(tmp))
       row.names(tmp) <- NULL
       if (NROW(tmp) == 1 && names(tmp) == "x") {
@@ -79,11 +79,11 @@ itistermsfromscientificname <- function(x, wt = "json", raw = FALSE, ...) {
   x <- parse_raw(wt, x)
   switch(wt, json = x, xml = {
     namespaces <- c(namespaces <- c(ax21 = "http://data.itis_service.itis.usgs.gov/xsd"))
-    gg <- xml_find_all(x, "//ax21:itisTerms", namespaces)
+    gg <- xml2::xml_find_all(x, "//ax21:itisTerms", namespaces)
     res <- lapply(gg, function(z) {
       sapply(xml2::xml_children(z), xml_ext)
     })
-    tmp <- do.call(rbind.fill, lapply(res, function(x) data.frame(x,
+    tmp <- do.call(plyr::rbind.fill, lapply(res, function(x) data.frame(x,
                                                                   stringsAsFactors = FALSE)))
     names(tmp) <- tolower(names(tmp))
     row.names(tmp) <- NULL

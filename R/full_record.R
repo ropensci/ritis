@@ -39,11 +39,11 @@ full_record <- function(tsn = NULL, lsid = NULL, wt = "xml", raw = FALSE, ...) {
 }
 
 xml_ext <- function(x) {
-  as.list(setNames(xml_text(x), xml_name(x)))
+  as.list(setNames(xml2::xml_text(x), xml2::xml_name(x)))
 }
 
 parse_fulldat <- function(x, dat) {
-  tmp <- xml_children(xml_find_all(dat, sprintf("//ax21:%s", x), xml_ns(dat)))
+  tmp <- xml2::xml_children(xml2::xml_find_all(dat, sprintf("//ax21:%s", x), xml2::xml_ns(dat)))
   tmp <- sapply(tmp, xml_ext)
   if (!is.null(tmp)) nmslwr(tmp) else tmp
 }
