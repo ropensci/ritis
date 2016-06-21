@@ -10,15 +10,22 @@ knitr::opts_chunk$set(
 )
 ```
 
-[![Build Status](https://api.travis-ci.org/ropensci/ritis.png)](https://travis-ci.org/ropensci/ritis)
-
-
-> UPDATE: 2016-03-15 - playing with bring this pkg back... now that there's a Solr service and a JSON API
+[![Build Status](https://travis-ci.org/ropensci/ritis.svg?branch=with-solr)](https://travis-ci.org/ropensci/ritis)
+[![Build status](https://ci.appveyor.com/api/projects/status/pvrc9muevha00fie/branch/with-solr?svg=true)](https://ci.appveyor.com/project/sckott/ritis/branch/with-solr)
+[![rstudio mirror downloads](http://cranlogs.r-pkg.org/badges/ritis)](https://github.com/metacran/cranlogs.app)
 
 * [ITIS API Docs](http://www.itis.gov/ws_description.html)
 * [Solr service](http://www.itis.gov/solr_documentation.html)
 
 ## Installation
+
+Stable, CRAN version
+
+```{r eval=FALSE}
+install.packages("ritis")
+```
+
+Dev version
 
 ```{r eval=FALSE}
 devtools::install_github("ropensci/ritis")
