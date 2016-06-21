@@ -90,8 +90,69 @@ itis_search(q = "nameWOInd:/[A-Za-z0-9]*[%20]{1,1}[A-Za-z0-9]*/")
 
 ## REST API 
 
+Get accepted names for a TSN
+
 
 ```r
-'xxx'
-#> [1] "xxx"
+accepted_names(tsn = 208527)
+#> $submittedtsn
+#> [1] "208527"
+#> 
+#> $acceptedname
+#> [1] NA
+#> 
+#> $acceptedtsn
+#> [1] NA
 ```
+
+Get common names for a TSN
+
+
+```r
+common_names(tsn = 183833)
+#> $class
+#> [1] "gov.usgs.itis.itis_service.data.SvcCommonNameList"
+#> 
+#> $commonNames
+#>                                           class          commonName
+#> 1 gov.usgs.itis.itis_service.data.SvcCommonName African hunting dog
+#> 2 gov.usgs.itis.itis_service.data.SvcCommonName    African Wild Dog
+#> 3 gov.usgs.itis.itis_service.data.SvcCommonName Painted Hunting Dog
+#>   language    tsn
+#> 1  English 183833
+#> 2  English 183833
+#> 3  English 183833
+#> 
+#> $tsn
+#> [1] "183833"
+```
+
+Full hierarchy for a TSN
+
+
+```r
+head(full_hierarchy(tsn = 37906)$hierarchyList)
+#>   author                                              class    parentName
+#> 1   <NA> gov.usgs.itis.itis_service.data.SvcHierarchyRecord              
+#> 2   <NA> gov.usgs.itis.itis_service.data.SvcHierarchyRecord       Plantae
+#> 3   <NA> gov.usgs.itis.itis_service.data.SvcHierarchyRecord Viridiplantae
+#> 4   <NA> gov.usgs.itis.itis_service.data.SvcHierarchyRecord  Streptophyta
+#> 5   <NA> gov.usgs.itis.itis_service.data.SvcHierarchyRecord   Embryophyta
+#> 6   <NA> gov.usgs.itis.itis_service.data.SvcHierarchyRecord  Tracheophyta
+#>   parentTsn      rankName       taxonName    tsn
+#> 1                 Kingdom         Plantae 202422
+#> 2    202422    Subkingdom   Viridiplantae 954898
+#> 3    954898  Infrakingdom    Streptophyta 846494
+#> 4    846494 Superdivision     Embryophyta 954900
+#> 5    954900      Division    Tracheophyta 846496
+#> 6    846496   Subdivision Spermatophytina 846504
+```
+
+## Meta
+
+* Please [report any issues or bugs](https://github.com/ropensci/ritis/issues).
+* License: MIT
+* Get citation information for `ritis` in R doing `citation(package = 'ritis')`
+* Please note that this project is released with a [Contributor Code of Conduct](CONDUCT.md). By participating in this project you agree to abide by its terms.
+
+[![ropensci_footer](http://ropensci.org/public_images/github_footer.png)](http://ropensci.org)

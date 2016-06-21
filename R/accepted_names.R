@@ -5,15 +5,15 @@
 #' @template tsn
 #' @examples \dontrun{
 #' # TSN accepted - good name
-#' accepted_names(tsn='208527')
+#' accepted_names(208527)
 #'
 #' # TSN not accepted - input TSN is old name
-#' accepted_names('504239')
+#' accepted_names(504239)
 #'
 #' # raw json
-#' accepted_names(tsn='208527', raw = TRUE)
+#' accepted_names(208527, raw = TRUE)
 #' # raw xml
-#' accepted_names(tsn='208527', wt = "xml", raw = TRUE)
+#' accepted_names(208527, wt = "xml", raw = TRUE)
 #' }
 accepted_names <- function(tsn, wt = "json", raw = FALSE, ...) {
   x <- itis_GET("getAcceptedNamesFromTSN", list(tsn = tsn), wt, ...)
