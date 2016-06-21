@@ -39,7 +39,7 @@ itisterms <- function(x, wt = "json", raw = FALSE, ...) {
       res <- lapply(gg, function(z) {
         sapply(xml2::xml_children(z), xml_ext)
       })
-      tmp <- do.call(plyr::rbind.fill, lapply(res, function(x) data.frame(x, stringsAsFactors = FALSE)))
+      tmp <- data.table::setDF(data.table::rbindlist(lapply(res, function(x) data.frame(x, stringsAsFactors = FALSE))))
       names(tmp) <- tolower(names(tmp))
       row.names(tmp) <- NULL
       if (NROW(tmp) == 1 && names(tmp) == "x") {
@@ -61,7 +61,7 @@ itistermsfromcommonname <- function(x, wt = "json", raw = FALSE, ...) {
       res <- lapply(gg, function(z) {
         sapply(xml2::xml_children(z), xml_ext)
       })
-      tmp <- do.call(plyr::rbind.fill, lapply(res, function(x) data.frame(x, stringsAsFactors = FALSE)))
+      tmp <- data.table::setDF(data.table::rbindlist(res, function(x) data.frame(x, stringsAsFactors = FALSE)))
       names(tmp) <- tolower(names(tmp))
       row.names(tmp) <- NULL
       if (NROW(tmp) == 1 && names(tmp) == "x") {
@@ -83,7 +83,7 @@ itistermsfromscientificname <- function(x, wt = "json", raw = FALSE, ...) {
     res <- lapply(gg, function(z) {
       sapply(xml2::xml_children(z), xml_ext)
     })
-    tmp <- do.call(plyr::rbind.fill, lapply(res, function(x) data.frame(x,
+    tmp <- data.table::setDF(data.table::rbindlist(res, function(x) data.frame(x,
                                                                   stringsAsFactors = FALSE)))
     names(tmp) <- tolower(names(tmp))
     row.names(tmp) <- NULL

@@ -1,9 +1,10 @@
 Package: ritis
 Title: Integrated Taxonomic Information System Interface
-Description: An interface to the Integrated Taxonomic Information System (ITIS).
-Version: 0.4.7.9000
+Description: An interface to the Integrated Taxonomic Information System (ITIS)
+    (<http://www.itis.gov/>).
+Version: 0.4.7.9500
 License: MIT + file LICENSE
-Date: 2016-05-16
+Date: 2016-06-21
 URL: https://github.com/ropensci/ritis
 BugReports: https://github.com/ropensci/ritis/issues
 Authors@R: c(person("Scott", "Chamberlain", role = c("aut", "cre"),
@@ -11,8 +12,8 @@ Authors@R: c(person("Scott", "Chamberlain", role = c("aut", "cre"),
 Imports:
     stats,
     solrium (>= 0.3.0),
-    httr (>= 1.1.0),
-    jsonlite (>= 0.9.19),
-    xml2,
-    plyr
+    httr (>= 1.2.0),
+    jsonlite (>= 0.9.22),
+    xml2 (>= 0.1.2),
+    data.table  (>= 1.9.6)
 RoxygenNote: 5.0.1
