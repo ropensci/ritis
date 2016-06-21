@@ -2,13 +2,18 @@ language: r
 sudo: false
 cache: packages
 
+r:
+  - oldrel
+  - release
+  - devel
+
 notifications:
   email:
     on_success: never
     on_failure: never
   slack:
-    secure: YOxbPBFVAMbDbNc/6tDn5749/qOfJkM+hfTraG9LGstCZC2C4I7rxb3BRkUHphIbFuQiH8BW/L+BKPXkLBL8Hrz4uMMyD3RtMX1A9fZ9WizkHMT4GLCHE011TITiYIeJvv41R7RBuy6rn3RLpID5KeMTTDphIz1TOZdl1zsxqds=
+    secure: EzL7zwihD0vkkmy/j95DutO2otXsYaMcOQMUaZwRVvk18oTpKCK2N8OfIDnatZWMKsgJIHC8FXIHew2vmD6FemPKk0J2b87JDxwcG45Qhu/VWDbKXJF88w8SQi5KsmezzXy73OSD3UnyoHZEZzFBrMyaPNvAK0829P1zUh6SfrA=
 
 env:
   global:
-    - R_CHECK_ARGS="--no-build-vignettes --no-manual --timings --as-cran"
+  - R_CHECK_ARGS="--no-build-vignettes --no-manual --timings --as-cran"
