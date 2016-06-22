@@ -3,8 +3,8 @@ ritis
 
 
 
-[![Build Status](https://travis-ci.org/ropensci/ritis.svg?branch=with-solr)](https://travis-ci.org/ropensci/ritis)
-[![Build status](https://ci.appveyor.com/api/projects/status/pvrc9muevha00fie/branch/with-solr?svg=true)](https://ci.appveyor.com/project/sckott/ritis/branch/with-solr)
+[![Build Status](https://travis-ci.org/ropensci/ritis.svg?branch=master)](https://travis-ci.org/ropensci/ritis)
+[![Build status](https://ci.appveyor.com/api/projects/status/pvrc9muevha00fie/branch/master?svg=true)](https://ci.appveyor.com/project/sckott/ritis/branch/master)
 [![rstudio mirror downloads](http://cranlogs.r-pkg.org/badges/ritis)](https://github.com/metacran/cranlogs.app)
 
 * [ITIS API Docs](http://www.itis.gov/ws_description.html)
@@ -39,7 +39,7 @@ matches only monomials
 ```r
 itis_search(q = "nameWOInd:/[A-Za-z0-9]*[%20]{0,0}*/")
 #> Source: local data frame [10 x 26]
-#> 
+#>
 #>      tsn          nameWInd         nameWOInd             unit1   usage
 #>    (chr)             (chr)             (chr)             (chr)   (chr)
 #> 1     51     Schizomycetes     Schizomycetes     Schizomycetes invalid
@@ -67,7 +67,7 @@ matches only binomials
 ```r
 itis_search(q = "nameWOInd:/[A-Za-z0-9]*[%20]{1,1}[A-Za-z0-9]*/")
 #> Source: local data frame [10 x 24]
-#> 
+#>
 #>      tsn                  nameWInd                 nameWOInd        unit1
 #>    (chr)                     (chr)                     (chr)        (chr)
 #> 1     58        Nitrobacter agilis        Nitrobacter agilis  Nitrobacter
@@ -88,7 +88,7 @@ itis_search(q = "nameWOInd:/[A-Za-z0-9]*[%20]{1,1}[A-Za-z0-9]*/")
 #>   taxonAuthor (chr), parentTSN (chr)
 ```
 
-## REST API 
+## REST API
 
 Get accepted names for a TSN
 
@@ -97,10 +97,10 @@ Get accepted names for a TSN
 accepted_names(tsn = 208527)
 #> $submittedtsn
 #> [1] "208527"
-#> 
+#>
 #> $acceptedname
 #> [1] NA
-#> 
+#>
 #> $acceptedtsn
 #> [1] NA
 ```
@@ -112,7 +112,7 @@ Get common names for a TSN
 common_names(tsn = 183833)
 #> $class
 #> [1] "gov.usgs.itis.itis_service.data.SvcCommonNameList"
-#> 
+#>
 #> $commonNames
 #>                                           class          commonName
 #> 1 gov.usgs.itis.itis_service.data.SvcCommonName African hunting dog
@@ -122,7 +122,7 @@ common_names(tsn = 183833)
 #> 1  English 183833
 #> 2  English 183833
 #> 3  English 183833
-#> 
+#>
 #> $tsn
 #> [1] "183833"
 ```
@@ -133,7 +133,7 @@ Full hierarchy for a TSN
 ```r
 head(full_hierarchy(tsn = 37906)$hierarchyList)
 #>   author                                              class    parentName
-#> 1   <NA> gov.usgs.itis.itis_service.data.SvcHierarchyRecord              
+#> 1   <NA> gov.usgs.itis.itis_service.data.SvcHierarchyRecord
 #> 2   <NA> gov.usgs.itis.itis_service.data.SvcHierarchyRecord       Plantae
 #> 3   <NA> gov.usgs.itis.itis_service.data.SvcHierarchyRecord Viridiplantae
 #> 4   <NA> gov.usgs.itis.itis_service.data.SvcHierarchyRecord  Streptophyta
