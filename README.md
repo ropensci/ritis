@@ -5,6 +5,7 @@ ritis
 
 [![Build Status](https://travis-ci.org/ropensci/ritis.svg?branch=master)](https://travis-ci.org/ropensci/ritis)
 [![Build status](https://ci.appveyor.com/api/projects/status/pvrc9muevha00fie/branch/master?svg=true)](https://ci.appveyor.com/project/sckott/ritis/branch/master)
+[![codecov](https://codecov.io/gh/ropensci/ritis/branch/master/graph/badge.svg)](https://codecov.io/gh/ropensci/ritis)
 [![rstudio mirror downloads](http://cranlogs.r-pkg.org/badges/ritis)](https://github.com/metacran/cranlogs.app)
 
 * [ITIS API Docs](http://www.itis.gov/ws_description.html)
