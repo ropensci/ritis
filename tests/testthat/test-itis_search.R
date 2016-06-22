@@ -20,8 +20,8 @@ test_that("itis_search fails well", {
   skip_on_cran()
 
   expect_identical(
-    suppressMessages(itis_search(foo = "bar")),
-    suppressMessages(itis_search())
+    sm(itis_search(foo = "bar")),
+    sm(itis_search())
   )
 
   expect_error(itis_search(wt = "asdfaddf"),
