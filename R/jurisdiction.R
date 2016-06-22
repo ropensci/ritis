@@ -27,7 +27,7 @@
 jurisdictional_origin <- function(tsn, wt = "json", raw = FALSE, ...) {
   out <- itis_GET("getJurisdictionalOriginFromTSN", list(tsn = tsn), wt, ...)
   if (raw || wt == "xml") return(out)
-  z <- parse_raw(wt, out)
+  z <- parse_raw(out)
   pick_cols(z$jurisdictionalOrigins, c("jurisdictionValue", "origin", "updateDate"))
 }
 
@@ -36,7 +36,7 @@ jurisdictional_origin <- function(tsn, wt = "json", raw = FALSE, ...) {
 jurisdiction_origin_values <- function(wt = "json", raw = FALSE, ...) {
   out <- itis_GET("getJurisdictionalOriginValues", list(), wt, ...)
   if (raw || wt == "xml") return(out)
-  pick_cols(parse_raw(wt, out)$originValues, c("jurisdiction", "origin"))
+  pick_cols(parse_raw(out)$originValues, c("jurisdiction", "origin"))
 }
 
 #' @export
@@ -44,5 +44,5 @@ jurisdiction_origin_values <- function(wt = "json", raw = FALSE, ...) {
 jurisdiction_values <- function(wt = "json", raw = FALSE, ...) {
   out <- itis_GET("getJurisdictionValues", list(), wt, ...)
   if (raw || wt == "xml") return(out)
-  parse_raw(wt, out)$jurisdictionValues
+  parse_raw(out)$jurisdictionValues
 }

@@ -10,7 +10,7 @@
 other_sources <- function(tsn, wt = "json", raw = FALSE, ...) {
   out <- itis_GET("getOtherSourcesFromTSN", list(tsn = tsn), wt, ...)
   if (raw || wt == "xml") return(out)
-  x <- parse_raw(wt, out)$otherSources
+  x <- parse_raw(out)$otherSources
   x <- cbind(dr_op(x, "referencefor"), bindlist(x$referenceFor))
   tibble::as_data_frame(pick_cols(
     x,

@@ -11,5 +11,5 @@
 geographic_values <- function(wt = "json", raw = FALSE, ...) {
   out <- itis_GET("getGeographicValues", list(), wt, ...)
   if (raw || wt == "xml") return(out)
-  parse_raw(wt, out)$geographicValues
+  parse_raw(out)$geographicValues
 }

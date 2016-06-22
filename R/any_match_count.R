@@ -12,5 +12,5 @@
 any_match_count <- function(x, wt = "json", raw = FALSE, ...) {
   out <- itis_GET("getAnyMatchCount", list(srchKey = x), wt = wt, ...)
   if (raw || wt == "xml") return(out)
-  parse_raw(wt, out)$return
+  parse_raw(out)$return
 }

@@ -10,5 +10,5 @@
 description <- function(wt = "json", raw = FALSE, ...){
   out <- itis_GET("getDescription", list(), wt, ...)
   if (raw || wt == "xml") return(out)
-  parse_raw(wt, out)$description
+  parse_raw(out)$description
 }

@@ -11,7 +11,7 @@ argsnull <- function(x) {
 }
 
 nmslwr <- function(x) {
-  setNames(x, tolower(names(x)))
+  stats::setNames(x, tolower(names(x)))
 }
 
 itbase <- function() 'http://www.itis.gov/ITISWebService/services/ITISService/'

@@ -13,5 +13,5 @@
 geographic_divisions <- function(tsn, wt = "json", raw = FALSE, ...) {
   out <- itis_GET("getGeographicDivisionsFromTSN", list(tsn = tsn), wt, ...)
   if (raw || wt == "xml") return(out)
-  dr_op(tibble::as_data_frame(parse_raw(wt, out)$geoDivisions), "class")
+  dr_op(tibble::as_data_frame(parse_raw(out)$geoDivisions), "class")
 }

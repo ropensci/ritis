@@ -9,5 +9,5 @@
 vernacular_languages <- function(wt = "json", raw = FALSE, ...) {
   out <- itis_GET("getVernacularLanguages", list(), wt, ...)
   if (raw || wt == "xml") return(out)
-  tibble::as_data_frame(parse_raw(wt, out)$languageNames)
+  tibble::as_data_frame(parse_raw(out)$languageNames)
 }

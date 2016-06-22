@@ -12,7 +12,7 @@
 parent_tsn <- function(tsn, wt = "json", raw = FALSE, ...) {
   out <- itis_GET("getParentTSNFromTSN", list(tsn = tsn), wt, ...)
   if (raw || wt == "xml") return(out)
-  x <- parse_raw(wt, out)
+  x <- parse_raw(out)
   tibble::as_data_frame(pick_cols(
     data.frame(x, stringsAsFactors = FALSE),
     c("parentTsn", "tsn")

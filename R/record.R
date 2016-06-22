@@ -13,7 +13,7 @@
 record <- function(lsid, wt = "json", raw = FALSE, ...) {
   out <- itis_GET("getRecordFromLSID", list(lsid = lsid), wt, ...)
   if (raw || wt == "xml") return(out)
-  x <- tc(parse_raw(wt, out))
+  x <- tc(parse_raw(out))
   tibble::as_data_frame(pick_cols(
     data.frame(x, stringsAsFactors = FALSE),
     c("authorship","genusPart","infragenericEpithet",

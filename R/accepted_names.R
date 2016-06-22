@@ -16,6 +16,6 @@
 accepted_names <- function(tsn, wt = "json", raw = FALSE, ...) {
   out <- itis_GET("getAcceptedNamesFromTSN", list(tsn = tsn), wt, ...)
   if (raw || wt == "xml") return(out)
-  tmp <- parse_raw(wt, out)
+  tmp <- parse_raw(out)
   if (all(is.na(tmp$acceptedNames))) tibble::data_frame() else dr_op(tibble::as_data_frame(tmp$acceptedNames), "class")
 }

@@ -10,5 +10,5 @@
 last_change_date <- function(wt = "json", raw = FALSE, ...) {
   out <- itis_GET("getLastChangeDate", list(), wt, ...)
   if (raw || wt == "xml") return(out)
-  parse_raw(wt, out)$updateDate
+  parse_raw(out)$updateDate
 }

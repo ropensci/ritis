@@ -18,7 +18,7 @@ search_any_match_paged <- function(x, pagesize = NULL, pagenum = NULL, ascend = 
   args <- tc(list(srchKey=x, pageSize=pagesize, pageNum=pagenum, ascend=ascend))
   out <- itis_GET("searchForAnyMatchPaged", args, wt, ...)
   if (raw || wt == "xml") return(out)
-  x <- parse_raw(wt, out)$anyMatchList
+  x <- parse_raw(out)$anyMatchList
   tmp <- dr_op(bindlist(x$commonNameList.commonNames), "class")
   names(tmp) <- paste0("common_", names(tmp))
   x <- suppressWarnings(

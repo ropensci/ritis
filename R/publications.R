@@ -14,7 +14,7 @@
 publications <- function(tsn, wt = "json", raw = FALSE, ...) {
   out <- itis_GET("getPublicationsFromTSN", list(tsn = tsn), wt, ...)
   if (raw || wt == "xml") return(out)
-  x <- parse_raw(wt, out)$publications
+  x <- parse_raw(out)$publications
   x <- cbind(dr_op(x, "referencefor"), dr_op(bindlist(x$referenceFor), "class"))
   tibble::as_data_frame(pick_cols(
     x,

@@ -17,7 +17,7 @@
 kingdom_name <- function(tsn, wt = "json", raw = FALSE, ...) {
   out <- itis_GET("getKingdomNameFromTSN", list(tsn = tsn), wt, ...)
   if (raw || wt == "xml") return(out)
-  pick_cols(tibble::as_data_frame(parse_raw(wt, out)), c('kingdomid', 'kingdomname', 'tsn'))
+  pick_cols(tibble::as_data_frame(parse_raw(out)), c('kingdomid', 'kingdomname', 'tsn'))
 }
 
 #' @export
@@ -25,5 +25,5 @@ kingdom_name <- function(tsn, wt = "json", raw = FALSE, ...) {
 kingdom_names <- function(wt = "json", raw = FALSE, ...) {
   out <- itis_GET("getKingdomNames", list(), wt, ...)
   if (raw || wt == "xml") return(out)
-  pick_cols(tibble::as_data_frame(parse_raw(wt, out)$kingdomNames), c('kingdomid', 'kingdomname', 'tsn'))
+  pick_cols(tibble::as_data_frame(parse_raw(out)$kingdomNames), c('kingdomid', 'kingdomname', 'tsn'))
 }

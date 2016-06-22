@@ -15,7 +15,7 @@
 rank_names <- function(wt = "json", raw = FALSE, ...) {
   out <- itis_GET("getRankNames", list(), wt, ...)
   if (raw || wt == "xml") return(out)
-  x <- parse_raw(wt, out)$rankNames
+  x <- parse_raw(out)$rankNames
   tibble::as_data_frame(pick_cols(
     x,
     c("kingdomName", "rankId", "rankName")

@@ -13,5 +13,5 @@
 tsn2lsid <- function(tsn, wt = "json", raw = FALSE, ...) {
   x <- itis_GET("getLSIDFromTSN", list(tsn = tsn), wt, ...)
   if (raw || wt == "xml") return(x)
-  parse_raw(wt, x)$return
+  parse_raw(x)$return
 }
