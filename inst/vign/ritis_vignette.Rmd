@@ -18,7 +18,7 @@ ritis introduction
 
 An interface to the Integrated Taxonomic Information System (ITIS)
 
-## Setup
+## Installation
 
 Install from CRAN
 
@@ -38,10 +38,58 @@ Load `ritis`
 library("ritis")
 ```
 
-## xxx
+## ITIS Solr interface
 
-xxx
+There are four methods.
+
+* `itis_search()` - Search
+* `itis_group()` - Group
+* `itis_highlight()` - Hightlight
+* `itis_facet()` - Facet
+
+These four methods use the equivalent functions in the package `solrium`, e.g.,
+`ritis::itis_search()` uses `solrium::solr_search()`, etc. The `itis_*()` functions
+simply use `...` to allow users to pass on parameters to the wrapped `solrium`
+functions. So do read the `solrium` docs.
+
+ITIS Solr API docs: [http://www.itis.gov/solr_documentation.html](http://www.itis.gov/solr_documentation.html)
+
+Some examples:
+
+matches only monomials
 
 ```{r}
-"xxx"
+itis_search(q = "nameWOInd:/[A-Za-z0-9]*[%20]{0,0}*/")
+```
+
+matches only binomials
+
+```{r}
+itis_search(q = "nameWOInd:/[A-Za-z0-9]*[%20]{1,1}[A-Za-z0-9]*/")
+```
+
+## ITIS REST API interface
+
+ITIS REST API docs: [http://www.itis.gov/ws_description.html](http://www.itis.gov/ws_description.html)
+
+The following are some example uses. There are many more methods not shown below
+
+-------
+
+Get accepted names for a TSN
+
+```{r}
+accepted_names(tsn = 208527)
+```
+
+Get common names for a TSN
+
+```{r}
+common_names(tsn = 183833)
+```
+
+Full hierarchy for a TSN
+
+```{r}
+hierarchy_full(tsn = 37906)
 ```
