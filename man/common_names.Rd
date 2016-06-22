@@ -16,6 +16,9 @@ Default: \code{FALSE}}
 
 \item{...}{Curl options passed on to \code{\link[httr]{GET}}}
 }
+\value{
+a data.frame
+}
 \description{
 Get common names from tsn
 }

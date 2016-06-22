@@ -16,12 +16,15 @@ Default: \code{FALSE}}
 
 \item{...}{Curl options passed on to \code{\link[httr]{GET}}}
 }
+\value{
+a data.frame
+}
 \description{
 Returns the review year for the TSN.
 }
 \examples{
 \dontrun{
-review_year(180541, config=timeout(3))
+review_year(tsn = 180541)
 }
 }
 

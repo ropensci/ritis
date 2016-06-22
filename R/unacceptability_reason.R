@@ -4,11 +4,10 @@
 #' @template common
 #' @template tsn
 #' @examples \dontrun{
-#' unacceptability_reason(183671, config=timeout(3))
+#' unacceptability_reason(tsn = 183671)
 #' }
 unacceptability_reason <- function(tsn, wt = "json", raw = FALSE, ...) {
   out <- itis_GET("getUnacceptabilityReasonFromTSN", list(tsn = tsn), wt, ...)
-  namespaces <- c(namespaces <- c(ax21 = "http://data.itis_service.itis.usgs.gov/xsd"))
-  toget <- list("tsn","unacceptReason")
-  itis_parse(toget, out, namespaces)
+  if (raw || wt == "xml") return(out)
+  dr_op(tibble::as_data_frame(parse_raw(wt, out)), "class")
 }

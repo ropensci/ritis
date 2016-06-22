@@ -4,7 +4,7 @@
 \alias{search_common}
 \title{Search for tsn by common name}
 \usage{
-search_common(x, from = "all", wt = "xml", raw = FALSE, ...)
+search_common(x, from = "all", wt = "json", raw = FALSE, ...)
 }
 \arguments{
 \item{x}{text or taxonomic serial number (TSN) (character or numeric)}
@@ -17,6 +17,9 @@ search_common(x, from = "all", wt = "xml", raw = FALSE, ...)
 Default: \code{FALSE}}
 
 \item{...}{Curl options passed on to \code{\link[httr]{GET}}}
+}
+\value{
+a data.frame
 }
 \description{
 Search for tsn by common name
@@ -34,7 +37,7 @@ The \code{from} parameter:
 }
 \examples{
 \dontrun{
-search_common("american bullfrog")
+search_common(x = "american bullfrog")
 search_common("ferret-badger")
 search_common("polar bear")
 
@@ -46,5 +49,8 @@ search_common("inch", from = "end")
 # end
 search_common("snake", from = "end")
 }
+}
+\seealso{
+\code{\link{search_scientific}}
 }
 

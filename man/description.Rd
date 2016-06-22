@@ -14,12 +14,16 @@ Default: \code{FALSE}}
 
 \item{...}{Curl options passed on to \code{\link[httr]{GET}}}
 }
+\value{
+a string, the ITIS web service description
+}
 \description{
 Get description of the ITIS service
 }
 \examples{
 \dontrun{
 description()
+description(wt = "xml")
 }
 }
 

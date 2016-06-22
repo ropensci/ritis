@@ -15,5 +15,6 @@ Imports:
     httr (>= 1.2.0),
     jsonlite (>= 0.9.22),
     xml2 (>= 0.1.2),
-    data.table  (>= 1.9.6)
+    data.table  (>= 1.9.6),
+    tibble
 RoxygenNote: 5.0.1

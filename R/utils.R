@@ -8,7 +8,7 @@ itis_GET <- function(endpt, args, wt, ...){
 parse_raw <- function(wt, x) {
   switch(
     wt,
-    json = jsonlite::fromJSON(x),
+    json = jsonlite::fromJSON(x, flatten = TRUE),
     xml = xml2::read_xml(x, encoding = "UTF-8")
   )
 }
@@ -35,4 +35,9 @@ itisdf <- function(a, b, matches, colnames, pastens="ax21") {
   } else {
     setNames(data.frame(output, stringsAsFactors = FALSE), colnames)
   }
+}
+
+pick_cols <- function(x, nms) {
+  names(x) <- tolower(names(x))
+  x[, names(x) %in% tolower(nms)]
 }

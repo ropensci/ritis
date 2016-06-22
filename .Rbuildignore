@@ -8,3 +8,4 @@ man-roxygen/
 .travis.yml
 cran-comments.md
 ^CONDUCT\.md$
+^appveyor.yml$

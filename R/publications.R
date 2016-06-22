@@ -3,19 +3,23 @@
 #' @export
 #' @template common
 #' @template tsn
+#' @return a data.frame
 #' @examples \dontrun{
-#' publications(70340)
+#' publications(tsn = 70340)
+#' publications(tsn = 70340, wt = "xml")
+#'
+#' library(httr)
+#' publications(tsn = 70340, config = verbose())
 #' }
 publications <- function(tsn, wt = "json", raw = FALSE, ...) {
   out <- itis_GET("getPublicationsFromTSN", list(tsn = tsn), wt, ...)
-  namespaces <- c(namespaces <- c(ax21 = "http://data.itis_service.itis.usgs.gov/xsd"))
-  toget <- list("actualPubDate","isbn","issn","listedPubDate","pages",
-                "pubComment","pubName","pubPlace","publisher","referenceAuthor",
-                "name","refLanguage","referredTsn","title","updateDate")
-  xpathfunc <- function(x) {
-    xml2::xml_text(xml2::xml_find_all(out, paste("//ax21:", x, sep = ''), namespaces))
-  }
-  df <-  do.call(cbind, lapply(toget, function(z) as.data.frame(xpathfunc(z))))
-  if (NROW(df) > 0) names(df) <- tolower(toget)
-  df
+  if (raw || wt == "xml") return(out)
+  x <- parse_raw(wt, out)$publications
+  x <- cbind(dr_op(x, "referencefor"), dr_op(bindlist(x$referenceFor), "class"))
+  tibble::as_data_frame(pick_cols(
+    x,
+    c("actualPubDate","isbn","issn","listedPubDate","pages",
+      "pubComment","pubName","pubPlace","publisher","referenceAuthor",
+      "name","refLanguage","referredTsn","title","updateDate")
+  ))
 }

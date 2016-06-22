@@ -16,13 +16,19 @@ Default: \code{FALSE}}
 
 \item{...}{Curl options passed on to \code{\link[httr]{GET}}}
 }
+\value{
+a data.frame
+}
 \description{
 Search for any match
 }
 \examples{
 \dontrun{
-search_anymatch(x=202385, config=timeout(3))
-search_anymatch(x="dolphin", config=timeout(3))
+search_anymatch(x = 202385)
+search_anymatch(x = "dolphin")
 }
+}
+\seealso{
+\code{\link{search_any_match_paged}}
 }
 

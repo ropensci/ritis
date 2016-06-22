@@ -17,12 +17,15 @@ Default: \code{FALSE}}
 
 \item{...}{Curl options passed on to \code{\link[httr]{GET}}}
 }
+\value{
+a data.frame
+}
 \description{
 Get tsn by vernacular language
 }
 \examples{
 \dontrun{
-# tsn_by_vernacular_language("french", config=timeout(3))
+tsn_by_vernacular_language(language = "french")
 }
 }
 

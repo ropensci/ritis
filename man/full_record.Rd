@@ -4,7 +4,7 @@
 \alias{full_record}
 \title{Get full record from TSN or lsid}
 \usage{
-full_record(tsn = NULL, lsid = NULL, wt = "xml", raw = FALSE, ...)
+full_record(tsn = NULL, lsid = NULL, wt = "json", raw = FALSE, ...)
 }
 \arguments{
 \item{tsn}{TSN for a taxonomic group (numeric). Required.}
@@ -24,13 +24,16 @@ Get full record from TSN or lsid
 \examples{
 \dontrun{
 # from tsn
-full_record(50423)
-full_record(202385)
-full_record(183833)
+full_record(tsn = 50423)
+full_record(tsn = 202385)
+full_record(tsn = 183833)
+
+full_record(tsn = 183833, wt = "xml")
+full_record(tsn = 183833, raw = TRUE)
 
 # from lsid
-full_record(lsid="urn:lsid:itis.gov:itis_tsn:180543")
-full_record(lsid="urn:lsid:itis.gov:itis_tsn:180543")
+full_record(lsid = "urn:lsid:itis.gov:itis_tsn:180543")
+full_record(lsid = "urn:lsid:itis.gov:itis_tsn:180543")
 }
 }
 

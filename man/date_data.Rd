@@ -21,9 +21,9 @@ Get date data from tsn
 }
 \examples{
 \dontrun{
-date_data(180543)
+date_data(tsn = 180543)
 date_data(180543, wt = "xml")
-date_data(180543, wt = "xml", raw = TRUE)
+date_data(180543, wt = "json", raw = TRUE)
 }
 }
 

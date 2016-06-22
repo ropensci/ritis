@@ -16,12 +16,15 @@ Default: \code{FALSE}}
 
 \item{...}{Curl options passed on to \code{\link[httr]{GET}}}
 }
+\value{
+a data.frame
+}
 \description{
 Returns the author information for the TSN.
 }
 \examples{
 \dontrun{
-taxon_authorship(183671, config=timeout(3))
+taxon_authorship(tsn = 183671)
 }
 }
 

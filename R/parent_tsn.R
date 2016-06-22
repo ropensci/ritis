@@ -3,12 +3,18 @@
 #' @export
 #' @template common
 #' @template tsn
+#' @return a data.frame
 #' @examples \dontrun{
-#' parent_tsn(202385, config=timeout(3))
+#' parent_tsn(tsn = 202385)
+#' parent_tsn(tsn = 202385, raw = TRUE)
+#' parent_tsn(tsn = 202385, wt = "xml")
 #' }
 parent_tsn <- function(tsn, wt = "json", raw = FALSE, ...) {
   out <- itis_GET("getParentTSNFromTSN", list(tsn = tsn), wt, ...)
-  namespaces <- c(namespaces <- c(ax21 = "http://data.itis_service.itis.usgs.gov/xsd"))
-  toget <- list("parentTsn","tsn")
-  itis_parse(toget, out, namespaces)
+  if (raw || wt == "xml") return(out)
+  x <- parse_raw(wt, out)
+  tibble::as_data_frame(pick_cols(
+    data.frame(x, stringsAsFactors = FALSE),
+    c("parentTsn", "tsn")
+  ))
 }

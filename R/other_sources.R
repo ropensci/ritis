@@ -4,15 +4,20 @@
 #' @template common
 #' @template tsn
 #' @examples \dontrun{
-#' other_sources(tsn=182662, config=timeout(3))
+#' other_sources(tsn=182662)
+#' other_sources(tsn=182662, wt = "xml")
 #' }
 other_sources <- function(tsn, wt = "json", raw = FALSE, ...) {
   out <- itis_GET("getOtherSourcesFromTSN", list(tsn = tsn), wt, ...)
-  namespaces <- c(namespaces <- c(ax21 = "http://data.itis_service.itis.usgs.gov/xsd"))
-  toget <- list("acquisitionDate","name","referredTsn","source",
-                "sourceType","updateDate","version")
-  xpathfunc <- function(x) {
-    xml2::xml_text(xml2::xml_find_all(out, paste("//ax21:", x, sep = ''), namespaces))
-  }
-  nmslwr(setNames(do.call(cbind, lapply(toget, function(z) as.data.frame(xpathfunc(z)))), toget))
+  if (raw || wt == "xml") return(out)
+  x <- parse_raw(wt, out)$otherSources
+  x <- cbind(dr_op(x, "referencefor"), bindlist(x$referenceFor))
+  tibble::as_data_frame(pick_cols(
+    x,
+    c("acquisitiondate","name","referredtsn","source", "sourcetype","updatedate","version")
+  ))
+}
+
+bindlist <- function(x) {
+  (data.table::setDF(data.table::rbindlist(x, use.names = TRUE, fill = TRUE)))
 }

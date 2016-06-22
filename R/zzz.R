@@ -26,3 +26,10 @@ iturl <- function(x) {
     xml = itbase()
   )
 }
+
+`%-%` <- function(x, y) if (length(x) == 0 || nchar(x) == 0 || is.null(x)) y else x
+
+dr_op <- function(x, y) {
+  x[, !tolower(names(x)) %in% tolower(y)]
+  #x[, tolower(names(x)) != tolower(y)]
+}

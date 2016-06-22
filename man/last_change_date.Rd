@@ -2,7 +2,7 @@
 % Please edit documentation in R/last_change_date.R
 \name{last_change_date}
 \alias{last_change_date}
-\title{Provides the date the ITIS database was last updated.}
+\title{Provides the date the ITIS database was last updated}
 \usage{
 last_change_date(wt = "json", raw = FALSE, ...)
 }
@@ -14,12 +14,16 @@ Default: \code{FALSE}}
 
 \item{...}{Curl options passed on to \code{\link[httr]{GET}}}
 }
+\value{
+character value with a date
+}
 \description{
-Provides the date the ITIS database was last updated.
+Provides the date the ITIS database was last updated
 }
 \examples{
 \dontrun{
-last_change_date(config=timeout(3))
+last_change_date()
+last_change_date(wt = "xml")
 }
 }
 

@@ -3,6 +3,7 @@
 #' @export
 #' @template common
 #' @template tsn
+#' @return a data.frame
 #' @examples \dontrun{
 #' # currency data
 #' currency(tsn=28727)
@@ -12,12 +13,7 @@
 #' currency(526852, raw = TRUE)
 #' }
 currency <- function(tsn, wt = "json", raw = FALSE, ...) {
-  x <- itis_GET("getCurrencyFromTSN", list(tsn = tsn), wt, ...)
-  if (raw) return(x)
-  x <- parse_raw(wt, x)
-  switch(wt, json = x, xml = {
-    namespaces <- c(ax21 = "http://data.itis_service.itis.usgs.gov/xsd")
-    matches <- c("rankId","taxonCurrency","tsn")
-    nmslwr(itisdf(x, namespaces, matches, tolower(matches)))
-  })
+  out <- itis_GET("getCurrencyFromTSN", list(tsn = tsn), wt, ...)
+  if (raw || wt == "xml") return(out)
+  dr_op(tibble::as_data_frame(parse_raw(wt, out)), "class")
 }

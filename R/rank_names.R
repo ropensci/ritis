@@ -3,12 +3,21 @@
 #'
 #' @export
 #' @template common
+#' @return a data.frame, with columns:
+#' \itemize{
+#'  \item kingdomname
+#'  \item rankid
+#'  \item rankname
+#' }
 #' @examples \dontrun{
-#' rank_names(config=timeout(3))
+#' rank_names()
 #' }
 rank_names <- function(wt = "json", raw = FALSE, ...) {
   out <- itis_GET("getRankNames", list(), wt, ...)
-  namespaces <- c(ax23 = "http://metadata.itis_service.itis.usgs.gov/xsd")
-  matches <- c("kingdomName","rankId","rankName")
-  itisdf(out, namespaces, matches, tolower(matches), "ax23")
+  if (raw || wt == "xml") return(out)
+  x <- parse_raw(wt, out)$rankNames
+  tibble::as_data_frame(pick_cols(
+    x,
+    c("kingdomName", "rankId", "rankName")
+  ))
 }

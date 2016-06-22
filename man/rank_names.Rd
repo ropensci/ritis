@@ -15,13 +15,21 @@ Default: \code{FALSE}}
 
 \item{...}{Curl options passed on to \code{\link[httr]{GET}}}
 }
+\value{
+a data.frame, with columns:
+\itemize{
+ \item kingdomname
+ \item rankid
+ \item rankname
+}
+}
 \description{
 Provides a list of all the unique rank names contained in the database and
  their kingdom and rank ID values.
 }
 \examples{
 \dontrun{
-rank_names(config=timeout(3))
+rank_names()
 }
 }
 

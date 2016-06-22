@@ -14,6 +14,9 @@
 #'
 #' # Get terms searching just scientific names
 #' itis_terms(query='Poa annua', "scientific")
+#'
+#' # many at once
+#' itis_terms(query=c('Poa annua', 'Pinus contorta'), "scientific")
 #' }
 itis_terms <- function(query, what = "both", wt = "json", raw = FALSE, ...) {
   what <- match.arg(what, c('both', 'scientific', 'common'))
@@ -30,67 +33,19 @@ itis_terms <- function(query, what = "both", wt = "json", raw = FALSE, ...) {
 
 # helpers
 itisterms <- function(x, wt = "json", raw = FALSE, ...) {
-  x <- itis_GET("getITISTerms", list(srchKey = x), wt, ...)
-  if (raw) return(x)
-  x <- parse_raw(wt, x)
-  switch(wt, json = x, xml = {
-      namespaces <- c(namespaces <- c(ax21 = "http://data.itis_service.itis.usgs.gov/xsd"))
-      gg <- xml2::xml_find_all(x, "//ax21:itisTerms", namespaces)
-      res <- lapply(gg, function(z) {
-        sapply(xml2::xml_children(z), xml_ext)
-      })
-      tmp <- data.table::setDF(data.table::rbindlist(lapply(res, function(x) data.frame(x, stringsAsFactors = FALSE))))
-      names(tmp) <- tolower(names(tmp))
-      row.names(tmp) <- NULL
-      if (NROW(tmp) == 1 && names(tmp) == "x") {
-        NA
-      } else {
-        tmp$commonnames <- gsub("true", NA, as.character(tmp$commonnames))
-        tmp
-      }
-    })
+  out <- itis_GET("getITISTerms", list(srchKey = x), wt, ...)
+  if (raw || wt == "xml") return(out)
+  tibble::as_data_frame(parse_raw(wt, out)$itisTerms)
 }
 
 itistermsfromcommonname <- function(x, wt = "json", raw = FALSE, ...) {
-  x <- itis_GET("getITISTermsFromCommonName", list(srchKey = x), wt, ...)
-  if (raw) return(x)
-  x <- parse_raw(wt, x)
-  switch(wt, json = x, xml = {
-      namespaces <- c(namespaces <- c(ax21 = "http://data.itis_service.itis.usgs.gov/xsd"))
-      gg <- xml2::xml_find_all(x, "//ax21:itisTerms", namespaces)
-      res <- lapply(gg, function(z) {
-        sapply(xml2::xml_children(z), xml_ext)
-      })
-      tmp <- data.table::setDF(data.table::rbindlist(res, function(x) data.frame(x, stringsAsFactors = FALSE)))
-      names(tmp) <- tolower(names(tmp))
-      row.names(tmp) <- NULL
-      if (NROW(tmp) == 1 && names(tmp) == "x") {
-        NA
-      } else {
-        tmp$commonnames <- gsub("true", NA, as.character(tmp$commonnames))
-        tmp
-      }
-    })
+  out <- itis_GET("getITISTermsFromCommonName", list(srchKey = x), wt, ...)
+  if (raw || wt == "xml") return(out)
+  tibble::as_data_frame(parse_raw(wt, out)$itisTerms)
 }
 
 itistermsfromscientificname <- function(x, wt = "json", raw = FALSE, ...) {
-  x <- itis_GET("getITISTermsFromScientificName", list(srchKey = x), wt, ...)
-  if (raw) return(x)
-  x <- parse_raw(wt, x)
-  switch(wt, json = x, xml = {
-    namespaces <- c(namespaces <- c(ax21 = "http://data.itis_service.itis.usgs.gov/xsd"))
-    gg <- xml2::xml_find_all(x, "//ax21:itisTerms", namespaces)
-    res <- lapply(gg, function(z) {
-      sapply(xml2::xml_children(z), xml_ext)
-    })
-    tmp <- data.table::setDF(data.table::rbindlist(res, function(x) data.frame(x,
-                                                                  stringsAsFactors = FALSE)))
-    names(tmp) <- tolower(names(tmp))
-    row.names(tmp) <- NULL
-    if (NROW(tmp) == 1 && names(tmp) == "x") {
-      NA
-    } else {
-      tmp
-    }
-  })
+  out <- itis_GET("getITISTermsFromScientificName", list(srchKey = x), wt, ...)
+  if (raw || wt == "xml") return(out)
+  tibble::as_data_frame(parse_raw(wt, out)$itisTerms)
 }

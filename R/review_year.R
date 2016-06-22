@@ -3,13 +3,17 @@
 #' @export
 #' @template common
 #' @template tsn
+#' @return a data.frame
 #' @examples \dontrun{
-#' review_year(180541, config=timeout(3))
+#' review_year(tsn = 180541)
 #' }
 review_year <- function(tsn, wt = "json", raw = FALSE, ...) {
   out <- itis_GET("getReviewYearFromTSN", list(tsn = tsn), wt, ...)
-  namespaces <- c(namespaces <- c(ax21 = "http://data.itis_service.itis.usgs.gov/xsd"))
-  toget <- list("rankId","reviewYear","tsn")
-  itis_parse(toget, out, namespaces)
+  if (raw || wt == "xml") return(out)
+  x <- tc(parse_raw(wt, out))
+  tibble::as_data_frame(pick_cols(
+    data.frame(x, stringsAsFactors = FALSE),
+    c("rankId","reviewYear","tsn")
+  ))
 }
 

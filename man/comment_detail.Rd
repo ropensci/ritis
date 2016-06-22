@@ -27,7 +27,7 @@ Get comment detail from TSN
 comment_detail(tsn=180543)
 comment_detail(tsn=180543, wt = "xml")
 library(httr)
-comment_detail(tsn=180543, config=verbose())
+comment_detail(tsn=180543)
 }
 }
 

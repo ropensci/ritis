@@ -16,12 +16,18 @@ Default: \code{FALSE}}
 
 \item{...}{Curl options passed on to \code{\link[httr]{GET}}}
 }
+\value{
+a character string, an LSID, or \code{NULL} if nothing found
+}
 \description{
 Gets the unique LSID for the TSN, or an empty result if there is no match.
 }
 \examples{
 \dontrun{
-tsn2lsid(155166)
+tsn2lsid(tsn = 155166)
+tsn2lsid(tsn = 333333333)
+tsn2lsid(155166, raw = TRUE)
+tsn2lsid(155166, wt = "xml")
 }
 }
 

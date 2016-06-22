@@ -2,12 +2,13 @@
 #'
 #' @export
 #' @template common
+#' @return a string, the ITIS web service description
 #' @examples \dontrun{
 #' description()
+#' description(wt = "xml")
 #' }
 description <- function(wt = "json", raw = FALSE, ...){
-  x <- itis_GET("getDescription", list(), wt, ...)
-  if (raw) return(x)
-  x <- parse_raw(wt, x)
-  switch(wt, json = x$description, xml = xml2::xml_text(xml2::xml_find_all(x, "//ns:return", xml2::xml_ns(x)))[[1]])
+  out <- itis_GET("getDescription", list(), wt, ...)
+  if (raw || wt == "xml") return(out)
+  parse_raw(wt, out)$description
 }

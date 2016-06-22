@@ -21,7 +21,11 @@ Get geographic divisions from tsn
 }
 \examples{
 \dontrun{
-geographic_divisions(tsn=180543, config=timeout(3))
+geographic_divisions(tsn = 180543)
+
+geographic_divisions(tsn = 180543, wt = "xml")
+
+geographic_divisions(tsn = 180543, wt = "json", raw = TRUE)
 }
 }
 

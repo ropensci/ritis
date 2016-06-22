@@ -14,12 +14,17 @@ Default: \code{FALSE}}
 
 \item{...}{Curl options passed on to \code{\link[httr]{GET}}}
 }
+\value{
+character vector of geographic names
+}
 \description{
 Get all possible geographic values
 }
 \examples{
 \dontrun{
 geographic_values()
+geographic_values(wt = "xml")
+geographic_values(wt = "json", raw = TRUE)
 }
 }
 

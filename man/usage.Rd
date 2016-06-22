@@ -21,7 +21,9 @@ Returns the usage information for the TSN.
 }
 \examples{
 \dontrun{
-usage(526852, config=timeout(3))
+usage(tsn = 526852)
+usage(tsn = 526852, raw = TRUE)
+usage(tsn = 526852, wt = "xml")
 }
 }
 

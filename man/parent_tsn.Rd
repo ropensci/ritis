@@ -16,12 +16,17 @@ Default: \code{FALSE}}
 
 \item{...}{Curl options passed on to \code{\link[httr]{GET}}}
 }
+\value{
+a data.frame
+}
 \description{
 Returns the parent TSN for the entered TSN.
 }
 \examples{
 \dontrun{
-parent_tsn(202385, config=timeout(3))
+parent_tsn(tsn = 202385)
+parent_tsn(tsn = 202385, raw = TRUE)
+parent_tsn(tsn = 202385, wt = "xml")
 }
 }
 

@@ -1,28 +1,29 @@
 #' Get kingdom names from tsn
 #'
 #' @export
+#' @name kingdoms
 #' @template common
 #' @template tsn
+#' @details
+#' \itemize{
+#'  \item kingdom_name: Get kingdom name for a TSN
+#'  \item kingdom_names: Get all possible kingdom names
+#' }
 #' @examples \dontrun{
-#' kingdom_name(202385, config=timeout(3))
+#' kingdom_name(202385)
+#' kingdom_name(202385, wt = "xml")
+#' kingdom_names()
 #' }
 kingdom_name <- function(tsn, wt = "json", raw = FALSE, ...) {
   out <- itis_GET("getKingdomNameFromTSN", list(tsn = tsn), wt, ...)
-  namespaces <- c(namespaces <- c(ax21 = "http://data.itis_service.itis.usgs.gov/xsd"))
-  toget <- list("kingdomId","kingdomName","tsn")
-  itis_parse(toget, out, namespaces)
+  if (raw || wt == "xml") return(out)
+  pick_cols(tibble::as_data_frame(parse_raw(wt, out)), c('kingdomid', 'kingdomname', 'tsn'))
 }
 
-#' Get all possible kingdom names
-#'
 #' @export
-#' @template common
-#' @examples \dontrun{
-#' kingdom_names(config=timeout(3))
-#' }
+#' @rdname kingdoms
 kingdom_names <- function(wt = "json", raw = FALSE, ...) {
   out <- itis_GET("getKingdomNames", list(), wt, ...)
-  namespaces <- c(ax21 = "http://metadata.itis_service.itis.usgs.gov/xsd")
-  matches <- c("kingdomId","kingdomName","tsn")
-  itisdf(out, namespaces, matches, tolower(matches))
+  if (raw || wt == "xml") return(out)
+  pick_cols(tibble::as_data_frame(parse_raw(wt, out)$kingdomNames), c('kingdomid', 'kingdomname', 'tsn'))
 }

@@ -4,11 +4,12 @@
 #' @template common
 #' @template tsn
 #' @examples \dontrun{
-#' usage(526852, config=timeout(3))
+#' usage(tsn = 526852)
+#' usage(tsn = 526852, raw = TRUE)
+#' usage(tsn = 526852, wt = "xml")
 #' }
 usage <- function(tsn, wt = "json", raw = FALSE, ...) {
   out <- itis_GET("getTaxonomicUsageFromTSN", list(tsn = tsn), wt, ...)
-  namespaces <- c(namespaces <- c(ax21 = "http://data.itis_service.itis.usgs.gov/xsd"))
-  toget <- list("taxonUsageRating","tsn")
-  itis_parse(toget, out, namespaces)
+  if (raw || wt == "xml") return(out)
+  dr_op(tibble::as_data_frame(parse_raw(wt, out)), "class")
 }

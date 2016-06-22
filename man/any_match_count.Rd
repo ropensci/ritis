@@ -24,8 +24,9 @@ Get any match count.
 }
 \examples{
 \dontrun{
-any_match_count(202385)
-any_match_count("dolphin")
+any_match_count(x = 202385)
+any_match_count(x = "dolphin")
+any_match_count(x = "dolphin", wt = "xml")
 }
 }
 

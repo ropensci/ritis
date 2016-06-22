@@ -5,15 +5,18 @@
 #' @inheritParams comment_detail
 #' @examples \dontrun{
 #' # from tsn
-#' full_record(50423)
-#' full_record(202385)
-#' full_record(183833)
+#' full_record(tsn = 50423)
+#' full_record(tsn = 202385)
+#' full_record(tsn = 183833)
+#'
+#' full_record(tsn = 183833, wt = "xml")
+#' full_record(tsn = 183833, raw = TRUE)
 #'
 #' # from lsid
-#' full_record(lsid="urn:lsid:itis.gov:itis_tsn:180543")
-#' full_record(lsid="urn:lsid:itis.gov:itis_tsn:180543")
+#' full_record(lsid = "urn:lsid:itis.gov:itis_tsn:180543")
+#' full_record(lsid = "urn:lsid:itis.gov:itis_tsn:180543")
 #' }
-full_record <- function(tsn = NULL, lsid = NULL, wt = "xml", raw = FALSE, ...) {
+full_record <- function(tsn = NULL, lsid = NULL, wt = "json", raw = FALSE, ...) {
   if (!xor(is.null(tsn), is.null(lsid))) stop("Pass only one of `tsn` or `lsid`", call. = FALSE)
   if (!is.null(tsn)) {
     verb <- "getFullRecordFromTSN"
@@ -23,27 +26,6 @@ full_record <- function(tsn = NULL, lsid = NULL, wt = "xml", raw = FALSE, ...) {
     args <- list(lsid = lsid)
   }
   out <- itis_GET(verb, args, wt, ...)
-  switch(
-    wt,
-    json = out,
-    xml = {
-      namespaces <- c(ax21 = "http://data.itis_service.itis.usgs.gov/xsd")
-      toget <- c("acceptedNameList","commentList","commonNameList","completenessRating",
-                 "coreMetadata","credibilityRating","currencyRating","dateData","expertList",
-                 "geographicDivisionList","hierarchyUp","jurisdictionalOriginList",
-                 "kingdom","otherSourceList","parentTSN","publicationList","scientificName",
-                 "synonymList","taxRank","taxonAuthor","unacceptReason","usage")
-      nmslwr(setNames(lapply(toget, parse_fulldat, dat = out), toget))
-    }
-  )
-}
-
-xml_ext <- function(x) {
-  as.list(setNames(xml2::xml_text(x), xml2::xml_name(x)))
-}
-
-parse_fulldat <- function(x, dat) {
-  tmp <- xml2::xml_children(xml2::xml_find_all(dat, sprintf("//ax21:%s", x), xml2::xml_ns(dat)))
-  tmp <- sapply(tmp, xml_ext)
-  if (!is.null(tmp)) nmslwr(tmp) else tmp
+  if (raw || wt == "xml") return(out)
+  parse_raw(wt, out)
 }

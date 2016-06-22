@@ -2,9 +2,7 @@
 % Please edit documentation in R/record.R
 \name{record}
 \alias{record}
-\title{Gets the partial ITIS record for the TSN in the LSID, found by comparing the
- TSN in the search key to the TSN field. Returns an empty result set if
- there is no match or the TSN is invalid.}
+\title{Gets a record from an LSID}
 \usage{
 record(lsid, wt = "json", raw = FALSE, ...)
 }
@@ -18,14 +16,20 @@ Default: \code{FALSE}}
 
 \item{...}{Curl options passed on to \code{\link[httr]{GET}}}
 }
+\value{
+a data.frame
+}
 \description{
+Gets a record from an LSID
+}
+\details{
 Gets the partial ITIS record for the TSN in the LSID, found by comparing the
  TSN in the search key to the TSN field. Returns an empty result set if
  there is no match or the TSN is invalid.
 }
 \examples{
 \dontrun{
-record("urn:lsid:itis.gov:itis_tsn:180543", config=timeout(5))
+record(lsid = "urn:lsid:itis.gov:itis_tsn:180543")
 }
 }
 

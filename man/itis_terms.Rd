@@ -32,6 +32,9 @@ itis_terms(query='tarweed', "common")
 
 # Get terms searching just scientific names
 itis_terms(query='Poa annua', "scientific")
+
+# many at once
+itis_terms(query=c('Poa annua', 'Pinus contorta'), "scientific")
 }
 }
 

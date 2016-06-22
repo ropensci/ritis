@@ -21,7 +21,7 @@ Returns the unacceptability reason, if any, for the TSN.
 }
 \examples{
 \dontrun{
-unacceptability_reason(183671, config=timeout(3))
+unacceptability_reason(tsn = 183671)
 }
 }
 

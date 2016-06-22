@@ -24,6 +24,11 @@ Default: \code{FALSE}}
 
 \item{...}{Curl options passed on to \code{\link[httr]{GET}}}
 }
+\value{
+a data.frame
+
+a data.frame
+}
 \description{
 Search for any matched page
 }
@@ -32,5 +37,8 @@ Search for any matched page
 search_any_match_paged(x=202385, pagesize=100, pagenum=1, ascend=FALSE)
 search_any_match_paged(x="Zy", pagesize=100, pagenum=1, ascend=FALSE)
 }
+}
+\seealso{
+\code{\link{search_anymatch}}
 }
 

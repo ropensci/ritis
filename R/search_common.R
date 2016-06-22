@@ -13,8 +13,10 @@
 #'  \item end - Search against the \code{searchByCommonNameEndsWith} API route, which
 #'  searches for a match at the end of a name string
 #' }
+#' @return a data.frame
+#' @seealso \code{\link{search_scientific}}
 #' @examples \dontrun{
-#' search_common("american bullfrog")
+#' search_common(x = "american bullfrog")
 #' search_common("ferret-badger")
 #' search_common("polar bear")
 #'
@@ -26,21 +28,10 @@
 #' # end
 #' search_common("snake", from = "end")
 #' }
-search_common <- function(x, from = "all", wt = "xml", raw = FALSE, ...) {
+search_common <- function(x, from = "all", wt = "json", raw = FALSE, ...) {
   verb <- switch(from, all = "searchByCommonName", begin = "searchByCommonNameBeginsWith",
                  end = "searchByCommonNameEndsWith")
-  scomm(verb, x, wt, ...)
-}
-
-scomm <- function(verb, x, wt, ...) {
   out <- itis_GET(verb, list(srchKey = x), wt, ...)
-  com_lang_tsn(out)
-}
-
-com_lang_tsn <- function(dat) {
-  namespaces <- c(namespaces <- c(ax21 = "http://data.itis_service.itis.usgs.gov/xsd"))
-  comname <- xml2::xml_text(xml2::xml_find_all(dat, "//ax21:commonName", namespaces))
-  lang <- xml2::xml_text(xml2::xml_find_all(dat, "//ax21:language", namespaces))
-  tsn <- xml2::xml_text(xml2::xml_find_all(dat, "//ax21:tsn", namespaces))
-  data.frame(comname = comname, lang = lang, tsn = tsn[!nchar(tsn) == 0], stringsAsFactors = FALSE)
+  if (raw || wt == "xml") return(out)
+  tibble::as_data_frame(dr_op(parse_raw(wt, out)$commonNames, "class"))
 }

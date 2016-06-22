@@ -21,7 +21,7 @@ Get expert information for the TSN.
 }
 \examples{
 \dontrun{
-experts(180544)
+experts(tsn = 180544)
 experts(180544, wt = "xml")
 }
 }

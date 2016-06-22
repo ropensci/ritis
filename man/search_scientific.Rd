@@ -16,13 +16,19 @@ Default: \code{FALSE}}
 
 \item{...}{Curl options passed on to \code{\link[httr]{GET}}}
 }
+\value{
+a data.frame
+}
 \description{
 Search by scientific name
 }
 \examples{
 \dontrun{
-search_scientific("Tardigrada", config=timeout(3))
-search_scientific("Quercus douglasii", config=timeout(3))
+search_scientific("Tardigrada")
+search_scientific("Quercus douglasii")
 }
+}
+\seealso{
+\code{\link{search_common}}
 }
 

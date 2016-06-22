@@ -16,12 +16,19 @@ Default: \code{FALSE}}
 
 \item{...}{Curl options passed on to \code{\link[httr]{GET}}}
 }
+\value{
+a data.frame
+}
 \description{
 Returns a list of the pulications used for the TSN.
 }
 \examples{
 \dontrun{
-publications(70340)
+publications(tsn = 70340)
+publications(tsn = 70340, wt = "xml")
+
+library(httr)
+publications(tsn = 70340, config = verbose())
 }
 }
 

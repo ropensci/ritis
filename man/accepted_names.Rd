@@ -22,15 +22,13 @@ Get accepted names from tsn
 \examples{
 \dontrun{
 # TSN accepted - good name
-accepted_names(tsn='208527')
+accepted_names(tsn = 208527)
 
 # TSN not accepted - input TSN is old name
-accepted_names('504239')
+accepted_names(tsn = 504239)
 
 # raw json
-accepted_names(tsn='208527', raw = TRUE)
-# raw xml
-accepted_names(tsn='208527', wt = "xml", raw = TRUE)
+accepted_names(tsn = 208527, raw = TRUE)
 }
 }
 

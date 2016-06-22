@@ -21,7 +21,9 @@ Get global species completeness from tsn
 }
 \examples{
 \dontrun{
-global_species_completeness(tsn=180541, config=timeout(3))
+global_species_completeness(tsn = 180541)
+global_species_completeness(180541, wt = "xml")
+global_species_completeness(180541, wt = "json", raw = TRUE)
 }
 }
 

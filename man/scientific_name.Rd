@@ -17,13 +17,16 @@ Default: \code{FALSE}}
 
 \item{...}{Curl options passed on to \code{\link[httr]{GET}}}
 }
+\value{
+a data.frame
+}
 \description{
 Returns the scientific name for the TSN. Also returns the component parts
    (names and indicators) of the scientific name.
 }
 \examples{
 \dontrun{
-scientific_name(531894, config=timeout(3))
+scientific_name(tsn = 531894)
 }
 }
 

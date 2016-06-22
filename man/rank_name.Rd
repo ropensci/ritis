@@ -16,12 +16,15 @@ Default: \code{FALSE}}
 
 \item{...}{Curl options passed on to \code{\link[httr]{GET}}}
 }
+\value{
+a data.frame, with rank name and other info
+}
 \description{
 Returns the kingdom and rank information for the TSN.
 }
 \examples{
 \dontrun{
-rank_name(202385, config=timeout(3))
+rank_name(tsn = 202385)
 }
 }
 
