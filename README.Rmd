@@ -55,7 +55,7 @@ itis_search(q = "nameWOInd:/[A-Za-z0-9]*[%20]{1,1}[A-Za-z0-9]*/")
 Get accepted names for a TSN
 
 ```{r}
-accepted_names(tsn = 208527)
+accepted_names(tsn = 504239)
 ```
 
 Get common names for a TSN
@@ -67,7 +67,7 @@ common_names(tsn = 183833)
 Full hierarchy for a TSN
 
 ```{r}
-head(hierarchy_full(tsn = 37906)$hierarchyList)
+hierarchy_full(tsn = 37906)
 ```
 
 ## Meta

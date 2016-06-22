@@ -3,6 +3,8 @@
 #' @export
 #' @template common
 #' @template tsn
+#' @return Zero row data.frame if the name is accepted, otherwise a data.frame
+#' with information on the currently accepted name
 #' @examples \dontrun{
 #' # TSN accepted - good name
 #' accepted_names(tsn = 208527)
