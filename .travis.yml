@@ -1,0 +1,19 @@
+language: r
+sudo: false
+cache: packages
+
+r:
+  - oldrel
+  - release
+  - devel
+
+notifications:
+  email:
+    on_success: never
+    on_failure: never
+  slack:
+    secure: EzL7zwihD0vkkmy/j95DutO2otXsYaMcOQMUaZwRVvk18oTpKCK2N8OfIDnatZWMKsgJIHC8FXIHew2vmD6FemPKk0J2b87JDxwcG45Qhu/VWDbKXJF88w8SQi5KsmezzXy73OSD3UnyoHZEZzFBrMyaPNvAK0829P1zUh6SfrA=
+
+env:
+  global:
+  - R_CHECK_ARGS="--no-build-vignettes --no-manual --timings --as-cran"

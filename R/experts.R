@@ -1,0 +1,14 @@
+#' Get expert information for the TSN.
+#'
+#' @export
+#' @template common
+#' @template tsn
+#' @examples \dontrun{
+#' experts(tsn = 180544)
+#' experts(180544, wt = "xml")
+#' }
+experts <- function(tsn, wt = "json", raw = FALSE, ...) {
+  out <- itis_GET("getExpertsFromTSN", list(tsn = tsn), wt, ...)
+  if (raw || wt == "xml") return(out)
+  dr_op(tibble::as_data_frame(parse_raw(out)$geoDivisions), "class")
+}
