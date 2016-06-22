@@ -4,7 +4,7 @@ Description: An interface to the Integrated Taxonomic Information System (ITIS)
     (<http://www.itis.gov>). Includes functions to work with the ITIS REST
     API methods (<http://www.itis.gov/ws_description.html>), as well as the
     Solr web service (<http://www.itis.gov/solr_documentation.html>).
-Version: 0.4.9.9100
+Version: 0.4.9.9300
 License: MIT + file LICENSE
 Date: 2016-06-22
 URL: https://github.com/ropensci/ritis
