@@ -16,6 +16,10 @@ Default: \code{FALSE}}
 
 \item{...}{Curl options passed on to \code{\link[httr]{GET}}}
 }
+\value{
+Zero row data.frame if the name is accepted, otherwise a data.frame
+with information on the currently accepted name
+}
 \description{
 Get accepted names from tsn
 }
