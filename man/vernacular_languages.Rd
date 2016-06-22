@@ -15,7 +15,7 @@ Default: \code{FALSE}}
 \item{...}{Curl options passed on to \code{\link[httr]{GET}}}
 }
 \value{
-a data.frame
+a character vector of verncular names
 }
 \description{
 Provides a list of the unique languages used in the vernacular table.
