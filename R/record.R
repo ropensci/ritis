@@ -15,7 +15,7 @@ record <- function(lsid, wt = "json", raw = FALSE, ...) {
   if (raw || wt == "xml") return(out)
   x <- tc(parse_raw(out))
   tibble::as_data_frame(
-    if (length(names(res)) < 2) {
+    if (length(names(x)) < 2) {
       NULL
     } else {
       pick_cols(
