@@ -15,5 +15,7 @@
 currency <- function(tsn, wt = "json", raw = FALSE, ...) {
   out <- itis_GET("getCurrencyFromTSN", list(tsn = tsn), wt, ...)
   if (raw || wt == "xml") return(out)
-  dr_op(tibble::as_data_frame(parse_raw(out)), "class")
+  res <- parse_raw(out)
+  if (is.null(res$taxonCurrency)) res$taxonCurrency <- ""
+  dr_op(tibble::as_data_frame(res), "class")
 }

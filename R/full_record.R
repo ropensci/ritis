@@ -27,5 +27,5 @@ full_record <- function(tsn = NULL, lsid = NULL, wt = "json", raw = FALSE, ...) 
   }
   out <- itis_GET(verb, args, wt, ...)
   if (raw || wt == "xml") return(out)
-  parse_raw(out)
+  dr_op(tc(parse_raw(out)), "class")
 }

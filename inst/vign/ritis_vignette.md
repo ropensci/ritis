@@ -57,7 +57,8 @@ matches only monomials
 
 ```r
 itis_search(q = "nameWOInd:/[A-Za-z0-9]*[%20]{0,0}*/")
-#> # A tibble: 10 x 26
+#> Source: local data frame [10 x 26]
+#> 
 #>      tsn          nameWInd         nameWOInd             unit1   usage
 #>    <chr>             <chr>             <chr>             <chr>   <chr>
 #> 1     51     Schizomycetes     Schizomycetes     Schizomycetes invalid
@@ -70,13 +71,13 @@ itis_search(q = "nameWOInd:/[A-Za-z0-9]*[%20]{0,0}*/")
 #> 8     57       Nitrobacter       Nitrobacter       Nitrobacter   valid
 #> 9     65      Nitrosomonas      Nitrosomonas      Nitrosomonas   valid
 #> 10    70  Thiobacteriaceae  Thiobacteriaceae  Thiobacteriaceae invalid
-#> # ... with 21 more variables: unacceptReason <chr>,
-#> #   credibilityRating <chr>, completenessRating <chr>,
-#> #   currencyRating <chr>, kingdom <chr>, rankID <chr>, rank <chr>,
-#> #   hierarchySoFar <chr>, hierarchySoFarWRanks <chr>, hierarchyTSN <chr>,
-#> #   synonyms <chr>, synonymTSNs <chr>, otherSource <chr>,
-#> #   acceptedTSN <chr>, comment <chr>, createDate <chr>, updateDate <chr>,
-#> #   _version_ <dbl>, taxonAuthor <chr>, vernacular <chr>, parentTSN <chr>
+#> Variables not shown: unacceptReason <chr>, credibilityRating <chr>,
+#>   completenessRating <chr>, currencyRating <chr>, kingdom <chr>, rankID
+#>   <chr>, rank <chr>, hierarchySoFar <chr>, hierarchySoFarWRanks <chr>,
+#>   hierarchyTSN <chr>, synonyms <chr>, synonymTSNs <chr>, otherSource
+#>   <chr>, acceptedTSN <chr>, comment <chr>, createDate <chr>, updateDate
+#>   <chr>, _version_ <dbl>, taxonAuthor <chr>, vernacular <chr>, parentTSN
+#>   <chr>.
 ```
 
 matches only binomials
@@ -84,7 +85,8 @@ matches only binomials
 
 ```r
 itis_search(q = "nameWOInd:/[A-Za-z0-9]*[%20]{1,1}[A-Za-z0-9]*/")
-#> # A tibble: 10 x 24
+#> Source: local data frame [10 x 24]
+#> 
 #>      tsn                  nameWInd                 nameWOInd        unit1
 #>    <chr>                     <chr>                     <chr>        <chr>
 #> 1     58        Nitrobacter agilis        Nitrobacter agilis  Nitrobacter
@@ -97,13 +99,12 @@ itis_search(q = "nameWOInd:/[A-Za-z0-9]*[%20]{1,1}[A-Za-z0-9]*/")
 #> 8     67 Nitrosomonas groningensis Nitrosomonas groningensis Nitrosomonas
 #> 9     68   Nitrosomonas javenensis   Nitrosomonas javenensis Nitrosomonas
 #> 10    69    Nitrosomonas monocella    Nitrosomonas monocella Nitrosomonas
-#> # ... with 20 more variables: unit2 <chr>, usage <chr>,
-#> #   unacceptReason <chr>, credibilityRating <chr>, kingdom <chr>,
-#> #   rankID <chr>, rank <chr>, hierarchySoFar <chr>,
-#> #   hierarchySoFarWRanks <chr>, hierarchyTSN <chr>, synonyms <chr>,
-#> #   synonymTSNs <chr>, otherSource <chr>, acceptedTSN <chr>,
-#> #   comment <chr>, createDate <chr>, updateDate <chr>, _version_ <dbl>,
-#> #   taxonAuthor <chr>, parentTSN <chr>
+#> Variables not shown: unit2 <chr>, usage <chr>, unacceptReason <chr>,
+#>   credibilityRating <chr>, kingdom <chr>, rankID <chr>, rank <chr>,
+#>   hierarchySoFar <chr>, hierarchySoFarWRanks <chr>, hierarchyTSN <chr>,
+#>   synonyms <chr>, synonymTSNs <chr>, otherSource <chr>, acceptedTSN <chr>,
+#>   comment <chr>, createDate <chr>, updateDate <chr>, _version_ <dbl>,
+#>   taxonAuthor <chr>, parentTSN <chr>.
 ```
 
 ## ITIS REST API interface
@@ -118,8 +119,12 @@ Get accepted names for a TSN
 
 
 ```r
-accepted_names(tsn = 208527)
-#> # A tibble: 0 x 0
+accepted_names(tsn = 504239)
+#> Source: local data frame [1 x 3]
+#> 
+#>          acceptedName acceptedTsn     author
+#>                 <chr>       <chr>      <chr>
+#> 1 Dasiphora fruticosa      836659 (L.) Rydb.
 ```
 
 Get common names for a TSN
@@ -127,7 +132,8 @@ Get common names for a TSN
 
 ```r
 common_names(tsn = 183833)
-#> # A tibble: 3 x 3
+#> Source: local data frame [3 x 3]
+#> 
 #>            commonName language    tsn
 #>                 <chr>    <chr>  <chr>
 #> 1 African hunting dog  English 183833
@@ -140,9 +146,10 @@ Full hierarchy for a TSN
 
 ```r
 hierarchy_full(tsn = 37906)
-#> # A tibble: 60 x 5
+#> Source: local data frame [60 x 5]
+#> 
 #>         parentname parenttsn      rankname       taxonname    tsn
-#> *            <chr>     <chr>         <chr>           <chr>  <chr>
+#>              <chr>     <chr>         <chr>           <chr>  <chr>
 #> 1                                  Kingdom         Plantae 202422
 #> 2          Plantae    202422    Subkingdom   Viridiplantae 954898
 #> 3    Viridiplantae    954898  Infrakingdom    Streptophyta 846494
@@ -153,5 +160,5 @@ hierarchy_full(tsn = 37906)
 #> 8    Magnoliopsida     18063    Superorder       Asteranae 846535
 #> 9        Asteranae    846535         Order       Asterales  35419
 #> 10       Asterales     35419        Family      Asteraceae  35420
-#> # ... with 50 more rows
+#> ..             ...       ...           ...             ...    ...
 ```

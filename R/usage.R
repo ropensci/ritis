@@ -11,5 +11,10 @@
 usage <- function(tsn, wt = "json", raw = FALSE, ...) {
   out <- itis_GET("getTaxonomicUsageFromTSN", list(tsn = tsn), wt, ...)
   if (raw || wt == "xml") return(out)
-  dr_op(tibble::as_data_frame(parse_raw(out)), "class")
+  x <- parse_raw(out)
+  if (is.null(x$taxonUsageRating) || inherits(x$taxonUsageRating, "logical")) {
+    tibble::data_frame()
+  } else {
+    dr_op(tibble::as_data_frame(x), "class")
+  }
 }

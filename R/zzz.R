@@ -41,6 +41,10 @@ dr_op.data.frame <- function(x, y) {
   x[, !tolower(names(x)) %in% tolower(y)]
 }
 
+dr_op.list <- function(x, y) {
+  x[!tolower(names(x)) %in% tolower(y)]
+}
+
 itis_GET <- function(endpt, args, wt, ...){
   args <- argsnull(args)
   tt <- httr::GET(paste0(iturl(wt), endpt), query = args, ...)

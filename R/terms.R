@@ -35,17 +35,32 @@ terms <- function(query, what = "both", wt = "json", raw = FALSE, ...) {
 itisterms <- function(x, wt = "json", raw = FALSE, ...) {
   out <- itis_GET("getITISTerms", list(srchKey = x), wt, ...)
   if (raw || wt == "xml") return(out)
-  tibble::as_data_frame(parse_raw(out)$itisTerms)
+  x <- parse_raw(out)
+  if (is.null(x$itisTerms) || inherits(x$itisTerms, "logical")) {
+    tibble::data_frame()
+  } else {
+    dr_op(tibble::as_data_frame(x$itisTerms), "class")
+  }
 }
 
 itistermsfromcommonname <- function(x, wt = "json", raw = FALSE, ...) {
   out <- itis_GET("getITISTermsFromCommonName", list(srchKey = x), wt, ...)
   if (raw || wt == "xml") return(out)
-  tibble::as_data_frame(parse_raw(out)$itisTerms)
+  x <- parse_raw(out)
+  if (is.null(x$itisTerms) || inherits(x$itisTerms, "logical")) {
+    tibble::data_frame()
+  } else {
+    dr_op(tibble::as_data_frame(x$itisTerms), "class")
+  }
 }
 
 itistermsfromscientificname <- function(x, wt = "json", raw = FALSE, ...) {
   out <- itis_GET("getITISTermsFromScientificName", list(srchKey = x), wt, ...)
   if (raw || wt == "xml") return(out)
-  tibble::as_data_frame(parse_raw(out)$itisTerms)
+  x <- parse_raw(out)
+  if (is.null(x$itisTerms) || inherits(x$itisTerms, "logical")) {
+    tibble::data_frame()
+  } else {
+    dr_op(tibble::as_data_frame(x$itisTerms), "class")
+  }
 }

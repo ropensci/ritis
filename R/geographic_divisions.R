@@ -13,5 +13,10 @@
 geographic_divisions <- function(tsn, wt = "json", raw = FALSE, ...) {
   out <- itis_GET("getGeographicDivisionsFromTSN", list(tsn = tsn), wt, ...)
   if (raw || wt == "xml") return(out)
-  dr_op(tibble::as_data_frame(parse_raw(out)$geoDivisions), "class")
+  res <- parse_raw(out)
+  if (inherits(res$geoDivisions, "logical") || is.null(res$geoDivisions)) {
+    tibble::data_frame()
+  } else {
+    dr_op(tibble::as_data_frame(res$geoDivisions), "class")
+  }
 }

@@ -79,7 +79,7 @@ The following are some example uses. There are many more methods not shown below
 Get accepted names for a TSN
 
 ```{r}
-accepted_names(tsn = 208527)
+accepted_names(tsn = 504239)
 ```
 
 Get common names for a TSN

@@ -23,6 +23,7 @@ Get expert information for the TSN.
 \dontrun{
 experts(tsn = 180544)
 experts(180544, wt = "xml")
+experts(180544, raw = TRUE)
 }
 }
 

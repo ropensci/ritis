@@ -42,7 +42,6 @@ credibility_rating(526852, raw = TRUE)
 credibility_ratings()
 credibility_ratings(wt = "xml")
 credibility_ratings(raw = TRUE)
-credibility_ratings(wt = "json", raw = TRUE)
 }
 }
 
