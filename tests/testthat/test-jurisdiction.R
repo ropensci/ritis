@@ -28,10 +28,9 @@ test_that("jurisdiction_values - basic functionality works", {
 
   aa <- jurisdiction_values()
 
-  expect_is(aa, "data.frame")
-  expect_is(aa, "tbl_df")
+  expect_is(aa, "character")
 
-  expect_equal(NCOL(aa), 1)
+  expect_gt(length(aa), 1)
 })
 
 test_that("jurisdiction functions fail well", {

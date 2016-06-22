@@ -48,7 +48,5 @@ jurisdiction_origin_values <- function(wt = "json", raw = FALSE, ...) {
 jurisdiction_values <- function(wt = "json", raw = FALSE, ...) {
   out <- itis_GET("getJurisdictionValues", list(), wt, ...)
   if (raw || wt == "xml") return(out)
-  tibble::as_data_frame(
-    parse_raw(out)$jurisdictionValues
-  )
+  parse_raw(out)$jurisdictionValues
 }
