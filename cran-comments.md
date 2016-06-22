@@ -7,7 +7,8 @@
 
 0 errors | 0 warnings | 1 note
 
-* This is a new release.
+* This is a new release. I have read and agree to the the CRAN 
+policies at http://cran.r-project.org/web/packages/policies.html
 
 ## Reverse dependencies
 
@@ -16,7 +17,8 @@ This is a new release, so there are no reverse dependencies.
 ---
 
 This is a resubmission of a package I previously had on CRAN, but is now
-archived. 
+archived. https://cran.rstudio.com/src/contrib/Archive/ritis/ 
+Last version on CRAN was v0.0.3
 
 The reason for the re-submission is the data provider, the Integrated 
 Taxonomic Information System (ITIS), came out with a new JSON version 

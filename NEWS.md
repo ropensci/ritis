@@ -5,19 +5,9 @@ ritis 0.5.0
 
 * Re-released to CRAN
 * Complete overhaul of the package API, simplifying all function
-interfaces, using JSON by default.
+interfaces, using JSON by default, shorter names, reduce code reuse.
 * Added functions for interacting with ITIS's new Solr
 interface via use of `solrium`
-
-
-ritis 0.3.0
-===============
-
-### NEW FEATURES
-
-* New functions for interacting with new ITIS Solr interface.
-* Reworked package API for the original REST API methods to have
-shorter names, reduce code reuse, etc.
 
 
 ritis 0.0.3
