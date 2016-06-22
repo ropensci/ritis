@@ -6,15 +6,45 @@ itis_GET <- function(endpt, args, wt, ...){
   con_utf8(tt)
 }
 
-parse_raw <- function(x) jsonlite::fromJSON(x, flatten = TRUE)
-  # switch(
-  #   wt,
-  #   json = jsonlite::fromJSON(x, flatten = TRUE),
-  #   xml = xml2::read_xml(x, encoding = "UTF-8")
-  # )
-# }
+parse_raw <- function(x) {
+  if (inherits(x, "character") && !nzchar(x)) {
+    return(tibble::as_data_frame())
+  }
+  jsonlite::fromJSON(x, flatten = TRUE)
+}
 
 pick_cols <- function(x, nms) {
-  names(x) <- tolower(names(x))
-  x[, names(x) %in% tolower(nms)]
+  UseMethod("pick_cols")
+}
+
+pick_cols.default <- function(x, nms) {
+  return(NULL)
+}
+
+pick_cols.data.frame <- function(x, nms) {
+  if (NROW(x) > 0) {
+    names(x) <- tolower(names(x))
+    x[, names(x) %in% tolower(nms)]
+  } else {
+    NULL
+  }
+  # if (inherits(x, "data.frame")) {
+  #   if (NROW(x) > 0) {
+  #     names(x) <- tolower(names(x))
+  #     x[, names(x) %in% tolower(nms)]
+  #   } else {
+  #     NULL
+  #   }
+  # } else {
+  #   NULL
+  # }
+}
+
+pick_cols.list <- function(x, nms) {
+  if (NROW(x) > 0) {
+    names(x) <- tolower(names(x))
+    x[names(x) %in% tolower(nms)]
+  } else {
+    NULL
+  }
 }

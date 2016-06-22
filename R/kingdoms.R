@@ -17,7 +17,10 @@
 kingdom_name <- function(tsn, wt = "json", raw = FALSE, ...) {
   out <- itis_GET("getKingdomNameFromTSN", list(tsn = tsn), wt, ...)
   if (raw || wt == "xml") return(out)
-  pick_cols(tibble::as_data_frame(parse_raw(out)), c('kingdomid', 'kingdomname', 'tsn'))
+  res <- tc(pick_cols(parse_raw(out), c('kingdomid', 'kingdomname', 'tsn')))
+  tibble::as_data_frame(
+    if (length(names(res)) != 1) res else NULL
+  )
 }
 
 #' @export

@@ -35,8 +35,9 @@ hierarchy_down <- function(tsn, wt = "json", raw = FALSE, ...) {
 hierarchy_up <- function(tsn, wt = "json", raw = FALSE, ...) {
   out <- itis_GET("getHierarchyUpFromTSN", list(tsn = tsn), wt, ...)
   if (raw || wt == "xml") return(out)
+  res <- tc(pick_cols(parse_raw(out), c("parentName","parentTsn","rankName","taxonName","tsn")))
   tibble::as_data_frame(
-    parse_raw(out)[c("parentName","parentTsn","rankName","taxonName","tsn")]
+    if (length(names(res)) != 1) res else NULL
   )
 }
 
@@ -47,6 +48,9 @@ hierarchy_full <- function(tsn, wt = "json", raw = FALSE, ...) {
   if (raw || wt == "xml") return(out)
   x <- parse_raw(out)
   tibble::as_data_frame(
-    pick_cols(x$hierarchyList, c('parentname', 'parenttsn', 'rankname', 'taxonname', 'tsn'))
+    pick_cols(
+      if ('hierarchyList' %in% names(x)) x$hierarchyList else x,
+      c('parentname', 'parenttsn', 'rankname', 'taxonname', 'tsn')
+    )
   )
 }
