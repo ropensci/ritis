@@ -7,6 +7,7 @@ ritis
 [![Build status](https://ci.appveyor.com/api/projects/status/pvrc9muevha00fie/branch/master?svg=true)](https://ci.appveyor.com/project/sckott/ritis/branch/master)
 [![codecov](https://codecov.io/gh/ropensci/ritis/branch/master/graph/badge.svg)](https://codecov.io/gh/ropensci/ritis)
 [![rstudio mirror downloads](http://cranlogs.r-pkg.org/badges/ritis)](https://github.com/metacran/cranlogs.app)
+[![cran version](http://www.r-pkg.org/badges/version/ritis)](https://cran.r-project.org/package=ritis)
 
 * [ITIS API Docs](http://www.itis.gov/ws_description.html)
 * [Solr service](http://www.itis.gov/solr_documentation.html)
@@ -40,7 +41,7 @@ matches only monomials
 ```r
 itis_search(q = "nameWOInd:/[A-Za-z0-9]*[%20]{0,0}*/")
 #> Source: local data frame [10 x 26]
-#> 
+#>
 #>      tsn          nameWInd         nameWOInd             unit1   usage
 #>    <chr>             <chr>             <chr>             <chr>   <chr>
 #> 1     51     Schizomycetes     Schizomycetes     Schizomycetes invalid
@@ -68,7 +69,7 @@ matches only binomials
 ```r
 itis_search(q = "nameWOInd:/[A-Za-z0-9]*[%20]{1,1}[A-Za-z0-9]*/")
 #> Source: local data frame [10 x 24]
-#> 
+#>
 #>      tsn                  nameWInd                 nameWOInd        unit1
 #>    <chr>                     <chr>                     <chr>        <chr>
 #> 1     58        Nitrobacter agilis        Nitrobacter agilis  Nitrobacter
@@ -97,7 +98,7 @@ Get accepted names for a TSN
 ```r
 accepted_names(tsn = 504239)
 #> Source: local data frame [1 x 3]
-#> 
+#>
 #>          acceptedName acceptedTsn     author
 #>                 <chr>       <chr>      <chr>
 #> 1 Dasiphora fruticosa      836659 (L.) Rydb.
@@ -109,7 +110,7 @@ Get common names for a TSN
 ```r
 common_names(tsn = 183833)
 #> Source: local data frame [3 x 3]
-#> 
+#>
 #>            commonName language    tsn
 #>                 <chr>    <chr>  <chr>
 #> 1 African hunting dog  English 183833
@@ -123,7 +124,7 @@ Full hierarchy for a TSN
 ```r
 hierarchy_full(tsn = 37906)
 #> Source: local data frame [60 x 5]
-#> 
+#>
 #>         parentname parenttsn      rankname       taxonname    tsn
 #>              <chr>     <chr>         <chr>           <chr>  <chr>
 #> 1                                  Kingdom         Plantae 202422
