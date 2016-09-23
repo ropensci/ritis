@@ -14,7 +14,7 @@ test_that("itis_facet basic functionality works", {
   expect_null(aa$facet_ranges)
 
   expect_named(aa$facet_fields, "kingdom")
-  expect_named(aa$facet_fields[[1]], c('X1', 'X2'))
+  expect_named(aa$facet_fields[[1]], c('term', 'value'))
 })
 
 test_that("itis_facet fails well", {
