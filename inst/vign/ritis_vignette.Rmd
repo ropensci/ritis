@@ -52,7 +52,7 @@ These four methods use the equivalent functions in the package `solrium`, e.g.,
 simply use `...` to allow users to pass on parameters to the wrapped `solrium`
 functions. So do read the `solrium` docs.
 
-ITIS Solr API docs: [http://www.itis.gov/solr_documentation.html](http://www.itis.gov/solr_documentation.html)
+ITIS Solr API docs: <https://www.itis.gov/solr_documentation.html>
 
 Some examples:
 
@@ -70,7 +70,7 @@ itis_search(q = "nameWOInd:/[A-Za-z0-9]*[%20]{1,1}[A-Za-z0-9]*/")
 
 ## ITIS REST API interface
 
-ITIS REST API docs: [http://www.itis.gov/ws_description.html](http://www.itis.gov/ws_description.html)
+ITIS REST API docs: <http://www.itis.gov/ws_description.html>
 
 The following are some example uses. There are many more methods not shown below
 

@@ -48,7 +48,7 @@ These four methods use the equivalent functions in the package `solrium`, e.g.,
 simply use `...` to allow users to pass on parameters to the wrapped `solrium`
 functions. So do read the `solrium` docs.
 
-ITIS Solr API docs: [http://www.itis.gov/solr_documentation.html](http://www.itis.gov/solr_documentation.html)
+ITIS Solr API docs: <https://www.itis.gov/solr_documentation.html>
 
 Some examples:
 
@@ -57,8 +57,7 @@ matches only monomials
 
 ```r
 itis_search(q = "nameWOInd:/[A-Za-z0-9]*[%20]{0,0}*/")
-#> Source: local data frame [10 x 26]
-#> 
+#> # A tibble: 10 × 27
 #>      tsn          nameWInd         nameWOInd             unit1   usage
 #>    <chr>             <chr>             <chr>             <chr>   <chr>
 #> 1     51     Schizomycetes     Schizomycetes     Schizomycetes invalid
@@ -71,13 +70,14 @@ itis_search(q = "nameWOInd:/[A-Za-z0-9]*[%20]{0,0}*/")
 #> 8     57       Nitrobacter       Nitrobacter       Nitrobacter   valid
 #> 9     65      Nitrosomonas      Nitrosomonas      Nitrosomonas   valid
 #> 10    70  Thiobacteriaceae  Thiobacteriaceae  Thiobacteriaceae invalid
-#> Variables not shown: unacceptReason <chr>, credibilityRating <chr>,
-#>   completenessRating <chr>, currencyRating <chr>, kingdom <chr>, rankID
-#>   <chr>, rank <chr>, hierarchySoFar <chr>, hierarchySoFarWRanks <chr>,
-#>   hierarchyTSN <chr>, synonyms <chr>, synonymTSNs <chr>, otherSource
-#>   <chr>, acceptedTSN <chr>, comment <chr>, createDate <chr>, updateDate
-#>   <chr>, _version_ <dbl>, taxonAuthor <chr>, vernacular <chr>, parentTSN
-#>   <chr>.
+#> # ... with 22 more variables: unacceptReason <chr>,
+#> #   credibilityRating <chr>, completenessRating <chr>,
+#> #   currencyRating <chr>, kingdom <chr>, rankID <chr>, rank <chr>,
+#> #   hierarchySoFar <chr>, hierarchySoFarWRanks <chr>, hierarchyTSN <chr>,
+#> #   synonyms <chr>, synonymTSNs <chr>, otherSource <chr>,
+#> #   acceptedTSN <chr>, comment <chr>, createDate <chr>, updateDate <chr>,
+#> #   `_version_` <dbl>, taxonAuthor <chr>, vernacular <chr>,
+#> #   hierarchicalSort <chr>, parentTSN <chr>
 ```
 
 matches only binomials
@@ -85,8 +85,7 @@ matches only binomials
 
 ```r
 itis_search(q = "nameWOInd:/[A-Za-z0-9]*[%20]{1,1}[A-Za-z0-9]*/")
-#> Source: local data frame [10 x 24]
-#> 
+#> # A tibble: 10 × 25
 #>      tsn                  nameWInd                 nameWOInd        unit1
 #>    <chr>                     <chr>                     <chr>        <chr>
 #> 1     58        Nitrobacter agilis        Nitrobacter agilis  Nitrobacter
@@ -99,17 +98,18 @@ itis_search(q = "nameWOInd:/[A-Za-z0-9]*[%20]{1,1}[A-Za-z0-9]*/")
 #> 8     67 Nitrosomonas groningensis Nitrosomonas groningensis Nitrosomonas
 #> 9     68   Nitrosomonas javenensis   Nitrosomonas javenensis Nitrosomonas
 #> 10    69    Nitrosomonas monocella    Nitrosomonas monocella Nitrosomonas
-#> Variables not shown: unit2 <chr>, usage <chr>, unacceptReason <chr>,
-#>   credibilityRating <chr>, kingdom <chr>, rankID <chr>, rank <chr>,
-#>   hierarchySoFar <chr>, hierarchySoFarWRanks <chr>, hierarchyTSN <chr>,
-#>   synonyms <chr>, synonymTSNs <chr>, otherSource <chr>, acceptedTSN <chr>,
-#>   comment <chr>, createDate <chr>, updateDate <chr>, _version_ <dbl>,
-#>   taxonAuthor <chr>, parentTSN <chr>.
+#> # ... with 21 more variables: unit2 <chr>, usage <chr>,
+#> #   unacceptReason <chr>, credibilityRating <chr>, kingdom <chr>,
+#> #   rankID <chr>, rank <chr>, hierarchySoFar <chr>,
+#> #   hierarchySoFarWRanks <chr>, hierarchyTSN <chr>, synonyms <chr>,
+#> #   synonymTSNs <chr>, otherSource <chr>, acceptedTSN <chr>,
+#> #   comment <chr>, createDate <chr>, updateDate <chr>, `_version_` <dbl>,
+#> #   taxonAuthor <chr>, parentTSN <chr>, hierarchicalSort <chr>
 ```
 
 ## ITIS REST API interface
 
-ITIS REST API docs: [http://www.itis.gov/ws_description.html](http://www.itis.gov/ws_description.html)
+ITIS REST API docs: <http://www.itis.gov/ws_description.html>
 
 The following are some example uses. There are many more methods not shown below
 
@@ -120,8 +120,7 @@ Get accepted names for a TSN
 
 ```r
 accepted_names(tsn = 504239)
-#> Source: local data frame [1 x 3]
-#> 
+#> # A tibble: 1 × 3
 #>          acceptedName acceptedTsn     author
 #>                 <chr>       <chr>      <chr>
 #> 1 Dasiphora fruticosa      836659 (L.) Rydb.
@@ -132,8 +131,7 @@ Get common names for a TSN
 
 ```r
 common_names(tsn = 183833)
-#> Source: local data frame [3 x 3]
-#> 
+#> # A tibble: 3 × 3
 #>            commonName language    tsn
 #>                 <chr>    <chr>  <chr>
 #> 1 African hunting dog  English 183833
@@ -146,10 +144,9 @@ Full hierarchy for a TSN
 
 ```r
 hierarchy_full(tsn = 37906)
-#> Source: local data frame [60 x 5]
-#> 
+#> # A tibble: 60 × 5
 #>         parentname parenttsn      rankname       taxonname    tsn
-#>              <chr>     <chr>         <chr>           <chr>  <chr>
+#> *            <chr>     <chr>         <chr>           <chr>  <chr>
 #> 1                                  Kingdom         Plantae 202422
 #> 2          Plantae    202422    Subkingdom   Viridiplantae 954898
 #> 3    Viridiplantae    954898  Infrakingdom    Streptophyta 846494
@@ -160,5 +157,5 @@ hierarchy_full(tsn = 37906)
 #> 8    Magnoliopsida     18063    Superorder       Asteranae 846535
 #> 9        Asteranae    846535         Order       Asterales  35419
 #> 10       Asterales     35419        Family      Asteraceae  35420
-#> ..             ...       ...           ...             ...    ...
+#> # ... with 50 more rows
 ```
