@@ -1,3 +1,12 @@
+ritis 0.5.4
+===============
+
+### BUG FIXES
+
+* Base URL changed from `http` to `https`, was causing problems in some
+requests, but not others. Changed to `https` (#4)
+
+
 ritis 0.5.0
 ===============
 

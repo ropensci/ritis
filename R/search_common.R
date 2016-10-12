@@ -16,7 +16,7 @@
 #' @return a data.frame
 #' @seealso \code{\link{search_scientific}}
 #' @examples \dontrun{
-#' search_common(x = "american bullfrog")
+#' search_common("american bullfrog", config=verbose())
 #' search_common("ferret-badger")
 #' search_common("polar bear")
 #'

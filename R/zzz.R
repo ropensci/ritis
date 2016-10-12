@@ -14,8 +14,8 @@ nmslwr <- function(x) {
   stats::setNames(x, tolower(names(x)))
 }
 
-itbase <- function() 'http://www.itis.gov/ITISWebService/services/ITISService/'
-itjson <- function() 'http://www.itis.gov/ITISWebService/jsonservice/'
+itbase <- function() 'https://www.itis.gov/ITISWebService/services/ITISService/'
+itjson <- function() 'https://www.itis.gov/ITISWebService/jsonservice/'
 iturl <- function(x) {
   if (!tolower(x) %in% c('json', 'xml')) {
     stop("'wt' must be one of 'json' or 'xml'", call. = FALSE)
