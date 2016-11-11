@@ -42,8 +42,6 @@ test_that("jurisdiction functions fail well", {
 
   expect_error(jurisdiction_values(wt = "ffa"), "'wt' must be one of")
 
-  # lsid's not found lead to 0 row data.frame's
-  tmp <- jurisdictional_origin(tsn = "asdfasdf")
-  expect_is(tmp, "tbl_df")
-  expect_equal(NROW(tmp), 0)
+  # lsid's not found lead 404
+  expect_error(jurisdictional_origin(tsn = "asdfasdf"), "Not Found")
 })

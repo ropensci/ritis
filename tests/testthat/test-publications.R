@@ -37,8 +37,6 @@ test_that("publications fails well", {
 
   expect_error(publications(tsn = 70340, wt = "ffa"), "'wt' must be one of")
 
-  # tsn's not found lead to 0 row data.frame's
-  tmp <- publications(tsn = "Asdfasdfa")
-  expect_is(tmp, "tbl_df")
-  expect_equal(NROW(tmp), 0)
+  # tsn's not found lead to 404
+  expect_error(publications(tsn = "Asdfasdfa"), "Not Found")
 })

@@ -48,9 +48,14 @@ dr_op.list <- function(x, y) {
 itis_GET <- function(endpt, args, wt, ...){
   args <- argsnull(args)
   tt <- httr::GET(paste0(iturl(wt), endpt), query = args, ...)
-  httr::stop_for_status(tt)
-  #err_handle(tt)
+  err_handle(tt)
   con_utf8(tt)
+}
+
+err_handle <- function(x) {
+  if (x$status_code > 201) {
+    stop(httr::http_status(x)$message, call. = FALSE)
+  }
 }
 
 parse_raw <- function(x) {

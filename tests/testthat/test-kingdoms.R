@@ -34,8 +34,6 @@ test_that("kingdom functions fail well", {
 
   expect_error(kingdom_names(wt = "ffa"), "'wt' must be one of")
 
-  # tsn's not found lead to 0 row data.frame's
-  tmp <- kingdom_name(tsn = "Asdfasdfa")
-  expect_is(tmp, "tbl_df")
-  expect_equal(NROW(tmp), 0)
+  # tsn's not found lead to 404
+  expect_error(kingdom_name(tsn = "Asdfasdfa"), "Not Found")
 })
