@@ -10,3 +10,5 @@ man-roxygen/
 ^appveyor.yml$
 ^Makefile$
 ^cran-comments\.md$
+.github
+
