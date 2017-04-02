@@ -3,7 +3,7 @@ context("hierarchy functions")
 test_that("hierarchy_down basic functionality works", {
   skip_on_cran()
 
-  aa <- hierarchy_down(tsn = 161030)
+  aa <- hierarchy_down(tsn = 179913)
 
   expect_is(aa, "data.frame")
   expect_is(aa, "tbl_df")

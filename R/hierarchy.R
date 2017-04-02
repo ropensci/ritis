@@ -11,15 +11,18 @@
 #'  \item hierarchy_full: Get full hierarchy from tsn
 #' }
 #' @examples \dontrun{
-#' ## Full down
-#' hierarchy_down(tsn=161030)
+#' ## Full down (class Mammalia)
+#' hierarchy_down(tsn=179913)
 #'
-#' ## Full up
+#' ## Full up (genus Agoseris)
 #' hierarchy_up(tsn=36485)
 #'
 #' ## Full hierarchy
+#' ### genus Liatris
 #' hierarchy_full(tsn=37906)
+#' ### get raw data back
 #' hierarchy_full(tsn=37906, raw = TRUE)
+#' ### genus Baetis, get xml back
 #' hierarchy_full(100800, wt = "xml")
 #' }
 hierarchy_down <- function(tsn, wt = "json", raw = FALSE, ...) {
