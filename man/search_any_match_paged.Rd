@@ -41,4 +41,3 @@ search_any_match_paged(x="Zy", pagesize=100, pagenum=1, ascend=FALSE)
 \seealso{
 \code{\link{search_anymatch}}
 }
-

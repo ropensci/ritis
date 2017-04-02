@@ -22,4 +22,3 @@ x <- itis_facet(q = "hierarchySoFar:*$Aves$* AND rank:Species AND usage:valid",
 head(x$facet_pivot$`nameWInd,vernacular`)
 }
 }
-

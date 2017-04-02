@@ -31,4 +31,3 @@ library(httr)
 publications(tsn = 70340, config = verbose())
 }
 }
-

@@ -29,4 +29,3 @@ core_metadata(183671)
 core_metadata(183671, wt = "xml")
 }
 }
-

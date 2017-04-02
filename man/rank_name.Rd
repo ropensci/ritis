@@ -27,4 +27,3 @@ Returns the kingdom and rank information for the TSN.
 rank_name(tsn = 202385)
 }
 }
-

@@ -29,4 +29,3 @@ any_match_count(x = "dolphin")
 any_match_count(x = "dolphin", wt = "xml")
 }
 }
-

@@ -27,4 +27,3 @@ geographic_values(wt = "xml")
 geographic_values(wt = "json", raw = TRUE)
 }
 }
-

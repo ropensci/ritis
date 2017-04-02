@@ -31,4 +31,3 @@ search_scientific("Quercus douglasii")
 \seealso{
 \code{\link{search_common}}
 }
-

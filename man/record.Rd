@@ -32,4 +32,3 @@ Gets the partial ITIS record for the TSN in the LSID, found by comparing the
 record(lsid = "urn:lsid:itis.gov:itis_tsn:180543")
 }
 }
-

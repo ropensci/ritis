@@ -26,4 +26,3 @@ date_data(180543, wt = "xml")
 date_data(180543, wt = "json", raw = TRUE)
 }
 }
-

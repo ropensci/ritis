@@ -37,4 +37,3 @@ terms(query='Poa annua', "scientific")
 terms(query=c('Poa annua', 'Pinus contorta'), "scientific")
 }
 }
-

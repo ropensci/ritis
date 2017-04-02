@@ -27,4 +27,3 @@ Returns the author information for the TSN.
 taxon_authorship(tsn = 183671)
 }
 }
-

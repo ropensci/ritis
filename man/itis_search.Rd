@@ -35,4 +35,3 @@ itis_search(q = "nameWOInd:/[A-Za-z0-9]*[\%20]{0,0}*/",
    fl = c('nameWInd', 'tsn'))
 }
 }
-

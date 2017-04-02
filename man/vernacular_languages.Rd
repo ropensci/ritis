@@ -25,4 +25,3 @@ Provides a list of the unique languages used in the vernacular table.
 vernacular_languages()
 }
 }
-

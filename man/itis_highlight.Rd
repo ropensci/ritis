@@ -17,4 +17,3 @@ ITIS Solr highlight
 itis_highlight(q = "rank:Species", hl.fl = 'rank', rows=10)
 }
 }
-

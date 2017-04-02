@@ -2,9 +2,9 @@
 % Please edit documentation in R/jurisdiction.R
 \name{jurisdiction}
 \alias{jurisdiction}
+\alias{jurisdictional_origin}
 \alias{jurisdiction_origin_values}
 \alias{jurisdiction_values}
-\alias{jurisdictional_origin}
 \title{Get jurisdictional origin from tsn}
 \usage{
 jurisdictional_origin(tsn, wt = "json", raw = FALSE, ...)
@@ -51,4 +51,3 @@ jurisdiction_origin_values()
 jurisdiction_values()
 }
 }
-

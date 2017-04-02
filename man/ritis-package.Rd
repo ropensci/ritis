@@ -2,8 +2,8 @@
 % Please edit documentation in R/ritis-package.R
 \docType{package}
 \name{ritis-package}
-\alias{ritis}
 \alias{ritis-package}
+\alias{ritis}
 \title{Interface to Integrated Taxonomic Information (ITIS)}
 \description{
 Interface to Integrated Taxonomic Information (ITIS)
@@ -25,7 +25,7 @@ string, or list. You can get raw JSON as a character string back,
 or raw XML as a character string, and then parse yourself with
 \pkg{jsonlite} or \pkg{xml2}
 }
+
 \author{
 Scott Chamberlain \email{myrmecocystus@gmail.com}
 }
-

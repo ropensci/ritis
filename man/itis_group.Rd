@@ -19,4 +19,3 @@ x <- itis_group(q = "nameWOInd:/[A-Za-z0-9]*[\%20]{1,1}[A-Za-z0-9]*/",
 head(x)
 }
 }
-

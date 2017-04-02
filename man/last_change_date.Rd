@@ -26,4 +26,3 @@ last_change_date()
 last_change_date(wt = "xml")
 }
 }
-

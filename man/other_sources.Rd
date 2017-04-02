@@ -25,4 +25,3 @@ other_sources(tsn=182662)
 other_sources(tsn=182662, wt = "xml")
 }
 }
-

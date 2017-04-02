@@ -32,4 +32,3 @@ Provides a list of all the unique rank names contained in the database and
 rank_names()
 }
 }
-

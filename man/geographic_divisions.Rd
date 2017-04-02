@@ -28,4 +28,3 @@ geographic_divisions(tsn = 180543, wt = "xml")
 geographic_divisions(tsn = 180543, wt = "json", raw = TRUE)
 }
 }
-

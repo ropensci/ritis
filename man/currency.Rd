@@ -32,4 +32,3 @@ currency(526852)
 currency(526852, raw = TRUE)
 }
 }
-

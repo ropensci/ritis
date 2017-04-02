@@ -26,4 +26,3 @@ global_species_completeness(180541, wt = "xml")
 global_species_completeness(180541, wt = "json", raw = TRUE)
 }
 }
-

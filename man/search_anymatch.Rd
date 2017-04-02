@@ -31,4 +31,3 @@ search_anymatch(x = "dolphin")
 \seealso{
 \code{\link{search_any_match_paged}}
 }
-

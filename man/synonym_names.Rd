@@ -28,4 +28,3 @@ synonym_names(tsn=183671) # tsn not accepted
 synonym_names(tsn=526852) # tsn accepted
 }
 }
-

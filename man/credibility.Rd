@@ -44,4 +44,3 @@ credibility_ratings(wt = "xml")
 credibility_ratings(raw = TRUE)
 }
 }
-
