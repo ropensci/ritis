@@ -43,6 +43,14 @@ dr_op.list <- function(x, y) {
   x[!tolower(names(x)) %in% tolower(y)]
 }
 
+itis_GET2 <- function(endpt, args, wt, ...){
+  args <- argsnull(args)
+  cli <- crul::HttpClient$new(url = paste0(iturl(wt), endpt))
+  tt <- cli$get(query = args, ...)
+  tt$raise_for_status()
+  readBin(tt$content, character())
+}
+
 itis_GET <- function(endpt, args, wt, ...){
   args <- argsnull(args)
   cli <- crul::HttpClient$new(url = paste0(iturl(wt), endpt))
