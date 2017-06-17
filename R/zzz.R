@@ -1,5 +1,3 @@
-con_utf8 <- function(x) rawToChar(httr::content(x, "raw", encoding = "UTF-8"))
-
 tc <- function(l) Filter(Negate(is.null), l)
 
 argsnull <- function(x) {
@@ -47,19 +45,14 @@ dr_op.list <- function(x, y) {
 
 itis_GET <- function(endpt, args, wt, ...){
   args <- argsnull(args)
-  tt <- httr::GET(paste0(iturl(wt), endpt), query = args, ...)
-  err_handle(tt)
-  con_utf8(tt)
-}
-
-err_handle <- function(x) {
-  if (x$status_code > 201) {
-    stop(httr::http_status(x)$message, call. = FALSE)
-  }
+  cli <- crul::HttpClient$new(url = paste0(iturl(wt), endpt))
+  tt <- cli$get(query = args, ...)
+  tt$raise_for_status()
+  tt$parse("UTF-8")
 }
 
 parse_raw <- function(x) {
-  if (inherits(x, "character") && !nzchar(x)) {
+  if ((inherits(x, "character") && !nzchar(x)) || is.na(x)) {
     return(tibble::as_data_frame())
   }
   jsonlite::fromJSON(x, flatten = TRUE)

@@ -21,13 +21,13 @@ jurisdiction_values(wt = "json", raw = FALSE, ...)
 \item{raw}{(logical) Return raw JSON or XML as character string. Required.
 Default: \code{FALSE}}
 
-\item{...}{Curl options passed on to \code{\link[httr]{GET}}}
+\item{...}{Curl options passed on to \code{\link[crul]{HttpClient}}}
 }
 \value{
 \itemize{
- \item jurisdictional_origin: data.frame
- \item jurisdiction_origin_values: data.frame
- \item jurisdiction_values: character vector
+\item jurisdictional_origin: data.frame
+\item jurisdiction_origin_values: data.frame
+\item jurisdiction_values: character vector
 }
 }
 \description{
@@ -36,9 +36,9 @@ Get jurisdictional origin from tsn
 \details{
 Jurisdiction methods:
 \itemize{
- \item jurisdictional_origin: Get jurisdictional origin from tsn
- \item jurisdiction_origin_values: Get jurisdiction origin values
- \item jurisdiction_values: Get all possible jurisdiction values
+\item jurisdictional_origin: Get jurisdictional origin from tsn
+\item jurisdiction_origin_values: Get jurisdiction origin values
+\item jurisdiction_values: Get all possible jurisdiction values
 }
 }
 \examples{

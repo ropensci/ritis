@@ -16,7 +16,7 @@ search_common(x, from = "all", wt = "json", raw = FALSE, ...)
 \item{raw}{(logical) Return raw JSON or XML as character string. Required.
 Default: \code{FALSE}}
 
-\item{...}{Curl options passed on to \code{\link[httr]{GET}}}
+\item{...}{Curl options passed on to \code{\link[crul]{HttpClient}}}
 }
 \value{
 a data.frame
@@ -27,12 +27,12 @@ Search for tsn by common name
 \details{
 The \code{from} parameter:
 \itemize{
- \item all - Search against the \code{searchByCommonName} API route, which
- searches entire name string
- \item begin - Search against the \code{searchByCommonNameBeginsWith} API route, which
- searches for a match at the beginning of a name string
- \item end - Search against the \code{searchByCommonNameEndsWith} API route, which
- searches for a match at the end of a name string
+\item all - Search against the \code{searchByCommonName} API route, which
+searches entire name string
+\item begin - Search against the \code{searchByCommonNameBeginsWith} API route, which
+searches for a match at the beginning of a name string
+\item end - Search against the \code{searchByCommonNameEndsWith} API route, which
+searches for a match at the end of a name string
 }
 }
 \examples{

@@ -4,16 +4,17 @@ Description: An interface to the Integrated Taxonomic Information System ('ITIS'
     (<https://www.itis.gov>). Includes functions to work with the 'ITIS' REST
     'API' methods (<https://www.itis.gov/ws_description.html>), as well as the
     'Solr' web service (<https://www.itis.gov/solr_documentation.html>).
-Version: 0.5.4.9394
+Version: 0.5.8.9200
 License: MIT + file LICENSE
 URL: https://github.com/ropensci/ritis
 BugReports: https://github.com/ropensci/ritis/issues
 Authors@R: c(person("Scott", "Chamberlain", role = c("aut", "cre"),
     email = "myrmecocystus@gmail.com"))
 VignetteBuilder: knitr
+Roxygen: list(markdown = TRUE)
 Imports:
     solrium (>= 0.3.0),
-    httr (>= 1.2.0),
+    crul (>= 0.3.8),
     jsonlite (>= 0.9.22),
     data.table (>= 1.9.6),
     tibble (>= 1.0)

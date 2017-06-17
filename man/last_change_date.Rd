@@ -12,7 +12,7 @@ last_change_date(wt = "json", raw = FALSE, ...)
 \item{raw}{(logical) Return raw JSON or XML as character string. Required.
 Default: \code{FALSE}}
 
-\item{...}{Curl options passed on to \code{\link[httr]{GET}}}
+\item{...}{Curl options passed on to \code{\link[crul]{HttpClient}}}
 }
 \value{
 character value with a date

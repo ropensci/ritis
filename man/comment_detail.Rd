@@ -14,7 +14,7 @@ comment_detail(tsn, wt = "json", raw = FALSE, ...)
 \item{raw}{(logical) Return raw JSON or XML as character string. Required.
 Default: \code{FALSE}}
 
-\item{...}{Curl options passed on to \code{\link[httr]{GET}}}
+\item{...}{Curl options passed on to \code{\link[crul]{HttpClient}}}
 }
 \value{
 A data.frame with results.
@@ -26,7 +26,5 @@ Get comment detail from TSN
 \dontrun{
 comment_detail(tsn=180543)
 comment_detail(tsn=180543, wt = "xml")
-library(httr)
-comment_detail(tsn=180543)
 }
 }

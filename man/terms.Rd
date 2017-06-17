@@ -17,7 +17,7 @@ common names), or scientific (search just scientific names)}
 \item{raw}{(logical) Return raw JSON or XML as character string. Required.
 Default: \code{FALSE}}
 
-\item{...}{Curl options passed on to \code{\link[httr]{GET}}}
+\item{...}{Curl options passed on to \code{\link[crul]{HttpClient}}}
 }
 \description{
 Get ITIS terms, i.e., tsn's, authors, common names, and scientific names.

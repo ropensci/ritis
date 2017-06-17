@@ -7,8 +7,6 @@
 #' @examples \dontrun{
 #' comment_detail(tsn=180543)
 #' comment_detail(tsn=180543, wt = "xml")
-#' library(httr)
-#' comment_detail(tsn=180543)
 #' }
 comment_detail <- function(tsn, wt = "json", raw = FALSE, ...) {
   out <- itis_GET("getCommentDetailFromTSN", list(tsn = tsn), wt, ...)

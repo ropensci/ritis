@@ -11,10 +11,10 @@ interace to ITIS data as you have access to a very flexible query interface.
 \section{Functions}{
 
 \itemize{
- \item \code{\link{itis_search}} - Search
- \item \code{\link{itis_group}} - Group
- \item \code{\link{itis_highlight}} - Highlight
- \item \code{\link{itis_facet}} - Facet
+\item \code{\link{itis_search}} - Search
+\item \code{\link{itis_group}} - Group
+\item \code{\link{itis_highlight}} - Highlight
+\item \code{\link{itis_facet}} - Facet
 }
 }
 

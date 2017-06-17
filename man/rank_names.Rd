@@ -3,7 +3,7 @@
 \name{rank_names}
 \alias{rank_names}
 \title{Provides a list of all the unique rank names contained in the database and
- their kingdom and rank ID values.}
+their kingdom and rank ID values.}
 \usage{
 rank_names(wt = "json", raw = FALSE, ...)
 }
@@ -13,19 +13,19 @@ rank_names(wt = "json", raw = FALSE, ...)
 \item{raw}{(logical) Return raw JSON or XML as character string. Required.
 Default: \code{FALSE}}
 
-\item{...}{Curl options passed on to \code{\link[httr]{GET}}}
+\item{...}{Curl options passed on to \code{\link[crul]{HttpClient}}}
 }
 \value{
 a data.frame, with columns:
 \itemize{
- \item kingdomname
- \item rankid
- \item rankname
+\item kingdomname
+\item rankid
+\item rankname
 }
 }
 \description{
 Provides a list of all the unique rank names contained in the database and
- their kingdom and rank ID values.
+their kingdom and rank ID values.
 }
 \examples{
 \dontrun{

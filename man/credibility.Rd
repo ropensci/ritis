@@ -18,7 +18,7 @@ credibility_ratings(wt = "json", raw = FALSE, ...)
 \item{raw}{(logical) Return raw JSON or XML as character string. Required.
 Default: \code{FALSE}}
 
-\item{...}{Curl options passed on to \code{\link[httr]{GET}}}
+\item{...}{Curl options passed on to \code{\link[crul]{HttpClient}}}
 }
 \value{
 a data.frame
@@ -29,8 +29,8 @@ Get credibility rating from tsn
 \details{
 methods:
 \itemize{
- \item credibility_rating: Get credibility rating for a tsn
- \item credibility_ratings: Get possible credibility ratings
+\item credibility_rating: Get credibility rating for a tsn
+\item credibility_ratings: Get possible credibility ratings
 }
 }
 \examples{
