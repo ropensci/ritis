@@ -9,8 +9,8 @@ terms(query, what = "both", wt = "json", raw = FALSE, ...)
 \arguments{
 \item{query}{One or more common or scientific names, or partial names}
 
-\item{what}{One of both (search common and scientific names), common (search just
-common names), or scientific (search just scientific names)}
+\item{what}{One of both (search common and scientific names), common
+(search just common names), or scientific (search just scientific names)}
 
 \item{wt}{(character) One of "json" or "xml". Required.}
 

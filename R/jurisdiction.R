@@ -29,7 +29,8 @@ jurisdictional_origin <- function(tsn, wt = "json", raw = FALSE, ...) {
   if (raw || wt == "xml") return(out)
   z <- parse_raw(out)
   tibble::as_data_frame(
-    pick_cols(z$jurisdictionalOrigins, c("jurisdictionValue", "origin", "updateDate"))
+    pick_cols(z$jurisdictionalOrigins, c("jurisdictionValue", "origin",
+                                         "updateDate"))
   )
 }
 

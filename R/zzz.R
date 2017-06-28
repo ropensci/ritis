@@ -43,20 +43,25 @@ dr_op.list <- function(x, y) {
   x[!tolower(names(x)) %in% tolower(y)]
 }
 
-itis_GET2 <- function(endpt, args, wt, ...){
-  args <- argsnull(args)
-  cli <- crul::HttpClient$new(url = paste0(iturl(wt), endpt))
-  tt <- cli$get(query = args, ...)
-  tt$raise_for_status()
-  readBin(tt$content, character())
-}
-
 itis_GET <- function(endpt, args, wt, ...){
   args <- argsnull(args)
   cli <- crul::HttpClient$new(url = paste0(iturl(wt), endpt))
   tt <- cli$get(query = args, ...)
   tt$raise_for_status()
-  tt$parse("UTF-8")
+
+  # sort out encoding - if not found, parse differently
+  encoding <- NULL
+  if (!is.null(tt$response_headers$`content-type`)) {
+    encoding <- strsplit(
+      strsplit(tt$response_headers$`content-type`, ";")[[1]][2],
+      "="
+    )[[1]][2]
+  }
+  if (is.null(encoding) || !nzchar(encoding)) {
+    readBin(tt$content, character())
+  } else {
+    tt$parse(encoding)
+  }
 }
 
 parse_raw <- function(x) {
