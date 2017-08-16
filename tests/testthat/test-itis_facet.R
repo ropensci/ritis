@@ -20,8 +20,7 @@ test_that("itis_facet basic functionality works", {
 test_that("itis_facet fails well", {
   skip_on_cran()
 
-  expect_error(sm(itis_facet(foo = "bar")),
-               "didn't detect any facet. fields - at least 1 required")
+  expect_null(sm(itis_facet(foo = "bar")))
 
   expect_error(sm(itis_facet(wt = "asdfaddf")))
 })
