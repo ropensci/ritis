@@ -16,7 +16,7 @@ COPYRIGHT HOLDER: Scott Chamberlain
 
 ## Reverse dependencies
 
-I have run R CMD check on the 2 downstream dependencies (https://github.com/ropensci/ritis/blob/master/revdep/README.md). 
+I have run R CMD check on the 2 downstream dependencies. 
 There were no problems.
 
 ---
