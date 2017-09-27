@@ -45,8 +45,11 @@ dr_op.list <- function(x, y) {
 
 itis_GET <- function(endpt, args, wt, ...){
   args <- argsnull(args)
-  cli <- crul::HttpClient$new(url = paste0(iturl(wt), endpt))
-  tt <- cli$get(query = args, ...)
+  cli <- crul::HttpClient$new(
+    url = paste0(iturl(wt), endpt),
+    opts = opts
+  )
+  tt <- cli$get(query = args)
   tt$raise_for_status()
 
   # sort out encoding - if not found, parse differently

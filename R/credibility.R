@@ -2,8 +2,8 @@
 #'
 #' @export
 #' @name credibility
-#' @template common
 #' @template tsn
+#' @inheritParams accepted_names
 #' @return a data.frame
 #' @details methods:
 #' \itemize{

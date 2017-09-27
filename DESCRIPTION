@@ -2,9 +2,9 @@ Package: ritis
 Title: Integrated Taxonomic Information System Client
 Description: An interface to the Integrated Taxonomic Information System ('ITIS')
     (<https://www.itis.gov>). Includes functions to work with the 'ITIS' REST
-    'API' methods (<https://www.itis.gov/ws_description.html>), as well as the
+    API methods (<https://www.itis.gov/ws_description.html>), as well as the
     'Solr' web service (<https://www.itis.gov/solr_documentation.html>).
-Version: 0.5.8.9811
+Version: 0.6.0
 License: MIT + file LICENSE
 URL: https://github.com/ropensci/ritis
 BugReports: https://github.com/ropensci/ritis/issues

@@ -2,7 +2,7 @@
 #'
 #' @export
 #' @name hierarchy
-#' @template common
+#' @inheritParams accepted_names
 #' @template tsn
 #' @details Hierarchy methods:
 #' \itemize{
@@ -29,7 +29,8 @@ hierarchy_down <- function(tsn, wt = "json", raw = FALSE, ...) {
   out <- itis_GET("getHierarchyDownFromTSN", list(tsn = tsn), wt, ...)
   if (raw || wt == "xml") return(out)
   tibble::as_data_frame(
-    pick_cols(parse_raw(out)$hierarchyList, c("parentName","parentTsn","rankName","taxonName","tsn"))
+    pick_cols(parse_raw(out)$hierarchyList, c("parentName","parentTsn",
+                                              "rankName","taxonName","tsn"))
   )
 }
 
@@ -38,7 +39,8 @@ hierarchy_down <- function(tsn, wt = "json", raw = FALSE, ...) {
 hierarchy_up <- function(tsn, wt = "json", raw = FALSE, ...) {
   out <- itis_GET("getHierarchyUpFromTSN", list(tsn = tsn), wt, ...)
   if (raw || wt == "xml") return(out)
-  res <- tc(pick_cols(parse_raw(out), c("parentName","parentTsn","rankName","taxonName","tsn")))
+  res <- tc(pick_cols(parse_raw(out), c("parentName","parentTsn","rankName",
+                                        "taxonName","tsn")))
   tibble::as_data_frame(
     if (length(names(res)) != 1) res else NULL
   )

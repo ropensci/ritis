@@ -2,7 +2,7 @@
 #'
 #' @export
 #' @template tsn
-#' @template common
+#' @inheritParams accepted_names
 #' @return A data.frame with results.
 #' @examples \dontrun{
 #' comment_detail(tsn=180543)

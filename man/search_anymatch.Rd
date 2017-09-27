@@ -12,9 +12,9 @@ search_anymatch(x, wt = "json", raw = FALSE, ...)
 \item{wt}{(character) One of "json" or "xml". Required.}
 
 \item{raw}{(logical) Return raw JSON or XML as character string. Required.
-Default: \code{FALSE}}
+Default: `FALSE`}
 
-\item{...}{Curl options passed on to \code{\link[crul]{HttpClient}}}
+\item{...}{curl options passed on to \link[crul:HttpClient]{crul::HttpClient}}
 }
 \value{
 a data.frame

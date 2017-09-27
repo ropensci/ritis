@@ -1,8 +1,8 @@
 #' Get date data from tsn
 #'
 #' @export
-#' @template common
 #' @template tsn
+#' @inheritParams accepted_names
 #' @examples \dontrun{
 #' date_data(tsn = 180543)
 #' date_data(180543, wt = "xml")

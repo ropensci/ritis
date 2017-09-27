@@ -1,8 +1,8 @@
 #' Get any match count.
 #'
 #' @export
-#' @template common
 #' @param x text or taxonomic serial number (TSN) (character or numeric)
+#' @inheritParams accepted_names
 #' @return An integer containing the number of matches the search will return.
 #' @examples \dontrun{
 #' any_match_count(x = 202385)

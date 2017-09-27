@@ -1,8 +1,8 @@
 #' Get currency from tsn
 #'
 #' @export
-#' @template common
 #' @template tsn
+#' @inheritParams accepted_names
 #' @return a data.frame
 #' @examples \dontrun{
 #' # currency data

@@ -1,8 +1,8 @@
 #' Get core metadata from tsn
 #'
 #' @export
-#' @template common
 #' @template tsn
+#' @inheritParams accepted_names
 #' @examples \dontrun{
 #' # coverage and currrency data
 #' core_metadata(tsn=28727)

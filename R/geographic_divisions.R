@@ -1,8 +1,8 @@
 #' Get geographic divisions from tsn
 #'
 #' @export
-#' @template common
 #' @template tsn
+#' @inheritParams accepted_names
 #' @examples \dontrun{
 #' geographic_divisions(tsn = 180543)
 #'

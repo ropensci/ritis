@@ -1,8 +1,8 @@
 #' Get coverge from tsn
 #'
 #' @export
-#' @template common
 #' @template tsn
+#' @inheritParams accepted_names
 #' @examples \dontrun{
 #' # coverage data
 #' coverage(tsn=28727)

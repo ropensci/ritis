@@ -1,7 +1,7 @@
 #' Get all possible geographic values
 #'
 #' @export
-#' @template common
+#' @inheritParams accepted_names
 #' @return character vector of geographic names
 #' @examples \dontrun{
 #' geographic_values()

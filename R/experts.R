@@ -1,7 +1,7 @@
 #' Get expert information for the TSN.
 #'
 #' @export
-#' @template common
+#' @inheritParams accepted_names
 #' @template tsn
 #' @examples \dontrun{
 #' experts(tsn = 180544)

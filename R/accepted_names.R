@@ -1,7 +1,10 @@
 #' Get accepted names from tsn
 #'
 #' @export
-#' @template common
+#' @param wt (character) One of "json" or "xml". Required.
+#' @param raw (logical) Return raw JSON or XML as character string. Required.
+#' Default: `FALSE`
+#' @param ... curl options passed on to [crul::HttpClient]
 #' @template tsn
 #' @return Zero row data.frame if the name is accepted, otherwise a data.frame
 #' with information on the currently accepted name
@@ -19,5 +22,9 @@ accepted_names <- function(tsn, wt = "json", raw = FALSE, ...) {
   out <- itis_GET("getAcceptedNamesFromTSN", list(tsn = tsn), wt, ...)
   if (raw || wt == "xml") return(out)
   tmp <- parse_raw(out)
-  if (all(is.na(tmp$acceptedNames))) tibble::data_frame() else dr_op(tibble::as_data_frame(tmp$acceptedNames), "class")
+  if (all(is.na(tmp$acceptedNames))) {
+    tibble::data_frame()
+  } else {
+    dr_op(tibble::as_data_frame(tmp$acceptedNames), "class")
+  }
 }

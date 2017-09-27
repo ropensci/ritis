@@ -16,8 +16,12 @@
 #' full_record(lsid = "urn:lsid:itis.gov:itis_tsn:180543")
 #' full_record(lsid = "urn:lsid:itis.gov:itis_tsn:180543")
 #' }
-full_record <- function(tsn = NULL, lsid = NULL, wt = "json", raw = FALSE, ...) {
-  if (!xor(is.null(tsn), is.null(lsid))) stop("Pass only one of `tsn` or `lsid`", call. = FALSE)
+full_record <- function(tsn = NULL, lsid = NULL, wt = "json", raw = FALSE,
+                        ...) {
+
+  if (!xor(is.null(tsn), is.null(lsid))) {
+    stop("Pass only one of `tsn` or `lsid`", call. = FALSE)
+  }
   if (!is.null(tsn)) {
     verb <- "getFullRecordFromTSN"
     args <- list(tsn = tsn)

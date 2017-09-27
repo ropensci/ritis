@@ -1,8 +1,8 @@
 #' Get common names from tsn
 #'
 #' @export
-#' @template common
 #' @template tsn
+#' @inheritParams accepted_names
 #' @return a data.frame
 #' @examples \dontrun{
 #' common_names(tsn=183833)
