@@ -2,7 +2,7 @@
 #'    (names and indicators) of the scientific name.
 #'
 #' @export
-#' @template common
+#' @inheritParams accepted_names
 #' @template tsn
 #' @return a data.frame
 #' @examples \dontrun{

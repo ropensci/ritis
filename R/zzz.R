@@ -14,6 +14,7 @@ nmslwr <- function(x) {
 
 itbase <- function() 'https://www.itis.gov/ITISWebService/services/ITISService/'
 itjson <- function() 'https://www.itis.gov/ITISWebService/jsonservice/'
+itis_solr_url <- function() "https://services.itis.gov"
 iturl <- function(x) {
   if (!tolower(x) %in% c('json', 'xml')) {
     stop("'wt' must be one of 'json' or 'xml'", call. = FALSE)
@@ -47,7 +48,7 @@ itis_GET <- function(endpt, args, wt, ...){
   args <- argsnull(args)
   cli <- crul::HttpClient$new(
     url = paste0(iturl(wt), endpt),
-    opts = opts
+    opts = list(...)
   )
   tt <- cli$get(query = args)
   tt$raise_for_status()

@@ -1,7 +1,7 @@
 #' Returns the usage information for the TSN.
 #'
 #' @export
-#' @template common
+#' @inheritParams accepted_names
 #' @template tsn
 #' @examples \dontrun{
 #' usage(tsn = 526852)

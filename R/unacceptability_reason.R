@@ -1,7 +1,7 @@
 #' Returns the unacceptability reason, if any, for the TSN.
 #'
 #' @export
-#' @template common
+#' @inheritParams accepted_names
 #' @template tsn
 #' @examples \dontrun{
 #' unacceptability_reason(tsn = 183671)

@@ -6,6 +6,6 @@
 #' itis_highlight(q = "rank:Species", hl.fl = 'rank', rows=10)
 #' }
 itis_highlight <- function(...) {
-  invisible(solrium::solr_connect(url = "http://services.itis.gov"))
+  invisible(solrium::solr_connect(url = itis_solr_url()))
   solrium::solr_highlight(...)
 }

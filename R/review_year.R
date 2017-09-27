@@ -1,7 +1,7 @@
 #' Returns the review year for the TSN.
 #'
 #' @export
-#' @template common
+#' @inheritParams accepted_names
 #' @template tsn
 #' @return a data.frame
 #' @examples \dontrun{

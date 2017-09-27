@@ -1,7 +1,7 @@
 #' Gets a record from an LSID
 #'
 #' @export
-#' @template common
+#' @inheritParams accepted_names
 #' @param lsid lsid for a taxonomic group (character). Required.
 #' @details Gets the partial ITIS record for the TSN in the LSID, found by comparing the
 #'  TSN in the search key to the TSN field. Returns an empty result set if

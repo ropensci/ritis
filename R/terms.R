@@ -1,7 +1,7 @@
 #' Get ITIS terms, i.e., tsn's, authors, common names, and scientific names.
 #'
 #' @export
-#' @template common
+#' @inheritParams accepted_names
 #' @param query One or more common or scientific names, or partial names
 #' @param what One of both (search common and scientific names), common
 #' (search just common names), or scientific (search just scientific names)

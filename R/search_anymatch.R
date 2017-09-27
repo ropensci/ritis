@@ -1,7 +1,7 @@
 #' Search for any match
 #'
 #' @export
-#' @template common
+#' @inheritParams accepted_names
 #' @inheritParams any_match_count
 #' @return a data.frame
 #' @seealso \code{\link{search_any_match_paged}}

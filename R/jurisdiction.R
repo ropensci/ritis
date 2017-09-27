@@ -2,7 +2,7 @@
 #'
 #' @export
 #' @name jurisdiction
-#' @template common
+#' @inheritParams accepted_names
 #' @template tsn
 #' @return
 #' \itemize{

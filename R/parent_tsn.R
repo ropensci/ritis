@@ -1,7 +1,7 @@
 #' Returns the parent TSN for the entered TSN.
 #'
 #' @export
-#' @template common
+#' @inheritParams accepted_names
 #' @template tsn
 #' @return a data.frame
 #' @examples \dontrun{

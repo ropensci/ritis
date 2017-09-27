@@ -1,7 +1,7 @@
 #' Gets the unique LSID for the TSN, or an empty result if there is no match.
 #'
 #' @export
-#' @template common
+#' @inheritParams accepted_names
 #' @template tsn
 #' @return a character string, an LSID, or \code{NULL} if nothing found
 #' @examples \dontrun{

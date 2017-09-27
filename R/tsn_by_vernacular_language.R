@@ -1,7 +1,7 @@
 #' Get tsn by vernacular language
 #'
 #' @export
-#' @template common
+#' @inheritParams accepted_names
 #' @param language A string containing the language. This is a language string,
 #'    not the international language code (character)
 #' @return a data.frame

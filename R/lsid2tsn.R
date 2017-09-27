@@ -1,7 +1,7 @@
 #' Gets the TSN corresponding to the LSID, or an empty result if there is no match.
 #'
 #' @export
-#' @template common
+#' @inheritParams accepted_names
 #' @param lsid (character) lsid for a taxonomic group. Required.
 #' @examples \dontrun{
 #' lsid2tsn(lsid="urn:lsid:itis.gov:itis_tsn:28726")

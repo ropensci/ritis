@@ -1,7 +1,7 @@
 #' Provides a list of the unique languages used in the vernacular table.
 #'
 #' @export
-#' @template common
+#' @inheritParams accepted_names
 #' @return a character vector of verncular names
 #' @examples \dontrun{
 #' vernacular_languages()

@@ -1,7 +1,7 @@
 #' Search for any matched page
 #'
 #' @export
-#' @template common
+#' @inheritParams accepted_names
 #' @inheritParams any_match_count
 #' @return a data.frame
 #' @param pagesize An integer containing the page size (numeric)

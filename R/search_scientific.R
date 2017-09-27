@@ -1,7 +1,7 @@
 #' Search by scientific name
 #'
 #' @export
-#' @template common
+#' @inheritParams accepted_names
 #' @inheritParams any_match_count
 #' @return a data.frame
 #' @seealso \code{\link{search_common}}

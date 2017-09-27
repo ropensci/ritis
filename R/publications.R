@@ -1,7 +1,7 @@
 #' Returns a list of the pulications used for the TSN.
 #'
 #' @export
-#' @template common
+#' @inheritParams accepted_names
 #' @template tsn
 #' @return a data.frame
 #' @examples \dontrun{

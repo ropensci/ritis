@@ -24,6 +24,6 @@
 #'    fl = c('nameWInd', 'tsn'))
 #' }
 itis_search <- function(...) {
-  invisible(solrium::solr_connect(url = "http://services.itis.gov"))
+  invisible(solrium::solr_connect(url = itis_solr_url()))
   solrium::solr_search(...)
 }

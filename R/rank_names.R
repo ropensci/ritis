@@ -2,7 +2,7 @@
 #'  their kingdom and rank ID values.
 #'
 #' @export
-#' @template common
+#' @inheritParams accepted_names
 #' @return a data.frame, with columns:
 #' \itemize{
 #'  \item kingdomname

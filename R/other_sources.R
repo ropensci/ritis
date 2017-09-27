@@ -1,7 +1,7 @@
 #' Returns a list of the other sources used for the TSN.
 #'
 #' @export
-#' @template common
+#' @inheritParams accepted_names
 #' @template tsn
 #' @examples \dontrun{
 #' other_sources(tsn=182662)

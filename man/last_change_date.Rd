@@ -10,7 +10,9 @@ last_change_date(wt = "json", raw = FALSE, ...)
 \item{wt}{(character) One of "json" or "xml". Required.}
 
 \item{raw}{(logical) Return raw JSON or XML as character string. Required.
-Default: `FALSE`}
+Default: \code{FALSE}}
+
+\item{...}{curl options passed on to \link[crul:HttpClient]{crul::HttpClient}}
 }
 \value{
 character value with a date

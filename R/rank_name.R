@@ -1,7 +1,7 @@
 #' Returns the kingdom and rank information for the TSN.
 #'
 #' @export
-#' @template common
+#' @inheritParams accepted_names
 #' @template tsn
 #' @return a data.frame, with rank name and other info
 #' @examples \dontrun{

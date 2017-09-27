@@ -2,7 +2,7 @@
 #'
 #' @export
 #' @name kingdoms
-#' @template common
+#' @inheritParams accepted_names
 #' @template tsn
 #' @details
 #' \itemize{

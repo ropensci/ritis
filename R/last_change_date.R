@@ -1,7 +1,7 @@
 #' Provides the date the ITIS database was last updated
 #'
 #' @export
-#' @template common
+#' @inheritParams accepted_names
 #' @return character value with a date
 #' @examples \dontrun{
 #' last_change_date()
