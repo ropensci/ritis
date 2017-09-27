@@ -1,5 +1,18 @@
+ritis 0.6.0
+===========
+
+### NEW FEATURES
+
+* Now using `crul` as underlying HTTP client (#5)
+
+### BUG FIXES
+
+* Base URL change for Solr service from `http` to `https` (#8)
+* Fixed JSON parsing problem (#6)
+
+
 ritis 0.5.4
-===============
+===========
 
 ### BUG FIXES
 
@@ -8,7 +21,7 @@ requests, but not others. Changed to `https` (#4)
 
 
 ritis 0.5.0
-===============
+===========
 
 ### NEW FEATURES
 
@@ -20,7 +33,7 @@ interface via use of `solrium`
 
 
 ritis 0.0.3
-===============
+===========
 
 ### BUG FIXES
 
@@ -28,7 +41,7 @@ ritis 0.0.3
 
 
 ritis 0.0.2
-===============
+===========
 
 ### BUG FIXES
 
@@ -36,7 +49,7 @@ ritis 0.0.2
 
 
 ritis 0.0.1
-===============
+===========
 
 ### NEW FEATURES
 
