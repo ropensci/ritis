@@ -5,17 +5,18 @@ test_that("itis_highlight basic functionality works", {
 
   aa <- sm(itis_highlight(q = "rank:Species", hl.fl = 'rank', rows = 10))
 
-  expect_is(aa, "list")
-  expect_is(aa[[1]], "list")
-  expect_is(aa[[1]][[1]], "character")
-  expect_named(aa[[1]], "rank")
+  expect_is(aa, "tbl_df")
+  expect_is(aa$rank[1], "character")
+  expect_is(aa$names[1], "character")
+  expect_named(aa, c("names", "rank"))
 })
 
 test_that("itis_highlight fails well", {
   skip_on_cran()
 
   expect_error(sm(itis_highlight(foo = "bar")),
-               "unused argument")
+               "some keys not in acceptable set")
 
-  expect_error(sm(itis_highlight(wt = "asdfaddf")))
+  expect_error(sm(itis_highlight(wt = "asdfaddf")),
+    "wt must be one of")
 })

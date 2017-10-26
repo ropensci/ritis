@@ -100,3 +100,9 @@ pick_cols.list <- function(x, nms) {
     NULL
   }
 }
+
+make_itis_conn <- function(proxy) {
+  solrium::SolrClient$new(host = "services.itis.gov",
+    scheme = "https", port = NULL, errors = "complete",
+    proxy = proxy)
+}

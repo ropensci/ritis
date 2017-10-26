@@ -1,7 +1,9 @@
 #' ITIS Solr facet
 #'
 #' @export
-#' @param ... Args passed to \code{\link[solrium]{solr_facet}}
+#' @param ... Arguments passed on to the `params` parameter of
+#' the [solrium::solr_facet()] function
+#' @inheritParams itis_search
 #' @examples \dontrun{
 #' itis_facet(q = "rank:Species", rows = 0, facet.field = "kingdom")$facet_fields
 #'
@@ -10,7 +12,9 @@
 #'    rows = 0)
 #' head(x$facet_pivot$`nameWInd,vernacular`)
 #' }
-itis_facet <- function(...) {
-  invisible(solrium::solr_connect(url = itis_solr_url()))
-  solrium::solr_facet(...)
+itis_facet <- function(..., proxy = NULL, callopts=list()) {
+  if (!is.null(proxy)) conn_dc <- make_itis_conn(proxy)
+  args <- list(...)
+	if (!is.null(args$fl)) args$fl <- paste(args$fl, collapse = ",")
+  conn_itis$facet(params = args, callopts = callopts)
 }

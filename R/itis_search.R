@@ -1,7 +1,13 @@
 #' ITIS Solr search
 #'
 #' @export
-#' @param ... Args passed to \code{\link[solrium]{solr_search}}
+#' @param ... Arguments passed on to the `params` parameter of
+#' the [solrium::solr_search()] function
+#' @param proxy List of arguments for a proxy connection,
+#' including one or more of: url, port, username, password,
+#' and auth. See [crul::proxy()] for  help, which is used to
+#' construct the proxy connection.
+#' @param callopts Curl options passed on to [crul::HttpClient]
 #' @examples \dontrun{
 #' itis_search(q = "tsn:182662")
 #'
@@ -23,7 +29,10 @@
 #' itis_search(q = "nameWOInd:/[A-Za-z0-9]*[%20]{0,0}*/",
 #'    fl = c('nameWInd', 'tsn'))
 #' }
-itis_search <- function(...) {
-  invisible(solrium::solr_connect(url = itis_solr_url()))
-  solrium::solr_search(...)
+itis_search <- function(..., proxy = NULL, callopts=list()) {
+  if (!is.null(proxy)) conn_dc <- make_itis_conn(proxy)
+  args <- list(...)
+	if (!is.null(args$fl)) args$fl <- paste(args$fl, collapse = ",")
+  conn_itis$search(params = args, minOptimizedRows = FALSE,
+  	callopts = callopts)
 }

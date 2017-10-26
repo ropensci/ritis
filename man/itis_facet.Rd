@@ -4,10 +4,18 @@
 \alias{itis_facet}
 \title{ITIS Solr facet}
 \usage{
-itis_facet(...)
+itis_facet(..., proxy = NULL, callopts = list())
 }
 \arguments{
-\item{...}{Args passed to \code{\link[solrium]{solr_facet}}}
+\item{...}{Arguments passed on to the \code{params} parameter of
+the \code{\link[solrium:solr_facet]{solrium::solr_facet()}} function}
+
+\item{proxy}{List of arguments for a proxy connection,
+including one or more of: url, port, username, password,
+and auth. See \code{\link[crul:proxy]{crul::proxy()}} for  help, which is used to
+construct the proxy connection.}
+
+\item{callopts}{Curl options passed on to \link[crul:HttpClient]{crul::HttpClient}}
 }
 \description{
 ITIS Solr facet

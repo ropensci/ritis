@@ -4,10 +4,18 @@
 \alias{itis_highlight}
 \title{ITIS Solr highlight}
 \usage{
-itis_highlight(...)
+itis_highlight(..., proxy = NULL, callopts = list())
 }
 \arguments{
-\item{...}{Args passed to \code{\link[solrium]{solr_highlight}}}
+\item{...}{Arguments passed on to the \code{params} parameter of
+the \code{\link[solrium:solr_highlight]{solrium::solr_highlight()}} function}
+
+\item{proxy}{List of arguments for a proxy connection,
+including one or more of: url, port, username, password,
+and auth. See \code{\link[crul:proxy]{crul::proxy()}} for  help, which is used to
+construct the proxy connection.}
+
+\item{callopts}{Curl options passed on to \link[crul:HttpClient]{crul::HttpClient}}
 }
 \description{
 ITIS Solr highlight
