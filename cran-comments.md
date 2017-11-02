@@ -16,13 +16,14 @@ COPYRIGHT HOLDER: Scott Chamberlain
 
 ## Reverse dependencies
 
-I have run R CMD check on the 2 downstream dependencies. 
-There were no problems.
+I have run R CMD check on the 2 downstream dependencies.
+There were no problems. Summary at
+<https://github.com/ropensci/ritis/blob/master/revdep/README.md>
 
 ---
 
-This version swaps out a dependency, fixes a bug, and fix
-a base URL for a web service.
+This version makes changes internally for switch to new version
+of solrium package dependency.
 
 Thanks!
 Scott Chamberlain

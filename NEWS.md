@@ -1,3 +1,12 @@
+ritis 0.7.0
+===========
+
+### NEW FEATURES
+
+* Now using new version of `solrium` package - users shouldn't
+see any differences (#9)
+
+
 ritis 0.6.0
 ===========
 
