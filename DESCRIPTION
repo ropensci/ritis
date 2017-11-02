@@ -13,7 +13,7 @@ Authors@R: c(person("Scott", "Chamberlain", role = c("aut", "cre"),
 VignetteBuilder: knitr
 Roxygen: list(markdown = TRUE)
 Imports:
-    solrium (>= 0.9.9.9100),
+    solrium (>= 1.0.0),
     crul (>= 0.4.0),
     jsonlite (>= 1.5),
     data.table (>= 1.9.6),
