@@ -11,4 +11,4 @@ man-roxygen/
 ^Makefile$
 ^cran-comments\.md$
 .github
-
+revdep
