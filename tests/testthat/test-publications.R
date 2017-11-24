@@ -38,5 +38,5 @@ test_that("publications fails well", {
   expect_error(publications(tsn = 70340, wt = "ffa"), "'wt' must be one of")
 
   # tsn's not found lead to 404
-  expect_error(publications(tsn = "Asdfasdfa"), "Not Found")
+  expect_error(publications(tsn = "Asdfasdfa"), "Bad Request \\(HTTP 400\\)")
 })

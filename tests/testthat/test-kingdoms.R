@@ -35,5 +35,5 @@ test_that("kingdom functions fail well", {
   expect_error(kingdom_names(wt = "ffa"), "'wt' must be one of")
 
   # tsn's not found lead to 404
-  expect_error(kingdom_name(tsn = "Asdfasdfa"), "Not Found")
+  expect_error(kingdom_name(tsn = "Asdfasdfa"), "Bad Request \\(HTTP 400\\)")
 })

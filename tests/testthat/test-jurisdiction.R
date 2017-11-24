@@ -43,5 +43,5 @@ test_that("jurisdiction functions fail well", {
   expect_error(jurisdiction_values(wt = "ffa"), "'wt' must be one of")
 
   # lsid's not found lead 404
-  expect_error(jurisdictional_origin(tsn = "asdfasdf"), "Not Found")
+  expect_error(jurisdictional_origin(tsn = "asdfasdf"), "Bad Request \\(HTTP 400\\)")
 })

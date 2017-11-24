@@ -44,9 +44,12 @@ test_that("hierarchy functions fail well", {
   expect_error(hierarchy_full(), "\"tsn\" is missing")
 
   # tsn's not found gives 404
-  expect_error(hierarchy_down(tsn = "Asdfasdfa"), "Not Found")
+  expect_error(hierarchy_down(tsn = "Asdfasdfa"),
+    "Bad Request \\(HTTP 400\\)")
 
-  expect_error(hierarchy_up(tsn = "Asdfasdfa"), "Not Found")
+  expect_error(hierarchy_up(tsn = "Asdfasdfa"),
+    "Bad Request \\(HTTP 400\\)")
 
-  expect_error(hierarchy_full(tsn = "Asdfasdfa"), "Not Found")
+  expect_error(hierarchy_full(tsn = "Asdfasdfa"),
+    "Bad Request \\(HTTP 400\\)")
 })
