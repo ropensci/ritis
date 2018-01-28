@@ -12,3 +12,4 @@ man-roxygen/
 ^cran-comments\.md$
 .github
 revdep
+^codemeta\.json$
