@@ -4,7 +4,7 @@ Description: An interface to the Integrated Taxonomic Information System ('ITIS'
     (<https://www.itis.gov>). Includes functions to work with the 'ITIS' REST
     'API' methods (<https://www.itis.gov/ws_description.html>), as well as the
     'Solr' web service (<https://www.itis.gov/solr_documentation.html>).
-Version: 0.7.0.9100
+Version: 0.7.0.9110
 License: MIT + file LICENSE
 URL: https://github.com/ropensci/ritis
 BugReports: https://github.com/ropensci/ritis/issues
@@ -21,5 +21,8 @@ Imports:
 Suggests:
     roxygen2 (>= 6.0.1),
     testthat,
-    knitr
+    knitr,
+    webmockr (>= 0.2.2.9114),
+    vcr (>= 0.0.8.9538)
+Remotes: ropensci/vcr, ropensci/webmockr
 RoxygenNote: 6.0.1

@@ -1,0 +1,57 @@
+http_interactions:
+- request:
+    method: get
+    uri: https://services.itis.gov/?foo=bar&wt=json
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      User-Agent: libcurl/7.54.0 r-curl/3.2 crul/0.5.2
+      Accept-Encoding: gzip, deflate
+      Accept: application/json, text/xml, application/xml, */*
+  response:
+    status:
+      status_code: '200'
+      message: OK
+      explanation: Request fulfilled, document follows
+    headers:
+      status: HTTP/1.1 200 OK
+      date: Thu, 03 May 2018 17:48:36 GMT
+      server: Apache
+      content-length: '124'
+      content-type: application/json
+    body:
+      encoding: UTF-8
+      string: |+
+        {"responseHeader":{"status":0,"QTime":0,"params":{"foo":"bar","wt":"json"}},"response":{"numFound":0,"start":0,"docs":[]}}
+
+  recorded_at: 2018-05-03 17:48:36 GMT
+  recorded_with: vcr/0.0.8.9538, webmockr/0.2.2.9119, crul/0.5.2
+- request:
+    method: get
+    uri: https://services.itis.gov/?wt=json
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      User-Agent: libcurl/7.54.0 r-curl/3.2 crul/0.5.2
+      Accept-Encoding: gzip, deflate
+      Accept: application/json, text/xml, application/xml, */*
+  response:
+    status:
+      status_code: '200'
+      message: OK
+      explanation: Request fulfilled, document follows
+    headers:
+      status: HTTP/1.1 200 OK
+      date: Thu, 03 May 2018 17:48:36 GMT
+      server: Apache
+      content-length: '112'
+      content-type: application/json
+    body:
+      encoding: UTF-8
+      string: |+
+        {"responseHeader":{"status":0,"QTime":0,"params":{"wt":"json"}},"response":{"numFound":0,"start":0,"docs":[]}}
+
+  recorded_at: 2018-05-03 17:48:36 GMT
+  recorded_with: vcr/0.0.8.9538, webmockr/0.2.2.9119, crul/0.5.2
