@@ -1,0 +1,53 @@
+http_interactions:
+- request:
+    method: get
+    uri: https://www.itis.gov/ITISWebService/services/ITISService/getPublicationsFromTSN?tsn=70340
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      User-Agent: libcurl/7.54.0 r-curl/3.2 crul/0.5.2
+      Accept-Encoding: gzip, deflate
+      Accept: application/json, text/xml, application/xml, */*
+  response:
+    status:
+      status_code: '200'
+      message: OK
+      explanation: Request fulfilled, document follows
+    headers:
+      connection: keep-alive
+      content-type: application/xml;charset=UTF-8
+      date: Thu, 03 May 2018 17:52:16 GMT
+      status: HTTP/1.1 200 OK
+      strict-transport-security:
+      - max-age=63072000; includeSubdomains; preload
+      - max-age=63072000; includeSubdomains; preload
+      transfer-encoding: chunked
+      x-application: itis_webservices
+      x-node-name: not shown
+      x-upstream-member: not shown
+    body:
+      encoding: UTF-8
+      string: '<ns:getPublicationsFromTSNResponse xmlns:ns="http://itis_service.itis.usgs.gov"><ns:return
+        xmlns:ax21="http://data.itis_service.itis.usgs.gov/xsd" xmlns:ax26="http://itis_service.itis.usgs.gov/xsd"
+        xmlns:ax23="http://metadata.itis_service.itis.usgs.gov/xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:type="ax21:SvcTaxonPublicationList"><ax21:tsn>70340</ax21:tsn><ax21:publications
+        xsi:type="ax21:SvcTaxonPublication"><ax21:actualPubDate>1988-01-01</ax21:actualPubDate><ax21:isbn>0-913235-47-4</ax21:isbn><ax21:issn>0097-0638</ax21:issn><ax21:listedPubDate>1988-01-01</ax21:listedPubDate><ax21:pages>vii
+        + 277</ax21:pages><ax21:pubComment></ax21:pubComment><ax21:pubName>American
+        Fisheries Society Special Publication 16</ax21:pubName><ax21:pubPlace>Bethesda,
+        Maryland, USA</ax21:pubPlace><ax21:publisher>American Fisheries Society</ax21:publisher><ax21:referenceAuthor>Turgeon,
+        D. D., A. E. Bogan, E. V. Coan, W. K. Emerson, W. G. Lyons, W. Pratt, et al.</ax21:referenceAuthor><ax21:referenceFor
+        xsi:type="ax21:SvcReferenceForElement"><ax21:name>Tulotoma magnifica</ax21:name><ax21:refLanguage
+        xsi:nil="true" /><ax21:referredTsn>70340</ax21:referredTsn></ax21:referenceFor><ax21:title>Common
+        and scientific names of aquatic invertebrates from the United States and Canada:
+        mollusks</ax21:title><ax21:updateDate>2017-06-28</ax21:updateDate></ax21:publications><ax21:publications
+        xsi:type="ax21:SvcTaxonPublication"><ax21:actualPubDate>1998-01-01</ax21:actualPubDate><ax21:isbn>1-888569-01-8</ax21:isbn><ax21:issn>0097-0638</ax21:issn><ax21:listedPubDate>1998-01-01</ax21:listedPubDate><ax21:pages>526</ax21:pages><ax21:pubComment></ax21:pubComment><ax21:pubName>American
+        Fisheries Society Special Publication 26</ax21:pubName><ax21:pubPlace>Bethesda,
+        Maryland, USA</ax21:pubPlace><ax21:publisher>American Fisheries Society</ax21:publisher><ax21:referenceAuthor>Turgeon,
+        D. D., J. F. Quinn, Jr., A. E. Bogan, E. V. Coan, F. G. Hochberg, W. G. Lyons,
+        et al.</ax21:referenceAuthor><ax21:referenceFor xsi:type="ax21:SvcReferenceForElement"><ax21:name>Tulotoma
+        magnifica</ax21:name><ax21:refLanguage xsi:nil="true" /><ax21:referredTsn>70340</ax21:referredTsn></ax21:referenceFor><ax21:title>Common
+        and scientific names of aquatic invertebrates from the United States and Canada:
+        Mollusks, 2nd ed.</ax21:title><ax21:updateDate>2017-06-28</ax21:updateDate></ax21:publications></ns:return></ns:getPublicationsFromTSNResponse>'
+  recorded_at: 2018-05-03 17:52:16 GMT
+  recorded_with: vcr/0.0.8.9538, webmockr/0.2.2.9119, crul/0.5.2

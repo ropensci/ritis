@@ -1,0 +1,28 @@
+http_interactions:
+- request:
+    method: get
+    uri: https://services.itis.gov/?wt=json&group=true
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      User-Agent: libcurl/7.54.0 r-curl/3.2 crul/0.5.2
+      Accept-Encoding: gzip, deflate
+      Accept: application/json, text/xml, application/xml, */*
+  response:
+    status:
+      status_code: '200'
+      message: OK
+      explanation: Request fulfilled, document follows
+    headers:
+      status: HTTP/1.1 200 OK
+      date: Thu, 03 May 2018 17:46:21 GMT
+      server: Apache
+      content-length: '60'
+      content-type: text/html; charset=UTF-8
+    body:
+      encoding: UTF-8
+      string: |
+        <html><head></head><body><p>Query failed!</p></body></html>
+  recorded_at: 2018-05-03 17:46:21 GMT
+  recorded_with: vcr/0.0.8.9538, webmockr/0.2.2.9119, crul/0.5.2
