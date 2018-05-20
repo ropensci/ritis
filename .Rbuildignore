@@ -6,7 +6,7 @@
 ^README\.Rmd$
 man-roxygen/
 .travis.yml
-^CONDUCT\.md$
+^CODE_OF_CONDUCT\.md$
 ^appveyor.yml$
 ^Makefile$
 ^cran-comments\.md$
