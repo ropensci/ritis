@@ -1,3 +1,11 @@
+ritis 0.7.2
+===========
+
+### NEW FEATURES
+
+* Integration with `vcr` and `webmockr` packages for unit test stubbing
+
+
 ritis 0.7.0
 ===========
 
