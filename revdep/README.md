@@ -1,40 +1,28 @@
-# Setup
+# Platform
 
-## Platform
+|field    |value                        |
+|:--------|:----------------------------|
+|version  |R version 3.5.0 (2018-04-23) |
+|os       |macOS High Sierra 10.13.4    |
+|system   |x86_64, darwin15.6.0         |
+|ui       |X11                          |
+|language |(EN)                         |
+|collate  |en_US.UTF-8                  |
+|tz       |US/Pacific                   |
+|date     |2018-05-20                   |
 
-|setting  |value                                       |
-|:--------|:-------------------------------------------|
-|version  |R version 3.4.2 Patched (2017-10-30 r73642) |
-|system   |x86_64, darwin15.6.0                        |
-|ui       |X11                                         |
-|language |(EN)                                        |
-|collate  |en_US.UTF-8                                 |
-|tz       |America/Los_Angeles                         |
-|date     |2017-11-02                                  |
+# Dependencies
 
-## Packages
+|package |old   |new   |Δ  |
+|:-------|:-----|:-----|:--|
+|ritis   |0.7.0 |0.7.2 |*  |
 
-|package |*  |version |date       |source                    |
-|:-------|:--|:-------|:----------|:-------------------------|
-|ritis   |   |0.7.0   |2017-11-02 |local (ropensci/ritis@NA) |
+# Revdeps
 
-# Check results
+## All (2)
 
-2 packages
-
-|package  |version | errors| warnings| notes|
-|:--------|:-------|------:|--------:|-----:|
-|camtrapR |0.99.9  |      0|        0|     0|
-|taxize   |0.9.0   |      0|        0|     0|
-
-## camtrapR (0.99.9)
-Maintainer: Juergen Niedballa <niedballa@izw-berlin.de>
-
-0 errors | 0 warnings | 0 notes
-
-## taxize (0.9.0)
-Maintainer: Scott Chamberlain <myrmecocystus@gmail.com>  
-Bug reports: https://github.com/ropensci/taxize/issues
-
-0 errors | 0 warnings | 0 notes
+|package                          |version |error |warning |note |
+|:--------------------------------|:-------|:-----|:-------|:----|
+|[camtrapR](problems.md#camtrapr) |0.99.9  |      |1       |     |
+|taxize                           |0.9.3   |      |        |     |
 
