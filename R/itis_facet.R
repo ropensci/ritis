@@ -2,7 +2,8 @@
 #'
 #' @export
 #' @param ... Arguments passed on to the `params` parameter of
-#' the [solrium::solr_facet()] function
+#' the [solrium::solr_facet()] function. See [solr_fields] for possible
+#' parameters, and examples below
 #' @inheritParams itis_search
 #' @examples \dontrun{
 #' itis_facet(q = "rank:Species", rows = 0, facet.field = "kingdom")$facet_fields

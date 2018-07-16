@@ -8,7 +8,8 @@ itis_search(..., proxy = NULL, callopts = list())
 }
 \arguments{
 \item{...}{Arguments passed on to the \code{params} parameter of
-the \code{\link[solrium:solr_search]{solrium::solr_search()}} function}
+the \code{\link[solrium:solr_search]{solrium::solr_search()}} function. See \link{solr_fields} for possible
+parameters, and examples below}
 
 \item{proxy}{List of arguments for a proxy connection,
 including one or more of: url, port, username, password,
@@ -42,4 +43,7 @@ itis_search(q = "nameWOInd:/[A-Za-z0-9]*[\%20]{0,0}*/", rows = 200)
 itis_search(q = "nameWOInd:/[A-Za-z0-9]*[\%20]{0,0}*/",
    fl = c('nameWInd', 'tsn'))
 }
+}
+\references{
+\url{https://www.itis.gov/solr_documentation.html}
 }

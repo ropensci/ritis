@@ -2,7 +2,8 @@
 #'
 #' @export
 #' @param ... Arguments passed on to the `params` parameter of
-#' the [solrium::solr_highlight()] function
+#' the [solrium::solr_highlight()] function. See [solr_fields] for possible
+#' parameters, and examples below
 #' @inheritParams itis_search
 #' @examples \dontrun{
 #' itis_highlight(q = "rank:Species", hl.fl = 'rank', rows=10)

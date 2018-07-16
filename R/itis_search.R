@@ -2,12 +2,14 @@
 #'
 #' @export
 #' @param ... Arguments passed on to the `params` parameter of
-#' the [solrium::solr_search()] function
+#' the [solrium::solr_search()] function. See [solr_fields] for possible
+#' parameters, and examples below
 #' @param proxy List of arguments for a proxy connection,
 #' including one or more of: url, port, username, password,
 #' and auth. See [crul::proxy()] for  help, which is used to
 #' construct the proxy connection.
 #' @param callopts Curl options passed on to [crul::HttpClient]
+#' @references <https://www.itis.gov/solr_documentation.html>
 #' @examples \dontrun{
 #' itis_search(q = "tsn:182662")
 #'

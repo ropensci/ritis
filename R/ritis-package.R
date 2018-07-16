@@ -21,3 +21,19 @@
 #' @docType package
 #' @author Scott Chamberlain \email{myrmecocystus@@gmail.com}
 NULL
+
+#' List of fields that can be used in [solr] functions
+#'
+#' Each element in the list has a list of length tree, with:
+#' 
+#' - field: the field name, this is the name you can use in your 
+#' queries
+#' - definition: the definition of the field
+#' - example: an example value
+#'
+#' @format A list of length 36
+#' @source <https://www.itis.gov/solr_documentation.html>
+#' @name solr_fields
+#' @docType data
+#' @keywords data
+NULL

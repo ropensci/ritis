@@ -2,7 +2,8 @@
 #'
 #' @export
 #' @param ... Arguments passed on to the `params` parameter of
-#' the [solrium::solr_group()] function
+#' the [solrium::solr_group()] function. See [solr_fields] for possible
+#' parameters, and examples below
 #' @inheritParams itis_search
 #' @examples \dontrun{
 #' x <- itis_group(q = "nameWOInd:/[A-Za-z0-9]*[%20]{1,1}[A-Za-z0-9]*/",

@@ -9,6 +9,10 @@ ITIS provides access to their data via their Solr service described at
 interace to ITIS data as you have access to a very flexible query
 interface.
 }
+\details{
+See \link{solr_fields} and \url{https://www.itis.gov/solr_documentation.html}
+for guidance on available fields.
+}
 \section{Functions}{
 
 \itemize{

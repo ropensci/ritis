@@ -8,7 +8,8 @@ itis_group(..., proxy = NULL, callopts = list())
 }
 \arguments{
 \item{...}{Arguments passed on to the \code{params} parameter of
-the \code{\link[solrium:solr_group]{solrium::solr_group()}} function}
+the \code{\link[solrium:solr_group]{solrium::solr_group()}} function. See \link{solr_fields} for possible
+parameters, and examples below}
 
 \item{proxy}{List of arguments for a proxy connection,
 including one or more of: url, port, username, password,
