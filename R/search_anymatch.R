@@ -8,12 +8,15 @@
 #' @examples \dontrun{
 #' search_anymatch(x = 202385)
 #' search_anymatch(x = "dolphin")
+#' # no results
+#' search_anymatch(x = "Pisces")
 #' }
 search_anymatch <- function(x, wt = "json", raw = FALSE, ...) {
   out <- itis_GET("searchForAnyMatch", list(srchKey = x), wt, ...)
   if (raw || wt == "xml") return(out)
   x <- parse_raw(out)$anyMatchList
   tmp <- dr_op(bindlist(x$commonNameList.commonNames), "class")
+  if (NROW(tmp) == 0) return(tibble::data_frame())
   names(tmp) <- paste0("common_", names(tmp))
   x <- suppressWarnings(
     cbind(

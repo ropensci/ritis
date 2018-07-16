@@ -26,6 +26,8 @@ Search for any match
 \dontrun{
 search_anymatch(x = 202385)
 search_anymatch(x = "dolphin")
+# no results
+search_anymatch(x = "Pisces")
 }
 }
 \seealso{
