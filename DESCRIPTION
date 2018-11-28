@@ -4,7 +4,7 @@ Description: An interface to the Integrated Taxonomic Information System ('ITIS'
     (<https://www.itis.gov>). Includes functions to work with the 'ITIS' REST
     'API' methods (<https://www.itis.gov/ws_description.html>), as well as the
     'Solr' web service (<https://www.itis.gov/solr_documentation.html>).
-Version: 0.7.3.9210
+Version: 0.7.3.9211
 License: MIT + file LICENSE
 URL: https://github.com/ropensci/ritis
 BugReports: https://github.com/ropensci/ritis/issues
@@ -15,7 +15,7 @@ VignetteBuilder: knitr
 Roxygen: list(markdown = TRUE)
 LazyData: true
 Imports:
-    solrium (>= 1.0.0),
+    solrium (>= 1.0.1.9421),
     crul (>= 0.4.0),
     jsonlite (>= 1.5),
     data.table (>= 1.9.6),
@@ -27,3 +27,4 @@ Suggests:
     webmockr,
     vcr
 RoxygenNote: 6.0.1
+Remotes: ropensci/solrium
