@@ -14,6 +14,7 @@ Authors@R: person("Scott", "Chamberlain", role = c("aut", "cre"),
 VignetteBuilder: knitr
 Roxygen: list(markdown = TRUE)
 LazyData: true
+Encoding: UTF-8
 Imports:
     solrium (>= 1.0.1.9510),
     crul (>= 0.4.0),
@@ -26,5 +27,5 @@ Suggests:
     testthat,
     webmockr,
     vcr
-RoxygenNote: 6.0.1
+RoxygenNote: 6.1.1
 Remotes: ropensci/solrium
