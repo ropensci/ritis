@@ -20,10 +20,8 @@ test_that("itis_search fails well", {
   skip_on_cran()
 
   vcr::use_cassette("itis_search-fails-well", {
-    expect_identical(
-      sm(itis_search(foo = "bar")),
-      sm(itis_search())
-    )
+    expect_equal(length(sm(itis_search(foo = "bar"))), 0)
+    expect_equal(length(sm(itis_search())), 0)
   })
 
   expect_error(itis_search(wt = "asdfaddf"),
