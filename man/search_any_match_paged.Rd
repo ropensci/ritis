@@ -4,8 +4,8 @@
 \alias{search_any_match_paged}
 \title{Search for any matched page}
 \usage{
-search_any_match_paged(x, pagesize = NULL, pagenum = NULL, ascend = NULL,
-  wt = "json", raw = FALSE, ...)
+search_any_match_paged(x, pagesize = NULL, pagenum = NULL,
+  ascend = NULL, wt = "json", raw = FALSE, ...)
 }
 \arguments{
 \item{x}{text or taxonomic serial number (TSN) (character or numeric)}
