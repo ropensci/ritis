@@ -15,7 +15,7 @@ VignetteBuilder: knitr
 Roxygen: list(markdown = TRUE)
 LazyData: true
 Imports:
-    solrium (>= 1.0.1.9421),
+    solrium (>= 1.0.1.9510),
     crul (>= 0.4.0),
     jsonlite (>= 1.5),
     data.table (>= 1.9.6),
