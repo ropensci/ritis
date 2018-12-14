@@ -1,2 +1,1 @@
-library("revdepcheck")
-res <- revdep_check()
+revdepcheck::revdep_check()

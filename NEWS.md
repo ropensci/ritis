@@ -1,3 +1,16 @@
+ritis 0.7.6
+===========
+
+### MINOR IMPROVEMENTS
+
+* improve docs for solr functions, pointing to appropriate docs in `solrium` package (#12)
+* give link to taxize book in readme, vignette, and pkg level manual file (#13)
+
+### BUG FIXES
+
+* fixed bug in `search_anymatch()`: we weren't correctly handling cases where no results were returned (#11)
+
+
 ritis 0.7.2
 ===========
 

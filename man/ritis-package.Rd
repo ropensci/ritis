@@ -24,6 +24,9 @@ We parse the JSON to R native format, either data.frame, character
 string, or list. You can get raw JSON as a character string back,
 or raw XML as a character string, and then parse yourself with
 \pkg{jsonlite} or \pkg{xml2}
+
+You'll also be interested in the taxize book
+\url{https://ropensci.github.io/taxize-book/}
 }
 
 \author{
