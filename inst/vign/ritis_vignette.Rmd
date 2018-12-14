@@ -18,6 +18,9 @@ ritis introduction
 
 An interface to the Integrated Taxonomic Information System (ITIS)
 
+See also the [taxize book](https://ropensci.github.io/taxize-book/) for 
+a manual on working with taxonomic data in R, including with ITIS data.
+
 ## Installation
 
 Install from CRAN

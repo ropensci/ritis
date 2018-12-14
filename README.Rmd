@@ -18,8 +18,18 @@ knitr::opts_chunk$set(
 [![rstudio mirror downloads](http://cranlogs.r-pkg.org/badges/ritis)](https://github.com/metacran/cranlogs.app)
 [![cran version](http://www.r-pkg.org/badges/version/ritis)](https://cran.r-project.org/package=ritis)
 
+An interface to the Integrated Taxonomic Information System (ITIS)
+
 * [ITIS API Docs](https://www.itis.gov/ws_description.html)
 * [Solr service](https://www.itis.gov/solr_documentation.html)
+* [taxize book](https://ropensci.github.io/taxize-book/)
+
+## Package API
+
+```{r echo=FALSE, comment=NA, results='asis'}
+cat(paste(" -", paste(sprintf("`%s`", sort(getNamespaceExports("ritis"))), collapse = "\n - ")))
+```
+
 
 ## Installation
 
