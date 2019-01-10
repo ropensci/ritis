@@ -27,5 +27,6 @@ Suggests:
     knitr,
     testthat,
     webmockr,
-    vcr
+    vcr (>= 0.2.0.9114)
 RoxygenNote: 6.1.1
+Remotes: ropensci/vcr
