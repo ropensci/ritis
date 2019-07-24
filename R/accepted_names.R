@@ -25,6 +25,6 @@ accepted_names <- function(tsn, wt = "json", raw = FALSE, ...) {
   if (all(is.na(tmp$acceptedNames))) {
     tibble::data_frame()
   } else {
-    dr_op(tibble::as_data_frame(tmp$acceptedNames), "class")
+    dr_op(tibble::as_tibble(tmp$acceptedNames), "class")
   }
 }

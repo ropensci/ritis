@@ -70,7 +70,7 @@ itis_GET <- function(endpt, args, wt, ...){
 
 parse_raw <- function(x) {
   if ((inherits(x, "character") && !nzchar(x)) || is.na(x)) {
-    return(tibble::as_data_frame())
+    return(tibble::as_tibble())
   }
   jsonlite::fromJSON(x, flatten = TRUE)
 }

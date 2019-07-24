@@ -25,5 +25,5 @@ search_anymatch <- function(x, wt = "json", raw = FALSE, ...) {
       tmp
     )
   )
-  tibble::as_data_frame(x)
+  tibble::as_tibble(x)
 }

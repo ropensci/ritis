@@ -14,5 +14,5 @@ date_data <- function(tsn, wt = "json", raw = FALSE, ...) {
   res <- parse_raw(out)
   if (is.null(res$initialTimeStamp)) res$initialTimeStamp <- ""
   if (is.null(res$updateDate)) res$updateDate <- ""
-  dr_op(tibble::as_data_frame(res), "class")
+  dr_op(tibble::as_tibble(res), "class")
 }

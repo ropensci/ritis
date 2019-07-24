@@ -12,7 +12,7 @@ scientific_name <- function(tsn, wt = "json", raw = FALSE, ...) {
   out <- itis_GET("getScientificNameFromTSN", list(tsn = tsn), wt, ...)
   if (raw || wt == "xml") return(out)
   x <- tc(parse_raw(out))
-  tibble::as_data_frame(pick_cols(
+  tibble::as_tibble(pick_cols(
     data.frame(x, stringsAsFactors = FALSE),
     c("combinedName","unitInd1","unitInd3","unitName1","unitName2",
       "unitName3","tsn")

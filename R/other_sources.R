@@ -15,7 +15,7 @@ other_sources <- function(tsn, wt = "json", raw = FALSE, ...) {
     tibble::data_frame()
   } else {
     x <- cbind(dr_op(x, "referencefor"), bindlist(x$referenceFor))
-    tibble::as_data_frame(pick_cols(
+    tibble::as_tibble(pick_cols(
       x,
       c("acquisitiondate","name","referredtsn","source", "sourcetype","updatedate","version")
     ))

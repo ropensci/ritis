@@ -14,6 +14,6 @@ taxon_authorship <- function(tsn, wt = "json", raw = FALSE, ...) {
   if (is.null(x$authorship) || inherits(x$authorship, "logical")) {
     tibble::data_frame()
   } else {
-    dr_op(tibble::as_data_frame(x), "class")
+    dr_op(tibble::as_tibble(x), "class")
   }
 }

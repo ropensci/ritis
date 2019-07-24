@@ -15,6 +15,6 @@ tsn_by_vernacular_language <- function(language, wt = "json", raw = FALSE, ...) 
   if (is.null(x$vernacularTsns) || inherits(x$vernacularTsns, "logical")) {
     tibble::data_frame()
   } else {
-    dr_op(tibble::as_data_frame(x$vernacularTsns), "class")
+    dr_op(tibble::as_tibble(x$vernacularTsns), "class")
   }
 }

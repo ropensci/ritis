@@ -15,7 +15,7 @@ publications <- function(tsn, wt = "json", raw = FALSE, ...) {
   if (raw || wt == "xml") return(out)
   x <- parse_raw(out)$publications
   x <- cbind(dr_op(x, "referencefor"), dr_op(bindlist(x$referenceFor), "class"))
-  tibble::as_data_frame(pick_cols(
+  tibble::as_tibble(pick_cols(
     x,
     c("actualPubDate","isbn","issn","listedPubDate","pages",
       "pubComment","pubName","pubPlace","publisher","referenceAuthor",

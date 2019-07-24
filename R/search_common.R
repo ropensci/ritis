@@ -36,5 +36,5 @@ search_common <- function(x, from = "all", wt = "json", raw = FALSE,
                  end = "searchByCommonNameEndsWith")
   out <- itis_GET(endpt = verb, args = list(srchKey = x), wt, ...)
   if (raw || wt == "xml") return(out)
-  tibble::as_data_frame(dr_op(parse_raw(out)$commonNames, "class"))
+  tibble::as_tibble(dr_op(parse_raw(out)$commonNames, "class"))
 }

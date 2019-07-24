@@ -15,6 +15,6 @@ usage <- function(tsn, wt = "json", raw = FALSE, ...) {
   if (is.null(x$taxonUsageRating) || inherits(x$taxonUsageRating, "logical")) {
     tibble::data_frame()
   } else {
-    dr_op(tibble::as_data_frame(x), "class")
+    dr_op(tibble::as_tibble(x), "class")
   }
 }

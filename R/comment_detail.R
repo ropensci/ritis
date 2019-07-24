@@ -11,5 +11,5 @@
 comment_detail <- function(tsn, wt = "json", raw = FALSE, ...) {
   out <- itis_GET("getCommentDetailFromTSN", list(tsn = tsn), wt, ...)
   if (raw || wt == "xml") return(out)
-  dr_op(tibble::as_data_frame(parse_raw(out)$comments), "class")
+  dr_op(tibble::as_tibble(parse_raw(out)$comments), "class")
 }

@@ -24,7 +24,7 @@ credibility_rating <- function(tsn, wt = "json", raw = FALSE, ...) {
   if (raw || wt == "xml") return(out)
   res <- parse_raw(out)
   if (is.null(res$credRating)) res$credRating <- ""
-  dr_op(tibble::as_data_frame(res), "class")
+  dr_op(tibble::as_tibble(res), "class")
 }
 
 #' @export
@@ -32,5 +32,5 @@ credibility_rating <- function(tsn, wt = "json", raw = FALSE, ...) {
 credibility_ratings <- function(wt = "json", raw = FALSE, ...) {
   out <- itis_GET("getCredibilityRatings", list(), wt, ...)
   if (raw || wt == "xml") return(out)
-  dr_op(tibble::as_data_frame(parse_raw(out)), "class")
+  dr_op(tibble::as_tibble(parse_raw(out)), "class")
 }

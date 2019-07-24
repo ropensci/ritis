@@ -13,6 +13,6 @@ unacceptability_reason <- function(tsn, wt = "json", raw = FALSE, ...) {
   if (is.null(x$unacceptReason) || inherits(x$unacceptReason, "logical")) {
     tibble::data_frame()
   } else {
-    dr_op(tibble::as_data_frame(x), "class")
+    dr_op(tibble::as_tibble(x), "class")
   }
 }

@@ -27,5 +27,5 @@ search_any_match_paged <- function(x, pagesize = NULL, pagenum = NULL, ascend = 
       tmp
     )
   )
-  tibble::as_data_frame(x)
+  tibble::as_tibble(x)
 }

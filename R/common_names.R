@@ -11,5 +11,5 @@
 common_names <- function(tsn, wt = "json", raw = FALSE, ...) {
   out <- itis_GET("getCommonNamesFromTSN", list(tsn = tsn), wt, ...)
   if (raw || wt == "xml") return(out)
-  dr_op(tibble::as_data_frame(parse_raw(out)$commonNames), "class")
+  dr_op(tibble::as_tibble(parse_raw(out)$commonNames), "class")
 }

@@ -12,7 +12,7 @@ rank_name <- function(tsn, wt = "json", raw = FALSE, ...) {
   if (raw || wt == "xml") return(out)
   x <- parse_raw(out)
   res <- tc(pick_cols(x, c("kingdomId","kingdomName","rankId","rankName","tsn")))
-  tibble::as_data_frame(
+  tibble::as_tibble(
     if (length(names(res)) == 1) NULL else res
   )
 }

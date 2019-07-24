@@ -17,5 +17,5 @@ currency <- function(tsn, wt = "json", raw = FALSE, ...) {
   if (raw || wt == "xml") return(out)
   res <- parse_raw(out)
   if (is.null(res$taxonCurrency)) res$taxonCurrency <- ""
-  dr_op(tibble::as_data_frame(res), "class")
+  dr_op(tibble::as_tibble(res), "class")
 }

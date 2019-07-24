@@ -15,6 +15,6 @@ synonym_names <- function(tsn, wt = "json", raw = FALSE, ...) {
   if (inherits(tmp, "logical") || is.null(tmp)) {
     tibble::data_frame()
   } else {
-    dr_op(tibble::as_data_frame(tmp), "class")
+    dr_op(tibble::as_tibble(tmp), "class")
   }
 }

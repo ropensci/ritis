@@ -17,6 +17,6 @@ geographic_divisions <- function(tsn, wt = "json", raw = FALSE, ...) {
   if (inherits(res$geoDivisions, "logical") || is.null(res$geoDivisions)) {
     tibble::data_frame()
   } else {
-    dr_op(tibble::as_data_frame(res$geoDivisions), "class")
+    dr_op(tibble::as_tibble(res$geoDivisions), "class")
   }
 }
