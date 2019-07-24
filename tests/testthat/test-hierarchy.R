@@ -44,12 +44,12 @@ test_that("hierarchy functions fail well", {
   vcr::use_cassette("hierarchy-fails-well", {
     # tsn's not found gives 404
     expect_error(hierarchy_down(tsn = "Asdfasdfa"),
-      "Bad Request \\(HTTP 400\\)")
+      "Bad Request \\(HTTP 400\\)", class = "error")
 
     expect_error(hierarchy_up(tsn = "Asdfasdfa"),
-      "Bad Request \\(HTTP 400\\)")
+      "Bad Request \\(HTTP 400\\)", class = "error")
 
     expect_error(hierarchy_full(tsn = "Asdfasdfa"),
-      "Bad Request \\(HTTP 400\\)")
+      "Bad Request \\(HTTP 400\\)", class = "error")
   })
 })

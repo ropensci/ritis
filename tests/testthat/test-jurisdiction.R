@@ -43,6 +43,7 @@ test_that("jurisdiction functions fail well", {
 
   vcr::use_cassette("jurisdictional_origin-fails-well", {
     # lsid's not found lead 404
-    expect_error(jurisdictional_origin(tsn = "asdfasdf"), "Bad Request \\(HTTP 400\\)")
+    expect_error(jurisdictional_origin(tsn = "asdfasdf"),
+      "Bad Request \\(HTTP 400\\)", class = "error")
   })
 })

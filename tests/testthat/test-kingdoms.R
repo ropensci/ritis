@@ -34,6 +34,7 @@ test_that("kingdom functions fail well", {
 
   vcr::use_cassette("kingdom_name-fails-well", {
     # tsn's not found lead to 404
-    expect_error(kingdom_name(tsn = "Asdfasdfa"), "Bad Request \\(HTTP 400\\)")
+    expect_error(kingdom_name(tsn = "Asdfasdfa"),
+      "Bad Request \\(HTTP 400\\)", class = "error")
   })
 })

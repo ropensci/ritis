@@ -37,6 +37,7 @@ test_that("publications fails well", {
 
   vcr::use_cassette("publications-fails-well", {
     # tsn's not found lead to 404
-    expect_error(publications(tsn = "Asdfasdfa"), "Bad Request \\(HTTP 400\\)")
+    expect_error(publications(tsn = "Asdfasdfa"),
+      "Bad Request \\(HTTP 400\\)", class = "error")
   })
 })
