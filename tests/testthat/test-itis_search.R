@@ -3,7 +3,7 @@ context("itis_search")
 test_that("itis_search basic functionality works", {
   vcr::use_cassette("itis_search", {
     aa <- sm(itis_search(q = "tsn:182662"))
-    bb <- sm(itis_search(q = "nameWOInd:Liquidamber\\%20styraciflua~0.4"))
+    bb <- sm(itis_search(q = "nameWOInd:Liquidamber\\ styraciflua~0.4"))
     cc <- sm(itis_search(q = "nameWOInd:/[A-Ba-z0-9]*[%20]{0,0}*/"))
 
     expect_is(aa, "data.frame")

@@ -6,7 +6,7 @@ http_interactions:
       encoding: ''
       string: ''
     headers:
-      User-Agent: libcurl/7.54.0 r-curl/3.2 crul/0.5.2
+      User-Agent: libcurl/7.54.0 r-curl/4.2 crul/0.8.4
       Accept-Encoding: gzip, deflate
       Accept: application/json, text/xml, application/xml, */*
   response:
@@ -16,8 +16,7 @@ http_interactions:
       explanation: Request fulfilled, document follows
     headers:
       status: HTTP/1.1 200 OK
-      date: Thu, 03 May 2018 17:48:36 GMT
-      server: Apache
+      date: Fri, 11 Oct 2019 01:00:30 GMT
       content-length: '124'
       content-type: application/json
     body:
@@ -25,8 +24,8 @@ http_interactions:
       string: |+
         {"responseHeader":{"status":0,"QTime":0,"params":{"foo":"bar","wt":"json"}},"response":{"numFound":0,"start":0,"docs":[]}}
 
-  recorded_at: 2018-05-03 17:48:36 GMT
-  recorded_with: vcr/0.0.8.9538, webmockr/0.2.2.9119, crul/0.5.2
+  recorded_at: 2019-10-11 01:00:28 GMT
+  recorded_with: vcr/0.3.0, webmockr/0.4.0
 - request:
     method: get
     uri: https://services.itis.gov/?wt=json
@@ -34,7 +33,7 @@ http_interactions:
       encoding: ''
       string: ''
     headers:
-      User-Agent: libcurl/7.54.0 r-curl/3.2 crul/0.5.2
+      User-Agent: libcurl/7.54.0 r-curl/4.2 crul/0.8.4
       Accept-Encoding: gzip, deflate
       Accept: application/json, text/xml, application/xml, */*
   response:
@@ -44,8 +43,7 @@ http_interactions:
       explanation: Request fulfilled, document follows
     headers:
       status: HTTP/1.1 200 OK
-      date: Thu, 03 May 2018 17:48:36 GMT
-      server: Apache
+      date: Fri, 11 Oct 2019 01:00:30 GMT
       content-length: '112'
       content-type: application/json
     body:
@@ -53,5 +51,5 @@ http_interactions:
       string: |+
         {"responseHeader":{"status":0,"QTime":0,"params":{"wt":"json"}},"response":{"numFound":0,"start":0,"docs":[]}}
 
-  recorded_at: 2018-05-03 17:48:36 GMT
-  recorded_with: vcr/0.0.8.9538, webmockr/0.2.2.9119, crul/0.5.2
+  recorded_at: 2019-10-11 01:00:28 GMT
+  recorded_with: vcr/0.3.0, webmockr/0.4.0

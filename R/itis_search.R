@@ -23,7 +23,7 @@
 #' # matches binomials or trinomials
 #' itis_search(q = "nameWOInd:/[A-Za-z0-9]*[%20]{1,1}[A-Za-z0-9]*[%20]{0,1}[A-Za-z0-9]*/")
 #'
-#' itis_search(q = "nameWOInd:Poa\\%20annua")
+#' itis_search(q = "nameWOInd:Poa\\ annua")
 #'
 #' itis_search(q = "nameWOInd:/[A-Za-z0-9]*[%20]{0,0}*/", rows = 2)
 #' itis_search(q = "nameWOInd:/[A-Za-z0-9]*[%20]{0,0}*/", rows = 200)
