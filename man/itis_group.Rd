@@ -23,7 +23,7 @@ ITIS Solr group search
 }
 \examples{
 \dontrun{
-x <- itis_group(q = "nameWOInd:/[A-Za-z0-9]*[\%20]{1,1}[A-Za-z0-9]*/",
+x <- itis_group(q = "nameWOInd:/[A-Za-z0-9]*[\%20]{0,0}*/",
    group.field = 'rank', group.limit = 3)
 head(x)
 }
