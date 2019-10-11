@@ -6,7 +6,7 @@ http_interactions:
       encoding: ''
       string: ''
     headers:
-      User-Agent: libcurl/7.54.0 r-curl/3.2 crul/0.5.2
+      User-Agent: libcurl/7.54.0 r-curl/4.2 crul/0.8.4
       Accept-Encoding: gzip, deflate
       Accept: application/json, text/xml, application/xml, */*
   response:
@@ -17,8 +17,8 @@ http_interactions:
     headers:
       connection: keep-alive
       content-type: application/xml;charset=UTF-8
-      date: Thu, 03 May 2018 17:40:59 GMT
-      status: HTTP/1.1 200 OK
+      date: Fri, 11 Oct 2019 16:09:48 GMT
+      status: 'HTTP/1.1 200 '
       strict-transport-security:
       - max-age=63072000; includeSubdomains; preload
       - max-age=63072000; includeSubdomains; preload
@@ -29,5 +29,5 @@ http_interactions:
     body:
       encoding: UTF-8
       string: <ns:getAnyMatchCountResponse xmlns:ns="http://itis_service.itis.usgs.gov"><ns:return>1</ns:return></ns:getAnyMatchCountResponse>
-  recorded_at: 2018-05-03 17:40:59 GMT
-  recorded_with: vcr/0.0.8.9538, webmockr/0.2.2.9119, crul/0.5.2
+  recorded_at: 2019-10-11 16:09:46 GMT
+  recorded_with: vcr/0.3.0, webmockr/0.4.0

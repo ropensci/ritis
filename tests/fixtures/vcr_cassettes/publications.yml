@@ -6,7 +6,7 @@ http_interactions:
       encoding: ''
       string: ''
     headers:
-      User-Agent: libcurl/7.54.0 r-curl/3.2 crul/0.5.2
+      User-Agent: libcurl/7.54.0 r-curl/4.2 crul/0.8.4
       Accept-Encoding: gzip, deflate
       Accept: application/json, text/xml, application/xml, */*
   response:
@@ -18,8 +18,8 @@ http_interactions:
       connection: keep-alive
       content-length: '1575'
       content-type: text/json;charset=ISO-8859-1
-      date: Thu, 03 May 2018 17:52:16 GMT
-      status: HTTP/1.1 200 OK
+      date: Fri, 11 Oct 2019 16:13:14 GMT
+      status: 'HTTP/1.1 200 '
       strict-transport-security:
       - max-age=63072000; includeSubdomains; preload
       - max-age=63072000; includeSubdomains; preload
@@ -29,6 +29,6 @@ http_interactions:
     body:
       encoding: UTF-8
       string: |
-        {"class":"gov.usgs.itis.itis_service.data.SvcTaxonPublicationList","publications":[{"actualPubDate":"1988-01-01","class":"gov.usgs.itis.itis_service.data.SvcTaxonPublication","isbn":"0-913235-47-4","issn":"0097-0638","listedPubDate":"1988-01-01","pages":"vii + 277","pubComment":"","pubName":"American Fisheries Society Special Publication 16","pubPlace":"Bethesda, Maryland, USA","publisher":"American Fisheries Society","referenceAuthor":"Turgeon, D. D., A. E. Bogan, E. V. Coan, W. K. Emerson, W. G. Lyons, W. Pratt, et al.","referenceFor":[{"class":"gov.usgs.itis.itis_service.data.SvcReferenceForElement","name":"Tulotoma magnifica","refLanguage":null,"referredTsn":"70340"}],"title":"Common and scientific names of aquatic invertebrates from the United States and Canada: mollusks","updateDate":"2017-06-28"},{"actualPubDate":"1998-01-01","class":"gov.usgs.itis.itis_service.data.SvcTaxonPublication","isbn":"1-888569-01-8","issn":"0097-0638","listedPubDate":"1998-01-01","pages":"526","pubComment":"","pubName":"American Fisheries Society Special Publication 26","pubPlace":"Bethesda, Maryland, USA","publisher":"American Fisheries Society","referenceAuthor":"Turgeon, D. D., J. F. Quinn, Jr., A. E. Bogan, E. V. Coan, F. G. Hochberg, W. G. Lyons, et al.","referenceFor":[{"class":"gov.usgs.itis.itis_service.data.SvcReferenceForElement","name":"Tulotoma magnifica","refLanguage":null,"referredTsn":"70340"}],"title":"Common and scientific names of aquatic invertebrates from the United States and Canada: Mollusks, 2nd ed.","updateDate":"2017-06-28"}],"tsn":"70340"}
-  recorded_at: 2018-05-03 17:52:16 GMT
-  recorded_with: vcr/0.0.8.9538, webmockr/0.2.2.9119, crul/0.5.2
+        {"class":"gov.usgs.itis.itis_service.data.SvcTaxonPublicationList","publications":[{"actualPubDate":"1988-01-01","class":"gov.usgs.itis.itis_service.data.SvcTaxonPublication","isbn":"0-913235-47-4","issn":"0097-0638","listedPubDate":"1988-01-01","pages":"vii + 277","pubComment":"","pubName":"American Fisheries Society Special Publication 16","pubPlace":"Bethesda, Maryland, USA","publisher":"American Fisheries Society","referenceAuthor":"Turgeon, D. D., A. E. Bogan, E. V. Coan, W. K. Emerson, W. G. Lyons, W. Pratt, et al.","referenceFor":[{"class":"gov.usgs.itis.itis_service.data.SvcReferenceForElement","name":"Tulotoma magnifica","refLanguage":null,"referredTsn":"70340"}],"title":"Common and scientific names of aquatic invertebrates from the United States and Canada: mollusks","updateDate":"2017-06-28"},{"actualPubDate":"1998-01-01","class":"gov.usgs.itis.itis_service.data.SvcTaxonPublication","isbn":"1-888569-01-8","issn":"0097-0638","listedPubDate":"1998-01-01","pages":"526","pubComment":"","pubName":"American Fisheries Society Special Publication 26","pubPlace":"Bethesda, Maryland, USA","publisher":"American Fisheries Society","referenceAuthor":"Turgeon, D. D., J. F. Quinn, Jr., A. E. Bogan, E. V. Coan, F. G. Hochberg, W. G. Lyons, et al.","referenceFor":[{"class":"gov.usgs.itis.itis_service.data.SvcReferenceForElement","name":"Tulotoma magnifica","refLanguage":null,"referredTsn":"70340"}],"title":"Common and scientific names of aquatic invertebrates from the United States and Canada: Mollusks, 2nd ed.","updateDate":"2019-04-27"}],"tsn":"70340"}
+  recorded_at: 2019-10-11 16:13:13 GMT
+  recorded_with: vcr/0.3.0, webmockr/0.4.0

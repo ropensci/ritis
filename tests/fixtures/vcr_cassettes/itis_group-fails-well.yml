@@ -6,7 +6,7 @@ http_interactions:
       encoding: ''
       string: ''
     headers:
-      User-Agent: libcurl/7.54.0 r-curl/3.2 crul/0.5.2
+      User-Agent: libcurl/7.54.0 r-curl/4.2 crul/0.8.4
       Accept-Encoding: gzip, deflate
       Accept: application/json, text/xml, application/xml, */*
   response:
@@ -16,13 +16,12 @@ http_interactions:
       explanation: Request fulfilled, document follows
     headers:
       status: HTTP/1.1 200 OK
-      date: Thu, 03 May 2018 17:46:21 GMT
-      server: Apache
+      date: Fri, 11 Oct 2019 16:10:36 GMT
       content-length: '60'
       content-type: text/html; charset=UTF-8
     body:
       encoding: UTF-8
       string: |
         <html><head></head><body><p>Query failed!</p></body></html>
-  recorded_at: 2018-05-03 17:46:21 GMT
-  recorded_with: vcr/0.0.8.9538, webmockr/0.2.2.9119, crul/0.5.2
+  recorded_at: 2019-10-11 16:10:34 GMT
+  recorded_with: vcr/0.3.0, webmockr/0.4.0

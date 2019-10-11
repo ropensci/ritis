@@ -6,7 +6,7 @@ http_interactions:
       encoding: ''
       string: ''
     headers:
-      User-Agent: libcurl/7.54.0 r-curl/3.2 crul/0.5.2
+      User-Agent: libcurl/7.54.0 r-curl/4.2 crul/0.8.4
       Accept-Encoding: gzip, deflate
       Accept: application/json, text/xml, application/xml, */*
   response:
@@ -18,8 +18,8 @@ http_interactions:
       connection: keep-alive
       content-length: '286'
       content-type: text/json;charset=ISO-8859-1
-      date: Thu, 03 May 2018 17:53:14 GMT
-      status: HTTP/1.1 200 OK
+      date: Fri, 11 Oct 2019 16:13:15 GMT
+      status: 'HTTP/1.1 200 '
       strict-transport-security:
       - max-age=63072000; includeSubdomains; preload
       - max-age=63072000; includeSubdomains; preload
@@ -30,5 +30,5 @@ http_interactions:
       encoding: UTF-8
       string: |
         {"authorship":null,"class":"gov.usgs.itis.itis_service.data.SvcLSIDRecord","genusPart":null,"infragenericEpithet":null,"infraspecificEpithet":null,"lsid":null,"nameComplete":null,"nomenclaturalCode":null,"rank":null,"rankString":null,"specificEpithet":null,"tsn":null,"uninomial":null}
-  recorded_at: 2018-05-03 17:53:14 GMT
-  recorded_with: vcr/0.0.8.9538, webmockr/0.2.2.9119, crul/0.5.2
+  recorded_at: 2019-10-11 16:13:14 GMT
+  recorded_with: vcr/0.3.0, webmockr/0.4.0

@@ -6,7 +6,7 @@ http_interactions:
       encoding: ''
       string: ''
     headers:
-      User-Agent: libcurl/7.54.0 r-curl/3.2 crul/0.5.2
+      User-Agent: libcurl/7.54.0 r-curl/4.2 crul/0.8.4
       Accept-Encoding: gzip, deflate
       Accept: application/json, text/xml, application/xml, */*
   response:
@@ -17,8 +17,8 @@ http_interactions:
     headers:
       connection: keep-alive
       content-type: application/xml;charset=UTF-8
-      date: Thu, 03 May 2018 17:54:25 GMT
-      status: HTTP/1.1 200 OK
+      date: Fri, 11 Oct 2019 16:14:04 GMT
+      status: 'HTTP/1.1 200 '
       strict-transport-security:
       - max-age=63072000; includeSubdomains; preload
       - max-age=63072000; includeSubdomains; preload
@@ -29,10 +29,10 @@ http_interactions:
     body:
       encoding: UTF-8
       string: <ns:searchByCommonNameResponse xmlns:ns="http://itis_service.itis.usgs.gov"><ns:return
-        xmlns:ax21="http://data.itis_service.itis.usgs.gov/xsd" xmlns:ax26="http://itis_service.itis.usgs.gov/xsd"
-        xmlns:ax23="http://metadata.itis_service.itis.usgs.gov/xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:ax21="http://data.itis_service.itis.usgs.gov/xsd" xmlns:ax23="http://metadata.itis_service.itis.usgs.gov/xsd"
+        xmlns:ax26="http://itis_service.itis.usgs.gov/xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:type="ax21:SvcCommonNameList"><ax21:tsn xsi:nil="true" /><ax21:commonNames
         xsi:type="ax21:SvcCommonName"><ax21:commonName>American Bullfrog</ax21:commonName><ax21:language>English</ax21:language><ax21:tsn>775084</ax21:tsn></ax21:commonNames><ax21:commonNames
         xsi:type="ax21:SvcCommonName"><ax21:commonName>American Bullfrog</ax21:commonName><ax21:language>English</ax21:language><ax21:tsn>173441</ax21:tsn></ax21:commonNames></ns:return></ns:searchByCommonNameResponse>
-  recorded_at: 2018-05-03 17:54:25 GMT
-  recorded_with: vcr/0.0.8.9538, webmockr/0.2.2.9119, crul/0.5.2
+  recorded_at: 2019-10-11 16:14:02 GMT
+  recorded_with: vcr/0.3.0, webmockr/0.4.0

@@ -6,7 +6,7 @@ http_interactions:
       encoding: ''
       string: ''
     headers:
-      User-Agent: libcurl/7.54.0 r-curl/3.2 crul/0.5.2
+      User-Agent: libcurl/7.54.0 r-curl/4.2 crul/0.8.4
       Accept-Encoding: gzip, deflate
       Accept: application/json, text/xml, application/xml, */*
   response:
@@ -16,14 +16,13 @@ http_interactions:
       explanation: Request fulfilled, document follows
     headers:
       status: HTTP/1.1 200 OK
-      date: Thu, 03 May 2018 17:44:26 GMT
-      server: Apache
-      content-length: '461'
+      date: Fri, 11 Oct 2019 16:10:35 GMT
+      content-length: '462'
       content-type: application/json
     body:
       encoding: UTF-8
       string: |+
-        {"responseHeader":{"status":0,"QTime":8,"params":{"q":"rank:Species","facet.field":"kingdom","fl":"DOES_NOT_EXIST","rows":"0","wt":"json","facet":"true"}},"response":{"numFound":580832,"start":0,"docs":[]},"facet_counts":{"facet_queries":{},"facet_fields":{"kingdom":["Animalia",453736,"Plantae",102820,"Bacteria",11983,"Chromista",6560,"Fungi",2961,"Protozoa",2328,"Archaea",444]},"facet_dates":{},"facet_ranges":{},"facet_intervals":{},"facet_heatmaps":{}}}
+        {"responseHeader":{"status":0,"QTime":11,"params":{"q":"rank:Species","facet.field":"kingdom","fl":"DOES_NOT_EXIST","rows":"0","wt":"json","facet":"true"}},"response":{"numFound":621563,"start":0,"docs":[]},"facet_counts":{"facet_queries":{},"facet_fields":{"kingdom":["animalia",487387,"plantae",109900,"bacteria",11983,"chromista",6560,"fungi",2961,"protozoa",2328,"archaea",444]},"facet_dates":{},"facet_ranges":{},"facet_intervals":{},"facet_heatmaps":{}}}
 
-  recorded_at: 2018-05-03 17:44:26 GMT
-  recorded_with: vcr/0.0.8.9538, webmockr/0.2.2.9119, crul/0.5.2
+  recorded_at: 2019-10-11 16:10:34 GMT
+  recorded_with: vcr/0.3.0, webmockr/0.4.0
