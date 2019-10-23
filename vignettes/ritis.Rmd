@@ -1,20 +1,25 @@
-<!--
-%\VignetteEngine{knitr::knitr}
-%\VignetteIndexEntry{ritis introduction}
-%\VignetteEncoding{UTF-8}
--->
+---
+title: "ritis introduction"
+author: "Scott Chamberlain"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{ritis introduction}
+  %\VignetteEngine{knitr::rmarkdown}
+  \usepackage[utf8]{inputenc}
+---
 
-```{r echo=FALSE}
+```{r, echo = FALSE, warning = FALSE, message = FALSE}
+NOT_CRAN <- identical(tolower(Sys.getenv("NOT_CRAN")), "true")
 knitr::opts_chunk$set(
-	comment = "#>",
-	collapse = TRUE,
-	warning = FALSE,
-	message = FALSE
+  collapse  =  TRUE,
+  comment  =  "#>",
+  warning = FALSE,
+  message = FALSE,
+  purl  =  NOT_CRAN,
+  eval  =  NOT_CRAN
 )
 ```
-
-ritis introduction
-==================
 
 An interface to the Integrated Taxonomic Information System (ITIS)
 
@@ -62,13 +67,13 @@ Some examples:
 matches only monomials
 
 ```{r}
-itis_search(q = "nameWOInd:/[A-Za-z0-9]*[%20]{0,0}*/")
+itis_search(q = "nameWOInd:/[A-Za-z0-9]*[ ]{0,0}*/")
 ```
 
 matches only binomials
 
 ```{r}
-itis_search(q = "nameWOInd:/[A-Za-z0-9]*[%20]{1,1}[A-Za-z0-9]*/")
+itis_search(q = "nameWOInd:/[A-Za-z0-9]*[ ]{1,1}[A-Za-z0-9]*/")
 ```
 
 ## ITIS REST API interface

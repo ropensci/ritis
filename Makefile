@@ -1,14 +1,5 @@
 RSCRIPT = Rscript --no-init-file
 
-all: move rmd2md
-
-move:
-		cp inst/vign/ritis_vignette.md vignettes
-
-rmd2md:
-		cd vignettes;\
-		mv ritis_vignette.md ritis_vignette.Rmd
-
 install: doc build
 	R CMD INSTALL . && rm *.tar.gz
 

@@ -6,7 +6,8 @@ Description: An interface to the Integrated Taxonomic Information System ('ITIS'
     'Solr' web service (<https://www.itis.gov/solr_documentation.html>).
 Version: 0.7.9.9110
 License: MIT + file LICENSE
-URL: https://github.com/ropensci/ritis
+URL: https://github.com/ropensci/ritis (devel),
+    https://docs.ropensci.org/ritis/ (website)
 BugReports: https://github.com/ropensci/ritis/issues
 Authors@R: c(
     person("Scott", "Chamberlain", role = c("aut", "cre"),
