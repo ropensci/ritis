@@ -10,13 +10,13 @@ knitr::opts_chunk$set(
 )
 ```
 
-[![Project Status: Active – The project has reached a stable, usable state and is being actively developed.](http://www.repostatus.org/badges/latest/active.svg)](http://www.repostatus.org/#active)
+[![Project Status: Active – The project has reached a stable, usable state and is being actively developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
 [![cran checks](https://cranchecks.info/badges/worst/ritis)](https://cranchecks.info/pkgs/ritis)
 [![Build Status](https://travis-ci.org/ropensci/ritis.svg?branch=master)](https://travis-ci.org/ropensci/ritis)
 [![Build status](https://ci.appveyor.com/api/projects/status/pvrc9muevha00fie/branch/master?svg=true)](https://ci.appveyor.com/project/sckott/ritis/branch/master)
 [![codecov](https://codecov.io/gh/ropensci/ritis/branch/master/graph/badge.svg)](https://codecov.io/gh/ropensci/ritis)
-[![rstudio mirror downloads](http://cranlogs.r-pkg.org/badges/ritis)](https://github.com/metacran/cranlogs.app)
-[![cran version](http://www.r-pkg.org/badges/version/ritis)](https://cran.r-project.org/package=ritis)
+[![rstudio mirror downloads](https://cranlogs.r-pkg.org/badges/ritis)](https://github.com/metacran/cranlogs.app)
+[![cran version](https://www.r-pkg.org/badges/version/ritis)](https://cran.r-project.org/package=ritis)
 
 An interface to the Integrated Taxonomic Information System (ITIS)
 
@@ -54,13 +54,13 @@ library("ritis")
 matches only monomials
 
 ```{r}
-itis_search(q = "nameWOInd:/[A-Za-z0-9]*[%20]{0,0}*/")
+itis_search(q = "nameWOInd:/[A-Za-z0-9]*[ ]{0,0}*/")
 ```
 
 matches only binomials
 
 ```{r}
-itis_search(q = "nameWOInd:/[A-Za-z0-9]*[%20]{1,1}[A-Za-z0-9]*/")
+itis_search(q = "nameWOInd:/[A-Za-z0-9]*[ ]{1,1}[A-Za-z0-9]*/")
 ```
 
 ## REST API
@@ -88,6 +88,9 @@ hierarchy_full(tsn = 37906)
 * Please [report any issues or bugs](https://github.com/ropensci/ritis/issues).
 * License: MIT
 * Get citation information for `ritis` in R doing `citation(package = 'ritis')`
-* Please note that this project is released with a [Contributor Code of Conduct](CODE_OF_CONDUCT.md). By participating in this project you agree to abide by its terms.
+* Please note that this project is released with a [Contributor Code of Conduct][coc].
+By participating in this project you agree to abide by its terms.
 
 [![ropensci_footer](http://ropensci.org/public_images/github_footer.png)](http://ropensci.org)
+
+[coc]: https://github.com/ropensci/ritis/blob/master/CODE_OF_CONDUCT.md

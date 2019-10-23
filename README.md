@@ -3,13 +3,13 @@ ritis
 
 
 
-[![Project Status: Active – The project has reached a stable, usable state and is being actively developed.](http://www.repostatus.org/badges/latest/active.svg)](http://www.repostatus.org/#active)
+[![Project Status: Active – The project has reached a stable, usable state and is being actively developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
 [![cran checks](https://cranchecks.info/badges/worst/ritis)](https://cranchecks.info/pkgs/ritis)
 [![Build Status](https://travis-ci.org/ropensci/ritis.svg?branch=master)](https://travis-ci.org/ropensci/ritis)
 [![Build status](https://ci.appveyor.com/api/projects/status/pvrc9muevha00fie/branch/master?svg=true)](https://ci.appveyor.com/project/sckott/ritis/branch/master)
 [![codecov](https://codecov.io/gh/ropensci/ritis/branch/master/graph/badge.svg)](https://codecov.io/gh/ropensci/ritis)
-[![rstudio mirror downloads](http://cranlogs.r-pkg.org/badges/ritis)](https://github.com/metacran/cranlogs.app)
-[![cran version](http://www.r-pkg.org/badges/version/ritis)](https://cran.r-project.org/package=ritis)
+[![rstudio mirror downloads](https://cranlogs.r-pkg.org/badges/ritis)](https://github.com/metacran/cranlogs.app)
+[![cran version](https://www.r-pkg.org/badges/version/ritis)](https://cran.r-project.org/package=ritis)
 
 An interface to the Integrated Taxonomic Information System (ITIS)
 
@@ -98,53 +98,51 @@ matches only monomials
 
 
 ```r
-itis_search(q = "nameWOInd:/[A-Za-z0-9]*[%20]{0,0}*/")
-#> # A tibble: 10 x 27
-#>    tsn   nameWInd nameWOInd unit1 usage unacceptReason credibilityRati…
-#>    <chr> <chr>    <chr>     <chr> <chr> <chr>          <chr>           
-#>  1 51    Schizom… Schizomy… Schi… inva… unavailable, … Minimum taxonom…
-#>  2 50    Bacteria Bacteria  Bact… valid <NA>           TWG standards m…
-#>  3 52    Archang… Archangi… Arch… inva… unavailable, … Minimum taxonom…
-#>  4 53    Pseudom… Pseudomo… Pseu… valid <NA>           TWG standards m…
-#>  5 54    Rhodoba… Rhodobac… Rhod… inva… unavailable, … Minimum taxonom…
-#>  6 55    Pseudom… Pseudomo… Pseu… inva… unavailable, … Minimum taxonom…
-#>  7 56    Nitroba… Nitrobac… Nitr… inva… unavailable, … Minimum taxonom…
-#>  8 57    Nitroba… Nitrobac… Nitr… valid <NA>           TWG standards m…
-#>  9 65    Nitroso… Nitrosom… Nitr… valid <NA>           TWG standards m…
-#> 10 70    Thiobac… Thiobact… Thio… inva… unavailable, … Minimum taxonom…
-#> # … with 20 more variables: completenessRating <chr>,
-#> #   currencyRating <chr>, kingdom <chr>, rankID <chr>, rank <chr>,
-#> #   hierarchySoFar <chr>, hierarchySoFarWRanks <chr>, hierarchyTSN <chr>,
-#> #   synonyms <chr>, synonymTSNs <chr>, otherSource <chr>,
-#> #   acceptedTSN <chr>, comment <chr>, createDate <chr>, updateDate <chr>,
-#> #   `_version_` <dbl>, taxonAuthor <chr>, vernacular <chr>,
-#> #   hierarchicalSort <chr>, parentTSN <chr>
+itis_search(q = "nameWOInd:/[A-Za-z0-9]*[ ]{0,0}*/")
+#> # A tibble: 10 x 20
+#>    tsn   nameWInd nameWOInd unit1 usage credibilityRati… completenessRat…
+#>    <chr> <chr>    <chr>     <chr> <chr> <chr>            <chr>           
+#>  1 1348… Phthiri… Phthirii… Phth… valid No review; untr… unknown         
+#>  2 1348… Phthiria Phthiria  Phth… valid No review; untr… unknown         
+#>  3 1348… Poecilo… Poecilog… Poec… valid No review; untr… unknown         
+#>  4 1348… Neacreo… Neacreot… Neac… valid No review; untr… unknown         
+#>  5 1348… Geronin… Geroninae Gero… valid No review; untr… unknown         
+#>  6 1348… Geron    Geron     Geron valid No review; untr… unknown         
+#>  7 1349… Cythere… Cytherei… Cyth… valid No review; untr… unknown         
+#>  8 1349… Pantarb… Pantarbes Pant… valid No review; untr… unknown         
+#>  9 1349… Tomomyz… Tomomyzi… Tomo… valid No review; untr… unknown         
+#> 10 1349… Amphico… Amphicos… Amph… valid No review; untr… unknown         
+#> # … with 13 more variables: currencyRating <chr>, kingdom <chr>,
+#> #   parentTSN <chr>, rankID <chr>, rank <chr>, hierarchySoFar <chr>,
+#> #   hierarchySoFarWRanks <chr>, hierarchyTSN <chr>, otherSource <chr>,
+#> #   createDate <chr>, updateDate <chr>, hierarchicalSort <chr>,
+#> #   `_version_` <dbl>
 ```
 
 matches only binomials
 
 
 ```r
-itis_search(q = "nameWOInd:/[A-Za-z0-9]*[%20]{1,1}[A-Za-z0-9]*/")
-#> # A tibble: 10 x 25
+itis_search(q = "nameWOInd:/[A-Za-z0-9]*[ ]{1,1}[A-Za-z0-9]*/")
+#> # A tibble: 10 x 24
 #>    tsn   nameWInd nameWOInd unit1 unit2 usage unacceptReason
 #>    <chr> <chr>    <chr>     <chr> <chr> <chr> <chr>         
-#>  1 58    Nitroba… Nitrobac… Nitr… agil… inva… unavailable, …
-#>  2 59    Nitroba… Nitrobac… Nitr… flav… inva… unavailable, …
-#>  3 60    Nitroba… Nitrobac… Nitr… olig… inva… unavailable, …
-#>  4 61    Nitroba… Nitrobac… Nitr… poly… inva… unavailable, …
-#>  5 62    Nitroba… Nitrobac… Nitr… punc… inva… unavailable, …
-#>  6 64    Nitroba… Nitrobac… Nitr… wino… valid <NA>          
-#>  7 66    Nitroso… Nitrosom… Nitr… euro… valid <NA>          
-#>  8 67    Nitroso… Nitrosom… Nitr… gron… inva… unavailable, …
-#>  9 68    Nitroso… Nitrosom… Nitr… jave… inva… unavailable, …
-#> 10 69    Nitroso… Nitrosom… Nitr… mono… inva… unavailable, …
-#> # … with 18 more variables: credibilityRating <chr>, kingdom <chr>,
-#> #   rankID <chr>, rank <chr>, hierarchySoFar <chr>,
+#>  1 1347… Rhabdop… Rhabdops… Rhab… mus   inva… junior synonym
+#>  2 1347… Apolysi… Apolysis… Apol… neut… valid <NA>          
+#>  3 1347… Pseudog… Pseudoge… Pseu… neut… inva… junior synonym
+#>  4 1347… Apolysi… Apolysis… Apol… nigr… valid <NA>          
+#>  5 1347… Oligodr… Oligodra… Olig… nigr… inva… junior synonym
+#>  6 1347… Apolysi… Apolysis… Apol… obsc… valid <NA>          
+#>  7 1347… Pseudog… Pseudoge… Pseu… obsc… inva… junior synonym
+#>  8 1347… Apolysi… Apolysis… Apol… palp… valid <NA>          
+#>  9 1347… Oligodr… Oligodra… Olig… palp… inva… junior synonym
+#> 10 1347… Apolysi… Apolysis… Apol… pann… valid <NA>          
+#> # … with 17 more variables: credibilityRating <chr>, taxonAuthor <chr>,
+#> #   kingdom <chr>, rankID <chr>, rank <chr>, hierarchySoFar <chr>,
 #> #   hierarchySoFarWRanks <chr>, hierarchyTSN <chr>, synonyms <chr>,
 #> #   synonymTSNs <chr>, otherSource <chr>, acceptedTSN <chr>,
-#> #   comment <chr>, createDate <chr>, updateDate <chr>, `_version_` <dbl>,
-#> #   taxonAuthor <chr>, parentTSN <chr>, hierarchicalSort <chr>
+#> #   createDate <chr>, updateDate <chr>, `_version_` <dbl>,
+#> #   parentTSN <chr>, hierarchicalSort <chr>
 ```
 
 ## REST API
@@ -199,6 +197,9 @@ hierarchy_full(tsn = 37906)
 * Please [report any issues or bugs](https://github.com/ropensci/ritis/issues).
 * License: MIT
 * Get citation information for `ritis` in R doing `citation(package = 'ritis')`
-* Please note that this project is released with a [Contributor Code of Conduct](CODE_OF_CONDUCT.md). By participating in this project you agree to abide by its terms.
+* Please note that this project is released with a [Contributor Code of Conduct][coc].
+By participating in this project you agree to abide by its terms.
 
 [![ropensci_footer](http://ropensci.org/public_images/github_footer.png)](http://ropensci.org)
+
+[coc]: https://github.com/ropensci/ritis/blob/master/CODE_OF_CONDUCT.md
