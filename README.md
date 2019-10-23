@@ -15,7 +15,7 @@ An interface to the Integrated Taxonomic Information System (ITIS)
 
 * [ITIS API Docs](https://www.itis.gov/ws_description.html)
 * [Solr service](https://www.itis.gov/solr_documentation.html)
-* [taxize book](https://ropensci.github.io/taxize-book/)
+* [taxize book](https://taxize.dev/)
 
 ## Package API
 
