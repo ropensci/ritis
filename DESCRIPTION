@@ -4,20 +4,24 @@ Description: An interface to the Integrated Taxonomic Information System ('ITIS'
     (<https://www.itis.gov>). Includes functions to work with the 'ITIS' REST
     API methods (<https://www.itis.gov/ws_description.html>), as well as the
     'Solr' web service (<https://www.itis.gov/solr_documentation.html>).
-Version: 0.7.6.9220
+Version: 0.7.9.9110
 License: MIT + file LICENSE
 URL: https://github.com/ropensci/ritis
 BugReports: https://github.com/ropensci/ritis/issues
-Authors@R: person("Scott", "Chamberlain", role = c("aut", "cre"),
-    email = "myrmecocystus@gmail.com",
-    comment = c(ORCID = "0000-0003-1444-9135"))
+Authors@R: c(
+    person("Scott", "Chamberlain", role = c("aut", "cre"),
+        email = "myrmecocystus@gmail.com",
+        comment = c(ORCID = "0000-0003-1444-9135")),
+    person(given = "rOpenSci",
+        role = "fnd",
+        comment = "https://ropensci.org/"))
 VignetteBuilder: knitr
 Roxygen: list(markdown = TRUE)
 LazyData: true
 Encoding: UTF-8
 Language: en-US
 Imports:
-    solrium (>= 1.0.2.9210),
+    solrium (>= 1.1.0),
     crul (>= 0.4.0),
     jsonlite (>= 1.5),
     data.table (>= 1.9.6),
@@ -28,5 +32,7 @@ Suggests:
     testthat,
     webmockr,
     vcr (>= 0.3.0)
-Remotes: ropensci/solrium
 RoxygenNote: 6.1.1
+X-schema.org-applicationCategory: Taxonomy
+X-schema.org-keywords: taxonomy, biology, nomenclature, JSON, API, web, api-client, identifiers, species, names
+X-schema.org-isPartOf: https://ropensci.org
