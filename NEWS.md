@@ -1,3 +1,15 @@
+ritis 0.8.0
+===========
+
+### MINOR IMPROVEMENTS
+
+* updated docs and examples for `itis_search()` to demonstate how to search appropriately with spaces and other characters  (#14)
+
+### BUG FIXES
+
+* `itis_group()` was failing on a parsing error (after retrieving the payload), via an error in parsing in `solrium` package; fixed now (#15)
+
+
 ritis 0.7.6
 ===========
 
