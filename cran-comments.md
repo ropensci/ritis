@@ -18,5 +18,7 @@ There were no problems related to this package. Summary at
 
 This version fixes a bug and improves documentation.
 
+This is a re-submission of this version, with a fix for a broken link.
+
 Thanks!
 Scott Chamberlain
