@@ -4,10 +4,10 @@ Description: An interface to the Integrated Taxonomic Information System ('ITIS'
     (<https://www.itis.gov>). Includes functions to work with the 'ITIS' REST
     API methods (<https://www.itis.gov/ws_description.html>), as well as the
     'Solr' web service (<https://www.itis.gov/solr_documentation.html>).
-Version: 0.8.0
+Version: 0.8.0.91
 License: MIT + file LICENSE
-URL: https://github.com/ropensci/ritis (devel),
-    https://docs.ropensci.org/ritis/ (website)
+URL: https://github.com/ropensci/ritis (devel)
+    https://docs.ropensci.org/ritis/ (docs)
 BugReports: https://github.com/ropensci/ritis/issues
 Authors@R: c(
     person("Scott", "Chamberlain", role = c("aut", "cre"),
@@ -28,12 +28,12 @@ Imports:
     data.table (>= 1.9.6),
     tibble (>= 1.3.4)
 Suggests:
-    roxygen2 (>= 6.1.1),
+    roxygen2 (>= 7.0.2),
     knitr,
     testthat,
     webmockr,
     vcr (>= 0.3.0)
-RoxygenNote: 6.1.1
+RoxygenNote: 7.0.2
 X-schema.org-applicationCategory: Taxonomy
 X-schema.org-keywords: taxonomy, biology, nomenclature, JSON, API, web, api-client, identifiers, species, names
 X-schema.org-isPartOf: https://ropensci.org
