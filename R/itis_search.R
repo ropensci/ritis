@@ -12,6 +12,10 @@
 #' @references <https://www.itis.gov/solr_documentation.html>
 #' @examples \dontrun{
 #' itis_search(q = "tsn:182662")
+#' 
+#' # get all orders within class Aves (birds)
+#' z <- itis_search(q = "rank:Class AND nameWOInd:Aves")
+#' hierarchy_down(z$tsn)
 #'
 #' itis_search(q = "nameWOInd:Liquidamber\\ styraciflua~0.4")
 #' 
