@@ -5,9 +5,6 @@
 \alias{ritis-package}
 \alias{ritis}
 \title{Interface to Integrated Taxonomic Information (ITIS)}
-\description{
-Interface to Integrated Taxonomic Information (ITIS)
-}
 \section{ritis package API}{
 
 All functions that start with \code{itis_} work with the ITIS Solr

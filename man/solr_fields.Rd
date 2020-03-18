@@ -4,7 +4,9 @@
 \name{solr_fields}
 \alias{solr_fields}
 \title{List of fields that can be used in \link{solr} functions}
-\format{A list of length 36}
+\format{
+A list of length 36
+}
 \source{
 \url{https://www.itis.gov/solr_documentation.html}
 }
