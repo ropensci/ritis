@@ -17,6 +17,15 @@ An interface to the Integrated Taxonomic Information System (ITIS)
 * [Solr service](https://www.itis.gov/solr_documentation.html)
 * [taxize book](https://taxize.dev/)
 
+How to cite ITIS. From https://itis.gov/citation.html 
+
+To cite data obtained from ITIS, the following citation format is offered as a suggestion:
+
+    Retrieved [month, day, year], from the Integrated Taxonomic Information System on-line database, http://www.itis.gov.
+
+
+ITIS is one of many different taxonomic data sources. Other include: Catalogue of Life (and COL+), NCBI taxonomy, International Plant Names Index, Index Fungorum, and more. The Wikipedia entry (https://en.wikipedia.org/wiki/Integrated_Taxonomic_Information_System) states that ITIS has a North American focus, but includes many taxa not in North America.
+
 ## Terminology
 
 * "mononomial": a taxonomic name with one part, e.g, _Poa_
