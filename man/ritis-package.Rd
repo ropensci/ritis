@@ -4,7 +4,10 @@
 \name{ritis-package}
 \alias{ritis-package}
 \alias{ritis}
-\title{Interface to Integrated Taxonomic Information (ITIS)}
+\title{ritis}
+\description{
+Interface to Integrated Taxonomic Information (ITIS)
+}
 \section{ritis package API}{
 
 All functions that start with \code{itis_} work with the ITIS Solr
@@ -24,6 +27,15 @@ or raw XML as a character string, and then parse yourself with
 
 You'll also be interested in the taxize book
 \url{https://taxize.dev/}
+}
+
+\section{Terminology}{
+
+\itemize{
+\item "mononomial": a taxonomic name with one part, e.g, \emph{Poa}
+\item "binomial": a taxonomic name with two parts, e.g, \emph{Poa annua}
+\item "trinomial": a taxonomic name with three parts, e.g, \emph{Poa annua annua}
+}
 }
 
 \author{

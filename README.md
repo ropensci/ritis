@@ -17,6 +17,12 @@ An interface to the Integrated Taxonomic Information System (ITIS)
 * [Solr service](https://www.itis.gov/solr_documentation.html)
 * [taxize book](https://taxize.dev/)
 
+## Terminology
+
+* "mononomial": a taxonomic name with one part, e.g, _Poa_
+* "binomial": a taxonomic name with two parts, e.g, _Poa annua_
+* "trinomial": a taxonomic name with three parts, e.g, _Poa annua annua_
+
 ## Package API
 
  - `accepted_names`
@@ -70,7 +76,6 @@ An interface to the Integrated Taxonomic Information System (ITIS)
  - `usage`
  - `vernacular_languages`
 
-
 ## Installation
 
 Stable, CRAN version
@@ -84,7 +89,7 @@ Dev version
 
 
 ```r
-devtools::install_github("ropensci/ritis")
+remotes::install_github("ropensci/ritis")
 ```
 
 
@@ -99,24 +104,24 @@ matches only monomials
 
 ```r
 itis_search(q = "nameWOInd:/[A-Za-z0-9]*[ ]{0,0}*/")
-#> # A tibble: 10 x 20
+#> # A tibble: 10 x 21
 #>    tsn   nameWInd nameWOInd unit1 usage credibilityRati… completenessRat…
 #>    <chr> <chr>    <chr>     <chr> <chr> <chr>            <chr>           
-#>  1 1348… Phthiri… Phthirii… Phth… valid No review; untr… unknown         
-#>  2 1348… Phthiria Phthiria  Phth… valid No review; untr… unknown         
-#>  3 1348… Poecilo… Poecilog… Poec… valid No review; untr… unknown         
-#>  4 1348… Neacreo… Neacreot… Neac… valid No review; untr… unknown         
-#>  5 1348… Geronin… Geroninae Gero… valid No review; untr… unknown         
-#>  6 1348… Geron    Geron     Geron valid No review; untr… unknown         
-#>  7 1349… Cythere… Cytherei… Cyth… valid No review; untr… unknown         
-#>  8 1349… Pantarb… Pantarbes Pant… valid No review; untr… unknown         
-#>  9 1349… Tomomyz… Tomomyzi… Tomo… valid No review; untr… unknown         
-#> 10 1349… Amphico… Amphicos… Amph… valid No review; untr… unknown         
-#> # … with 13 more variables: currencyRating <chr>, kingdom <chr>,
+#>  1 1433… Heterom… Heterome… Hete… valid No review; untr… unknown         
+#>  2 1433… Sobaroc… Sobaroce… Soba… valid No review; untr… unknown         
+#>  3 1433… Clusiod… Clusiodi… Clus… valid No review; untr… unknown         
+#>  4 1433… Clusiod… Clusiodes Clus… valid No review; untr… unknown         
+#>  5 1433… Acartop… Acartoph… Acar… valid No review; untr… unknown         
+#>  6 1433… Acartop… Acartoph… Acar… valid No review; untr… unknown         
+#>  7 1433… Odiniid… Odiniidae Odin… valid No review; untr… unknown         
+#>  8 1433… Tragino… Traginop… Trag… valid No review; untr… unknown         
+#>  9 1433… Tragino… Traginops Trag… valid No review; untr… unknown         
+#> 10 1433… Odiniin… Odiniinae Odin… valid No review; untr… unknown         
+#> # … with 14 more variables: currencyRating <chr>, kingdom <chr>,
 #> #   parentTSN <chr>, rankID <chr>, rank <chr>, hierarchySoFar <chr>,
 #> #   hierarchySoFarWRanks <chr>, hierarchyTSN <chr>, otherSource <chr>,
 #> #   createDate <chr>, updateDate <chr>, hierarchicalSort <chr>,
-#> #   `_version_` <dbl>
+#> #   `_version_` <dbl>, vernacular <chr>
 ```
 
 matches only binomials
@@ -125,24 +130,23 @@ matches only binomials
 ```r
 itis_search(q = "nameWOInd:/[A-Za-z0-9]*[ ]{1,1}[A-Za-z0-9]*/")
 #> # A tibble: 10 x 24
-#>    tsn   nameWInd nameWOInd unit1 unit2 usage unacceptReason
-#>    <chr> <chr>    <chr>     <chr> <chr> <chr> <chr>         
-#>  1 1347… Rhabdop… Rhabdops… Rhab… mus   inva… junior synonym
-#>  2 1347… Apolysi… Apolysis… Apol… neut… valid <NA>          
-#>  3 1347… Pseudog… Pseudoge… Pseu… neut… inva… junior synonym
-#>  4 1347… Apolysi… Apolysis… Apol… nigr… valid <NA>          
-#>  5 1347… Oligodr… Oligodra… Olig… nigr… inva… junior synonym
-#>  6 1347… Apolysi… Apolysis… Apol… obsc… valid <NA>          
-#>  7 1347… Pseudog… Pseudoge… Pseu… obsc… inva… junior synonym
-#>  8 1347… Apolysi… Apolysis… Apol… palp… valid <NA>          
-#>  9 1347… Oligodr… Oligodra… Olig… palp… inva… junior synonym
-#> 10 1347… Apolysi… Apolysis… Apol… pann… valid <NA>          
-#> # … with 17 more variables: credibilityRating <chr>, taxonAuthor <chr>,
-#> #   kingdom <chr>, rankID <chr>, rank <chr>, hierarchySoFar <chr>,
-#> #   hierarchySoFarWRanks <chr>, hierarchyTSN <chr>, synonyms <chr>,
-#> #   synonymTSNs <chr>, otherSource <chr>, acceptedTSN <chr>,
-#> #   createDate <chr>, updateDate <chr>, `_version_` <dbl>,
-#> #   parentTSN <chr>, hierarchicalSort <chr>
+#>    tsn   nameWInd nameWOInd unit1 unit2 usage credibilityRati… taxonAuthor
+#>    <chr> <chr>    <chr>     <chr> <chr> <chr> <chr>            <chr>      
+#>  1 1433… Clusia … Clusia o… Clus… occi… valid No review; untr… Malloch, 1…
+#>  2 1433… Heterom… Heterome… Hete… annu… valid No review; untr… Johnson, 1…
+#>  3 1433… Heterom… Heterome… Hete… flav… valid No review; untr… (Williston…
+#>  4 1433… Heteron… Heterone… Hete… flav… inva… No review; untr… Williston,…
+#>  5 1433… Heterom… Heterome… Hete… niti… valid No review; untr… Johnson, 1…
+#>  6 1433… Sobaroc… Sobaroce… Soba… affi… valid No review; untr… (Johnson, …
+#>  7 1433… Chaetoc… Chaetocl… Chae… affi… inva… No review; untr… Johnson, 1…
+#>  8 1433… Sobaroc… Sobaroce… Soba… test… inva… No review; untr… Soos, 1964 
+#>  9 1433… Sobaroc… Sobaroce… Soba… atri… valid No review; untr… Sabrosky, …
+#> 10 1433… Sobaroc… Sobaroce… Soba… atri… valid No review; untr… Sabrosky, …
+#> # … with 16 more variables: kingdom <chr>, parentTSN <chr>, rankID <chr>,
+#> #   rank <chr>, hierarchySoFar <chr>, hierarchySoFarWRanks <chr>,
+#> #   hierarchyTSN <chr>, otherSource <chr>, createDate <chr>, updateDate <chr>,
+#> #   hierarchicalSort <chr>, `_version_` <dbl>, synonyms <chr>,
+#> #   synonymTSNs <chr>, unacceptReason <chr>, acceptedTSN <chr>
 ```
 
 ## REST API
@@ -177,18 +181,18 @@ Full hierarchy for a TSN
 ```r
 hierarchy_full(tsn = 37906)
 #> # A tibble: 60 x 5
-#>    parentname      parenttsn rankname      taxonname       tsn   
-#>    <chr>           <chr>     <chr>         <chr>           <chr> 
-#>  1 ""              ""        Kingdom       Plantae         202422
-#>  2 Plantae         202422    Subkingdom    Viridiplantae   954898
-#>  3 Viridiplantae   954898    Infrakingdom  Streptophyta    846494
-#>  4 Streptophyta    846494    Superdivision Embryophyta     954900
-#>  5 Embryophyta     954900    Division      Tracheophyta    846496
-#>  6 Tracheophyta    846496    Subdivision   Spermatophytina 846504
-#>  7 Spermatophytina 846504    Class         Magnoliopsida   18063 
-#>  8 Magnoliopsida   18063     Superorder    Asteranae       846535
-#>  9 Asteranae       846535    Order         Asterales       35419 
-#> 10 Asterales       35419     Family        Asteraceae      35420 
+#>    parentname        parenttsn rankname      taxonname       tsn   
+#>    <chr>             <chr>     <chr>         <chr>           <chr> 
+#>  1 ""                ""        Kingdom       Plantae         202422
+#>  2 "Plantae"         "202422"  Subkingdom    Viridiplantae   954898
+#>  3 "Viridiplantae"   "954898"  Infrakingdom  Streptophyta    846494
+#>  4 "Streptophyta"    "846494"  Superdivision Embryophyta     954900
+#>  5 "Embryophyta"     "954900"  Division      Tracheophyta    846496
+#>  6 "Tracheophyta"    "846496"  Subdivision   Spermatophytina 846504
+#>  7 "Spermatophytina" "846504"  Class         Magnoliopsida   18063 
+#>  8 "Magnoliopsida"   "18063"   Superorder    Asteranae       846535
+#>  9 "Asteranae"       "846535"  Order         Asterales       35419 
+#> 10 "Asterales"       "35419"   Family        Asteraceae      35420 
 #> # … with 50 more rows
 ```
 

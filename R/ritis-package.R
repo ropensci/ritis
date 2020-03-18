@@ -1,4 +1,5 @@
-#' Interface to Integrated Taxonomic Information (ITIS)
+#' @title ritis
+#' @description Interface to Integrated Taxonomic Information (ITIS)
 #'
 #' @section ritis package API:
 #' All functions that start with `itis_` work with the ITIS Solr
@@ -18,6 +19,11 @@
 #' 
 #' You'll also be interested in the taxize book 
 #' <https://taxize.dev/>
+#' 
+#' @section Terminology:
+#' - "mononomial": a taxonomic name with one part, e.g, _Poa_
+#' - "binomial": a taxonomic name with two parts, e.g, _Poa annua_
+#' - "trinomial": a taxonomic name with three parts, e.g, _Poa annua annua_
 #'
 #' @name ritis-package
 #' @aliases ritis

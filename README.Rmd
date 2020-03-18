@@ -24,12 +24,17 @@ An interface to the Integrated Taxonomic Information System (ITIS)
 * [Solr service](https://www.itis.gov/solr_documentation.html)
 * [taxize book](https://taxize.dev/)
 
+## Terminology
+
+* "mononomial": a taxonomic name with one part, e.g, _Poa_
+* "binomial": a taxonomic name with two parts, e.g, _Poa annua_
+* "trinomial": a taxonomic name with three parts, e.g, _Poa annua annua_
+
 ## Package API
 
 ```{r echo=FALSE, comment=NA, results='asis'}
 cat(paste(" -", paste(sprintf("`%s`", sort(getNamespaceExports("ritis"))), collapse = "\n - ")))
 ```
-
 
 ## Installation
 
@@ -42,7 +47,7 @@ install.packages("ritis")
 Dev version
 
 ```{r eval=FALSE}
-devtools::install_github("ropensci/ritis")
+remotes::install_github("ropensci/ritis")
 ```
 
 ```{r}
