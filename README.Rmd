@@ -20,9 +20,10 @@ knitr::opts_chunk$set(
 
 An interface to the Integrated Taxonomic Information System (ITIS)
 
-* [ITIS API Docs](https://www.itis.gov/ws_description.html)
-* [Solr service](https://www.itis.gov/solr_documentation.html)
-* [taxize book](https://taxize.dev/)
+* ITIS API Docs: https://www.itis.gov/ws_description.html
+* Solr service: https://www.itis.gov/solr_documentation.html
+* taxize book: https://taxize.dev/
+* ritis docs: https://docs.ropensci.org/ritis/
 
 How to cite ITIS. From https://itis.gov/citation.html 
 
@@ -38,12 +39,6 @@ ITIS is one of many different taxonomic data sources. Other include: Catalogue o
 * "mononomial": a taxonomic name with one part, e.g, _Poa_
 * "binomial": a taxonomic name with two parts, e.g, _Poa annua_
 * "trinomial": a taxonomic name with three parts, e.g, _Poa annua annua_
-
-## Package API
-
-```{r echo=FALSE, comment=NA, results='asis'}
-cat(paste(" -", paste(sprintf("`%s`", sort(getNamespaceExports("ritis"))), collapse = "\n - ")))
-```
 
 ## Installation
 
@@ -63,7 +58,10 @@ remotes::install_github("ropensci/ritis")
 library("ritis")
 ```
 
+The following are examples of some functions. There are many more avaiable.
+
 ## Solr service
+
 
 matches only monomials
 

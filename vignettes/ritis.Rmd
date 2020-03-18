@@ -91,6 +91,8 @@ matches only binomials
 itis_search(q = "nameWOInd:/[A-Za-z0-9]*[ ]{1,1}[A-Za-z0-9]*/")
 ```
 
+The syntax for `itis_search()` can be a bit hard to grasp. See this ITIS page https://itis.gov/solr_examples.html for help on generating the syntax they want for specific searches.
+
 ## ITIS REST API interface
 
 ITIS REST API docs: <http://www.itis.gov/ws_description.html>
@@ -116,3 +118,8 @@ Full hierarchy for a TSN
 ```{r}
 hierarchy_full(tsn = 37906)
 ```
+
+## Specific use cases
+
+### asdfadfasf
+

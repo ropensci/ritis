@@ -21,6 +21,11 @@ construct the proxy connection.}
 \description{
 ITIS Solr search
 }
+\details{
+The syntax for this function can be a bit hard to grasp. See
+https://itis.gov/solr_examples.html for help on generating the
+syntax ITIS wants for specific searches.
+}
 \examples{
 \dontrun{
 itis_search(q = "tsn:182662")

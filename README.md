@@ -13,9 +13,10 @@ ritis
 
 An interface to the Integrated Taxonomic Information System (ITIS)
 
-* [ITIS API Docs](https://www.itis.gov/ws_description.html)
-* [Solr service](https://www.itis.gov/solr_documentation.html)
-* [taxize book](https://taxize.dev/)
+* ITIS API Docs: https://www.itis.gov/ws_description.html
+* Solr service: https://www.itis.gov/solr_documentation.html
+* taxize book: https://taxize.dev/
+* ritis docs: https://docs.ropensci.org/ritis/
 
 How to cite ITIS. From https://itis.gov/citation.html 
 
@@ -31,59 +32,6 @@ ITIS is one of many different taxonomic data sources. Other include: Catalogue o
 * "mononomial": a taxonomic name with one part, e.g, _Poa_
 * "binomial": a taxonomic name with two parts, e.g, _Poa annua_
 * "trinomial": a taxonomic name with three parts, e.g, _Poa annua annua_
-
-## Package API
-
- - `accepted_names`
- - `any_match_count`
- - `comment_detail`
- - `common_names`
- - `core_metadata`
- - `coverage`
- - `credibility_rating`
- - `credibility_ratings`
- - `currency`
- - `date_data`
- - `description`
- - `experts`
- - `full_record`
- - `geographic_divisions`
- - `geographic_values`
- - `global_species_completeness`
- - `hierarchy_down`
- - `hierarchy_full`
- - `hierarchy_up`
- - `itis_facet`
- - `itis_group`
- - `itis_highlight`
- - `itis_search`
- - `jurisdiction_origin_values`
- - `jurisdiction_values`
- - `jurisdictional_origin`
- - `kingdom_name`
- - `kingdom_names`
- - `last_change_date`
- - `lsid2tsn`
- - `other_sources`
- - `parent_tsn`
- - `publications`
- - `rank_name`
- - `rank_names`
- - `record`
- - `review_year`
- - `scientific_name`
- - `search_any_match_paged`
- - `search_anymatch`
- - `search_common`
- - `search_scientific`
- - `synonym_names`
- - `taxon_authorship`
- - `terms`
- - `tsn_by_vernacular_language`
- - `tsn2lsid`
- - `unacceptability_reason`
- - `usage`
- - `vernacular_languages`
 
 ## Installation
 
@@ -106,7 +54,10 @@ remotes::install_github("ropensci/ritis")
 library("ritis")
 ```
 
+The following are examples of some functions. There are many more avaiable.
+
 ## Solr service
+
 
 matches only monomials
 

@@ -10,6 +10,10 @@
 #' construct the proxy connection.
 #' @param callopts Curl options passed on to [crul::HttpClient]
 #' @references <https://www.itis.gov/solr_documentation.html>
+#' @details
+#' The syntax for this function can be a bit hard to grasp. See
+#' https://itis.gov/solr_examples.html for help on generating the
+#' syntax ITIS wants for specific searches.
 #' @examples \dontrun{
 #' itis_search(q = "tsn:182662")
 #' 
