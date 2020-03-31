@@ -15,7 +15,7 @@ geographic_divisions <- function(tsn, wt = "json", raw = FALSE, ...) {
   if (raw || wt == "xml") return(out)
   res <- parse_raw(out)
   if (inherits(res$geoDivisions, "logical") || is.null(res$geoDivisions)) {
-    tibble::data_frame()
+    tibble::tibble()
   } else {
     dr_op(tibble::as_tibble(res$geoDivisions), "class")
   }

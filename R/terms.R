@@ -39,7 +39,7 @@ itisterms <- function(x, wt = "json", raw = FALSE, ...) {
   if (raw || wt == "xml") return(out)
   x <- parse_raw(out)
   if (is.null(x$itisTerms) || inherits(x$itisTerms, "logical")) {
-    tibble::data_frame()
+    tibble::tibble()
   } else {
     dr_op(tibble::as_tibble(x$itisTerms), "class")
   }
@@ -50,7 +50,7 @@ itistermsfromcommonname <- function(x, wt = "json", raw = FALSE, ...) {
   if (raw || wt == "xml") return(out)
   x <- parse_raw(out)
   if (is.null(x$itisTerms) || inherits(x$itisTerms, "logical")) {
-    tibble::data_frame()
+    tibble::tibble()
   } else {
     dr_op(tibble::as_tibble(x$itisTerms), "class")
   }
@@ -61,7 +61,7 @@ itistermsfromscientificname <- function(x, wt = "json", raw = FALSE, ...) {
   if (raw || wt == "xml") return(out)
   x <- parse_raw(out)
   if (is.null(x$itisTerms) || inherits(x$itisTerms, "logical")) {
-    tibble::data_frame()
+    tibble::tibble()
   } else {
     dr_op(tibble::as_tibble(x$itisTerms), "class")
   }

@@ -12,7 +12,7 @@ taxon_authorship <- function(tsn, wt = "json", raw = FALSE, ...) {
   if (raw || wt == "xml") return(out)
   x <- parse_raw(out)
   if (is.null(x$authorship) || inherits(x$authorship, "logical")) {
-    tibble::data_frame()
+    tibble::tibble()
   } else {
     dr_op(tibble::as_tibble(x), "class")
   }

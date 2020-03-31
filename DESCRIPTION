@@ -4,7 +4,7 @@ Description: An interface to the Integrated Taxonomic Information System ('ITIS'
     (<https://www.itis.gov>). Includes functions to work with the 'ITIS' REST
     API methods (<https://www.itis.gov/ws_description.html>), as well as the
     'Solr' web service (<https://www.itis.gov/solr_documentation.html>).
-Version: 0.8.0.94
+Version: 0.8.0.95
 License: MIT + file LICENSE
 URL: https://github.com/ropensci/ritis (devel)
     https://docs.ropensci.org/ritis/ (docs)
@@ -28,7 +28,7 @@ Imports:
     data.table (>= 1.9.6),
     tibble (>= 1.3.4)
 Suggests:
-    roxygen2 (>= 7.0.2),
+    roxygen2 (>= 7.1.0),
     knitr,
     testthat,
     webmockr,

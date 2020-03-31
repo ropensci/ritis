@@ -13,7 +13,7 @@ synonym_names <- function(tsn, wt = "json", raw = FALSE, ...) {
   if (raw || wt == "xml") return(out)
   tmp <- parse_raw(out)$synonyms
   if (inherits(tmp, "logical") || is.null(tmp)) {
-    tibble::data_frame()
+    tibble::tibble()
   } else {
     dr_op(tibble::as_tibble(tmp), "class")
   }

@@ -13,7 +13,7 @@ tsn_by_vernacular_language <- function(language, wt = "json", raw = FALSE, ...) 
   if (raw || wt == "xml") return(out)
   x <- parse_raw(out)
   if (is.null(x$vernacularTsns) || inherits(x$vernacularTsns, "logical")) {
-    tibble::data_frame()
+    tibble::tibble()
   } else {
     dr_op(tibble::as_tibble(x$vernacularTsns), "class")
   }

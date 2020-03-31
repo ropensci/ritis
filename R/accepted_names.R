@@ -23,7 +23,7 @@ accepted_names <- function(tsn, wt = "json", raw = FALSE, ...) {
   if (raw || wt == "xml") return(out)
   tmp <- parse_raw(out)
   if (all(is.na(tmp$acceptedNames))) {
-    tibble::data_frame()
+    tibble::tibble()
   } else {
     dr_op(tibble::as_tibble(tmp$acceptedNames), "class")
   }

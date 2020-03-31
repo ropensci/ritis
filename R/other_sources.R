@@ -12,7 +12,7 @@ other_sources <- function(tsn, wt = "json", raw = FALSE, ...) {
   if (raw || wt == "xml") return(out)
   x <- parse_raw(out)$otherSources
   if (inherits(x, "logical") || is.null(x)) {
-    tibble::data_frame()
+    tibble::tibble()
   } else {
     x <- cbind(dr_op(x, "referencefor"), bindlist(x$referenceFor))
     tibble::as_tibble(pick_cols(

@@ -16,7 +16,7 @@ search_anymatch <- function(x, wt = "json", raw = FALSE, ...) {
   if (raw || wt == "xml") return(out)
   x <- parse_raw(out)$anyMatchList
   tmp <- dr_op(bindlist(x$commonNameList.commonNames), "class")
-  if (NROW(tmp) == 0) return(tibble::data_frame())
+  if (NROW(tmp) == 0) return(tibble::tibble())
   names(tmp) <- paste0("common_", names(tmp))
   x <- suppressWarnings(
     cbind(
