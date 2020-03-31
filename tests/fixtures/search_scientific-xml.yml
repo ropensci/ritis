@@ -1,0 +1,81 @@
+http_interactions:
+- request:
+    method: get
+    uri: https://www.itis.gov/ITISWebService/services/ITISService/searchByScientificName?srchKey=Tardigrada
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      User-Agent: libcurl/7.64.1 r-curl/4.3 crul/0.9.2.91
+      Accept-Encoding: gzip, deflate
+      Accept: application/json, text/xml, application/xml, */*
+  response:
+    status:
+      status_code: '200'
+      message: OK
+      explanation: Request fulfilled, document follows
+    headers:
+      connection: keep-alive
+      content-type: application/xml;charset=UTF-8
+      date: Tue, 31 Mar 2020 17:14:34 GMT
+      status: 'HTTP/1.1 200 '
+      strict-transport-security:
+      - max-age=63072000; includeSubdomains; preload
+      - max-age=63072000; includeSubdomains; preload
+      transfer-encoding: chunked
+      x-application: itis_webservices
+      x-node-name: not shown
+      x-upstream-member: not shown
+    body:
+      encoding: UTF-8
+      file: no
+      string: <ns:searchByScientificNameResponse xmlns:ns="http://itis_service.itis.usgs.gov"><ns:return
+        xmlns:ax21="http://data.itis_service.itis.usgs.gov/xsd" xmlns:ax23="http://metadata.itis_service.itis.usgs.gov/xsd"
+        xmlns:ax26="http://itis_service.itis.usgs.gov/xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:type="ax21:SvcScientificNameList"><ax21:scientificNames xsi:type="ax21:SvcScientificName"><ax21:tsn>58274</ax21:tsn><ax21:author>(Ehrenberg,
+        1832)</ax21:author><ax21:combinedName>Rotaria tardigrada</ax21:combinedName><ax21:kingdom>Animalia</ax21:kingdom><ax21:unitInd1
+        xsi:nil="true" /><ax21:unitInd2 xsi:nil="true" /><ax21:unitInd3 xsi:nil="true"
+        /><ax21:unitInd4 xsi:nil="true" /><ax21:unitName1>Rotaria</ax21:unitName1><ax21:unitName2>tardigrada</ax21:unitName2><ax21:unitName3
+        xsi:nil="true" /><ax21:unitName4 xsi:nil="true" /></ax21:scientificNames><ax21:scientificNames
+        xsi:type="ax21:SvcScientificName"><ax21:tsn>58898</ax21:tsn><ax21:author xsi:nil="true"
+        /><ax21:combinedName>Notommata tardigrada</ax21:combinedName><ax21:kingdom>Animalia</ax21:kingdom><ax21:unitInd1
+        xsi:nil="true" /><ax21:unitInd2 xsi:nil="true" /><ax21:unitInd3 xsi:nil="true"
+        /><ax21:unitInd4 xsi:nil="true" /><ax21:unitName1>Notommata</ax21:unitName1><ax21:unitName2>tardigrada</ax21:unitName2><ax21:unitName3
+        xsi:nil="true" /><ax21:unitName4 xsi:nil="true" /></ax21:scientificNames><ax21:scientificNames
+        xsi:type="ax21:SvcScientificName"><ax21:tsn>65562</ax21:tsn><ax21:author xsi:nil="true"
+        /><ax21:combinedName>Pilargis tardigrada</ax21:combinedName><ax21:kingdom>Animalia</ax21:kingdom><ax21:unitInd1
+        xsi:nil="true" /><ax21:unitInd2 xsi:nil="true" /><ax21:unitInd3 xsi:nil="true"
+        /><ax21:unitInd4 xsi:nil="true" /><ax21:unitName1>Pilargis</ax21:unitName1><ax21:unitName2>tardigrada</ax21:unitName2><ax21:unitName3
+        xsi:nil="true" /><ax21:unitName4 xsi:nil="true" /></ax21:scientificNames><ax21:scientificNames
+        xsi:type="ax21:SvcScientificName"><ax21:tsn>155166</ax21:tsn><ax21:author
+        xsi:nil="true" /><ax21:combinedName>Tardigrada</ax21:combinedName><ax21:kingdom>Animalia</ax21:kingdom><ax21:unitInd1
+        xsi:nil="true" /><ax21:unitInd2 xsi:nil="true" /><ax21:unitInd3 xsi:nil="true"
+        /><ax21:unitInd4 xsi:nil="true" /><ax21:unitName1>Tardigrada</ax21:unitName1><ax21:unitName2
+        xsi:nil="true" /><ax21:unitName3 xsi:nil="true" /><ax21:unitName4 xsi:nil="true"
+        /></ax21:scientificNames><ax21:scientificNames xsi:type="ax21:SvcScientificName"><ax21:tsn>155167</ax21:tsn><ax21:author>Marcus,
+        1927</ax21:author><ax21:combinedName>Heterotardigrada</ax21:combinedName><ax21:kingdom>Animalia</ax21:kingdom><ax21:unitInd1
+        xsi:nil="true" /><ax21:unitInd2 xsi:nil="true" /><ax21:unitInd3 xsi:nil="true"
+        /><ax21:unitInd4 xsi:nil="true" /><ax21:unitName1>Heterotardigrada</ax21:unitName1><ax21:unitName2
+        xsi:nil="true" /><ax21:unitName3 xsi:nil="true" /><ax21:unitName4 xsi:nil="true"
+        /></ax21:scientificNames><ax21:scientificNames xsi:type="ax21:SvcScientificName"><ax21:tsn>155168</ax21:tsn><ax21:author>Marcus,
+        1927</ax21:author><ax21:combinedName>Arthrotardigrada</ax21:combinedName><ax21:kingdom>Animalia</ax21:kingdom><ax21:unitInd1
+        xsi:nil="true" /><ax21:unitInd2 xsi:nil="true" /><ax21:unitInd3 xsi:nil="true"
+        /><ax21:unitInd4 xsi:nil="true" /><ax21:unitName1>Arthrotardigrada</ax21:unitName1><ax21:unitName2
+        xsi:nil="true" /><ax21:unitName3 xsi:nil="true" /><ax21:unitName4 xsi:nil="true"
+        /></ax21:scientificNames><ax21:scientificNames xsi:type="ax21:SvcScientificName"><ax21:tsn>155358</ax21:tsn><ax21:author>Rahm,
+        1937</ax21:author><ax21:combinedName>Mesotardigrada</ax21:combinedName><ax21:kingdom>Animalia</ax21:kingdom><ax21:unitInd1
+        xsi:nil="true" /><ax21:unitInd2 xsi:nil="true" /><ax21:unitInd3 xsi:nil="true"
+        /><ax21:unitInd4 xsi:nil="true" /><ax21:unitName1>Mesotardigrada</ax21:unitName1><ax21:unitName2
+        xsi:nil="true" /><ax21:unitName3 xsi:nil="true" /><ax21:unitName4 xsi:nil="true"
+        /></ax21:scientificNames><ax21:scientificNames xsi:type="ax21:SvcScientificName"><ax21:tsn>155362</ax21:tsn><ax21:author>Richters,
+        1926</ax21:author><ax21:combinedName>Eutardigrada</ax21:combinedName><ax21:kingdom>Animalia</ax21:kingdom><ax21:unitInd1
+        xsi:nil="true" /><ax21:unitInd2 xsi:nil="true" /><ax21:unitInd3 xsi:nil="true"
+        /><ax21:unitInd4 xsi:nil="true" /><ax21:unitName1>Eutardigrada</ax21:unitName1><ax21:unitName2
+        xsi:nil="true" /><ax21:unitName3 xsi:nil="true" /><ax21:unitName4 xsi:nil="true"
+        /></ax21:scientificNames><ax21:scientificNames xsi:type="ax21:SvcScientificName"><ax21:tsn>866744</ax21:tsn><ax21:author>Thorell,
+        1881</ax21:author><ax21:combinedName>Scytodes tardigrada</ax21:combinedName><ax21:kingdom>Animalia</ax21:kingdom><ax21:unitInd1
+        xsi:nil="true" /><ax21:unitInd2 xsi:nil="true" /><ax21:unitInd3 xsi:nil="true"
+        /><ax21:unitInd4 xsi:nil="true" /><ax21:unitName1>Scytodes</ax21:unitName1><ax21:unitName2>tardigrada</ax21:unitName2><ax21:unitName3
+        xsi:nil="true" /><ax21:unitName4 xsi:nil="true" /></ax21:scientificNames></ns:return></ns:searchByScientificNameResponse>
+  recorded_at: 2020-03-31 17:14:35 GMT
+  recorded_with: vcr/0.5.4, webmockr/0.6.2

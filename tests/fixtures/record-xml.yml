@@ -1,0 +1,41 @@
+http_interactions:
+- request:
+    method: get
+    uri: https://www.itis.gov/ITISWebService/services/ITISService/getRecordFromLSID?lsid=urn%3Alsid%3Aitis.gov%3Aitis_tsn%3A180543
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      User-Agent: libcurl/7.64.1 r-curl/4.3 crul/0.9.2.91
+      Accept-Encoding: gzip, deflate
+      Accept: application/json, text/xml, application/xml, */*
+  response:
+    status:
+      status_code: '200'
+      message: OK
+      explanation: Request fulfilled, document follows
+    headers:
+      connection: keep-alive
+      content-type: application/xml;charset=UTF-8
+      date: Tue, 31 Mar 2020 17:14:05 GMT
+      status: 'HTTP/1.1 200 '
+      strict-transport-security:
+      - max-age=63072000; includeSubdomains; preload
+      - max-age=63072000; includeSubdomains; preload
+      transfer-encoding: chunked
+      x-application: itis_webservices
+      x-node-name: not shown
+      x-upstream-member: not shown
+    body:
+      encoding: UTF-8
+      file: no
+      string: <ns:getRecordFromLSIDResponse xmlns:ns="http://itis_service.itis.usgs.gov"><ns:return
+        xmlns:ax21="http://data.itis_service.itis.usgs.gov/xsd" xmlns:ax23="http://metadata.itis_service.itis.usgs.gov/xsd"
+        xmlns:ax26="http://itis_service.itis.usgs.gov/xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:type="ax21:SvcLSIDRecord"><ax21:tsn>180543</ax21:tsn><ax21:authorship>Linnaeus,
+        1758</ax21:authorship><ax21:genusPart>Ursus</ax21:genusPart><ax21:infragenericEpithet
+        xsi:nil="true" /><ax21:infraspecificEpithet xsi:nil="true" /><ax21:lsid>urn:lsid:itis.gov:itis_tsn:180543</ax21:lsid><ax21:nameComplete>Ursus
+        arctos</ax21:nameComplete><ax21:nomenclaturalCode>iczn</ax21:nomenclaturalCode><ax21:rank>http://rs.tdwg.org/ontology/voc/TaxonRank#Species</ax21:rank><ax21:rankString>Species</ax21:rankString><ax21:specificEpithet>arctos</ax21:specificEpithet><ax21:uninomial
+        xsi:nil="true" /></ns:return></ns:getRecordFromLSIDResponse>
+  recorded_at: 2020-03-31 17:14:07 GMT
+  recorded_with: vcr/0.5.4, webmockr/0.6.2

@@ -1,0 +1,39 @@
+http_interactions:
+- request:
+    method: get
+    uri: https://www.itis.gov/ITISWebService/services/ITISService/searchByCommonName?srchKey=american%20bullfrog
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      User-Agent: libcurl/7.64.1 r-curl/4.3 crul/0.9.2.91
+      Accept-Encoding: gzip, deflate
+      Accept: application/json, text/xml, application/xml, */*
+  response:
+    status:
+      status_code: '200'
+      message: OK
+      explanation: Request fulfilled, document follows
+    headers:
+      connection: keep-alive
+      content-type: application/xml;charset=UTF-8
+      date: Tue, 31 Mar 2020 17:14:15 GMT
+      status: 'HTTP/1.1 200 '
+      strict-transport-security:
+      - max-age=63072000; includeSubdomains; preload
+      - max-age=63072000; includeSubdomains; preload
+      transfer-encoding: chunked
+      x-application: itis_webservices
+      x-node-name: not shown
+      x-upstream-member: not shown
+    body:
+      encoding: UTF-8
+      file: no
+      string: <ns:searchByCommonNameResponse xmlns:ns="http://itis_service.itis.usgs.gov"><ns:return
+        xmlns:ax21="http://data.itis_service.itis.usgs.gov/xsd" xmlns:ax23="http://metadata.itis_service.itis.usgs.gov/xsd"
+        xmlns:ax26="http://itis_service.itis.usgs.gov/xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:type="ax21:SvcCommonNameList"><ax21:tsn xsi:nil="true" /><ax21:commonNames
+        xsi:type="ax21:SvcCommonName"><ax21:commonName>American Bullfrog</ax21:commonName><ax21:language>English</ax21:language><ax21:tsn>775084</ax21:tsn></ax21:commonNames><ax21:commonNames
+        xsi:type="ax21:SvcCommonName"><ax21:commonName>American Bullfrog</ax21:commonName><ax21:language>English</ax21:language><ax21:tsn>173441</ax21:tsn></ax21:commonNames></ns:return></ns:searchByCommonNameResponse>
+  recorded_at: 2020-03-31 17:14:16 GMT
+  recorded_with: vcr/0.5.4, webmockr/0.6.2

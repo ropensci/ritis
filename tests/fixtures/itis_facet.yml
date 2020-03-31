@@ -1,0 +1,31 @@
+http_interactions:
+- request:
+    method: get
+    uri: https://services.itis.gov/?q=rank%3ASpecies&facet.field=kingdom&rows=0&wt=json&fl=DOES_NOT_EXIST&facet=true
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      User-Agent: libcurl/7.64.1 r-curl/4.3 crul/0.9.2.91
+      Accept-Encoding: gzip, deflate
+      Accept: application/json, text/xml, application/xml, */*
+  response:
+    status:
+      status_code: '200'
+      message: OK
+      explanation: Request fulfilled, document follows
+    headers:
+      status: HTTP/1.1 200 OK
+      date: Tue, 31 Mar 2020 17:12:53 GMT
+      content-length: '462'
+      content-type: application/json
+      set-cookie: TS010ecf5c=01a3504f4ccc21e2130bcad8ad5f7ddddc5f8269a6063ba32692a21c0ba6c7ed66dd8664d3225091ea933882a85175425d11d99f66;
+        Path=/; Secure; HTTPOnly
+    body:
+      encoding: UTF-8
+      file: no
+      string: |+
+        {"responseHeader":{"status":0,"QTime":21,"params":{"q":"rank:Species","facet.field":"kingdom","fl":"DOES_NOT_EXIST","rows":"0","wt":"json","facet":"true"}},"response":{"numFound":628077,"start":0,"docs":[]},"facet_counts":{"facet_queries":{},"facet_fields":{"kingdom":["animalia",493901,"plantae",109900,"bacteria",11983,"chromista",6560,"fungi",2961,"protozoa",2328,"archaea",444]},"facet_dates":{},"facet_ranges":{},"facet_intervals":{},"facet_heatmaps":{}}}
+
+  recorded_at: 2020-03-31 17:12:54 GMT
+  recorded_with: vcr/0.5.4, webmockr/0.6.2
