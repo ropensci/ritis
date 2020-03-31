@@ -9,10 +9,10 @@
 #' @return Zero row data.frame if the name is accepted, otherwise a data.frame
 #' with information on the currently accepted name
 #' @examples \dontrun{
-#' # TSN accepted - good name
+#' # TSN accepted - good name, empty data.frame returned
 #' accepted_names(tsn = 208527)
 #'
-#' # TSN not accepted - input TSN is old name
+#' # TSN not accepted - input TSN is old name, non-empty data.frame returned
 #' accepted_names(tsn = 504239)
 #'
 #' # raw json

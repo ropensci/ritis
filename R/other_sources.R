@@ -4,7 +4,11 @@
 #' @inheritParams accepted_names
 #' @template tsn
 #' @examples \dontrun{
+#' # results
 #' other_sources(tsn=182662)
+#' # no results
+#' other_sources(tsn=2085272) 
+#' # get xml
 #' other_sources(tsn=182662, wt = "xml")
 #' }
 other_sources <- function(tsn, wt = "json", raw = FALSE, ...) {

@@ -21,7 +21,11 @@ Returns a list of the other sources used for the TSN.
 }
 \examples{
 \dontrun{
+# results
 other_sources(tsn=182662)
+# no results
+other_sources(tsn=2085272) 
+# get xml
 other_sources(tsn=182662, wt = "xml")
 }
 }

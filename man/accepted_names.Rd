@@ -25,10 +25,10 @@ Get accepted names from tsn
 }
 \examples{
 \dontrun{
-# TSN accepted - good name
+# TSN accepted - good name, empty data.frame returned
 accepted_names(tsn = 208527)
 
-# TSN not accepted - input TSN is old name
+# TSN not accepted - input TSN is old name, non-empty data.frame returned
 accepted_names(tsn = 504239)
 
 # raw json
