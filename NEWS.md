@@ -1,3 +1,12 @@
+ritis 0.9.0
+===========
+
+### MINOR IMPROVEMENTS
+
+* an example added to `itis_search()` for how to do a search for Class Aves, and how to drill down from Class Aves to genera within Aves; added text to readme and vignette about how to cite ITIS and a brief comparison of ITIS to other taxonomic data sources; added brief terminology section to readme and vignette with 3 terms thus far (mononomial, binomial, trinomial) (#16) thanks to @TrashBirdEcology for the prompt
+* change `tibble::data_frame` useage to `tibble::tibble` (#17)
+
+
 ritis 0.8.0
 ===========
 

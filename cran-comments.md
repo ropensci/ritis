@@ -1,7 +1,7 @@
 ## Test environments
 
-* local OS X install, R 3.6.1 patched
-* ubuntu 14.04 (on travis-ci), R 3.6.1
+* local OS X install, R 3.6.3 patched
+* ubuntu 16.04 (on travis-ci), R 3.6.3
 * win-builder (devel and release)
 
 ## R CMD check results
@@ -16,9 +16,7 @@ There were no problems related to this package. Summary at
 
 ---
 
-This version fixes a bug and improves documentation.
-
-This is a re-submission of this version, with a fix for a broken link.
+This version updates a dependencies function to a new one they suggest; documentation improvements.
 
 Thanks!
 Scott Chamberlain
