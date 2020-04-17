@@ -23,7 +23,7 @@ knitr::opts_chunk$set(
 
 An interface to the Integrated Taxonomic Information System (ITIS)
 
-See also the [taxize book](https://taxize.dev/) for 
+See also the taxize book (https://taxize.dev/) for 
 a manual on working with taxonomic data in R, including with ITIS data.
 
 How to cite ITIS. From https://itis.gov/citation.html 
@@ -75,7 +75,7 @@ These four methods use the equivalent functions in the package `solrium`, e.g.,
 simply use `...` to allow users to pass on parameters to the wrapped `solrium`
 functions. So do read the `solrium` docs.
 
-ITIS Solr API docs: <https://www.itis.gov/solr_documentation.html>
+ITIS Solr API docs: https://www.itis.gov/solr_documentation.html
 
 Some examples:
 
@@ -95,7 +95,7 @@ The syntax for `itis_search()` can be a bit hard to grasp. See this ITIS page ht
 
 ## ITIS REST API interface
 
-ITIS REST API docs: <http://www.itis.gov/ws_description.html>
+ITIS REST API docs: http://www.itis.gov/ws_description.html
 
 The following are some example uses. There are many more methods not shown below
 
@@ -118,8 +118,3 @@ Full hierarchy for a TSN
 ```{r}
 hierarchy_full(tsn = 37906)
 ```
-
-## Specific use cases
-
-### asdfadfasf
-

@@ -64,24 +64,26 @@ matches only monomials
 
 ```r
 itis_search(q = "nameWOInd:/[A-Za-z0-9]*[ ]{0,0}*/")
-#> # A tibble: 10 x 21
+#> # A tibble: 10 x 28
 #>    tsn   nameWInd nameWOInd unit1 usage credibilityRati… completenessRat…
 #>    <chr> <chr>    <chr>     <chr> <chr> <chr>            <chr>           
-#>  1 1433… Heterom… Heterome… Hete… valid No review; untr… unknown         
-#>  2 1433… Sobaroc… Sobaroce… Soba… valid No review; untr… unknown         
-#>  3 1433… Clusiod… Clusiodi… Clus… valid No review; untr… unknown         
-#>  4 1433… Clusiod… Clusiodes Clus… valid No review; untr… unknown         
-#>  5 1433… Acartop… Acartoph… Acar… valid No review; untr… unknown         
-#>  6 1433… Acartop… Acartoph… Acar… valid No review; untr… unknown         
-#>  7 1433… Odiniid… Odiniidae Odin… valid No review; untr… unknown         
-#>  8 1433… Tragino… Traginop… Trag… valid No review; untr… unknown         
-#>  9 1433… Tragino… Traginops Trag… valid No review; untr… unknown         
-#> 10 1433… Odiniin… Odiniinae Odin… valid No review; untr… unknown         
-#> # … with 14 more variables: currencyRating <chr>, kingdom <chr>,
-#> #   parentTSN <chr>, rankID <chr>, rank <chr>, hierarchySoFar <chr>,
-#> #   hierarchySoFarWRanks <chr>, hierarchyTSN <chr>, otherSource <chr>,
-#> #   createDate <chr>, updateDate <chr>, hierarchicalSort <chr>,
-#> #   `_version_` <dbl>, vernacular <chr>
+#>  1 1427… Xenocha… Xenochae… Xeno… valid TWG standards m… complete        
+#>  2 1428… Myopiti… Myopitini Myop… inva… TWG standards m… unknown         
+#>  3 1428… Rhynenc… Rhynenci… Rhyn… valid TWG standards m… complete        
+#>  4 1428… Urophora Urophora  Urop… valid TWG standards m… complete        
+#>  5 1428… Oedaspi… Oedaspid… Oeda… inva… TWG standards m… unknown         
+#>  6 1428… Aciurina Aciurina  Aciu… valid TWG standards m… complete        
+#>  7 1428… Callach… Callachna Call… inva… TWG standards m… unknown         
+#>  8 1428… Cecidoc… Cecidoch… Ceci… valid TWG standards m… complete        
+#>  9 1428… Eurosta  Eurosta   Euro… valid TWG standards m… complete        
+#> 10 1428… Peronyma Peronyma  Pero… valid TWG standards m… complete        
+#> # … with 21 more variables: currencyRating <chr>, taxonAuthor <chr>,
+#> #   kingdom <chr>, parentTSN <chr>, rankID <chr>, rank <chr>,
+#> #   hierarchySoFar <chr>, hierarchySoFarWRanks <chr>, hierarchyTSN <chr>,
+#> #   publication <chr>, otherSource <chr>, createDate <chr>, updateDate <chr>,
+#> #   hierarchicalSort <chr>, `_version_` <dbl>, unacceptReason <chr>,
+#> #   synonyms <chr>, synonymTSNs <chr>, acceptedTSN <chr>, comment <chr>,
+#> #   expert <chr>
 ```
 
 matches only binomials
@@ -89,24 +91,24 @@ matches only binomials
 
 ```r
 itis_search(q = "nameWOInd:/[A-Za-z0-9]*[ ]{1,1}[A-Za-z0-9]*/")
-#> # A tibble: 10 x 24
-#>    tsn   nameWInd nameWOInd unit1 unit2 usage credibilityRati… taxonAuthor
-#>    <chr> <chr>    <chr>     <chr> <chr> <chr> <chr>            <chr>      
-#>  1 1433… Clusia … Clusia o… Clus… occi… valid No review; untr… Malloch, 1…
-#>  2 1433… Heterom… Heterome… Hete… annu… valid No review; untr… Johnson, 1…
-#>  3 1433… Heterom… Heterome… Hete… flav… valid No review; untr… (Williston…
-#>  4 1433… Heteron… Heterone… Hete… flav… inva… No review; untr… Williston,…
-#>  5 1433… Heterom… Heterome… Hete… niti… valid No review; untr… Johnson, 1…
-#>  6 1433… Sobaroc… Sobaroce… Soba… affi… valid No review; untr… (Johnson, …
-#>  7 1433… Chaetoc… Chaetocl… Chae… affi… inva… No review; untr… Johnson, 1…
-#>  8 1433… Sobaroc… Sobaroce… Soba… test… inva… No review; untr… Soos, 1964 
-#>  9 1433… Sobaroc… Sobaroce… Soba… atri… valid No review; untr… Sabrosky, …
-#> 10 1433… Sobaroc… Sobaroce… Soba… atri… valid No review; untr… Sabrosky, …
-#> # … with 16 more variables: kingdom <chr>, parentTSN <chr>, rankID <chr>,
+#> # A tibble: 10 x 25
+#>    tsn   nameWInd nameWOInd unit1 unit2 usage unacceptReason credibilityRati…
+#>    <chr> <chr>    <chr>     <chr> <chr> <chr> <chr>          <chr>           
+#>  1 1427… Trypeta… Trypeta … Tryp… plat… inva… original name… TWG standards m…
+#>  2 1427… Xenocha… Xenochae… Xeno… aura… valid <NA>           TWG standards m…
+#>  3 1428… Eutreta… Eutreta … Eutr… aura… inva… original name… TWG standards m…
+#>  4 1428… Xenocha… Xenochae… Xeno… dich… valid <NA>           TWG standards m…
+#>  5 1428… Rhynenc… Rhynenci… Rhyn… long… valid <NA>           TWG standards m…
+#>  6 1428… Aleomyi… Aleomyia… Aleo… alpha inva… junior synonym TWG standards m…
+#>  7 1428… Urophor… Urophora… Urop… acut… inva… original name… TWG standards m…
+#>  8 1428… Urophor… Urophora… Urop… affi… valid <NA>           TWG standards m…
+#>  9 1428… Trypeta… Trypeta … Tryp… affi… inva… original name… TWG standards m…
+#> 10 1428… Urophor… Urophora… Urop… card… valid <NA>           TWG standards m…
+#> # … with 17 more variables: taxonAuthor <chr>, kingdom <chr>, rankID <chr>,
 #> #   rank <chr>, hierarchySoFar <chr>, hierarchySoFarWRanks <chr>,
-#> #   hierarchyTSN <chr>, otherSource <chr>, createDate <chr>, updateDate <chr>,
-#> #   hierarchicalSort <chr>, `_version_` <dbl>, synonyms <chr>,
-#> #   synonymTSNs <chr>, unacceptReason <chr>, acceptedTSN <chr>
+#> #   hierarchyTSN <chr>, synonyms <chr>, synonymTSNs <chr>, publication <chr>,
+#> #   otherSource <chr>, acceptedTSN <chr>, createDate <chr>, updateDate <chr>,
+#> #   `_version_` <dbl>, parentTSN <chr>, hierarchicalSort <chr>
 ```
 
 ## REST API
