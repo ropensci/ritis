@@ -21,11 +21,11 @@
 terms <- function(query, what = "both", wt = "json", raw = FALSE, ...) {
   what <- match.arg(what, c('both', 'scientific', 'common'))
   temp <- switch(what,
-                 both = lapply(query, function(x) itisterms(x, wt, raw, ...)),
-                 common = lapply(query, function(x)
-                   itistermsfromcommonname(x, wt, raw, ...)),
-                 scientific = lapply(query, function(x)
-                   itistermsfromscientificname(x, wt, raw, ...)))
+    both = lapply(query, function(x) itisterms(x, wt, raw, ...)),
+    common = lapply(query, function(x)
+      itistermsfromcommonname(x, wt, raw, ...)),
+    scientific = lapply(query, function(x)
+      itistermsfromscientificname(x, wt, raw, ...)))
   if (length(query) == 1) {
     temp[[1]]
   } else {
@@ -38,6 +38,7 @@ itisterms <- function(x, wt = "json", raw = FALSE, ...) {
   out <- itis_GET("getITISTerms", list(srchKey = x), wt, ...)
   if (raw || wt == "xml") return(out)
   x <- parse_raw(out)
+  if (NROW(x) == 0) return(tibble::tibble())
   if (is.null(x$itisTerms) || inherits(x$itisTerms, "logical")) {
     tibble::tibble()
   } else {
