@@ -1,4 +1,21 @@
-#' Get ITIS terms, i.e., tsn's, authors, common names, and scientific names.
+foo_terms <- function(path) {
+  function(x, wt = "json", raw = FALSE, ...) {
+    out <- itis_GET(path, list(srchKey = x), wt, ...)
+    if (raw || wt == "xml") return(out)
+    x <- parse_raw(out)
+    if (NROW(x) == 0) return(tibble::tibble())
+    if (is.null(x$itisTerms) || inherits(x$itisTerms, "logical")) {
+      tibble::tibble()
+    } else {
+      dr_op(tibble::as_tibble(x$itisTerms), "class")
+    }
+  }
+}
+itisterms <- foo_terms("getITISTerms")
+itisterms_com <- foo_terms("getITISTermsFromCommonName")
+itisterms_sci <- foo_terms("getITISTermsFromScientificName")
+
+#' Get ITIS terms, i.e., tsn's, authors, common names, and scientific names
 #'
 #' @export
 #' @inheritParams accepted_names
@@ -20,50 +37,9 @@
 #' }
 terms <- function(query, what = "both", wt = "json", raw = FALSE, ...) {
   what <- match.arg(what, c('both', 'scientific', 'common'))
-  temp <- switch(what,
-    both = lapply(query, function(x) itisterms(x, wt, raw, ...)),
-    common = lapply(query, function(x)
-      itistermsfromcommonname(x, wt, raw, ...)),
-    scientific = lapply(query, function(x)
-      itistermsfromscientificname(x, wt, raw, ...)))
-  if (length(query) == 1) {
-    temp[[1]]
-  } else {
-    stats::setNames(temp, query)
-  }
-}
-
-# helpers
-itisterms <- function(x, wt = "json", raw = FALSE, ...) {
-  out <- itis_GET("getITISTerms", list(srchKey = x), wt, ...)
-  if (raw || wt == "xml") return(out)
-  x <- parse_raw(out)
-  if (NROW(x) == 0) return(tibble::tibble())
-  if (is.null(x$itisTerms) || inherits(x$itisTerms, "logical")) {
-    tibble::tibble()
-  } else {
-    dr_op(tibble::as_tibble(x$itisTerms), "class")
-  }
-}
-
-itistermsfromcommonname <- function(x, wt = "json", raw = FALSE, ...) {
-  out <- itis_GET("getITISTermsFromCommonName", list(srchKey = x), wt, ...)
-  if (raw || wt == "xml") return(out)
-  x <- parse_raw(out)
-  if (is.null(x$itisTerms) || inherits(x$itisTerms, "logical")) {
-    tibble::tibble()
-  } else {
-    dr_op(tibble::as_tibble(x$itisTerms), "class")
-  }
-}
-
-itistermsfromscientificname <- function(x, wt = "json", raw = FALSE, ...) {
-  out <- itis_GET("getITISTermsFromScientificName", list(srchKey = x), wt, ...)
-  if (raw || wt == "xml") return(out)
-  x <- parse_raw(out)
-  if (is.null(x$itisTerms) || inherits(x$itisTerms, "logical")) {
-    tibble::tibble()
-  } else {
-    dr_op(tibble::as_tibble(x$itisTerms), "class")
-  }
+  fun <- switch(what, both = itisterms, common = itisterms_com,
+    scientific = itisterms_sci)
+  temp <- lapply(query, fun, wt = wt, raw = raw, ...)
+  if (length(query) == 1) return(temp[[1]])
+  stats::setNames(temp, query)
 }

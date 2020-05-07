@@ -2,7 +2,7 @@
 % Please edit documentation in R/terms.R
 \name{terms}
 \alias{terms}
-\title{Get ITIS terms, i.e., tsn's, authors, common names, and scientific names.}
+\title{Get ITIS terms, i.e., tsn's, authors, common names, and scientific names}
 \usage{
 terms(query, what = "both", wt = "json", raw = FALSE, ...)
 }
@@ -20,7 +20,7 @@ Default: \code{FALSE}}
 \item{...}{curl options passed on to \link[crul:HttpClient]{crul::HttpClient}}
 }
 \description{
-Get ITIS terms, i.e., tsn's, authors, common names, and scientific names.
+Get ITIS terms, i.e., tsn's, authors, common names, and scientific names
 }
 \examples{
 \dontrun{
