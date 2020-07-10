@@ -28,12 +28,12 @@ Imports:
     data.table,
     tibble
 Suggests:
-    roxygen2 (>= 7.1.0),
+    roxygen2 (>= 7.1.1),
     knitr,
     testthat,
     webmockr,
     vcr (>= 0.5.4)
-RoxygenNote: 7.1.0
+RoxygenNote: 7.1.1
 X-schema.org-applicationCategory: Taxonomy
 X-schema.org-keywords: taxonomy, biology, nomenclature, JSON, API, web, api-client, identifiers, species, names
 X-schema.org-isPartOf: https://ropensci.org

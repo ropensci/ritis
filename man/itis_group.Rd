@@ -13,7 +13,7 @@ parameters, and examples below}
 
 \item{proxy}{List of arguments for a proxy connection,
 including one or more of: url, port, username, password,
-and auth. See \code{\link[crul:proxy]{crul::proxy()}} for  help, which is used to
+and auth. See \code{\link[crul:proxies]{crul::proxy()}} for  help, which is used to
 construct the proxy connection.}
 
 \item{callopts}{Curl options passed on to \link[crul:HttpClient]{crul::HttpClient}}
