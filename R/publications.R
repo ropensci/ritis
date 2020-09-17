@@ -14,11 +14,10 @@ publications <- function(tsn, wt = "json", raw = FALSE, ...) {
   out <- itis_GET("getPublicationsFromTSN", list(tsn = tsn), wt, ...)
   if (raw || wt == "xml") return(out)
   x <- parse_raw(out)$publications
-  x <- cbind(dr_op(x, "referencefor"), dr_op(bindlist(x$referenceFor), "class"))
   tibble::as_tibble(pick_cols(
     x,
     c("actualPubDate","isbn","issn","listedPubDate","pages",
       "pubComment","pubName","pubPlace","publisher","referenceAuthor",
-      "name","refLanguage","referredTsn","title","updateDate")
+      "referredTsn","title","updateDate")
   ))
 }
