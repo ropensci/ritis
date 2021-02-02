@@ -1,0 +1,117 @@
+---
+title: "ritis introduction"
+author: "Scott Chamberlain"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{ritis introduction}
+  %\VignetteEngine{knitr::rmarkdown}
+  \usepackage[utf8]{inputenc}
+---
+
+```{r, echo = FALSE, warning = FALSE, message = FALSE}
+knitr::opts_chunk$set(
+  collapse  =  TRUE,
+  comment  =  "#>",
+  warning = FALSE,
+  message = FALSE
+)
+```
+
+An interface to the Integrated Taxonomic Information System (ITIS)
+
+See also the taxize book (https://taxize.dev/) for 
+a manual on working with taxonomic data in R, including with ITIS data.
+
+How to cite ITIS. From https://itis.gov/citation.html 
+
+To cite data obtained from ITIS, the following citation format is offered as a suggestion:
+
+    Retrieved [month, day, year], from the Integrated Taxonomic Information System on-line database, http://www.itis.gov.
+
+
+ITIS is one of many different taxonomic data sources. Other include: Catalogue of Life (and COL+), NCBI taxonomy, International Plant Names Index, Index Fungorum, and more. The Wikipedia entry (https://en.wikipedia.org/wiki/Integrated_Taxonomic_Information_System) states that ITIS has a North American focus, but includes many taxa not in North America.
+
+## Terminology
+
+* "mononomial": a taxonomic name with one part, e.g, _Poa_
+* "binomial": a taxonomic name with two parts, e.g, _Poa annua_
+* "trinomial": a taxonomic name with three parts, e.g, _Poa annua annua_
+
+## Installation
+
+Install from CRAN
+
+```{r eval=FALSE}
+install.packages("ritis")
+```
+
+Or install the development version from GitHub
+
+```{r installgh, eval=FALSE}
+remotes::install_github("ropensci/ritis")
+```
+
+Load `ritis`
+
+```{r}
+library("ritis")
+```
+
+## ITIS Solr interface
+
+There are four methods.
+
+* `itis_search()` - Search
+* `itis_group()` - Group
+* `itis_highlight()` - Hightlight
+* `itis_facet()` - Facet
+
+These four methods use the equivalent functions in the package `solrium`, e.g.,
+`ritis::itis_search()` uses `solrium::solr_search()`, etc. The `itis_*()` functions
+simply use `...` to allow users to pass on parameters to the wrapped `solrium`
+functions. So do read the `solrium` docs.
+
+ITIS Solr API docs: https://www.itis.gov/solr_documentation.html
+
+Some examples:
+
+matches only monomials
+
+```{r}
+itis_search(q = "nameWOInd:/[A-Za-z0-9]*[ ]{0,0}*/")
+```
+
+matches only binomials
+
+```{r}
+itis_search(q = "nameWOInd:/[A-Za-z0-9]*[ ]{1,1}[A-Za-z0-9]*/")
+```
+
+The syntax for `itis_search()` can be a bit hard to grasp. See this ITIS page https://itis.gov/solr_examples.html for help on generating the syntax they want for specific searches.
+
+## ITIS REST API interface
+
+ITIS REST API docs: http://www.itis.gov/ws_description.html
+
+The following are some example uses. There are many more methods not shown below
+
+-------
+
+Get accepted names for a TSN
+
+```{r}
+accepted_names(tsn = 504239)
+```
+
+Get common names for a TSN
+
+```{r}
+common_names(tsn = 183833)
+```
+
+Full hierarchy for a TSN
+
+```{r}
+hierarchy_full(tsn = 37906)
+```

@@ -4,6 +4,7 @@
 ^.*\.Rproj$
 ^\.Rproj\.user$
 ^README\.Rmd$
+^README\.md$
 man-roxygen/
 .travis.yml
 ^CODE_OF_CONDUCT\.md$
@@ -13,3 +14,5 @@ man-roxygen/
 .github
 revdep
 ^codemeta\.json$
+vignettes/
+^LICENSE\.md$
