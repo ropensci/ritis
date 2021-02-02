@@ -1,7 +1,7 @@
 ## Test environments
 
-* local OS X install, R 3.6.3 patched
-* ubuntu 16.04 (on travis-ci), R 3.6.3
+* local OS X install, R 4.0.3 patched
+* ubuntu 16.04 (on github actions), R 4.0.3
 * win-builder (devel and release)
 
 ## R CMD check results
@@ -16,7 +16,7 @@ There were no problems related to this package. Summary at
 
 ---
 
-This version updates a dependencies function to a new one they suggest; documentation improvements.
+This version xxxx.
 
 Thanks!
 Scott Chamberlain

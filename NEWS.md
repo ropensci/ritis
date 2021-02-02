@@ -1,3 +1,16 @@
+ritis 1.0
+=========
+
+### MINOR IMPROVEMENTS
+
+* reduce code duplication in `terms()` (#18)
+* add more unit tests (#21)
+
+### BUG FIXES
+
+* fix for `publications()` function: parsing error fixed (#19) (#20)
+
+
 ritis 0.9.0
 ===========
 

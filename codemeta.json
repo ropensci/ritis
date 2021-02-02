@@ -10,14 +10,13 @@
   "codeRepository": "https://github.com/ropensci/ritis",
   "issueTracker": "https://github.com/ropensci/ritis/issues",
   "license": "https://spdx.org/licenses/MIT",
-  "version": "0.9.0",
+  "version": "1.0.0",
   "programmingLanguage": {
     "@type": "ComputerLanguage",
     "name": "R",
-    "version": "3.6.3",
     "url": "https://r-project.org"
   },
-  "runtimePlatform": "R version 3.6.3 Patched (2020-03-11 r78210)",
+  "runtimePlatform": "R version 4.0.3 Patched (2021-01-08 r79819)",
   "provider": {
     "@id": "https://cran.r-project.org",
     "@type": "Organization",
@@ -43,19 +42,6 @@
     }
   ],
   "softwareSuggestions": [
-    {
-      "@type": "SoftwareApplication",
-      "identifier": "roxygen2",
-      "name": "roxygen2",
-      "version": ">= 7.1.0",
-      "provider": {
-        "@id": "https://cran.r-project.org",
-        "@type": "Organization",
-        "name": "Comprehensive R Archive Network (CRAN)",
-        "url": "https://cran.r-project.org"
-      },
-      "sameAs": "https://CRAN.R-project.org/package=roxygen2"
-    },
     {
       "@type": "SoftwareApplication",
       "identifier": "knitr",
@@ -170,10 +156,10 @@
       "sameAs": "https://CRAN.R-project.org/package=tibble"
     }
   ],
-  "contIntegration": "https://travis-ci.org/ropensci/ritis",
+  "contIntegration": "https://codecov.io/gh/ropensci/ritis",
   "releaseNotes": "https://github.com/ropensci/ritis/blob/master/NEWS.md",
   "readme": "https://github.com/ropensci/ritis/blob/master/README.md",
-  "fileSize": "51.448KB",
+  "fileSize": "428.861KB",
   "relatedLink": "https://docs.ropensci.org/ritis/",
   "contributor": {},
   "copyrightHolder": {},
