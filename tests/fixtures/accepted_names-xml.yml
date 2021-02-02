@@ -1,0 +1,39 @@
+http_interactions:
+- request:
+    method: get
+    uri: https://www.itis.gov/ITISWebService/services/ITISService/getAcceptedNamesFromTSN?tsn=504239
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      User-Agent: libcurl/7.74.0 r-curl/4.3 crul/1.0.0
+      Accept-Encoding: gzip, deflate
+      Accept: application/json, text/xml, application/xml, */*
+  response:
+    status:
+      status_code: '200'
+      message: OK
+      explanation: Request fulfilled, document follows
+    headers:
+      content-type: application/xml;charset=UTF-8
+      date: Tue, 02 Feb 2021 00:42:49 GMT
+      status: 'HTTP/1.1 200 '
+      strict-transport-security:
+      - max-age=63072000; includeSubDomains; preload
+      - max-age=63072000; includeSubDomains; preload
+      transfer-encoding: chunked
+      x-content-type-options:
+      - nosniff
+      - nosniff
+      x-frame-options: SAMEORIGIN
+    body:
+      encoding: UTF-8
+      file: no
+      string: <ns:getAcceptedNamesFromTSNResponse xmlns:ns="http://itis_service.itis.usgs.gov"><ns:return
+        xmlns:ax21="http://data.itis_service.itis.usgs.gov/xsd" xmlns:ax23="http://metadata.itis_service.itis.usgs.gov/xsd"
+        xmlns:ax26="http://itis_service.itis.usgs.gov/xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:type="ax21:SvcAcceptedNameList"><ax21:tsn>504239</ax21:tsn><ax21:acceptedNames
+        xsi:type="ax21:SvcAcceptedName"><ax21:acceptedName>Dasiphora fruticosa</ax21:acceptedName><ax21:acceptedTsn>836659</ax21:acceptedTsn><ax21:author>(L.)
+        Rydb.</ax21:author></ax21:acceptedNames></ns:return></ns:getAcceptedNamesFromTSNResponse>
+  recorded_at: 2021-02-02 00:42:49 GMT
+  recorded_with: vcr/0.6.0, webmockr/0.7.4

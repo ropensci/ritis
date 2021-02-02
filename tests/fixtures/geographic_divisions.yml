@@ -1,0 +1,35 @@
+http_interactions:
+- request:
+    method: get
+    uri: https://www.itis.gov/ITISWebService/jsonservice/getGeographicDivisionsFromTSN?tsn=180543
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      User-Agent: libcurl/7.74.0 r-curl/4.3 crul/1.0.0
+      Accept-Encoding: gzip, deflate
+      Accept: application/json, text/xml, application/xml, */*
+  response:
+    status:
+      status_code: '200'
+      message: OK
+      explanation: Request fulfilled, document follows
+    headers:
+      content-length: '499'
+      content-type: text/json;charset=ISO-8859-1
+      date: Tue, 02 Feb 2021 01:09:46 GMT
+      status: 'HTTP/1.1 200 '
+      strict-transport-security:
+      - max-age=63072000; includeSubDomains; preload
+      - max-age=63072000; includeSubDomains; preload
+      x-content-type-options:
+      - nosniff
+      - nosniff
+      x-frame-options: SAMEORIGIN
+    body:
+      encoding: UTF-8
+      file: no
+      string: |
+        {"class":"gov.usgs.itis.itis_service.data.SvcTaxonGeoDivisionList","geoDivisions":[{"class":"gov.usgs.itis.itis_service.data.SvcTaxonGeoDivision","geographicValue":"Europe & Northern Asia (excluding China)","updateDate":"2014-02-03"},{"class":"gov.usgs.itis.itis_service.data.SvcTaxonGeoDivision","geographicValue":"North America","updateDate":"1998-01-27"},{"class":"gov.usgs.itis.itis_service.data.SvcTaxonGeoDivision","geographicValue":"Southern Asia","updateDate":"2003-10-28"}],"tsn":"180543"}
+  recorded_at: 2021-02-02 01:09:45 GMT
+  recorded_with: vcr/0.6.0, webmockr/0.7.4

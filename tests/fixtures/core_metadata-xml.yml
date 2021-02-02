@@ -1,0 +1,38 @@
+http_interactions:
+- request:
+    method: get
+    uri: https://www.itis.gov/ITISWebService/services/ITISService/getCoreMetadataFromTSN?tsn=183833
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      User-Agent: libcurl/7.74.0 r-curl/4.3 crul/1.0.0
+      Accept-Encoding: gzip, deflate
+      Accept: application/json, text/xml, application/xml, */*
+  response:
+    status:
+      status_code: '200'
+      message: OK
+      explanation: Request fulfilled, document follows
+    headers:
+      content-type: application/xml;charset=UTF-8
+      date: Tue, 02 Feb 2021 00:42:58 GMT
+      status: 'HTTP/1.1 200 '
+      strict-transport-security:
+      - max-age=63072000; includeSubDomains; preload
+      - max-age=63072000; includeSubDomains; preload
+      transfer-encoding: chunked
+      x-content-type-options:
+      - nosniff
+      - nosniff
+      x-frame-options: SAMEORIGIN
+    body:
+      encoding: UTF-8
+      file: no
+      string: <ns:getCoreMetadataFromTSNResponse xmlns:ns="http://itis_service.itis.usgs.gov"><ns:return
+        xmlns:ax21="http://data.itis_service.itis.usgs.gov/xsd" xmlns:ax23="http://metadata.itis_service.itis.usgs.gov/xsd"
+        xmlns:ax26="http://itis_service.itis.usgs.gov/xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:type="ax21:SvcCoreMetadata"><ax21:tsn>183833</ax21:tsn><ax21:credRating>TWG
+        standards met</ax21:credRating><ax21:rankId>220</ax21:rankId><ax21:taxonCoverage></ax21:taxonCoverage><ax21:taxonCurrency></ax21:taxonCurrency><ax21:taxonUsageRating>valid</ax21:taxonUsageRating><ax21:unacceptReason></ax21:unacceptReason></ns:return></ns:getCoreMetadataFromTSNResponse>
+  recorded_at: 2021-02-02 00:42:58 GMT
+  recorded_with: vcr/0.6.0, webmockr/0.7.4

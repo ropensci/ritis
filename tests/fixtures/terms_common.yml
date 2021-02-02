@@ -1,0 +1,35 @@
+http_interactions:
+- request:
+    method: get
+    uri: https://www.itis.gov/ITISWebService/jsonservice/getITISTermsFromCommonName?srchKey=hayfield%20tarweed
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      User-Agent: libcurl/7.74.0 r-curl/4.3 crul/1.0.0
+      Accept-Encoding: gzip, deflate
+      Accept: application/json, text/xml, application/xml, */*
+  response:
+    status:
+      status_code: '200'
+      message: OK
+      explanation: Request fulfilled, document follows
+    headers:
+      content-length: '2205'
+      content-type: text/json;charset=ISO-8859-1
+      date: Tue, 02 Feb 2021 01:29:01 GMT
+      status: 'HTTP/1.1 200 '
+      strict-transport-security:
+      - max-age=63072000; includeSubDomains; preload
+      - max-age=63072000; includeSubDomains; preload
+      x-content-type-options:
+      - nosniff
+      - nosniff
+      x-frame-options: SAMEORIGIN
+    body:
+      encoding: UTF-8
+      file: no
+      string: |
+        {"class":"gov.usgs.itis.itis_service.data.SvcItisTermList","itisTerms":[{"author":"DC.","class":"gov.usgs.itis.itis_service.data.SvcItisTerm","commonNames":["hayfield tarweed"],"nameUsage":"accepted","scientificName":"Hemizonia congesta","tsn":"37613"},{"author":"DC.","class":"gov.usgs.itis.itis_service.data.SvcItisTerm","commonNames":["hayfield tarweed"],"nameUsage":"not accepted","scientificName":"Hemizonia luzulifolia ssp. luzulifolia","tsn":"37626"},{"author":"DC.","class":"gov.usgs.itis.itis_service.data.SvcItisTerm","commonNames":["hayfield tarweed"],"nameUsage":"accepted","scientificName":"Hemizonia congesta ssp. congesta","tsn":"524128"},{"author":"(D.D. Keck) Tanowitz","class":"gov.usgs.itis.itis_service.data.SvcItisTerm","commonNames":["hayfield tarweed"],"nameUsage":"not accepted","scientificName":"Hemizonia congesta ssp. vernalis","tsn":"524129"},{"author":"(Tanowitz) Keil","class":"gov.usgs.itis.itis_service.data.SvcItisTerm","commonNames":["hayfield tarweed"],"nameUsage":"not accepted","scientificName":"Hemizonia congesta ssp. leucocephala","tsn":"525042"},{"author":"(DC.) Babc. & H.M. Hall","class":"gov.usgs.itis.itis_service.data.SvcItisTerm","commonNames":["hayfield tarweed"],"nameUsage":"accepted","scientificName":"Hemizonia congesta ssp. luzulifolia","tsn":"525043"},{"author":"Babc. & H.M. Hall","class":"gov.usgs.itis.itis_service.data.SvcItisTerm","commonNames":["hayfield tarweed"],"nameUsage":"accepted","scientificName":"Hemizonia congesta ssp. tracyi","tsn":"525044"},{"author":"Babc. & H.M. Hall","class":"gov.usgs.itis.itis_service.data.SvcItisTerm","commonNames":["hayfield tarweed"],"nameUsage":"accepted","scientificName":"Hemizonia congesta ssp. calyculata","tsn":"525174"},{"author":"(Greene) Babc. & H.M. Hall","class":"gov.usgs.itis.itis_service.data.SvcItisTerm","commonNames":["hayfield tarweed"],"nameUsage":"accepted","scientificName":"Hemizonia congesta ssp. clevelandii","tsn":"525175"},{"author":"(Greene) Babc. & H.M. Hall","class":"gov.usgs.itis.itis_service.data.SvcItisTerm","commonNames":["hayfield tarweed"],"nameUsage":"accepted","scientificName":"Hemizonia congesta ssp. lutescens","tsn":"780737"}],"requestedName":"hayfield tarweed"}
+  recorded_at: 2021-02-02 01:29:00 GMT
+  recorded_with: vcr/0.6.0, webmockr/0.7.4

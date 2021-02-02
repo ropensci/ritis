@@ -1,0 +1,46 @@
+http_interactions:
+- request:
+    method: get
+    uri: https://www.itis.gov/ITISWebService/services/ITISService/getExpertsFromTSN?tsn=180544
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      User-Agent: libcurl/7.74.0 r-curl/4.3 crul/1.0.0
+      Accept-Encoding: gzip, deflate
+      Accept: application/json, text/xml, application/xml, */*
+  response:
+    status:
+      status_code: '200'
+      message: OK
+      explanation: Request fulfilled, document follows
+    headers:
+      content-type: application/xml;charset=UTF-8
+      date: Tue, 02 Feb 2021 00:56:33 GMT
+      status: 'HTTP/1.1 200 '
+      strict-transport-security:
+      - max-age=63072000; includeSubDomains; preload
+      - max-age=63072000; includeSubDomains; preload
+      transfer-encoding: chunked
+      x-content-type-options:
+      - nosniff
+      - nosniff
+      x-frame-options: SAMEORIGIN
+    body:
+      encoding: UTF-8
+      file: no
+      string: <ns:getExpertsFromTSNResponse xmlns:ns="http://itis_service.itis.usgs.gov"><ns:return
+        xmlns:ax21="http://data.itis_service.itis.usgs.gov/xsd" xmlns:ax23="http://metadata.itis_service.itis.usgs.gov/xsd"
+        xmlns:ax26="http://itis_service.itis.usgs.gov/xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:type="ax21:SvcTaxonExpertList"><ax21:tsn>180544</ax21:tsn><ax21:experts
+        xsi:type="ax21:SvcTaxonExpert"><ax21:comment>Curator of North American mammals
+        and Chief of Mammal Section, National Biological Service, Smithsonian Institution,
+        National Museum of Natural History, Washington, DC, USA</ax21:comment><ax21:expert>Alfred
+        L. Gardner</ax21:expert><ax21:referenceFor xsi:type="ax21:SvcReferenceForElement"><ax21:name>Ursus
+        americanus</ax21:name><ax21:refLanguage xsi:nil="true" /><ax21:referredTsn>180544</ax21:referredTsn></ax21:referenceFor><ax21:updateDate>2003-10-28</ax21:updateDate></ax21:experts><ax21:experts
+        xsi:type="ax21:SvcTaxonExpert"><ax21:comment>Division of Natural Sciences,
+        Bethel College, 1001 W. McKinley Ave., Mishawaka, IN 46545</ax21:comment><ax21:expert>W.
+        Christopher Wozencraft</ax21:expert><ax21:referenceFor xsi:type="ax21:SvcReferenceForElement"><ax21:name>Ursus
+        americanus</ax21:name><ax21:refLanguage xsi:nil="true" /><ax21:referredTsn>180544</ax21:referredTsn></ax21:referenceFor><ax21:updateDate>2003-10-28</ax21:updateDate></ax21:experts></ns:return></ns:getExpertsFromTSNResponse>
+  recorded_at: 2021-02-02 00:56:33 GMT
+  recorded_with: vcr/0.6.0, webmockr/0.7.4

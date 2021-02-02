@@ -1,0 +1,44 @@
+http_interactions:
+- request:
+    method: get
+    uri: https://www.itis.gov/ITISWebService/services/ITISService/getGeographicValues
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      User-Agent: libcurl/7.74.0 r-curl/4.3 crul/1.0.0
+      Accept-Encoding: gzip, deflate
+      Accept: application/json, text/xml, application/xml, */*
+  response:
+    status:
+      status_code: '200'
+      message: OK
+      explanation: Request fulfilled, document follows
+    headers:
+      content-type: application/xml;charset=UTF-8
+      date: Tue, 02 Feb 2021 01:16:02 GMT
+      status: 'HTTP/1.1 200 '
+      strict-transport-security:
+      - max-age=63072000; includeSubDomains; preload
+      - max-age=63072000; includeSubDomains; preload
+      transfer-encoding: chunked
+      x-content-type-options:
+      - nosniff
+      - nosniff
+      x-frame-options: SAMEORIGIN
+    body:
+      encoding: UTF-8
+      file: no
+      string: <ns:getGeographicValuesResponse xmlns:ns="http://itis_service.itis.usgs.gov"><ns:return
+        xmlns:ax21="http://data.itis_service.itis.usgs.gov/xsd" xmlns:ax23="http://metadata.itis_service.itis.usgs.gov/xsd"
+        xmlns:ax26="http://itis_service.itis.usgs.gov/xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:type="ax23:SvcGeographicValueList"><ax23:geographicValues>Africa</ax23:geographicValues><ax23:geographicValues>Antarctica/Southern
+        Ocean</ax23:geographicValues><ax23:geographicValues>Australia</ax23:geographicValues><ax23:geographicValues>Caribbean</ax23:geographicValues><ax23:geographicValues>East
+        Pacific</ax23:geographicValues><ax23:geographicValues>Eastern Atlantic Ocean</ax23:geographicValues><ax23:geographicValues>Europe
+        &amp; Northern Asia (excluding China)</ax23:geographicValues><ax23:geographicValues>Indo-West
+        Pacific</ax23:geographicValues><ax23:geographicValues>Middle America</ax23:geographicValues><ax23:geographicValues>North
+        America</ax23:geographicValues><ax23:geographicValues>Oceania</ax23:geographicValues><ax23:geographicValues>South
+        America</ax23:geographicValues><ax23:geographicValues>Southern Asia</ax23:geographicValues><ax23:geographicValues>Western
+        Atlantic Ocean</ax23:geographicValues></ns:return></ns:getGeographicValuesResponse>
+  recorded_at: 2021-02-02 01:16:02 GMT
+  recorded_with: vcr/0.6.0, webmockr/0.7.4

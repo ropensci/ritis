@@ -1,0 +1,69 @@
+http_interactions:
+- request:
+    method: get
+    uri: https://www.itis.gov/ITISWebService/jsonservice/getCoreMetadataFromTSN?tsn=183833
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      User-Agent: libcurl/7.74.0 r-curl/4.3 crul/1.0.0
+      Accept-Encoding: gzip, deflate
+      Accept: application/json, text/xml, application/xml, */*
+  response:
+    status:
+      status_code: '200'
+      message: OK
+      explanation: Request fulfilled, document follows
+    headers:
+      content-length: '206'
+      content-type: text/json;charset=ISO-8859-1
+      date: Tue, 02 Feb 2021 00:42:56 GMT
+      status: 'HTTP/1.1 200 '
+      strict-transport-security:
+      - max-age=63072000; includeSubDomains; preload
+      - max-age=63072000; includeSubDomains; preload
+      x-content-type-options:
+      - nosniff
+      - nosniff
+      x-frame-options: SAMEORIGIN
+    body:
+      encoding: UTF-8
+      file: no
+      string: |
+        {"class":"gov.usgs.itis.itis_service.data.SvcCoreMetadata","credRating":"TWG standards met","rankId":220,"taxonCoverage":"","taxonCurrency":"","taxonUsageRating":"valid","tsn":"183833","unacceptReason":""}
+  recorded_at: 2021-02-02 00:42:57 GMT
+  recorded_with: vcr/0.6.0, webmockr/0.7.4
+- request:
+    method: get
+    uri: https://www.itis.gov/ITISWebService/jsonservice/getCoreMetadataFromTSN?tsn=183671
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      User-Agent: libcurl/7.74.0 r-curl/4.3 crul/1.0.0
+      Accept-Encoding: gzip, deflate
+      Accept: application/json, text/xml, application/xml, */*
+  response:
+    status:
+      status_code: '200'
+      message: OK
+      explanation: Request fulfilled, document follows
+    headers:
+      content-length: '220'
+      content-type: text/json;charset=ISO-8859-1
+      date: Tue, 02 Feb 2021 00:42:56 GMT
+      status: 'HTTP/1.1 200 '
+      strict-transport-security:
+      - max-age=63072000; includeSubDomains; preload
+      - max-age=63072000; includeSubDomains; preload
+      x-content-type-options:
+      - nosniff
+      - nosniff
+      x-frame-options: SAMEORIGIN
+    body:
+      encoding: UTF-8
+      file: no
+      string: |
+        {"class":"gov.usgs.itis.itis_service.data.SvcCoreMetadata","credRating":"TWG standards met","rankId":220,"taxonCoverage":"","taxonCurrency":"","taxonUsageRating":"not accepted","tsn":"183671","unacceptReason":"synonym"}
+  recorded_at: 2021-02-02 00:42:57 GMT
+  recorded_with: vcr/0.6.0, webmockr/0.7.4

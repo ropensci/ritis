@@ -1,0 +1,35 @@
+http_interactions:
+- request:
+    method: get
+    uri: https://www.itis.gov/ITISWebService/jsonservice/getCommentDetailFromTSN?tsn=180543
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      User-Agent: libcurl/7.74.0 r-curl/4.3 crul/1.0.0
+      Accept-Encoding: gzip, deflate
+      Accept: application/json, text/xml, application/xml, */*
+  response:
+    status:
+      status_code: '200'
+      message: OK
+      explanation: Request fulfilled, document follows
+    headers:
+      content-length: '1288'
+      content-type: text/json;charset=ISO-8859-1
+      date: Tue, 02 Feb 2021 00:42:52 GMT
+      status: 'HTTP/1.1 200 '
+      strict-transport-security:
+      - max-age=63072000; includeSubDomains; preload
+      - max-age=63072000; includeSubDomains; preload
+      x-content-type-options:
+      - nosniff
+      - nosniff
+      x-frame-options: SAMEORIGIN
+    body:
+      encoding: UTF-8
+      file: no
+      string: |
+        {"class":"gov.usgs.itis.itis_service.data.SvcTaxonCommentList","comments":[{"class":"gov.usgs.itis.itis_service.data.SvcTaxonComment","commentDetail":"Status: CITES - Appendix I as U. arctos (Mexico, Bhutan, China, and Mongolia populations) and U. a. isabellinus; otherwise Appendix II. U. S. ESA - Endangered as U. arctos pruinosus, as U. arctos in Mexico, and as U. a. arctos in Italy. Threatened as U. a. ho...","commentId":"18556","commentTimeStamp":"2007-08-20 15:06:38.0","commentator":"Wilson & Reeder, eds. (2005)","updateDate":"2014-02-03"},{"class":"gov.usgs.itis.itis_service.data.SvcTaxonComment","commentDetail":"Comments: Reviewed by Erdbrink (1953), Couturier (1954), Rausch (1963a), Kurt<e9>n (1973), Hall (1984) and Pasitschniak-Arts (1993). Ognev (1931) and Allen (1938) recognized U. pruinosus as distinct; not followed by Ellerman and Morrison-Scott (1951), Gao (1987), and Stroganov (1962). L<f6>nnberg (1923b) believed that differences between pruinosus and arctos warranted subgeneric distinction as (Mylarctos) pruinosus; however, this was not supported by Pocock's (1932b) thorough revision. Synonyms allocated a...","commentId":"18557","commentTimeStamp":"2007-08-20 15:06:38.0","commentator":"Wilson & Reeder, eds. (2005)","updateDate":"2014-02-03"}],"tsn":"180543"}
+  recorded_at: 2021-02-02 00:42:53 GMT
+  recorded_with: vcr/0.6.0, webmockr/0.7.4

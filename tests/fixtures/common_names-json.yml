@@ -1,0 +1,35 @@
+http_interactions:
+- request:
+    method: get
+    uri: https://www.itis.gov/ITISWebService/jsonservice/getCommonNamesFromTSN?tsn=183833
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      User-Agent: libcurl/7.74.0 r-curl/4.3 crul/1.0.0
+      Accept-Encoding: gzip, deflate
+      Accept: application/json, text/xml, application/xml, */*
+  response:
+    status:
+      status_code: '200'
+      message: OK
+      explanation: Request fulfilled, document follows
+    headers:
+      content-length: '477'
+      content-type: text/json;charset=ISO-8859-1
+      date: Tue, 02 Feb 2021 00:42:55 GMT
+      status: 'HTTP/1.1 200 '
+      strict-transport-security:
+      - max-age=63072000; includeSubDomains; preload
+      - max-age=63072000; includeSubDomains; preload
+      x-content-type-options:
+      - nosniff
+      - nosniff
+      x-frame-options: SAMEORIGIN
+    body:
+      encoding: UTF-8
+      file: no
+      string: |
+        {"class":"gov.usgs.itis.itis_service.data.SvcCommonNameList","commonNames":[{"class":"gov.usgs.itis.itis_service.data.SvcCommonName","commonName":"African hunting dog","language":"English","tsn":"183833"},{"class":"gov.usgs.itis.itis_service.data.SvcCommonName","commonName":"African Wild Dog","language":"English","tsn":"183833"},{"class":"gov.usgs.itis.itis_service.data.SvcCommonName","commonName":"Painted Hunting Dog","language":"English","tsn":"183833"}],"tsn":"183833"}
+  recorded_at: 2021-02-02 00:42:54 GMT
+  recorded_with: vcr/0.6.0, webmockr/0.7.4
