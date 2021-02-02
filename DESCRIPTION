@@ -16,7 +16,6 @@ Authors@R: c(
     person(given = "rOpenSci",
         role = "fnd",
         comment = "https://ropensci.org/"))
-VignetteBuilder: knitr
 Roxygen: list(markdown = TRUE)
 LazyData: true
 Encoding: UTF-8
@@ -28,7 +27,6 @@ Imports:
     data.table,
     tibble
 Suggests:
-    knitr,
     testthat,
     webmockr,
     vcr (>= 0.5.4)
